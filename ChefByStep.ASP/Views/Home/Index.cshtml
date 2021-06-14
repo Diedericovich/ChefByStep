@@ -1,7 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@{ 
+    Random random = new Random();
+    int randomId = random.Next(1, 5);
+}
 <div class="overview">
     <div>
         <div class="float-left header">
@@ -10,14 +13,14 @@
                 <p>Try out our new Chef-By-Step!</p>
             </div>
             <p class="decriptive-header">Try out any recipe from our library that contains +200 recipes.</p>
-            <button class="btn overview-btn">View recipes</button>
+            <a class="btn overview-btn" asp-area="" asp-controller="Recipe" asp-action="Index">View recipes</a>
         </div>
         <div class="float-right header">
             <img src="https://static.ah.nl/static/recepten/img_RAM_PRD143856_1600x_JPG.jpg" class=" header-img" width="450" />
         </div>
         <div class="overview-title">
             <p class="random-recipe">Surprise me with a recipe!</p>
-            <button class="btn random-btn">Start to cook!</button>
+            <a class="btn random-btn" asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id=@randomId>Start to cook!</a>
         </div>
     </div>
     <div>
