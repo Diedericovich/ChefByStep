@@ -1,6 +1,7 @@
 ﻿using ChefByStep.API.Entities;
 using ChefByStep.API.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -26,8 +27,15 @@ namespace ChefByStep.API.Controllers
         [HttpDelete("{id})")]
         public async Task<ActionResult> DeleteIngredientAsync(int id)
         {
-            await _service.DeleteIngredientAsync(id);
-            return Ok("Delete Ok");
+            try
+            {
+                await _service.DeleteIngredientAsync(id);
+                return Ok("Delete Ok");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         [HttpGet("{id}")]
@@ -45,8 +53,15 @@ namespace ChefByStep.API.Controllers
         [HttpPut]
         public async Task<ActionResult> UpdateIngredientAsync(Ingredient ingredient)
         {
-            await _service.UpdateIngredientAsync(ingredient);
-            return Ok("Update OK");
+            try
+            {
+                await _service.UpdateIngredientAsync(ingredient);
+                return Ok("Update OK");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
     }

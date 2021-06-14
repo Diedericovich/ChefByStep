@@ -8,8 +8,8 @@ namespace ChefByStep.API.Services
     {
         Task AddUserAsync(User user);
         Task DeleteUserAsync(int id);
+        Task<List<User>> GetAllUsersAsync();
         Task<User> GetUserAsync(int id);
-        Task<List<User>> GetUsersAsync();
         Task UpdateUserAsync(User user);
     }
 }

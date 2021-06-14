@@ -9,27 +9,28 @@ using System.Threading.Tasks;
 namespace ChefByStep.API.Controllers
 {
     [ApiController, Route("api/[controller]")]
-    public class UserController : ControllerBase
-    {
-        private IUserService _service;
 
-        public UserController(IUserService service)
+    public class StepController: ControllerBase
+    {
+        private IStepService _service;
+
+        public StepController(IStepService service)
         {
             _service = service;
         }
 
         [HttpPost]
-        public async Task AddUserAsync(User user)
+        public async Task AddStepAsync(Step step)
         {
-            await _service.AddUserAsync(user);
+            await _service.AddStepAsync(step);
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult> DeleteUserAsync(int id)
+        public async Task<ActionResult> DeleteStepAsync(int id)
         {
             try
             {
-                await _service.DeleteUserAsync(id);
+                await _service.DeleteStepAsync(id);
                 return Ok("Delete OK");
             }
             catch (Exception e)
@@ -39,23 +40,23 @@ namespace ChefByStep.API.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<User> GetUserAsync(int id)
+        public async Task<Step> GetStepAsync(int id)
         {
-            return await _service.GetUserAsync(id);
+            return await _service.GetStepAsync(id);
         }
 
         [HttpGet]
-        public async Task<List<User>> GetAllUsersAsync()
+        public async Task<List<Step>> GetAllStepsAsync()
         {
-            return await _service.GetAllUsersAsync();
+            return await _service.GetAllStepsAsync();
         }
 
         [HttpPut]
-        public async Task<ActionResult> UpdateUserAsync(User user)
+        public async Task<ActionResult> UpdateStepAsync(Step step)
         {
             try
             {
-                await _service.UpdateUserAsync(user);
+                await _service.UpdateStepAsync(step);
                 return Ok("Update OK");
             }
             catch (Exception e)

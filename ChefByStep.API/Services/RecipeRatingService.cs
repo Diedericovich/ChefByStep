@@ -23,15 +23,13 @@ namespace ChefByStep.API.Services
         {
             await _repo.DeleteAsync(id);
         }
-
-        public async Task<List<RecipeRating>> GetAllRecipeRatingsAsync()
-        {
-            return await _repo.GetAllAsync();
-        }
-
         public async Task<RecipeRating> GetRecipeRatingAsync(int id)
         {
             return await _repo.GetAsync(id);
+        }
+        public async Task<List<RecipeRating>> GetAllRecipeRatingsAsync()
+        {
+            return await _repo.GetAllAsync();
         }
 
         public async Task UpdateRecipeRatingAsync(RecipeRating recipeRating)

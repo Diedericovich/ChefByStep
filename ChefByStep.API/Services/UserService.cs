@@ -13,7 +13,6 @@ namespace ChefByStep.API.Services
         {
             _repo = repo;
         }
-
         public async Task AddUserAsync(User user)
         {
             await _repo.AddAsync(user);
@@ -24,14 +23,14 @@ namespace ChefByStep.API.Services
             await _repo.DeleteAsync(id);
         }
 
-        public async Task<List<User>> GetUsersAsync()
-        {
-            return await _repo.GetAllAsync();
-        }
-
         public async Task<User> GetUserAsync(int id)
         {
             return await _repo.GetAsync(id);
+        }
+
+        public async Task<List<User>> GetAllUsersAsync()
+        {
+            return await _repo.GetAllAsync();
         }
 
         public async Task UpdateUserAsync(User user)
