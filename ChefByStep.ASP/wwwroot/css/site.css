@@ -129,44 +129,6 @@ body {
 .random-btn {
     background-color: RGBA(120,198,163,0.59);
 }
-/* Carousel
----------------------------------------------------*/
-.horizontal .carousel-inner {
-    text-align: center;
-}
-
-.carousel.horizontal .item {
-    -webkit-transition: 0.6s ease-in-out left;
-    -moz-transition: 0.6s ease-in-out left;
-    -ms-transition: 0.6s ease-in-out left;
-    -o-transition: 0.6s ease-in-out left;
-    transition: 0.6s ease-in-out left;
-    left: 0;
-}
-
-
-
-.carousel.horizontal .active {
-    left: 0;
-}
-
-.carousel.horizontal .next {
-    left: 100%;
-}
-
-.carousel.horizontal .prev {
-    left: -100%;
-}
-
-    .carousel.horizontal .next.left,
-    .carousel.horizontal .prev.right {
-        left: 0;
-    }
-
-.carousel.horizontal .active.left {
-    left: -100%;
-}
-
-.carousel.horizontal .active.right {
-    left: 100%;
+.carousel-caption {
+    background-color: RGBA(120,198,163,0.75);
 }

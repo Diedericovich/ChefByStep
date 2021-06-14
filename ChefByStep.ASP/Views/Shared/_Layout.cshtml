@@ -7,7 +7,7 @@
     <title>@ViewData["Title"] - ChefByStep.ASP</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link href="/Content/fontawesome-all.css" rel="stylesheet" />    
+    <link href="/Content/fontawesome-all.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -19,12 +19,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse justify-content-end">
-                    
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
-                        <form class="d-flex">
-                            <input class="form-control me-2 home-search" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -36,10 +31,12 @@
                                 <i class="fas fa-user-alt"></i>
                             </a>
                         </li>
-
-
-                        <partial name="_LoginPartial" />
                     </ul>
+                    <form class="d-flex home-search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
