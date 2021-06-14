@@ -7,6 +7,7 @@ namespace ChefByStep.API.Repos
     public interface IRecipeRepo
     {
         Task<List<Recipe>> GetAllAsync();
+
         Task<Recipe> GetAsync(int id);
     }
 }
