@@ -15,5 +15,8 @@ namespace ChefByStep.ASP.Models
         public string Title { get; set; }
         public List<Ingredient> Ingredients { get; set; }
         public List<Step> Steps { get; set; }
+        public ApplicationUser CreatedBy { get; set; }
+        public List<ApplicationUser> FavouritedBy { get; set; }
+        public List<ApplicationUser> CompletedBy { get; set; }
     }
 }
