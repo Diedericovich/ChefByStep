@@ -1,3 +1,4 @@
+using ChefByStep.API.Repos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +36,11 @@ namespace ChefByStep.API
 
             services.AddDbContext<DatabaseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnectionString")));
+
+            services.AddScoped<IUserRepo, UserRepo>();
+            services.AddScoped<IRecipeRepo, RecipeRepo>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

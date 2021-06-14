@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.API.Repos
 {
-    public class RecipeRepo: GenericRepo<Recipe>
+    public class RecipeRepo : GenericRepo<Recipe>, IRecipeRepo
     {
-        public RecipeRepo(DatabaseContext context): base(context)
+        public RecipeRepo(DatabaseContext context) : base(context)
         {
 
         }

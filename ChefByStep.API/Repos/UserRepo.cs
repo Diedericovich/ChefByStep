@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.API.Repos
 {
-    public class UserRepo : GenericRepo<User>
+    public class UserRepo : GenericRepo<User>, IUserRepo
     {
-        public UserRepo(DatabaseContext context): base(context)
+        public UserRepo(DatabaseContext context) : base(context)
         {
 
         }
