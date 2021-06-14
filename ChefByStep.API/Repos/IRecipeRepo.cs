@@ -4,9 +4,8 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.API.Repos
 {
-    public interface IRecipeRepo
+    public interface IRecipeRepo: IGenericRepo<Recipe>
     {
-        Task<List<Recipe>> GetAllAsync();
-        Task<Recipe> GetAsync(int id);
+        
     }
 }
