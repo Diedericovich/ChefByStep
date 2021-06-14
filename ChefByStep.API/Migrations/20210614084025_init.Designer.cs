@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChefByStep.API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20210614080708_relations")]
-    partial class relations
+    [Migration("20210614084025_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -170,7 +170,7 @@ namespace ChefByStep.API.Migrations
 
                     b.HasIndex("CompletedRecipesId");
 
-                    b.ToTable("RecipeUser");
+                    b.ToTable("UserCompletedRecipe");
                 });
 
             modelBuilder.Entity("RecipeUser1", b =>
@@ -185,7 +185,7 @@ namespace ChefByStep.API.Migrations
 
                     b.HasIndex("FavouritedById");
 
-                    b.ToTable("RecipeUser1");
+                    b.ToTable("UserFavouritedRecipe");
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.Recipe", b =>

@@ -8,7 +8,7 @@ namespace ChefByStep.API.Repos
 {
     public class GenericRepo<T> : IGenericRepo<T> where T : class
     {
-        private DatabaseContext _context;
+        internal DatabaseContext _context;
 
         public GenericRepo(DatabaseContext context)
         {
