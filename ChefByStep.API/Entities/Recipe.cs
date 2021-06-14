@@ -4,7 +4,7 @@ namespace ChefByStep.API.Entities
 {
     public class Recipe
     {
-        public int MyProperty { get; set; }
+        public int Id { get; set; }
 
         public int CategoryId { get; set; }
 
