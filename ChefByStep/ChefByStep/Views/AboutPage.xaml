@@ -3,50 +3,94 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ChefByStep.Views.AboutPage"
              xmlns:vm="clr-namespace:ChefByStep.ViewModels"
-             Title="{Binding Title}">
+             Title="ChefByStep">
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
-                </ContentView>
-            </StackLayout>
+    <ScrollView>
+        <StackLayout>
+            <SearchBar Placeholder="Find a Recipe"/>
+
+            <CarouselView ItemsSource="{Binding Recipes}"
+                  PeekAreaInsets="100"
+                  Loop="True"
+                  HeightRequest="300">
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame HeightRequest="280"
+                               WidthRequest="180"
+                               BackgroundColor="white"
+                               HasShadow="True"
+                               CornerRadius="10"
+                               Padding="0"
+                               Margin="10"
+                               HorizontalOptions="CenterAndExpand">
+                                <Grid>
+                                    <StackLayout BackgroundColor="Black">
+                                        <Image Source="{Binding ImgUrl}"
+                                           Aspect="AspectFit"
+                                           Opacity="0.8" />
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Image Source="icon_bookmark.png"
+                                           HeightRequest="60"
+                                           Aspect="AspectFit"
+                                           HorizontalOptions="EndAndExpand"
+                                           Margin="0,-10,0,0" />
+                                        <Label Text="{Binding Title}"
+                                           TextColor="white"
+                                           FontSize="24"
+                                           FontAttributes="Bold"
+                                           Margin="15, 0"
+                                           VerticalOptions="EndAndExpand" />
+
+                                        <StackLayout Orientation="Horizontal"
+                                                 Margin="15, -10,0,0">
+                                            <Image Source="icon_map1.png"
+                                               HeightRequest="20"
+                                               Aspect="AspectFit" />
+                                            <Label Text="{Binding Description}"
+                                               TextColor="white"
+                                               FontSize="14"
+                                               VerticalOptions="EndAndExpand" />
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <!--<Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                    NumberOfTapsRequired="1"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AboutViewModel}},
+                                              Path=ItemTapped}"
+                                    CommandParameter="{Binding .}"/>
+                                    </Grid.GestureRecognizers>-->
+
+
+
+                                </Grid>
+                            </Frame>
+
+                        </StackLayout>
+
+
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            
+            
         </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Start developing now" FontSize="Title"/>
-                <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="0,0,0,0"/>
-                <Label FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Learn more at "/>
-                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-            </StackLayout>
-        </ScrollView>
-    </Grid>
+
+        
+
+
+
+
+    </ScrollView>
+
+    
+
 
 </ContentPage>
