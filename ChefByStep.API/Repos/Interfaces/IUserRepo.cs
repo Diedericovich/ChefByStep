@@ -4,9 +4,8 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.API.Repos
 {
-    public interface IUserRepo
+    public interface IUserRepo : IGenericRepo<User>
     {
-        Task<List<User>> GetAllAsync();
-        Task<User> GetAsync(int id);
+       
     }
 }
