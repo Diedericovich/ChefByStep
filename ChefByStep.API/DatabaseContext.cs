@@ -17,7 +17,18 @@ namespace ChefByStep.API
 
         public DatabaseContext(DbContextOptions options) : base(options)
         {
+        }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .HasMany(x => x.CompletedRecipes)
+                .WithMany(x => x.CompletedBy)
+                .UsingEntity(x => x.ToTable("UserCompletedRecipe"));
+            modelBuilder.Entity<User>()
+                .HasMany(x => x.FavoriteRecipes)
+                .WithMany(x => x.FavouritedBy)
+                .UsingEntity(x => x.ToTable("UserFavouritedRecipe"));
         }
     }
 }
