@@ -1,4 +1,5 @@
 using ChefByStep.API.Repos;
+using ChefByStep.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,8 +40,8 @@ namespace ChefByStep.API
 
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IRecipeRepo, RecipeRepo>();
-
-
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IRecipeService, RecipeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

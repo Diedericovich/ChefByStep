@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.API.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private IUserRepo _repo;
 
