@@ -32,15 +32,14 @@ namespace ChefByStep.API.Services
 
             return recipeList;
         }
-
-        public async Task UpdateRecipeAsync(Recipe recipe)
-        {
-            await _recipeRepo.UpdateAsync(recipe);
-        }
         public async Task<Recipe> GetRecipeAsync(int id)
         {
             Recipe recipe = await _recipeRepo.GetAsync(id);
             return recipe;
+        }
+        public async Task UpdateRecipeAsync(Recipe recipe)
+        {
+            await _recipeRepo.UpdateAsync(recipe);
         }
     }
 }
