@@ -1,5 +1,6 @@
 ﻿using ChefByStep.Models;
 using ChefByStep.Services.Repositories;
+using ChefByStep.Views;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -16,6 +17,7 @@ namespace ChefByStep.ViewModels
         {
             _repo = new MockRecepieRepo();
             ShowAllTheRecipes();
+            ItemTapped = new Command<Recipe>(OnRecipeSelected);
         }
         
        
@@ -50,11 +52,11 @@ namespace ChefByStep.ViewModels
             Recipes = new ObservableCollection<Recipe>(recipes);
         }
 
-        //private async void OnRecipeSelected(Recipe recipe)
-        //{
-        //    Shell.Current.GoToAsync(
-        //        $"{nameof(DetailPage)}?{nameof(DetailPageViewModel.PlaceId)}={place.ID}");
-        //}
+        private async void OnRecipeSelected(Recipe recipe)
+        {
+            await Shell.Current.GoToAsync(
+                $"{nameof(DetailPage)}?{nameof(DetailPageViewModel.RecipeId)}={recipe.Id}");
+        }
 
     }
 }

@@ -23,7 +23,7 @@ namespace ChefByStep.Services.Repositories
                     Id=1,
                     Description = "The sea in your plate",
                     Title= "Sushi",
-                    ImgUrl = "pasta.jpg"
+                    ImgUrl = "sushi.jpg"
                 },
 
                 new Recipe
@@ -31,7 +31,7 @@ namespace ChefByStep.Services.Repositories
                     Id=2,
                     Description = "Fresh, homemade pasta",
                     Title= "Pasta",
-                    ImgUrl = "sushi.jpg",
+                    ImgUrl = "pasta.jpg",
                 },
                 new Recipe
                 {
