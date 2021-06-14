@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.API.Services
 {
-    public class RecipeService
+    public class RecipeService : IRecipeService
     {
         private IRecipeRepo _recipeRepo;
 
@@ -16,7 +16,7 @@ namespace ChefByStep.API.Services
             _recipeRepo = recipeRepo;
         }
 
-        public async Task AddRecipeAsync (Recipe recipe)
+        public async Task AddRecipeAsync(Recipe recipe)
         {
             await _recipeRepo.AddAsync(recipe);
         }
