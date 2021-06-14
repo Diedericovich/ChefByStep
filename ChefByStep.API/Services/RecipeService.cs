@@ -1,8 +1,6 @@
 ﻿using ChefByStep.API.Entities;
 using ChefByStep.API.Repos;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ChefByStep.API.Services
