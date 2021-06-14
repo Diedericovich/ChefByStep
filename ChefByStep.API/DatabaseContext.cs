@@ -23,7 +23,7 @@ namespace ChefByStep.API
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.BuildRelations();
-            modelBuilder.Seed();
+            //modelBuilder.Seed();
         }
     }
 }
