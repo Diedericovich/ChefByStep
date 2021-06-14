@@ -4,14 +4,16 @@ using ChefByStep.API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ChefByStep.API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210614074712_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,9 +49,6 @@ namespace ChefByStep.API.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CreatedById")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -59,9 +58,22 @@ namespace ChefByStep.API.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId1")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId2")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedById");
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
+
+                    b.HasIndex("UserId2");
 
                     b.ToTable("Recipes");
                 });
@@ -156,43 +168,19 @@ namespace ChefByStep.API.Migrations
                     b.ToTable("IngredientRecipe");
                 });
 
-            modelBuilder.Entity("RecipeUser", b =>
-                {
-                    b.Property<int>("CompletedById")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CompletedRecipesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CompletedById", "CompletedRecipesId");
-
-                    b.HasIndex("CompletedRecipesId");
-
-                    b.ToTable("UserCompletedRecipe");
-                });
-
-            modelBuilder.Entity("RecipeUser1", b =>
-                {
-                    b.Property<int>("FavoriteRecipesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FavouritedById")
-                        .HasColumnType("int");
-
-                    b.HasKey("FavoriteRecipesId", "FavouritedById");
-
-                    b.HasIndex("FavouritedById");
-
-                    b.ToTable("UserFavouritedRecipe");
-                });
-
             modelBuilder.Entity("ChefByStep.API.Entities.Recipe", b =>
                 {
-                    b.HasOne("ChefByStep.API.Entities.User", "CreatedBy")
-                        .WithMany("CreatedRecipe")
-                        .HasForeignKey("CreatedById");
+                    b.HasOne("ChefByStep.API.Entities.User", null)
+                        .WithMany("CompletedRecipes")
+                        .HasForeignKey("UserId");
 
-                    b.Navigation("CreatedBy");
+                    b.HasOne("ChefByStep.API.Entities.User", null)
+                        .WithMany("CreatedRecipe")
+                        .HasForeignKey("UserId1");
+
+                    b.HasOne("ChefByStep.API.Entities.User", null)
+                        .WithMany("FavoriteRecipes")
+                        .HasForeignKey("UserId2");
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.RecipeRating", b =>
@@ -232,36 +220,6 @@ namespace ChefByStep.API.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("RecipeUser", b =>
-                {
-                    b.HasOne("ChefByStep.API.Entities.User", null)
-                        .WithMany()
-                        .HasForeignKey("CompletedById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ChefByStep.API.Entities.Recipe", null)
-                        .WithMany()
-                        .HasForeignKey("CompletedRecipesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("RecipeUser1", b =>
-                {
-                    b.HasOne("ChefByStep.API.Entities.Recipe", null)
-                        .WithMany()
-                        .HasForeignKey("FavoriteRecipesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ChefByStep.API.Entities.User", null)
-                        .WithMany()
-                        .HasForeignKey("FavouritedById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("ChefByStep.API.Entities.Recipe", b =>
                 {
                     b.Navigation("Ratings");
@@ -271,7 +229,11 @@ namespace ChefByStep.API.Migrations
 
             modelBuilder.Entity("ChefByStep.API.Entities.User", b =>
                 {
+                    b.Navigation("CompletedRecipes");
+
                     b.Navigation("CreatedRecipe");
+
+                    b.Navigation("FavoriteRecipes");
 
                     b.Navigation("Rating");
                 });

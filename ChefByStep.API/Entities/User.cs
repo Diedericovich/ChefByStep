@@ -22,10 +22,5 @@ namespace ChefByStep.API.Entities
         public List<Recipe> CompletedRecipes { get; set; }
 
         public List<RecipeRating> Rating { get; set; }
-
-
-
-
-
     }
 }

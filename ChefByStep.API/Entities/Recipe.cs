@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ChefByStep.API.Entities
 {
@@ -19,5 +20,14 @@ namespace ChefByStep.API.Entities
         public List<Ingredient> Ingredients { get; set; }
 
         public List<Step> Steps { get; set; }
+
+        [InverseProperty("CreatedRecipe")]
+        public User CreatedBy { get; set; }
+
+        [InverseProperty("FavoriteRecipes")]
+        public List<User> FavouritedBy { get; set; }
+
+        [InverseProperty("CompletedRecipes")]
+        public List<User> CompletedBy { get; set; }
     }
 }

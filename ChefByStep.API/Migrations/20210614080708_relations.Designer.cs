@@ -4,14 +4,16 @@ using ChefByStep.API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ChefByStep.API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210614080708_relations")]
+    partial class relations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,7 +170,7 @@ namespace ChefByStep.API.Migrations
 
                     b.HasIndex("CompletedRecipesId");
 
-                    b.ToTable("UserCompletedRecipe");
+                    b.ToTable("RecipeUser");
                 });
 
             modelBuilder.Entity("RecipeUser1", b =>
@@ -183,7 +185,7 @@ namespace ChefByStep.API.Migrations
 
                     b.HasIndex("FavouritedById");
 
-                    b.ToTable("UserFavouritedRecipe");
+                    b.ToTable("RecipeUser1");
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.Recipe", b =>
