@@ -20,6 +20,7 @@ namespace ChefByStep.API.Entities
         public List<Ingredient> Ingredients { get; set; }
 
         public List<Step> Steps { get; set; }
+        public int CreatedById { get; set; }
 
         [InverseProperty("CreatedRecipe")]
         public User CreatedBy { get; set; }
