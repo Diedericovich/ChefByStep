@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@{ 
+@{
     Random random = new Random();
     int randomId = random.Next(1, 5);
 }
@@ -36,10 +36,10 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" alt="First slide">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Strawberry Lemonade Cupcakes</h5>
-                            <p>This is my take on that boxed strawberry cake (you know the one...it’s pink), but mine is made with fresh strawberries. It takes a bit of time to reduce the strawberry mixture to a thick, jammy purée, but it's worth it, since it gets used both in the cake and also the frosting to create a beautiful—and delicious—swirl effect. I like these best decorated with lemon wedges and/or strawberries, but you can never miss with sprinkles! —Erin Jeanne McDowell</p>
-                        </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Strawberry Lemonade Cupcakes</h5>
+                        <p>This is my take on that boxed strawberry cake (you know the one...it’s pink), but mine is made with fresh strawberries. It takes a bit of time to reduce the strawberry mixture to a thick, jammy purée, but it's worth it, since it gets used both in the cake and also the frosting to create a beautiful—and delicious—swirl effect. I like these best decorated with lemon wedges and/or strawberries, but you can never miss with sprinkles! —Erin Jeanne McDowell</p>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="https://images.food52.com/i8P83CvSSFTTVWinAuWJuXqAHFo=/1008x672/filters:format(webp)/547d4b4b-dfa0-494a-9415-04a97a103f05--20120804_food52_08-20-12-1466.jpg" alt="Second slide">
@@ -65,5 +65,27 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-       
-</div>
+
+        <div>
+            <div class="overview-title">
+                <h2>Our top chefs</h2>
+                <div class="row recipe-row">
+                    <div class="col-sm-12 col-md-6 col-lg-3 ">
+                        <img class="recipe-img" src="https://images.squarespace-cdn.com/content/v1/51c1efe0e4b0b485e9579892/1499801823670-U7VP5UKDCOD8QH9UHZL4/ke17ZwdGBToddI8pDm48kJDhnYp150d284weEUcE99JZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzEhuHAZIvcOJXKHaK0IYA2FqQROTPv4Mp07VJTvhE0PNP7kjTIUmSMmot9ODR8CEk/Chefs_2_06.jpg" />
+                        <div class="picBox">Michael Dubois</div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3 ">
+                        <img class="recipe-img" src="https://images.squarespace-cdn.com/content/v1/51c1efe0e4b0b485e9579892/1499801830996-35DH1FU4WWEJF02TFRRG/ke17ZwdGBToddI8pDm48kJ5b5LlSF-1XktXoQ89M2BkUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z25xnCmRUhAKlHGQ4RqmsCCeYaq_DccnrHS4IzdLlV-KI_twk1mUNduAk0T15_nZ7z/Chefs_2_09.jpg" />
+                        <div class="picBox">Robert Fobert</div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3 ">
+                        <img class="recipe-img" src="https://images.squarespace-cdn.com/content/v1/51c1efe0e4b0b485e9579892/1499801811084-DIP6YOIY2KEJ47S79WVL/ke17ZwdGBToddI8pDm48kCnkMwhe3_HpQ1aojLmEiL0UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2SKfRAxeQiaJEr_8Qi2qTg4awdoZjfqMxFdabGB_z_CNtJ7FN3X5-sPvnbvPhIz1B/Chefs_2_01.jpg" />
+                        <div class="picBox">Julia Williams</div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3 ">
+                        <img class="recipe-img" src="https://images.squarespace-cdn.com/content/v1/51c1efe0e4b0b485e9579892/1499801828045-PO3BV52DW4XS7RCLAYPQ/ke17ZwdGBToddI8pDm48kHbyMxtMNNSCtlLRHoG2ASBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpy5UPpduxhVJIDdv7lJzsCRfvUqmx_TfFp0yF9Kyrkhn0sa9CUmR1X55pFtwATNAbI/Chefs_2_08.jpg" />
+                        <div class="picBox">David Johnson</div>
+                    </div>
+                </div>
+            </div>
+        </div>
