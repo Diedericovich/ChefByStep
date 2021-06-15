@@ -25,24 +25,6 @@ namespace ChefByStep.API.Helpers
 
         private static void BuildRecipes(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Recipe>().HasData(
-                new Recipe
-                {
-                    Id = 1,
-                    CategoryId = 1,
-                    Title = "Pasta Bolognese",
-                    Description = "paghetti bolognese consists of spaghetti (long strings of pasta) with an Italian ragù (meat sauce) made with minced beef, bacon and tomatoes, served with Parmesan cheese. Spaghetti bolognese is one of the most popular pasta dishes eaten outside of Italy.",
-                    ImageUrl = "https://placekitten.com/200/300",
-                    CreatedById = 1
-                }
-                );
-
-            modelBuilder.Entity<Step>().HasData(
-                new Step
-                { Id = 1, DurationMin = 0, Instruction = "step1", IsDone = false },
-                new Step
-                { Id = 2, DurationMin = 0, Instruction = "step2", IsDone = false }
-                );
         }
     }
 }
