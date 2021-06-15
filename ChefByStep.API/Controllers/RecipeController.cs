@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ChefByStep.API.Controllers
 {
     [ApiController, Route("api/[controller]")]
-    public class RecipeController: ControllerBase
+    public class RecipeController : ControllerBase
     {
         private IRecipeService _service;
 
@@ -23,7 +23,7 @@ namespace ChefByStep.API.Controllers
             await _service.AddRecipeAsync(recipe);
         }
 
-        [HttpDelete("{id})")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteRecipeAsync(int id)
         {
             try
@@ -62,6 +62,5 @@ namespace ChefByStep.API.Controllers
                 return BadRequest(e.Message);
             }
         }
-
     }
 }
