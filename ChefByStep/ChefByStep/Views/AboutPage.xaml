@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ChefByStep.Views.AboutPage"
              xmlns:vm="clr-namespace:ChefByStep.ViewModels"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
              Title="ChefByStep">
     
     <ContentPage.BindingContext>
@@ -11,7 +12,7 @@
 
     <ScrollView>
         <StackLayout>
-            <SearchBar Placeholder="Find a Recipe"/>
+            <SearchBar Placeholder="Find a Recipe" />
 
             <CarouselView ItemsSource="{Binding Recipes}"
                   PeekAreaInsets="100"
@@ -29,6 +30,7 @@
                                Padding="0"
                                Margin="10"
                                HorizontalOptions="CenterAndExpand">
+
                                 <Grid>
                                     <StackLayout BackgroundColor="Black">
                                         <Image Source="{Binding ImgUrl}"
@@ -72,15 +74,116 @@
 
                                 </Grid>
                             </Frame>
-
+                            
                         </StackLayout>
 
 
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
-            
-            
+
+            <StackLayout>
+                <Grid>
+                    <Frame BorderColor="Gray"
+                       CornerRadius="5"
+                       Padding="8"
+                       HasShadow="True"
+                       Margin="5">
+                        <StackLayout>
+                            <Label Text="Banner Example"
+                               FontSize="Medium"
+                                   HorizontalOptions="Center"
+                               FontAttributes="Bold" />
+                            <BoxView Color="Gray"
+                                 HeightRequest="2"
+                                 HorizontalOptions="Fill" />
+                            <Label Text="Frames can wrap more complex layouts to create more complex UI components, such as this card!"/>
+                        </StackLayout>
+                    </Frame>
+
+                    
+
+                </Grid>
+                
+                <Grid>
+                    <pancake:PancakeView 
+                           CornerRadius="0"
+                           BackgroundColor="white"
+                           HeightRequest="180"
+                           WidthRequest="180"
+                           HorizontalOptions="Center"
+                           VerticalOptions="StartAndExpand"
+                           Margin="5,5,5,5"
+                           >
+                        <pancake:PancakeView.Shadow>
+                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0"/>
+                        </pancake:PancakeView.Shadow>
+
+                        <Grid HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                            <Image Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg"
+                                   Aspect="AspectFill"
+                                   Margin="5"
+                                   
+                                   ></Image>
+
+                        </Grid>
+                    </pancake:PancakeView>
+
+                    <!--<Path Fill="red" 
+                          HorizontalOptions="Center" 
+                          Stroke="red" 
+                          Aspect="Uniform" 
+                          WidthRequest="80"
+                          Opacity="0.7"
+                          HeightRequest="80"
+                          Margin="20,80,-90,20"
+                          Data="m228.14355,216.34905c106.33335,-80.76219 212.66667,80.76219 318.99999,0l0,145.37192c-106.33332,80.7622 -212.66665,-80.76218 -318.99999,0l0,-145.37192z"/>-->
+                
+                </Grid>
+
+                <Grid>
+                    <pancake:PancakeView 
+                           CornerRadius="0"
+                           BackgroundColor="white"
+                           HeightRequest="180"
+                           WidthRequest="180"
+                           HorizontalOptions="Center"
+                           VerticalOptions="StartAndExpand"
+                           Margin="5,5,5,5"
+                           >
+                        <pancake:PancakeView.Shadow>
+                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0"/>
+                        </pancake:PancakeView.Shadow>
+
+                        <Grid HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                            <Image Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg"
+                                   Aspect="AspectFill"
+                                   Margin="5"
+                                   
+                                   ></Image>
+
+                        </Grid>
+                    </pancake:PancakeView>
+
+                    <Path Fill="red" 
+                          HorizontalOptions="Center" 
+                          Stroke="red" 
+                          Aspect="Uniform" 
+                          WidthRequest="30"
+                          Opacity="0.9"
+                          HeightRequest="50"
+                          Margin="35, -110,-90,20"
+                          Data="m354.76354,165.175l29.99999,0l0,44.79998l-15,11.20001l-15,-11.20001l0.00002,-44.79998z"/>
+
+                </Grid>
+
+
+            </StackLayout>
+
+         
+
         </StackLayout>
 
         

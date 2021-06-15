@@ -93,7 +93,7 @@
                                         <Label    
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center"
-                                        Text="Here are the reviews fro users" />
+                                        Text="Here are the reviews from users" />
                                     </Grid>
                                 </xct:TabViewItem>
                             </xct:TabView>
@@ -152,9 +152,10 @@
 
                 <Grid>
                     <StackLayout>
-                        <Button Text="Book now"
+                        <Button Text="Cook now!"
                                 VerticalOptions="EndAndExpand"
                                 Margin="20, 0, 20, 10"
+                                BackgroundColor="Green"
                                 ></Button>
                     </StackLayout>
                 </Grid>
