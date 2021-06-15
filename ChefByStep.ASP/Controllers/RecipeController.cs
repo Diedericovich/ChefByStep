@@ -24,7 +24,7 @@ namespace ChefByStep.ASP
 
         public ActionResult Index()
         {
-            ICollection<Recipe> recipes = await _service.GetRecipesAsync();
+            //ICollection<Recipe> recipes = await _service.GetRecipesAsync();
             return View();
         }
 
