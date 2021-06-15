@@ -1,4 +1,6 @@
-﻿using ChefByStep.ASP.Models;
+﻿using AutoMapper;
+using ChefByStep.ASP.Models;
+using ChefByStep.ASP.Services;
 using ChefByStep.ASP.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +13,15 @@ namespace ChefByStep.ASP
 {
     public class RecipeController : Controller
     {
-        // GET: RecipeController
+        private readonly IRecipeService _service;
+        private readonly IMapper _mapper;
+
+        public RecipeController(IRecipeService service, IMapper mapper)
+        {
+            _service = service;
+            _mapper = mapper;
+        }
+
         public ActionResult Index()
         {
             return View();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,8 +16,11 @@ namespace ChefByStep.ASP.Models
         public string Title { get; set; }
         public List<Ingredient> Ingredients { get; set; }
         public List<Step> Steps { get; set; }
+        [NotMapped]
         public ApplicationUser CreatedBy { get; set; }
+        [NotMapped]
         public List<ApplicationUser> FavouritedBy { get; set; }
+        [NotMapped]
         public List<ApplicationUser> CompletedBy { get; set; }
     }
 }
