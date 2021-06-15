@@ -22,10 +22,11 @@ namespace ChefByStep.ASP
             _mapper = mapper;
         }
 
-        public ActionResult Index()
+        public async Task<ActionResult> IndexAsync()
         {
             ICollection<Recipe> recipes = await _service.GetRecipesAsync();
-            return View();
+            RecipeDetailViewModel viewModel = _mapper.Map<RecipeDetailViewModel>(recipes);
+            return View(viewModel);
         }
 
         // GET: RecipeController/Details/5
@@ -50,7 +51,7 @@ namespace ChefByStep.ASP
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexAsync));
             }
             catch
             {
@@ -71,7 +72,7 @@ namespace ChefByStep.ASP
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexAsync));
             }
             catch
             {
@@ -92,7 +93,7 @@ namespace ChefByStep.ASP
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexAsync));
             }
             catch
             {

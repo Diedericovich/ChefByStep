@@ -15,6 +15,11 @@ namespace ChefByStep.ASP.Services
             _repo = repo;
         }
 
+        public async Task<ICollection<Recipe>> GetRecipesAsync()
+        {
+            ICollection<Recipe> recipes = await _repo.GetRecipesAsync();
+            return recipes;
+        }
         public async Task<Recipe> GetRecipeAsync(int id)
         {
             var recipe = await _repo.GetRecipeAsync(id);

@@ -22,6 +22,17 @@ namespace ChefByStep.ASP.Data
 
             return result;
         }
+
+        public async Task<ICollection<Recipe>> GetRecipesAsync()
+        {
+            url = $"{ apiUrl}/api/Recipe";
+            HttpResponseMessage message = await GetHttpResponseMessageAsync(url);
+            List<Recipe> result = new(); 
+            result.Add(await GetEntityFromJsonAsync(message));
+
+            return result;
+        }
+
         private async Task<HttpResponseMessage> GetHttpResponseMessageAsync(string url)
         {
             var client = new HttpClient();
