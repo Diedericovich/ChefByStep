@@ -37,9 +37,9 @@
                                           {
                                               new Step()
                                               {
-                                                  DurationMin = 1,
+                                                  DurationMin = 3,
                                                   Id = 1,
-                                                  Instruction = "Do something",
+                                                  Instruction = "1. Cut up the fish into tiny slices",
                                                   isDone = false,
                                               },
                                               new Step()
