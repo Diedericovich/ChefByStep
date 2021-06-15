@@ -25,7 +25,10 @@ namespace ChefByStep.ASP
         public async Task<ActionResult> IndexAsync()
         {
             ICollection<Recipe> recipes = await _service.GetRecipesAsync();
-            RecipeDetailViewModel viewModel = _mapper.Map<RecipeDetailViewModel>(recipes);
+            var viewModel = new RecipeViewModel
+            {
+                Recipes = _mapper.Map<ICollection<Recipe>>(recipes)
+            };
             return View(viewModel);
         }
 

@@ -7,6 +7,6 @@ namespace ChefByStep.ASP.Services
     public interface IRecipeService
     {
         Task<Recipe> GetRecipeAsync(int id);
-        Task<ICollection<Recipe>> GetRecipesAsync();
+        Task<IList<Recipe>> GetRecipesAsync();
     }
 }

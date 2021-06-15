@@ -1,18 +1,22 @@
 ﻿@model RecipeViewModel
 
-<div>
-    @foreach (var recipe in Model.Recipes)
-    {
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <a class="nav-link" asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
-                <img class="recipe-img" src="@recipe.ImageUrl" />
-            </a>
-            <div class="centered">@recipe.Title</div>
-        </div>
-    }
+<div class="overview">
+    <h2>All recipes</h2>
+    <div class="row">
+        @foreach (var recipe in Model.Recipes)
+        {
+            <div class="col-sm-12 col-md-6 col-lg-3 ">
+                <a class="nav-link" asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                    <img class="recipe-img" src="@recipe.ImageUrl" />
+
+                    <div class="centered">@recipe.Title</div>
+                </a>
+            </div>
+        }
+    </div>
 </div>
 
-<div class="overview">
+@*<div class="overview">
     <h2>All recipes</h2>
     <div class="row recipe-row">
         <div class="col-sm-12 col-md-6 col-lg-3 ">
@@ -86,4 +90,4 @@
             <div class="centered">Strawberry Lemonade Cupcakes</div>
         </div>
     </div>
-</div>
+</div>*@

@@ -23,12 +23,11 @@ namespace ChefByStep.ASP.Data
             return result;
         }
 
-        public async Task<ICollection<Recipe>> GetRecipesAsync()
+        public async Task<IList<Recipe>> GetRecipesAsync()
         {
             url = $"{ apiUrl}/api/Recipe";
             HttpResponseMessage message = await GetHttpResponseMessageAsync(url);
-            List<Recipe> result = new(); 
-            result.Add(await GetEntityFromJsonAsync(message));
+            IList<Recipe> result = await GetEntitiesFromJsonAsync(message);
 
             return result;
         }
@@ -60,6 +59,23 @@ namespace ChefByStep.ASP.Data
             {
                 throw new JsonSerializationException("Serialization failed", e);
             }
+
+        }
+
+        private async Task<List<Recipe>> GetEntitiesFromJsonAsync(HttpResponseMessage message)
+        {
+            string json = await message.Content.ReadAsStringAsync();
+
+            try
+            {
+                return JsonConvert.DeserializeObject<List<Recipe>>(json);
+
+            }
+            catch (Exception e)
+            {
+                throw new JsonSerializationException("Serialization failed", e);
+            }
+
         }
 
         private string GenerateUrl(int id)
