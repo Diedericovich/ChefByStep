@@ -2,33 +2,15 @@
 {
     using System;
     using System.Diagnostics;
-    using System.Windows.Input;
 
     using ChefByStep.Models;
     using ChefByStep.Services.Repositories;
-    using ChefByStep.Views;
 
     using Xamarin.Forms;
 
     [QueryProperty(nameof(RecipeId), nameof(RecipeId))]
-    public class DetailPageViewModel : BaseViewModel
+    public class RecipeStepsViewModel : BaseViewModel
     {
-        private MockRecipeRepo _repo;
-
-        public DetailPageViewModel()
-        {
-            _repo = new MockRecipeRepo();
-            SelectedRecipe = new Recipe();
-            OnButtonClickedCommand = new Command(GoToStepsPage);
-        }
-
-        public async void GoToStepsPage()
-        {
-            await Shell.Current.GoToAsync(nameof(RecipeStepsPage));
-        }
-
-        public ICommand OnButtonClickedCommand { get; }
-
         private Recipe selectedRecipe;
 
         public Recipe SelectedRecipe
@@ -48,12 +30,22 @@
 
         public int RecipeId
         {
-            get { return recipeId; }
-            set { 
+            get
+            {
+                return recipeId;
+            }
+            set
+            {
                 recipeId = value;
                 LoadRecipe(value);
-            
             }
+        }
+
+        private MockRecipeRepo _repo;
+
+        public RecipeStepsViewModel()
+        {
+            _repo = new MockRecipeRepo();
         }
 
         private void LoadRecipe(int id)

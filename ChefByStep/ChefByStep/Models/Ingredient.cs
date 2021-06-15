@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ChefByStep.Models
+﻿namespace ChefByStep.Models
 {
-    public class Ingrediant:BaseModel
+    using System.Collections.Generic;
+
+    public class Ingredient : BaseModel
     {
         public string Name { get; set; }
+
         public double Quantity { get; set; }
+
         public List<Recipe> Recipes { get; set; }
     }
 }

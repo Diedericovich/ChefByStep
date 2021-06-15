@@ -12,7 +12,7 @@
 
     <ScrollView>
         <StackLayout>
-            <SearchBar Placeholder="Find a Recipe" />
+            <SearchBar Placeholder="Find a Recipe"  />
 
             <CarouselView ItemsSource="{Binding Recipes}"
                   PeekAreaInsets="100"
@@ -90,7 +90,7 @@
                        HasShadow="True"
                        Margin="5">
                         <StackLayout>
-                            <Label Text="Banner Example"
+                            <Label Text="Welcome to CBS"
                                FontSize="Medium"
                                    HorizontalOptions="Center"
                                FontAttributes="Bold" />
@@ -116,7 +116,7 @@
                            Margin="5,5,5,5"
                            >
                         <pancake:PancakeView.Shadow>
-                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0"/>
+                            <pancake:DropShadow Color="Black" BlurRadius="50" Offset="0,0"/>
                         </pancake:PancakeView.Shadow>
 
                         <Grid HorizontalOptions="FillAndExpand"
@@ -166,17 +166,16 @@
 
                         </Grid>
                     </pancake:PancakeView>
-
-                    <Path Fill="red" 
-                          HorizontalOptions="Center" 
-                          Stroke="red" 
-                          Aspect="Uniform" 
+                    <Path Fill="red"
+                          HorizontalOptions="Center"
+                          Stroke="red"
+                          Aspect="Uniform"
                           WidthRequest="30"
                           Opacity="0.9"
                           HeightRequest="50"
                           Margin="35, -110,-90,20"
-                          Data="m354.76354,165.175l29.99999,0l0,44.79998l-15,11.20001l-15,-11.20001l0.00002,-44.79998z"/>
-
+                          Data="m354.76354,165.175l29.99999,0l0,44.79998l-15,11.20001l-15,-11.20001l0.00002,-44.79998z" />
+                
                 </Grid>
 
 

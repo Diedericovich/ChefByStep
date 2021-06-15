@@ -8,6 +8,7 @@
 
     <ContentPage.BindingContext>
         <local:DetailPageViewModel/>
+        
     </ContentPage.BindingContext>
 
 
@@ -153,10 +154,11 @@
                 <Grid>
                     <StackLayout>
                         <Button Text="Cook now!"
+                                Command="{Binding OnButtonClickedCommand}"
                                 VerticalOptions="EndAndExpand"
                                 Margin="20, 0, 20, 10"
-                                BackgroundColor="Green"
-                                ></Button>
+                                BackgroundColor="Green" />
+
                     </StackLayout>
                 </Grid>
 
