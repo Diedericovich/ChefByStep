@@ -11,11 +11,10 @@ namespace ChefByStep.API.Entities
 
         public string Description { get; set; }
 
-        public List<RecipeRating> Ratings { get; set; }
-
         public string ImageUrl { get; set; }
 
         public string Title { get; set; }
+        public List<RecipeRating> Ratings { get; set; }
 
         public List<Ingredient> Ingredients { get; set; }
 
