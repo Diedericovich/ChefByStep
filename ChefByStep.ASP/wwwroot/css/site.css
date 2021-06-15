@@ -9,7 +9,7 @@ a.navbar-brand {
     word-break: break-all;
 }
 .home-search{
-    width: 100px;
+    width: 200px;
 }
 .navbar {
     background-color: #78c6a3;
@@ -131,4 +131,22 @@ body {
 }
 .carousel-caption {
     background-color: RGBA(120,198,163,0.75);
+}
+.carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
 }

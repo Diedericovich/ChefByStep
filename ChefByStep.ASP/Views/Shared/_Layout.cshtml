@@ -19,6 +19,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse justify-content-end">
+
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -32,11 +33,12 @@
                             </a>
                         </li>
                     </ul>
+
+                    <partial name="_LoginPartial" />
                     <form class="d-flex home-search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
-                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
