@@ -2,7 +2,6 @@
 {
     using System;
 
-    using ChefByStep.ViewModels;
     using ChefByStep.Views;
 
     using Xamarin.Forms;
@@ -15,7 +14,7 @@
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(DetailPage), typeof(DetailPage));
-            Routing.RegisterRoute(nameof(RecipeStepsViewModel), typeof(RecipeStepsViewModel));
+            Routing.RegisterRoute(nameof(RecipeStepsPage), typeof(RecipeStepsPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

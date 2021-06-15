@@ -24,7 +24,10 @@
 
         public async void GoToStepsPage()
         {
-            await Shell.Current.GoToAsync(nameof(RecipeStepsPage));
+            var recipe = SelectedRecipe;
+
+            await Shell.Current.GoToAsync(
+                $"{nameof(RecipeStepsPage)}?{nameof(RecipeStepsViewModel.RecipeId)}={SelectedRecipe.Id}");
         }
 
         public ICommand OnButtonClickedCommand { get; }
@@ -48,11 +51,14 @@
 
         public int RecipeId
         {
-            get { return recipeId; }
-            set { 
+            get
+            {
+                return recipeId;
+            }
+            set
+            {
                 recipeId = value;
                 LoadRecipe(value);
-            
             }
         }
 
