@@ -21,6 +21,21 @@ namespace ChefByStep.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Steps",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Instruction = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DurationMin = table.Column<int>(type: "int", nullable: false),
+                    IsDone = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Steps", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -45,7 +60,7 @@ namespace ChefByStep.API.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedById = table.Column<int>(type: "int", nullable: true)
+                    CreatedById = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,7 +70,7 @@ namespace ChefByStep.API.Migrations
                         column: x => x.CreatedById,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -86,8 +101,6 @@ namespace ChefByStep.API.Migrations
                 name: "RecipeRatings",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     RecipeId = table.Column<int>(type: "int", nullable: false),
                     Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -95,41 +108,43 @@ namespace ChefByStep.API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RecipeRatings", x => x.Id);
+                    table.PrimaryKey("PK_RecipeRatings", x => new { x.UserId, x.RecipeId });
                     table.ForeignKey(
                         name: "FK_RecipeRatings_Recipes_RecipeId",
                         column: x => x.RecipeId,
                         principalTable: "Recipes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_RecipeRatings_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Steps",
+                name: "RecipeStep",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Instruction = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DurationMin = table.Column<int>(type: "int", nullable: false),
-                    IsDone = table.Column<bool>(type: "bit", nullable: false),
-                    RecipeId = table.Column<int>(type: "int", nullable: true)
+                    RecipesId = table.Column<int>(type: "int", nullable: false),
+                    StepsId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Steps", x => x.Id);
+                    table.PrimaryKey("PK_RecipeStep", x => new { x.RecipesId, x.StepsId });
                     table.ForeignKey(
-                        name: "FK_Steps_Recipes_RecipeId",
-                        column: x => x.RecipeId,
+                        name: "FK_RecipeStep_Recipes_RecipesId",
+                        column: x => x.RecipesId,
                         principalTable: "Recipes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RecipeStep_Steps_StepsId",
+                        column: x => x.StepsId,
+                        principalTable: "Steps",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -147,13 +162,13 @@ namespace ChefByStep.API.Migrations
                         column: x => x.CompletedRecipesId,
                         principalTable: "Recipes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UserCompletedRecipe_Users_CompletedById",
                         column: x => x.CompletedById,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -171,13 +186,13 @@ namespace ChefByStep.API.Migrations
                         column: x => x.FavoriteRecipesId,
                         principalTable: "Recipes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UserFavouritedRecipe_Users_FavouritedById",
                         column: x => x.FavouritedById,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -191,19 +206,14 @@ namespace ChefByStep.API.Migrations
                 column: "RecipeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RecipeRatings_UserId",
-                table: "RecipeRatings",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Recipes_CreatedById",
                 table: "Recipes",
                 column: "CreatedById");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Steps_RecipeId",
-                table: "Steps",
-                column: "RecipeId");
+                name: "IX_RecipeStep_StepsId",
+                table: "RecipeStep",
+                column: "StepsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserCompletedRecipe_CompletedRecipesId",
@@ -225,7 +235,7 @@ namespace ChefByStep.API.Migrations
                 name: "RecipeRatings");
 
             migrationBuilder.DropTable(
-                name: "Steps");
+                name: "RecipeStep");
 
             migrationBuilder.DropTable(
                 name: "UserCompletedRecipe");
@@ -235,6 +245,9 @@ namespace ChefByStep.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Ingredients");
+
+            migrationBuilder.DropTable(
+                name: "Steps");
 
             migrationBuilder.DropTable(
                 name: "Recipes");

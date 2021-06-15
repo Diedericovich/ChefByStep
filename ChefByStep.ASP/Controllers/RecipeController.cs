@@ -24,6 +24,7 @@ namespace ChefByStep.ASP
 
         public ActionResult Index()
         {
+            ICollection<Recipe> recipes = await _service.GetRecipesAsync();
             return View();
         }
 
@@ -33,7 +34,7 @@ namespace ChefByStep.ASP
             Recipe recipe = await _service.GetRecipeAsync(id);
             RecipeDetailViewModel viewModel = _mapper.Map<RecipeDetailViewModel>(recipe);
 
-            return View();
+            return View(viewModel);
         }
 
         // GET: RecipeController/Create
