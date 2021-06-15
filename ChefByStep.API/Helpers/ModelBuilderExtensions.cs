@@ -16,6 +16,18 @@ namespace ChefByStep.API.Helpers
                 .HasMany(x => x.FavoriteRecipes)
                 .WithMany(x => x.FavouritedBy)
                 .UsingEntity(x => x.ToTable("UserFavouritedRecipe"));
+            modelBuilder.Entity<RecipeRating>()
+                .HasKey(x => new { x.UserId, x.RecipeId });
+            modelBuilder.Entity<RecipeRating>()
+                .HasOne<User>(x => x.User)
+                .WithMany(x => x.Rating)
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<RecipeRating>()
+                .HasOne<Recipe>(x => x.Recipe)
+                .WithMany(x => x.Ratings)
+                .HasForeignKey(x => x.RecipeId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
         public static void Seed(this ModelBuilder modelBuilder)
