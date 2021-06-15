@@ -1,6 +1,7 @@
 ﻿namespace ChefByStep.ViewModels
 {
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
 
     using ChefByStep.Models;
     using ChefByStep.Services.Repositories;
@@ -45,9 +46,9 @@
         // //ItemTapped = new Command<Recipe>(OnPlaceSelected);
 
         // }
-        private void ShowAllTheRecipes()
+        private async Task ShowAllTheRecipes()
         {
-            var recipes = _repo.GetAllRecipes();
+            var recipes = await _repo.GetAllRecipes();
             Recipes = new ObservableCollection<Recipe>(recipes);
         }
 

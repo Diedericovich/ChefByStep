@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics;
+    using System.Threading.Tasks;
 
     using ChefByStep.Models;
     using ChefByStep.Services.Repositories;
@@ -48,11 +49,11 @@
             _repo = new MockRecipeRepo();
         }
 
-        private void LoadRecipe(int id)
+        private async Task LoadRecipe(int id)
         {
             try
             {
-                var recipe = _repo.FindRecipe(id);
+                var recipe = await _repo.FindRecipe(id);
                 SelectedRecipe = recipe;
             }
             catch (Exception)

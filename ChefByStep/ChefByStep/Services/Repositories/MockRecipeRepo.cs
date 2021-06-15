@@ -1,8 +1,13 @@
 ﻿namespace ChefByStep.Services.Repositories
 {
+    using System;
     using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Threading.Tasks;
 
     using ChefByStep.Models;
+
+    using Newtonsoft.Json;
 
     public class MockRecipeRepo : IMockRecipeRepo
     {
@@ -16,16 +21,16 @@
         {
         }
 
-        public Recipe FindRecipe(int id)
+        public async Task<Recipe> FindRecipe(int id)
         {
-            var allRecipes = GetAllRecipes();
-            Recipe recipe = allRecipes.Find(x => x.Id == id);
+            url = GenerateUrl(id);
+            HttpResponseMessage message = await GetHttpResponseMessageAsync(url);
+            Recipe recipe = await GetEntityFromJsonAsync(message);
             return recipe;
         }
 
-        
-        
         private const string apiUrl = "https://localhost:44350";
+
         private string url;
 
         public async Task<Recipe> GetRecipeAsync(int id)
@@ -46,7 +51,7 @@
             return result;
         }
 
-        private async Task<HttpResponseMessage> GetHttpResponseMessageAsync(string url)
+        public async Task<HttpResponseMessage> GetHttpResponseMessageAsync(string url)
         {
             var client = new HttpClient();
             HttpResponseMessage message = await client.GetAsync(url);
@@ -60,7 +65,7 @@
 
         }
 
-        private async Task<Recipe> GetEntityFromJsonAsync(HttpResponseMessage message)
+        public async Task<Recipe> GetEntityFromJsonAsync(HttpResponseMessage message)
         {
             string json = await message.Content.ReadAsStringAsync();
 
@@ -76,7 +81,7 @@
 
         }
 
-        private async Task<List<Recipe>> GetEntitiesFromJsonAsync(HttpResponseMessage message)
+        public async Task<List<Recipe>> GetEntitiesFromJsonAsync(HttpResponseMessage message)
         {
             string json = await message.Content.ReadAsStringAsync();
 
@@ -92,7 +97,7 @@
 
         }
 
-        private string GenerateUrl(int id)
+        public string GenerateUrl(int id)
         {
             if (id == 0)
             {

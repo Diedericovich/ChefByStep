@@ -1,16 +1,18 @@
-﻿using ChefByStep.API.Entities;
-using ChefByStep.API.Helpers;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace ChefByStep.API.Repos
+﻿namespace ChefByStep.API.Repos
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using ChefByStep.API.Entities;
+    using ChefByStep.API.Helpers;
+
+    using Microsoft.EntityFrameworkCore;
+
     public class RecipeRepo : GenericRepo<Recipe>, IRecipeRepo
     {
         public RecipeRepo(DatabaseContext context) : base(context)
         {
-            //DataSeeder.SeedRecipes(context);
+            DataSeeder.SeedRecipes(context);
         }
 
         public override Task<Recipe> GetAsync(int id)
