@@ -1,6 +1,6 @@
 ﻿@model RecipeDetailViewModel
 
-<div>
+<div class="overview">
     <div>
         <img src="@Model.ImageUrl"/>
         <div>@Model.Title</div>
@@ -11,7 +11,7 @@
             {
             <ul>
                 <li>
-                    @ingredient
+                    @ingredient.Name
                 </li>
             </ul>
             }
