@@ -42,6 +42,8 @@ namespace ChefByStep.API
             services.AddDbContext<DatabaseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnectionString")));
 
+            services.AddCors();
+
             services.AddScoped<IGenericRepo<Step>, GenericRepo<Step>>();
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IRecipeRepo, RecipeRepo>();
@@ -67,6 +69,8 @@ namespace ChefByStep.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5001"));
 
             app.UseAuthorization();
 
