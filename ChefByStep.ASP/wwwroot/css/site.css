@@ -8,10 +8,12 @@ a.navbar-brand {
     text-align: center;
     word-break: break-all;
 }
-.home-search{
+
+.home-search {
     width: 200px;
     padding-top: 20px;
 }
+
     .home-search button {
         height: 25%;
         padding-bottom: 4px;
@@ -19,14 +21,16 @@ a.navbar-brand {
         color: #000;
         border-color: RGBA(120,198,163,0.59);
     }
-    .home-search .btn :hover{
 
+    .home-search .btn:hover {
         color: #fff;
-        background-color: #0366d6;
+        background-color: darkorange;
     }
-.home-search input {
-    height: 25%;
-}
+
+    .home-search input {
+        height: 20%;
+    }
+
 .navbar {
     background-color: #78c6a3;
 }
@@ -94,7 +98,6 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     background-color: rgba(135, 212, 171, 0.33);
- 
 }
 
 .footer {
@@ -138,22 +141,27 @@ body {
 .overview-btn {
     background-color: #78c6a3;
 }
+
 .overview-title {
     font-size: 2.5em;
     font-weight: 600;
     line-height: 40px;
     margin-top: 5%;
 }
-.random-recipe{
+
+.random-recipe {
     font-size: 1em;
     font-family: Britannic;
 }
+
 .random-btn {
     background-color: RGBA(120,198,163,0.59);
 }
+
 .carousel-caption {
     background-color: RGBA(120,198,163,0.75);
 }
+
 .carousel-control-next, .carousel-control-prev {
     position: absolute;
     top: 0;
@@ -172,6 +180,7 @@ body {
     text-align: center;
     opacity: .5;
 }
+
 .recipe-row {
     margin-bottom: 3%;
     position: relative;
@@ -179,7 +188,7 @@ body {
     color: white;
 }
 
-.recipe-img{
+.recipe-img {
     width: 100%;
 }
 
@@ -189,4 +198,13 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: RGBA(120,198,163,0.75);
+}
+
+.recipe-row .picBox {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: RGBA(120,198,163,0.75);
+    font-size: 20px;
 }
