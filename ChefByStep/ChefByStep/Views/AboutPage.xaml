@@ -9,7 +9,6 @@
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-
     <ScrollView>
         <StackLayout>
             <SearchBar Placeholder="Find a Recipe"  />
@@ -69,15 +68,9 @@
                                               Path=ItemTapped}"
                                     CommandParameter="{Binding .}"/>
                                     </Grid.GestureRecognizers>
-
-
-
                                 </Grid>
                             </Frame>
-                            
                         </StackLayout>
-
-
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
@@ -100,9 +93,6 @@
                             <Label Text="Frames can wrap more complex layouts to create more complex UI components, such as this card!"/>
                         </StackLayout>
                     </Frame>
-
-                    
-
                 </Grid>
                 
                 <Grid>
@@ -123,13 +113,9 @@
                 VerticalOptions="FillAndExpand">
                             <Image Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg"
                                    Aspect="AspectFill"
-                                   Margin="5"
-                                   
-                                   ></Image>
-
+                                   Margin="5" />
                         </Grid>
                     </pancake:PancakeView>
-
                     <!--<Path Fill="red" 
                           HorizontalOptions="Center" 
                           Stroke="red" 
@@ -139,7 +125,6 @@
                           HeightRequest="80"
                           Margin="20,80,-90,20"
                           Data="m228.14355,216.34905c106.33335,-80.76219 212.66667,80.76219 318.99999,0l0,145.37192c-106.33332,80.7622 -212.66665,-80.76218 -318.99999,0l0,-145.37192z"/>-->
-                
                 </Grid>
 
                 <Grid>
@@ -155,15 +140,11 @@
                         <pancake:PancakeView.Shadow>
                             <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0"/>
                         </pancake:PancakeView.Shadow>
-
                         <Grid HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand">
+                              VerticalOptions="FillAndExpand">
                             <Image Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg"
                                    Aspect="AspectFill"
-                                   Margin="5"
-                                   
-                                   ></Image>
-
+                                   Margin="5" />
                         </Grid>
                     </pancake:PancakeView>
                     <Path Fill="red"
@@ -175,24 +156,8 @@
                           HeightRequest="50"
                           Margin="35, -110,-90,20"
                           Data="m354.76354,165.175l29.99999,0l0,44.79998l-15,11.20001l-15,-11.20001l0.00002,-44.79998z" />
-                
                 </Grid>
-
-
             </StackLayout>
-
-         
-
         </StackLayout>
-
-        
-
-
-
-
     </ScrollView>
-
-    
-
-
 </ContentPage>

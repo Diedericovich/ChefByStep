@@ -51,6 +51,7 @@
             Recipes = new ObservableCollection<Recipe>(recipes);
         }
 
+      
         private async void OnRecipeSelected(Recipe recipe)
         {
             await Shell.Current.GoToAsync($"{nameof(DetailPage)}?{nameof(DetailPageViewModel.RecipeId)}={recipe.Id}");
