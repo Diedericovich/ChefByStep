@@ -1,4 +1,5 @@
 using ChefByStep.API.Entities;
+using ChefByStep.API.Helpers;
 using ChefByStep.API.Repos;
 using ChefByStep.API.Repos.Interfaces;
 using ChefByStep.API.Services;
@@ -31,7 +32,8 @@ namespace ChefByStep.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChefByStep.API", Version = "v1" });
