@@ -10,6 +10,17 @@ a.navbar-brand {
 }
 .home-search{
     width: 200px;
+    padding-top: 20px;
+}
+    .home-search button {
+        height: 25%;
+        padding-bottom: 4px;
+        margin-left: 5%;
+        color: #000;
+        border-color: RGBA(120,198,163,0.59);
+    }
+.home-search input {
+    height: 25%;
 }
 .navbar {
     background-color: #78c6a3;
@@ -149,4 +160,22 @@ body {
     color: #fff;
     text-align: center;
     opacity: .5;
+}
+.recipe-row {
+    margin-bottom: 3%;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.recipe-img{
+    width: 100%;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: RGBA(120,198,163,0.75);
 }
