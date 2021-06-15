@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using ChefByStep.ASP.Models;
+using ChefByStep.ASP.Services;
+using ChefByStep.ASP.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,15 +13,26 @@ namespace ChefByStep.ASP
 {
     public class RecipeController : Controller
     {
-        // GET: RecipeController
+        private readonly IRecipeService _service;
+        private readonly IMapper _mapper;
+
+        public RecipeController(IRecipeService service, IMapper mapper)
+        {
+            _service = service;
+            _mapper = mapper;
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
         // GET: RecipeController/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> DetailAsync(int id)
         {
+            Recipe recipe = await _service.GetRecipeAsync(id);
+            RecipeDetailViewModel viewModel = _mapper.Map<RecipeDetailViewModel>(recipe);
+
             return View();
         }
 
