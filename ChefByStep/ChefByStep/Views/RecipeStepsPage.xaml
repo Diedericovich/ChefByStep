@@ -1,12 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ChefByStep.Views.RecipeStepsPage">
+             x:Class="ChefByStep.Views.RecipeStepsPage"
+             xmlns:vm="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
+             xmlns:detailvm="clr-namespace:ChefByStep.Models;assembly=ChefByStep"
+             xmlns:local="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep">
+    <ContentPage.BindingContext><local:RecipeStepsViewModel></local:RecipeStepsViewModel></ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding SelectedRecipe.Title}"></Label>
+            <Label Text="{Binding SelectedRecipe.Description}"></Label>
+            <Label Text="{Binding SelectedRecipe.Id}"></Label>
+            <Label Text="{Binding Title}"></Label>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
