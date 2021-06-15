@@ -19,11 +19,22 @@ a.navbar-brand {
         color: #000;
         border-color: RGBA(120,198,163,0.59);
     }
+    .home-search .btn :hover{
+
+        color: #fff;
+        background-color: #0366d6;
+    }
 .home-search input {
     height: 25%;
 }
 .navbar {
     background-color: #78c6a3;
+}
+
+.nav-link i {
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: -5px;
 }
 
 /* Provide sufficient contrast against white background */
