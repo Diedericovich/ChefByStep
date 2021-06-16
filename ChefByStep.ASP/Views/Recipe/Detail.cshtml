@@ -25,11 +25,27 @@
     </div>
 
     <div class="cooking-div" id="start-cooking">
-        @for (int i = 1; i < Model.Steps.Count; i++)
-        {
-            <p>Step: @i</p>
-            <p>@Model.Steps[i].Instruction</p>
-        }
+        <a href="#" class="prev" onclick="prev()">Previous</a>
+        <a href="#" class="next" onclick="next()">Next</a>
+        <ul>
+            @for (int i = 1; i < Model.Steps.Count; i++)
+            {
+                @*<div class="step-div" id="steps" onclick="toggleStepByStep()">
+                    <p>Step: @i</p>
+                    <p id="step-intruction">@Model.Steps[i].Instruction</p>
+                </div>*@
+
+                <li class="li">
+                    <div class="step-list" id="steps" onclick="toggleStepByStep()">
+                        <p>Step: @i</p>
+                        <div id="step-div" onclick="myFunction()">
+                            <p id="step-intruction">@Model.Steps[i].Instruction</p>
+                        </div>
+                    </div>
+                </li>
+            }
+
+        </ul>
     </div>
 
 </div>
