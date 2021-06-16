@@ -18,8 +18,8 @@ namespace ChefByStep.API.Repos
             return await _context.Users
                 .Include(x => x.CompletedRecipes)
                 .Include(x => x.FavoriteRecipes)
-                .Include(x => x.CreatedRecipe)
-                .Include(x => x.Rating)
+                .Include(x => x.CreatedRecipes)
+                .Include(x => x.Ratings)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
@@ -28,8 +28,8 @@ namespace ChefByStep.API.Repos
             return await _context.Users
                 .Include(x => x.CompletedRecipes)
                 .Include(x => x.FavoriteRecipes)
-                .Include(x => x.CreatedRecipe)
-                .Include(x => x.Rating)
+                .Include(x => x.CreatedRecipes)
+                .Include(x => x.Ratings)
                 .ToListAsync();
         }
     }

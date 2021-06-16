@@ -170,7 +170,7 @@ namespace ChefByStep.API.Migrations
 
                     b.HasIndex("CompletedRecipesId");
 
-                    b.ToTable("UserCompletedRecipe");
+                    b.ToTable("UserCompletedRecipes");
                 });
 
             modelBuilder.Entity("RecipeUser1", b =>
@@ -185,15 +185,15 @@ namespace ChefByStep.API.Migrations
 
                     b.HasIndex("FavouritedById");
 
-                    b.ToTable("UserFavouritedRecipe");
+                    b.ToTable("UserFavouriteRecipes");
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.Recipe", b =>
                 {
                     b.HasOne("ChefByStep.API.Entities.User", "CreatedBy")
-                        .WithMany("CreatedRecipe")
+                        .WithMany("CreatedRecipes")
                         .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("CreatedBy");
@@ -208,7 +208,7 @@ namespace ChefByStep.API.Migrations
                         .IsRequired();
 
                     b.HasOne("ChefByStep.API.Entities.User", "User")
-                        .WithMany("Rating")
+                        .WithMany("Ratings")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -285,9 +285,9 @@ namespace ChefByStep.API.Migrations
 
             modelBuilder.Entity("ChefByStep.API.Entities.User", b =>
                 {
-                    b.Navigation("CreatedRecipe");
+                    b.Navigation("CreatedRecipes");
 
-                    b.Navigation("Rating");
+                    b.Navigation("Ratings");
                 });
 #pragma warning restore 612, 618
         }

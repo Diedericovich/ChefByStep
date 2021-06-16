@@ -16,7 +16,6 @@ namespace ChefByStep.API.Repos
         public override Task<Recipe> GetAsync(int id)
         {
             return _context.Recipes
-                .Include(x => x.CreatedBy)
                 .Include(x => x.Ratings)
                 .Include(x => x.Ingredients)
                 .Include(x => x.Steps)
