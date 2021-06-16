@@ -17,12 +17,12 @@ function toggleSteps() {
         // clock is visible. hide it
         mySteps.style.display = 'none';
         // change button text
-        startCooking.innerHTML = 'Show steps';
+        startCooking.innerHTML = 'Start Cooking';
     }
     else {
         // clock is hidden. show it
         mySteps.style.display = 'block';
         // change button text
-        startCooking.innerHTML = 'Hide steps';
+        startCooking.innerHTML = 'Stop Cooking';
     }
 }
