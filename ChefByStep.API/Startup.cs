@@ -1,4 +1,5 @@
 using ChefByStep.API.Entities;
+using ChefByStep.API.Helpers;
 using ChefByStep.API.Repos;
 using ChefByStep.API.Repos.Interfaces;
 using ChefByStep.API.Services;
@@ -31,7 +32,8 @@ namespace ChefByStep.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChefByStep.API", Version = "v1" });
@@ -39,6 +41,8 @@ namespace ChefByStep.API
 
             services.AddDbContext<DatabaseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnectionString")));
+
+            services.AddCors();
 
             services.AddScoped<IGenericRepo<Step>, GenericRepo<Step>>();
             services.AddScoped<IUserRepo, UserRepo>();
@@ -65,6 +69,8 @@ namespace ChefByStep.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5001"));
 
             app.UseAuthorization();
 

@@ -1,0 +1,23 @@
+﻿@model RecipeDetailViewModel
+
+<div class="overview">
+    <div>
+        <img src="@Model.ImageUrl"/>
+        <div>@Model.Title</div>
+    </div>
+    <div>
+        <div>
+            @foreach (var ingredient in @Model.Ingredients)
+            {
+            <ul>
+                <li>
+                    @ingredient.Name
+                </li>
+            </ul>
+            }
+        </div>
+        <div>
+            <p>@Model.Description</p>
+        </div>
+    </div>
+</div>
