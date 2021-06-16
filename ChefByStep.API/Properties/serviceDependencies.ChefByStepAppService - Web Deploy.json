@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/chefbystep-api-db-server/databases/ChefByStep.API_db",
+      "type": "mssql.azure",
+      "connectionId": "DBConnectionString",
+      "secretStore": "AzureAppSettings"
+    },
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/ChefByStepAPIMGMT/apis/recipes",
+      "type": "apis.azure",
+      "apiEndpoint": "https://chefbystepapimgmt.azure-api.net/api"
+    }
+  }
+}

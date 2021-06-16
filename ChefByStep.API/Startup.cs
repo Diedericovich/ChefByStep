@@ -1,25 +1,18 @@
-using ChefByStep.API.Entities;
-using ChefByStep.API.Helpers;
-using ChefByStep.API.Repos;
-using ChefByStep.API.Repos.Interfaces;
-using ChefByStep.API.Services;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace ChefByStep.API
 {
+    using ChefByStep.API.Entities;
+    using ChefByStep.API.Repos;
+    using ChefByStep.API.Repos.Interfaces;
+    using ChefByStep.API.Services;
+
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using Microsoft.OpenApi.Models;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -34,10 +27,16 @@ namespace ChefByStep.API
         {
             services.AddControllers().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChefByStep.API", Version = "v1" });
-            });
+            services.AddSwaggerGen(
+                config =>
+                    {
+                        config.SwaggerDoc(
+                            "v1", new OpenApiInfo
+                                  {
+                                      Title = "recipes",
+                                      Version = "v1"
+                                  });
+                    });
 
             services.AddDbContext<DatabaseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnectionString")));
@@ -63,7 +62,7 @@ namespace ChefByStep.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ChefByStep.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "recipes"));
             }
 
             app.UseHttpsRedirection();
