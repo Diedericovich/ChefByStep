@@ -1,58 +1,45 @@
 ﻿namespace ChefByStep.ViewModels
 {
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
-
-    using ChefByStep.Models;
-    using ChefByStep.Services.Repositories;
-    using ChefByStep.Views;
-
+    using Models;
+    using Services.Repositories;
+    using Views;
     using Xamarin.Forms;
 
     public class AboutViewModel : BaseViewModel
     {
         private MockRecipeRepo _repo;
-
-        public AboutViewModel()
-        {
-            _repo = new MockRecipeRepo();
-            ShowAllTheRecipes();
-            ItemTapped = new Command<Recipe>(OnRecipeSelected);
-        }
-
-        private ObservableCollection<Recipe> recipes;
+        private ObservableCollection<Recipe> _recipes;
 
         public ObservableCollection<Recipe> Recipes
         {
-            get
-            {
-                return recipes;
-            }
+            get { return _recipes; }
 
             set
             {
-                recipes = value;
+                _recipes = value;
                 OnPropertyChanged(nameof(Recipes));
             }
         }
 
         public Command<Recipe> ItemTapped { get; }
 
-        // private IMockRecipeRepo _repo;
-        // public AboutViewModel(IMockRecipeRepo repo)
-        // {
-        // _repo = repo;
-        // ShowAllTheRecipes();
-        // //ItemTapped = new Command<Recipe>(OnPlaceSelected);
-
-        // }
-        private async Task ShowAllTheRecipes()
+        public AboutViewModel()
         {
-            var recipes = await _repo.GetAllRecipes();
-            Recipes = new ObservableCollection<Recipe>(recipes);
+            _repo = new MockRecipeRepo();
+
+            ItemTapped = new Command<Recipe>(OnRecipeSelected);
         }
 
-      
+        private async Task<ObservableCollection<Recipe>> ShowAllTheRecipes()
+        {
+            IList<Recipe> allRecipes = await _repo.GetAllRecipes();
+            Recipes = (ObservableCollection<Recipe>) allRecipes;
+            return (ObservableCollection<Recipe>) allRecipes;
+        }
+
         private async void OnRecipeSelected(Recipe recipe)
         {
             await Shell.Current.GoToAsync($"{nameof(DetailPage)}?{nameof(DetailPageViewModel.RecipeId)}={recipe.Id}");

@@ -11,9 +11,7 @@
     </ContentPage.BindingContext>
     <ScrollView>
         <StackLayout>
-            <SearchBar Placeholder="Find a Recipe"  />
-
-            <CarouselView ItemsSource="{Binding Recipes}"
+           <CarouselView ItemsSource="{Binding Recipes}"
                   PeekAreaInsets="100"
                   Loop="True"
                   HeightRequest="300">
@@ -32,9 +30,12 @@
 
                                 <Grid>
                                     <StackLayout BackgroundColor="Black">
+                                        <Label Text="{Binding Title}"></Label>
+                                        <Label Text="{Binding Description}"></Label>
+                                        <Label Text="{Binding Ingredients/Name}"></Label>
                                         <Image Source="{Binding ImgUrl}"
-                                           Aspect="AspectFit"
-                                           Opacity="0.8" />
+                                               Aspect="AspectFit"
+                                               Opacity="0.8" />
                                     </StackLayout>
                                     <StackLayout>
                                         <Image Source="icon_bookmark.png"
