@@ -19,39 +19,42 @@ namespace ChefByStep.API.Helpers
 
         public static void SeedRecipes(DatabaseContext context)
         {
-            User tempuser = new User
+            if (!context.Recipes.Any())
             {
-                Name = "test"
-            };
-            context.Add(tempuser);
-            context.SaveChanges();
-
-            string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                var line = lines[i].Split(';');
-                Recipe temp = new Recipe
+                User tempuser = new User
                 {
-                    ImageUrl = line[2],
-                    Title = line[0],
-                    Ingredients = new List<Ingredient>(),
-                    Steps = new List<Step>(),
-                    Description = line[4],
-                    CreatedById = 1
+                    Name = "test"
                 };
-                string[] ingredients = line[3].Split('|').ToArray();
-                foreach (var item in ingredients)
-                {
-                    temp.Ingredients.Add(new Ingredient { Name = item });
-                }
-                string[] steps = line[5].Split('|').ToArray();
-                foreach (var item in steps)
-                {
-                    temp.Steps.Add(new Step { Instruction = item });
-                }
-
-                context.Add(temp);
+                context.Add(tempuser);
                 context.SaveChanges();
+
+                string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    var line = lines[i].Split(';');
+                    Recipe temp = new Recipe
+                    {
+                        ImageUrl = line[2],
+                        Title = line[0],
+                        Ingredients = new List<Ingredient>(),
+                        Steps = new List<Step>(),
+                        Description = line[4],
+                        CreatedById = 1
+                    };
+                    string[] ingredients = line[3].Split('|').ToArray();
+                    foreach (var item in ingredients)
+                    {
+                        temp.Ingredients.Add(new Ingredient { Name = item });
+                    }
+                    string[] steps = line[5].Split('|').ToArray();
+                    foreach (var item in steps)
+                    {
+                        temp.Steps.Add(new Step { Instruction = item });
+                    }
+
+                    context.Update(temp);
+                    context.SaveChanges();
+                }
             }
         }
     }

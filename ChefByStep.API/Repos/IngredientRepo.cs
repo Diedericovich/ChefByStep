@@ -1,4 +1,5 @@
 ﻿using ChefByStep.API.Entities;
+using ChefByStep.API.Helpers;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace ChefByStep.API.Repos.Interfaces
     {
         public IngredientRepo(DatabaseContext context) : base(context)
         {
+            DataSeeder.SeedRecipes(context);
         }
 
         public override async Task<Ingredient> GetAsync(int id)

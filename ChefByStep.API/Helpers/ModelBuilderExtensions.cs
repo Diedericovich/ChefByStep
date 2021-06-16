@@ -29,14 +29,5 @@ namespace ChefByStep.API.Helpers
                 .HasForeignKey(x => x.RecipeId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
-
-        public static void Seed(this ModelBuilder modelBuilder)
-        {
-            BuildRecipes(modelBuilder);
-        }
-
-        private static void BuildRecipes(ModelBuilder modelBuilder)
-        {
-        }
     }
 }

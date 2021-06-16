@@ -1,4 +1,5 @@
 ﻿using ChefByStep.API.Entities;
+using ChefByStep.API.Helpers;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,8 +10,9 @@ namespace ChefByStep.API.Repos
     {
         public UserRepo(DatabaseContext context) : base(context)
         {
-
+            DataSeeder.SeedRecipes(context);
         }
+
         public override async Task<User> GetAsync(int id)
         {
             return await _context.Users
