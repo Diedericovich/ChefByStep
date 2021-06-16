@@ -1,6 +1,5 @@
 ﻿using ChefByStep.API.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace ChefByStep.API.Helpers
 {
@@ -33,6 +32,22 @@ namespace ChefByStep.API.Helpers
                 .HasMany(x => x.FavouritedBy)
                 .WithMany(x => x.FavoriteRecipes)
                 .UsingEntity(x => x.ToTable("UserFavouriteRecipes"));
+        }
+
+        public static void Seed(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasData(
+                DataSeeder.GetUsers()
+                );
+            modelBuilder.Entity<Step>().HasData(
+                DataSeeder.GetStepsFromCsv()
+                );
+            modelBuilder.Entity<Recipe>().HasData(
+                DataSeeder.GetRecipesFromCsv()
+                );
+            modelBuilder.Entity<Ingredient>().HasData(
+                DataSeeder.GetIngredientsFromCsv()
+                );
         }
     }
 }

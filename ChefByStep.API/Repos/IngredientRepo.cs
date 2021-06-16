@@ -10,7 +10,6 @@ namespace ChefByStep.API.Repos.Interfaces
     {
         public IngredientRepo(DatabaseContext context) : base(context)
         {
-            DataSeeder.SeedRecipes(context);
         }
 
         public override async Task<Ingredient> GetAsync(int id)

@@ -1,20 +1,102 @@
 ﻿using ChefByStep.API.Entities;
-using ChefByStep.API.Repos;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ChefByStep.API.Helpers
 {
     public class DataSeeder
     {
-        internal DatabaseContext _context;
-
-        public DataSeeder(DatabaseContext context)
+        public DataSeeder()
         {
-            _context = context;
+            string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
+        }
+
+        public static List<Recipe> GetRecipesFromCsv()
+        {
+            string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
+            var rand = new Random();
+            List<Recipe> recipes = new List<Recipe>();
+            for (int i = 0; i < lines.Length; i++)
+            {
+                var line = lines[i].Split(';');
+                recipes.Add(
+                    new Recipe
+                    {
+                        Id = i + 1,
+                        ImageUrl = line[2],
+                        Title = line[0],
+                        Ingredients = new List<Ingredient>(),
+                        Steps = new List<Step>(),
+                        Description = line[4],
+                        CreatedById = rand.Next(1, 5)
+                    });
+            }
+            return recipes;
+        }
+
+        public static List<User> GetUsers()
+        {
+            string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
+            List<User> users = new List<User>
+            {
+                new User{Id = 1, Name = "Frieda", },
+                new User{Id = 2,Name = "Alberto",},
+                new User{Id = 3,Name = "Octaaf",},
+                new User{Id = 4,Name = "Gert",},
+            };
+            return users;
+        }
+
+        public static List<Step> GetStepsFromCsv()
+        {
+            int idcounter = 0;
+            string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
+            var steps = new List<Step>();
+            for (int i = 0; i < lines.Length; i++)
+            {
+                var line = lines[i].Split(';');
+                string[] steplines = line[5].Split('|').Distinct().ToArray();
+                for (int j = 0; j < steplines.Length; j++)
+                {
+                    idcounter++;
+                    steps.Add(new Step { Instruction = steplines[j], Id = idcounter });
+                }
+            }
+            return steps;
+        }
+
+        public static List<Ingredient> GetIngredientsFromCsv()
+        {
+            int idcounter = 0;
+            string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
+            var ingredients = new List<string>();
+            var ingredientList = new List<Ingredient>();
+            for (int i = 0; i < lines.Length; i++)
+            {
+                var line = lines[i].Split(';');
+                string[] ingredientlines = line[3].Split('|').Distinct().ToArray();
+                for (int j = 0; j < ingredientlines.Length; j++)
+                {
+                    string[] ingredient = ingredientlines[j].Split(',').Distinct().ToArray();
+                    if (ingredient.Length > 1)
+                    {
+                        ingredients.Add(ingredient[1].Trim().ToLower());
+                    }
+                    else
+                    {
+                        ingredients.Add(ingredient[0].Trim().ToLower());
+                    }
+                }
+            }
+            IEnumerable<string> distinct = ingredients.Distinct();
+            foreach (var item in distinct)
+            {
+                idcounter++;
+                ingredientList.Add(new Ingredient { Id = idcounter, Name = item });
+            }
+            return ingredientList;
         }
 
         public static void SeedRecipes(DatabaseContext context)

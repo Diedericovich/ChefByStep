@@ -10,7 +10,6 @@ namespace ChefByStep.API.Repos
     {
         public RecipeRepo(DatabaseContext context) : base(context)
         {
-            DataSeeder.SeedRecipes(context);
         }
 
         public override Task<Recipe> GetAsync(int id)
@@ -19,6 +18,7 @@ namespace ChefByStep.API.Repos
                 .Include(x => x.Ratings)
                 .Include(x => x.Ingredients)
                 .Include(x => x.Steps)
+                .Include(x => x.CreatedBy)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
