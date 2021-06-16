@@ -2,22 +2,35 @@
 
 <div class="overview">
     <div>
-        <img src="@Model.ImageUrl"/>
+        <img src="@Model.ImageUrl" />
         <div>@Model.Title</div>
     </div>
     <div>
         <div>
             @foreach (var ingredient in @Model.Ingredients)
             {
-            <ul>
-                <li>
-                    @ingredient.Name
-                </li>
-            </ul>
+                <ul>
+                    <li>
+                        @ingredient.Name
+                    </li>
+                </ul>
             }
         </div>
         <div>
             <p>@Model.Description</p>
         </div>
+        <div class="btn-cook">
+            <a class="btn nav-link" href="#start-cooking" onclick="toggleSteps()" id="startCooking">Start Cooking</a>
+        </div>
     </div>
+
+    <div class="cooking-div" id="start-cooking">
+        @for (int i = 1; i < Model.Steps.Count; i++)
+        {
+            <p>Step: @i</p>
+            <p>@Model.Steps[i].Instruction</p>
+        }
+    </div>
+
+
 </div>

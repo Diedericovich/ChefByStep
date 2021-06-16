@@ -12,6 +12,7 @@ namespace ChefByStep.ASP.ViewModels
         public string Title { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
+        public List<Step> Steps { get; set; }
         public List<Ingredient> Ingredients { get; set; }
         public List<RecipeRating> Ratings { get; set; }
     }

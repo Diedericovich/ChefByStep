@@ -190,7 +190,23 @@ body {
 
 .recipe-img {
     width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: RGBA(120,198,163,0.75);
 }
+
+.recipe-row a {
+    text-decoration: none;
+    color: #fff;
+}
+
+    .recipe-row a:hover {
+        color: #fff;
+    }
+
+    .recipe-row a:visited {
+        color: #fff;
+    }
 
 .centered {
     position: absolute;
@@ -207,4 +223,16 @@ body {
     transform: translate(-50%, -50%);
     background-color: RGBA(120,198,163,0.75);
     font-size: 20px;
+}
+
+.btn-cook {
+    background-color: RGBA(120,198,163,0.59);
+    width: 20%;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cooking-div:target {
+    display: none;
 }
