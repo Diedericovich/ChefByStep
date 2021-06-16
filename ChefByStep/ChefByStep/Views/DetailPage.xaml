@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:ChefByStep.ViewModels"
-             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="ChefByStep.Views.DetailPage">
+<ContentPage
+    x:Class="ChefByStep.Views.DetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ChefByStep.ViewModels"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
 
     <ContentPage.BindingContext>
-        <local:DetailPageViewModel/>
-        
+        <local:DetailPageViewModel />
+
     </ContentPage.BindingContext>
 
 
@@ -17,29 +18,33 @@
             <StackLayout VerticalOptions="FillAndExpand">
                 <Grid>
 
-                    <Frame HeightRequest="400" Padding="0" BackgroundColor="Black">
-                        <Image Source="{Binding SelectedRecipe.ImgUrl}"
-                           HeightRequest="400"
-                           Aspect="AspectFill"
-                           Opacity="0.9"/>
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="Black"
+                        HeightRequest="400">
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="400"
+                            Opacity="0.9"
+                            Source="{Binding SelectedRecipe.ImgUrl}" />
                     </Frame>
                     <StackLayout VerticalOptions="EndAndExpand">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="5*"/>
-                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="5*" />
+                                <ColumnDefinition Width="auto" />
                             </Grid.ColumnDefinitions>
 
-                            <Label Text="{Binding SelectedRecipe.Title}"
-                               TextColor="White"
-                               FontSize="32"
-                               FontAttributes="Bold"
-                               Margin="15"
-                               />
+                            <Label
+                                Margin="15"
+                                FontAttributes="Bold"
+                                FontSize="32"
+                                Text="{Binding SelectedRecipe.Title}"
+                                TextColor="White" />
                             <!--<StackLayout Grid.Column="1"
                                          VerticalOptions="Center">
                                 <Label Text="4,6*"
-                                   
+
                                    TextColor="Red"
                                    FontSize="24"
                                    FontAttributes="Bold"
@@ -52,49 +57,48 @@
                     </StackLayout>
                 </Grid>
 
-                <Grid VerticalOptions="FillAndExpand"
-                      Margin="0,-20,0,0"
-                      Padding="0">
+                <Grid
+                    Margin="0,-20,0,0"
+                    Padding="0"
+                    VerticalOptions="FillAndExpand">
 
                     <Frame CornerRadius="25">
                         <StackLayout>
-
                             <xct:TabView
-                                        TabStripPlacement="Top"
-                                        TabStripBackgroundColor="LightGray"
-                                        TabStripHeight="60"
-                                        TabIndicatorColor="red"
-                                        TabContentBackgroundColor="Transparent"
-                                        Margin="-20">
+                                Margin="-20"
+                                TabContentBackgroundColor="Transparent"
+                                TabIndicatorColor="red"
+                                TabStripBackgroundColor="LightGray"
+                                TabStripHeight="60"
+                                TabStripPlacement="Top">
 
                                 <xct:TabViewItem
-                                        Icon="triangle.png"
-                                        Text="Description"
-                                        TextColor="black"
-                                        TextColorSelected="Red"
-                                        FontSize="16">
-                                    <Grid 
-                                        BackgroundColor="Transparent">
+                                    FontSize="16"
+                                    Icon="triangle.png"
+                                    Text="Description"
+                                    TextColor="black"
+                                    TextColorSelected="Red">
+                                    <Grid BackgroundColor="Transparent">
                                         <Label
-                                        HorizontalOptions="Start"
-                                        VerticalOptions="Start"
-                                        Text="{Binding SelectedRecipe.Description}"
-                                        TextColor="black"
-                                        Margin=" 30"/>
+                                            Margin="30"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding SelectedRecipe.Description}"
+                                            TextColor="black"
+                                            VerticalOptions="Start" />
                                     </Grid>
                                 </xct:TabViewItem>
 
                                 <xct:TabViewItem
-                                        Icon="info.png"
-                                        Text="Reviews"
-                                        TextColor="Black"
-                                        TextColorSelected="red"
-                                        FontSize="16">
+                                    FontSize="16"
+                                    Icon="info.png"
+                                    Text="Reviews"
+                                    TextColor="Black"
+                                    TextColorSelected="red">
                                     <Grid>
-                                        <Label    
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center"
-                                        Text="Here are the reviews from users" />
+                                        <Label
+                                            HorizontalOptions="Center"
+                                            Text="Here are the reviews from users"
+                                            VerticalOptions="Center" />
                                     </Grid>
                                 </xct:TabViewItem>
                             </xct:TabView>
@@ -107,7 +111,7 @@
 
 
 
-                        <!--Xamarin Community Toolkit , using for tabs-->
+                        <!--  Xamarin Community Toolkit , using for tabs  -->
                         <!--<Grid>
                             <xyt:TabView Style="{StaticResource TabStyle}">
                                 <xyt:TabViewItem >
@@ -126,23 +130,26 @@
 
                     </Frame>
 
-                    <pancake:PancakeView CornerRadius="50"
-                           BackgroundColor="white"
-                           HeightRequest="60"
-                           WidthRequest="60"
-                           HorizontalOptions="EndAndExpand"
-                           VerticalOptions="StartAndExpand"
-                           Margin="0,-35,35,0"
-                           >
+                    <pancake:PancakeView
+                        Margin="0,-35,35,0"
+                        BackgroundColor="white"
+                        CornerRadius="50"
+                        HeightRequest="60"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        WidthRequest="60">
                         <pancake:PancakeView.Shadow>
-                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0"/>
+                            <pancake:DropShadow
+                                BlurRadius="15"
+                                Offset="0,0"
+                                Color="Black" />
                         </pancake:PancakeView.Shadow>
 
-                        <Grid VerticalOptions="Center"
-                              HorizontalOptions="Center">
-                            <Label Text="{Binding SelectedPlace.Rating}"
-                                   FontSize="22"
-                                   TextColor="red"/>
+                        <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label
+                                FontSize="22"
+                                Text="{Binding SelectedPlace.Rating}"
+                                TextColor="red" />
                         </Grid>
 
 
@@ -153,11 +160,12 @@
 
                 <Grid>
                     <StackLayout>
-                        <Button Text="Cook now!"
-                                Command="{Binding OnButtonClickedCommand}"
-                                VerticalOptions="EndAndExpand"
-                                Margin="20, 0, 20, 10"
-                                BackgroundColor="Green" />
+                        <Button
+                            Margin="20,0,20,10"
+                            BackgroundColor="{StaticResource QuaternaryColor}"
+                            Command="{Binding OnButtonClickedCommand}"
+                            Text="Cook now!"
+                            VerticalOptions="EndAndExpand" />
 
                     </StackLayout>
                 </Grid>

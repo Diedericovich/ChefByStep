@@ -10,14 +10,11 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" 
                      HorizontalOptions="CenterAndExpand">      
-          
-            <CarouselView ItemsSource="{Binding SelectedRecipe.Steps}"
+          <CarouselView ItemsSource="{Binding SelectedRecipe.Steps}"
                   PeekAreaInsets="20"
                   Loop="False"
-                  HeightRequest="550"
+                  HeightRequest="550">
                 
-             >
-
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
