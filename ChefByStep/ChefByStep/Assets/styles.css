@@ -1,0 +1,49 @@
+﻿navigationpage {
+    -xf-bar-background-color: lightgray;
+}
+
+^contentpage {
+    background-color: palegoldenrod;
+}
+
+#listView {
+    background-color: lightgray;
+}
+
+stacklayout {
+    margin: 20;
+}
+
+.mainPageTitle {
+    font-style: bold;
+    font-size: medium;
+}
+
+.label {
+    background-color: yellow;
+}
+
+.mainPageSubtitle {
+    margin-top: 15;
+}
+
+.detailPageTitle {
+    font-style: bold;
+    font-size: medium;
+    text-align: center;
+}
+
+.detailPageSubtitle {
+    text-align: center;
+    font-style: italic;
+}
+
+listview image {
+    height: 60;
+    width: 60;
+}
+
+stacklayout > image {
+    height: 200;
+    width: 200;
+}

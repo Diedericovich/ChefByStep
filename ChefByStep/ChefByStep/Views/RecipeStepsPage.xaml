@@ -1,22 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ChefByStep.Views.RecipeStepsPage"
              xmlns:vm="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
              xmlns:detailvm="clr-namespace:ChefByStep.Models;assembly=ChefByStep"
              xmlns:local="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep">
-    <ContentPage.BindingContext><local:RecipeStepsViewModel />
+    <ContentPage.BindingContext>
+        <local:RecipeStepsViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" 
-                     HorizontalOptions="CenterAndExpand">      
-          
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand">
+
             <CarouselView ItemsSource="{Binding SelectedRecipe.Steps}"
-                  PeekAreaInsets="20"
-                  Loop="False"
-                  HeightRequest="550"
-                
-             >
+                          PeekAreaInsets="20"
+                          Loop="False"
+                          HeightRequest="550">
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
@@ -40,15 +40,13 @@
                                     <StackLayout>
                                         <Label Text="{Binding Instruction}"
                                                HeightRequest="60"
-                                               HorizontalOptions="EndAndExpand"
-                                        />
+                                               HorizontalOptions="EndAndExpand" />
                                         <Label Text="{Binding Id}"
                                                TextColor="Black"
                                                FontSize="30"
                                                FontAttributes="Bold"
                                                Margin="15, 0"
                                                VerticalOptions="EndAndExpand" />
-                                  
                                     </StackLayout>
                                 </Grid>
                             </Frame>
@@ -59,5 +57,3 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
-    
-    

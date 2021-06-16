@@ -1,11 +1,14 @@
-﻿using ChefByStep.API.Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace ChefByStep.API.Repos.Interfaces
+﻿namespace ChefByStep.API.Repos
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using ChefByStep.API.Entities;
+    using ChefByStep.API.Repos.Interfaces;
+
+    using Microsoft.EntityFrameworkCore;
+
     public class RecipeRatingRepo : GenericRepo<RecipeRating>, IRecipeRatingRepo
     {
         public RecipeRatingRepo(DatabaseContext context) : base(context)
