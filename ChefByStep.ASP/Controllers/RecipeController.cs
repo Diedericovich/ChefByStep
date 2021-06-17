@@ -41,6 +41,14 @@ namespace ChefByStep.ASP
             return View(viewModel);
         }
 
+        public async Task<ActionResult> StepAsync(int id)
+        {
+            Recipe recipe = await _service.GetRecipeAsync(id);
+            RecipeDetailViewModel viewModel = _mapper.Map<RecipeDetailViewModel>(recipe);
+
+            return View(viewModel);
+        }
+
         // GET: RecipeController/Create
         public ActionResult Create()
         {
