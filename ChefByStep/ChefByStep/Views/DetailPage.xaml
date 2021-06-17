@@ -41,16 +41,6 @@
                                 FontSize="32"
                                 Text="{Binding SelectedRecipe.Title}"
                                 TextColor="White" />
-                            <!--<StackLayout Grid.Column="1"
-                                         VerticalOptions="Center">
-                                <Label Text="4,6*"
-
-                                   TextColor="Red"
-                                   FontSize="24"
-                                   FontAttributes="Bold"
-                                   Margin="15"
-                                   />
-                            </StackLayout>-->
 
                         </Grid>
 
@@ -103,30 +93,7 @@
                                 </xct:TabViewItem>
                             </xct:TabView>
 
-
-                            <!--<Label Text="{Binding SelectedPlace.Description}"
-                                   FontSize="18"
-                                   Margin="10,20"/>-->
                         </StackLayout>
-
-
-
-                        <!--  Xamarin Community Toolkit , using for tabs  -->
-                        <!--<Grid>
-                            <xyt:TabView Style="{StaticResource TabStyle}">
-                                <xyt:TabViewItem >
-                                    <Grid BackgroundColor="Red">
-                                    </Grid>
-                                </xyt:TabViewItem>
-                                <xyt:TabViewItem>
-                                    <Grid BackgroundColor="Blue">
-                                    </Grid>
-                                </xyt:TabViewItem>
-                            </xyt:TabView>
-                        </Grid>-->
-
-
-
 
                     </Frame>
 

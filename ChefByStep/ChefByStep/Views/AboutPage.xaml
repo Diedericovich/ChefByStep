@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage
     x:Class="ChefByStep.Views.AboutPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:vm="clr-namespace:ChefByStep.ViewModels"
-    Title="ChefByStep">
+    Title="ChefByStep"
+    >
 
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
@@ -19,7 +21,8 @@
                 HeightRequest="300"
                 ItemsSource="{Binding Recipes}"
                 Loop="True"
-                PeekAreaInsets="100">
+                PeekAreaInsets="100"
+                >
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
@@ -32,14 +35,16 @@
                                 HasShadow="True"
                                 HeightRequest="280"
                                 HorizontalOptions="CenterAndExpand"
-                                WidthRequest="180">
+                                WidthRequest="180"
+                                >
 
                                 <Grid>
                                     <StackLayout BackgroundColor="{StaticResource WebBackGroundColor}">
                                         <Image
                                             Aspect="AspectFit"
                                             Opacity="0.8"
-                                            Source="{Binding ImgUrl}" />
+                                            Source="{Binding ImgUrl}"
+                                            />
                                     </StackLayout>
                                     <StackLayout>
                                         <Image
@@ -47,25 +52,32 @@
                                             Aspect="AspectFit"
                                             HeightRequest="60"
                                             HorizontalOptions="EndAndExpand"
-                                            Source="icon_bookmark.png" />
+                                            Source="icon_bookmark.png"
+                                            />
                                         <Label
                                             Margin="15,0"
                                             FontAttributes="Bold"
                                             FontSize="24"
                                             Text="{Binding Title}"
                                             TextColor="white"
-                                            VerticalOptions="EndAndExpand" />
+                                            VerticalOptions="EndAndExpand"
+                                            />
 
-                                        <StackLayout Margin="15,-10,0,0" Orientation="Horizontal">
+                                        <StackLayout
+                                            Margin="15,-10,0,0"
+                                            Orientation="Horizontal"
+                                            >
                                             <Image
                                                 Aspect="AspectFit"
                                                 HeightRequest="20"
-                                                Source="icon_map1.png" />
+                                                Source="icon_map1.png"
+                                                />
                                             <Label
                                                 FontSize="14"
                                                 Text="{Binding Description}"
                                                 TextColor="white"
-                                                VerticalOptions="EndAndExpand" />
+                                                VerticalOptions="EndAndExpand"
+                                                />
                                         </StackLayout>
                                     </StackLayout>
 
@@ -73,9 +85,9 @@
                                         <TapGestureRecognizer
                                             Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AboutViewModel}}, Path=ItemTapped}"
                                             CommandParameter="{Binding .}"
-                                            NumberOfTapsRequired="1" />
+                                            NumberOfTapsRequired="1"
+                                            />
                                     </Grid.GestureRecognizers>
-
 
 
                                 </Grid>
@@ -93,23 +105,33 @@
                     <Frame
                         Margin="5"
                         Padding="8"
+                        BackgroundColor="{StaticResource WebBackGroundColor}"
                         BorderColor="{StaticResource WebBackGroundColor}"
                         CornerRadius="5"
-                        HasShadow="True">
+                        HasShadow="True"
+                        >
                         <StackLayout>
                             <Label
                                 FontAttributes="Bold"
                                 FontSize="Medium"
                                 HorizontalOptions="Center"
-                                Text="Welcome to CBS" />
+                                Text="Welcome to Chef By Step"
+                                TextColor="{StaticResource SecondaryTextColor}"
+                                />
                             <BoxView
                                 HeightRequest="2"
                                 HorizontalOptions="Fill"
-                                Color="Gray" />
-                            <Label Text="Frames can wrap more complex layouts to create more complex UI components, such as this card!" />
+                                Color="{StaticResource WebBackGroundColor}"
+                                />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="Small"
+                                HorizontalOptions="Center"
+                                Text="Cook easy. Cook now."
+                                TextColor="{StaticResource SecondaryTextColor}"
+                                />
                         </StackLayout>
                     </Frame>
-
 
 
                 </Grid>
@@ -122,19 +144,25 @@
                         HeightRequest="180"
                         HorizontalOptions="Center"
                         VerticalOptions="StartAndExpand"
-                        WidthRequest="180">
+                        WidthRequest="180"
+                        >
                         <pancake:PancakeView.Shadow>
                             <pancake:DropShadow
                                 BlurRadius="50"
                                 Offset="0,0"
-                                Color="Black" />
+                                Color="Black"
+                                />
                         </pancake:PancakeView.Shadow>
 
-                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            >
                             <Image
                                 Margin="5"
                                 Aspect="AspectFill"
-                                Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg" />
+                                Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg"
+                                />
 
                         </Grid>
                     </pancake:PancakeView>
@@ -159,19 +187,25 @@
                         HeightRequest="180"
                         HorizontalOptions="Center"
                         VerticalOptions="StartAndExpand"
-                        WidthRequest="180">
+                        WidthRequest="180"
+                        >
                         <pancake:PancakeView.Shadow>
                             <pancake:DropShadow
                                 BlurRadius="15"
                                 Offset="0,0"
-                                Color="Black" />
+                                Color="Black"
+                                />
                         </pancake:PancakeView.Shadow>
 
-                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            >
                             <Image
                                 Margin="5"
                                 Aspect="AspectFill"
-                                Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg" />
+                                Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg"
+                                />
 
                         </Grid>
                     </pancake:PancakeView>
@@ -184,7 +218,8 @@
                         HorizontalOptions="Center"
                         Opacity="0.9"
                         Stroke="white"
-                        WidthRequest="30" />
+                        WidthRequest="30"
+                        />
 
                 </Grid>
 
@@ -192,17 +227,10 @@
             </StackLayout>
 
 
-
         </StackLayout>
 
 
-
-
-
-
     </ScrollView>
-
-
 
 
 </ContentPage>
