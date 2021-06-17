@@ -1,13 +1,10 @@
-﻿using ChefByStep.API.Entities;
-using ChefByStep.API.Helpers;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ChefByStep.API
+﻿namespace ChefByStep.API
 {
+    using ChefByStep.API.Entities;
+    using ChefByStep.API.Helpers;
+
+    using Microsoft.EntityFrameworkCore;
+
     public class DatabaseContext : DbContext
     {
         public DbSet<Recipe> Recipes { get; set; }
@@ -23,7 +20,7 @@ namespace ChefByStep.API
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.BuildRelations();
-            //modelBuilder.Seed();
+            modelBuilder.Seed();
         }
     }
 }
