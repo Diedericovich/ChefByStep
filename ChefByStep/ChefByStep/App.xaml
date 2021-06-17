@@ -16,6 +16,11 @@
             <Color x:Key="QuinaryColor">#F25022</Color>
             <Color x:Key="TextColor">#1d1d1d</Color>
             <Color x:Key="SecondaryTextColor">#ffffff</Color>
+            <Color x:Key="WebBackGroundColor">#78c6a3</Color>
+            <Color x:Key="WebButtonColor">#1b6ec2</Color>
+            <Color x:Key="WebButtonBorderColor">#1861ac</Color>
+            <Color x:Key="WebBorderTopColor">#e5e5e5</Color>
+
             <Color x:Key="AppColor">#FFFFFF</Color>
             <SolidColorBrush x:Key="QuinaryBrush" Color="{StaticResource QuinaryColor}" />
             <Color x:Key="Primary">#2196F3</Color>
@@ -26,7 +31,7 @@
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource WebBackGroundColor}" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">

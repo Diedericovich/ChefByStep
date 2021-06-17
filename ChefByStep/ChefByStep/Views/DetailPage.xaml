@@ -68,7 +68,7 @@
                                 Margin="-20"
                                 TabContentBackgroundColor="Transparent"
                                 TabIndicatorColor="red"
-                                TabStripBackgroundColor="LightGray"
+                                TabStripBackgroundColor="{StaticResource WebBorderTopColor}"
                                 TabStripHeight="60"
                                 TabStripPlacement="Top">
 
@@ -132,7 +132,7 @@
 
                     <pancake:PancakeView
                         Margin="0,-35,35,0"
-                        BackgroundColor="white"
+                        BackgroundColor="{StaticResource WebBackGroundColor}"
                         CornerRadius="50"
                         HeightRequest="60"
                         HorizontalOptions="EndAndExpand"
@@ -162,7 +162,7 @@
                     <StackLayout>
                         <Button
                             Margin="20,0,20,10"
-                            BackgroundColor="{StaticResource QuaternaryColor}"
+                            BackgroundColor="{StaticResource WebBackGroundColor}"
                             Command="{Binding OnButtonClickedCommand}"
                             Text="Cook now!"
                             VerticalOptions="EndAndExpand" />

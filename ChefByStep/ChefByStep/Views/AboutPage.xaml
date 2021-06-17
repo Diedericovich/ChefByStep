@@ -35,7 +35,7 @@
                                 WidthRequest="180">
 
                                 <Grid>
-                                    <StackLayout BackgroundColor="{StaticResource TertiaryColor}">
+                                    <StackLayout BackgroundColor="{StaticResource WebBackGroundColor}">
                                         <Image
                                             Aspect="AspectFit"
                                             Opacity="0.8"
@@ -93,7 +93,7 @@
                     <Frame
                         Margin="5"
                         Padding="8"
-                        BorderColor="{StaticResource SecondaryColor}"
+                        BorderColor="{StaticResource WebBackGroundColor}"
                         CornerRadius="5"
                         HasShadow="True">
                         <StackLayout>
@@ -183,7 +183,7 @@
                         HeightRequest="50"
                         HorizontalOptions="Center"
                         Opacity="0.9"
-                        Stroke="red"
+                        Stroke="white"
                         WidthRequest="30" />
 
                 </Grid>
