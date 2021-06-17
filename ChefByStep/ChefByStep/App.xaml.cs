@@ -1,11 +1,10 @@
-﻿using ChefByStep.Services;
-using ChefByStep.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace ChefByStep
+﻿namespace ChefByStep
 {
+    using ChefByStep.Services;
+    using ChefByStep.Views;
+
+    using Xamarin.Forms;
+
     public partial class App : Application
     {
 
@@ -14,7 +13,7 @@ namespace ChefByStep
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            //MainPage = new AppShell();
+            MainPage = new AppShell();
             MainPage = new LoginPage();
         }
 

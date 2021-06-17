@@ -1,25 +1,31 @@
-﻿using ChefByStep.Services.Repositories;
-using ChefByStep.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
-
-namespace ChefByStep.ViewModels
+﻿namespace ChefByStep.ViewModels
 {
+    using System;
+
+    using ChefByStep.Models;
+    using ChefByStep.Services.Repositories;
+
+    using Xamarin.Essentials;
+    using Xamarin.Forms;
+
     public class LoginViewModel : BaseViewModel
     {
         private UserRepository _userRepo;
-        
+
         public Command LoginCommand { get; }
+
         public Command GuestCommand { get; }
 
         private string firstName;
 
         public string FirstName
         {
-            get { return firstName; }
-            set { 
+            get
+            {
+                return firstName;
+            }
+            set
+            {
                 firstName = value;
                 OnPropertyChanged(nameof(FirstName));
             }
@@ -29,8 +35,12 @@ namespace ChefByStep.ViewModels
 
         public string Password
         {
-            get { return password; }
-            set { 
+            get
+            {
+                return password;
+            }
+            set
+            {
                 password = value;
                 OnPropertyChanged(nameof(Password));
             }
@@ -45,9 +55,17 @@ namespace ChefByStep.ViewModels
 
         private async void OnLoginClicked(object obj)
         {
-            //check for user
-            Application.Current.MainPage = new AppShell();
-            //await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+            User tempuser = await _userRepo.GetUser(Convert.ToInt32(FirstName));
+
+            if (tempuser.FirstName == null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Login Failed", "Id or Password incorrect", "OK");
+            }
+            else
+            {
+                await SecureStorage.SetAsync("isLogged", "1");
+                Application.Current.MainPage = new AppShell();
+            }
         }
 
         private async void GoToHomePage()
@@ -57,3 +75,5 @@ namespace ChefByStep.ViewModels
         }
     }
 }
+
+    
