@@ -36,11 +36,11 @@
                             <p id="step-intruction">@Model.Steps[i].Instruction</p>
                         </div>*@
 
-                        <li class="li">
+                        <li class="li list-group-item">
                             <div class="step-list" id="steps" onclick="toggleStepByStep()">
                                 <p>Step: @i</p>
                                 <div id="step-div" onclick="myFunction()">
-                                    <p id="step-intruction">@Model.Steps[i].Instruction</p>
+                                    <p class="collapse" id="step-intruction">@Model.Steps[i].Instruction</p>
                                 </div>
                             </div>
                         </li>
