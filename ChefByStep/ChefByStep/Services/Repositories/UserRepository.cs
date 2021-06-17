@@ -33,7 +33,7 @@ namespace ChefByStep.Services.Repositories
                     }
                     else
                     {
-                        return new User { FirstName = "No data" };
+                        return new User { Name = "No data" };
                     }
                 }
                 catch (Exception exception)
@@ -64,7 +64,7 @@ namespace ChefByStep.Services.Repositories
                     }
                     else
                     {
-                        return new List<User> { new User { FirstName = "No data" } };
+                        return new List<User> { new User { Name = "No data" } };
                     }
                 }
                 catch (Exception exception)
@@ -74,5 +74,25 @@ namespace ChefByStep.Services.Repositories
                 }
             }
         }
+
+        public async Task<User> FindUserByFirstName(string name)
+        {
+            var ListOfUsers = await GetAllUsers();
+            User user = new User();
+            foreach (var item in ListOfUsers)
+            {
+                if (item.Name == name)
+                {
+                    user = item;
+                }
+                else
+                {
+                    Console.WriteLine("User not found");
+                }
+            }
+            return user;
+        }
+
+
     }
 }

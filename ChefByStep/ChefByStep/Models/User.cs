@@ -6,8 +6,8 @@ namespace ChefByStep.Models
 {
     public class User: BaseModel
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Name { get; set; }
+        //public string LastName { get; set; }
         public int AcoountId { get; set; }
         public int RoleIdn { get; set; }
         public List<Recipe> CreateRecipe { get; set; }

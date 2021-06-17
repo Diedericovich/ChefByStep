@@ -1,8 +1,10 @@
-﻿using ChefByStep.Services.Repositories;
+﻿using ChefByStep.Models;
+using ChefByStep.Services.Repositories;
 using ChefByStep.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace ChefByStep.ViewModels
@@ -14,14 +16,16 @@ namespace ChefByStep.ViewModels
         public Command LoginCommand { get; }
         public Command GuestCommand { get; }
 
-        private string firstName;
+        public Task DisplayAlert { get; private set; }
 
-        public string FirstName
+        private string name;
+
+        public string Name
         {
-            get { return firstName; }
+            get { return name; }
             set { 
-                firstName = value;
-                OnPropertyChanged(nameof(FirstName));
+                name = value;
+                OnPropertyChanged(nameof(Name));
             }
         }
 
@@ -43,10 +47,24 @@ namespace ChefByStep.ViewModels
             GuestCommand = new Command(GoToHomePage);
         }
 
-        private async void OnLoginClicked(object obj)
+        private async void OnLoginClicked()
         {
-            //check for user
-            Application.Current.MainPage = new AppShell();
+            User user = await _userRepo.FindUserByFirstName(Name);
+
+            if (user !=null)
+            {
+                ActiveUser.ApplicationUser = user;
+                Application.Current.MainPage = new AppShell();
+                return;
+            }
+
+            await App.Current.MainPage.DisplayAlert("Welcome", "Wrong email or password, please try again", "Ok");
+            Name = string.Empty;
+            Password = string.Empty;
+            Application.Current.MainPage = new LoginPage();
+
+
+            //Application.Current.MainPage = new AppShell();
             //await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
         }
 
