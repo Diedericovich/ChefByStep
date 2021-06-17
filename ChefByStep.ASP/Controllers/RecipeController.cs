@@ -1,16 +1,17 @@
-﻿using AutoMapper;
-using ChefByStep.ASP.Models;
-using ChefByStep.ASP.Services;
-using ChefByStep.ASP.ViewModels;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ChefByStep.ASP
+﻿namespace ChefByStep.ASP.Controllers
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using AutoMapper;
+
+    using ChefByStep.ASP.Models;
+    using ChefByStep.ASP.Services;
+    using ChefByStep.ASP.ViewModels;
+
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+
     public class RecipeController : Controller
     {
         private readonly IRecipeService _service;

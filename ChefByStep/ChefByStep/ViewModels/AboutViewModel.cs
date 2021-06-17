@@ -2,6 +2,7 @@
 {
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
+
     using ChefByStep.Models;
     using ChefByStep.Services.Repositories;
     using ChefByStep.Views;
@@ -10,7 +11,7 @@
 
     public class AboutViewModel : BaseViewModel
     {
-        private RecipeRepository _repo;
+        private IRecipeRepository _repo;
 
         public AboutViewModel()
         {

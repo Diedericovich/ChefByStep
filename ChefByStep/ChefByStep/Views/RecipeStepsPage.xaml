@@ -1,59 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ChefByStep.Views.RecipeStepsPage"
-             xmlns:vm="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
-             xmlns:detailvm="clr-namespace:ChefByStep.Models;assembly=ChefByStep"
-             xmlns:local="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep">
-    <ContentPage.BindingContext><local:RecipeStepsViewModel />
+
+<ContentPage
+    x:Class="ChefByStep.Views.RecipeStepsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:detailvm="clr-namespace:ChefByStep.Models;assembly=ChefByStep"
+    xmlns:local="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
+    xmlns:vm="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
+    >
+    <ContentPage.BindingContext>
+        <local:RecipeStepsViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" 
-                     HorizontalOptions="CenterAndExpand">      
-          
-            <CarouselView ItemsSource="{Binding SelectedRecipe.Steps}"
-                  PeekAreaInsets="20"
-                  Loop="False"
-                  HeightRequest="550">
+        <StackLayout
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            >
+
+            <CarouselView
+                HeightRequest="550"
+                ItemsSource="{Binding SelectedRecipe.Steps}"
+                Loop="False"
+                PeekAreaInsets="20"
+                >
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame BackgroundColor="YellowGreen"
-                                   HeightRequest="550"
-                                   HasShadow="True"
-                                   CornerRadius="10"
-                                   Padding="0"
-                                   Margin="10"
-                                   WidthRequest="500"
-                                   HorizontalOptions="CenterAndExpand"
-                                   VerticalOptions="Start">
+                            <Frame
+                                Margin="10"
+                                Padding="0"
+                                BackgroundColor="{StaticResource PrimaryColor}"
+                                CornerRadius="10"
+                                HasShadow="True"
+                                HeightRequest="550"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="Start"
+                                WidthRequest="500"
+                                >
 
                                 <Grid>
-                                    <StackLayout BackgroundColor="CornflowerBlue"
-                                                 Opacity="95"
-                                                 >
-                                        <Label Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"
-                                               FontSize="16"
-                                               FontAttributes="Bold"
-                                               Margin="30,5"
-                                               />
+                                    <StackLayout
+                                        BackgroundColor="{StaticResource PrimaryDarkColor}"
+                                        Opacity="95"
+                                        >
+                                        <Label
+                                            Margin="30,5"
+                                            FontAttributes="Bold"
+                                            FontSize="16"
+                                            Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"
+                                            />
                                     </StackLayout>
                                     <StackLayout>
-                                        <Label Text="{Binding Instruction}"
-                                               FontSize="18"
-                                               HeightRequest="360"
-                                               Margin="30"
-                                               HorizontalOptions="EndAndExpand"
-                                        />
-                                        
-                                        <Label Text="{Binding Id}"
-                                               TextColor="Black"
-                                               FontSize="24"
-                                               FontAttributes="Bold"
-                                               Margin="15, 0"
-                                               VerticalOptions="EndAndExpand" />
-                                  
+                                        <Label
+                                            Margin="30"
+                                            FontSize="18"
+                                            HeightRequest="360"
+                                            HorizontalOptions="EndAndExpand"
+                                            Text="{Binding Instruction}"
+                                            />
+
+                                        <Label
+                                            Margin="15,0"
+                                            FontAttributes="Bold"
+                                            FontSize="24"
+                                            Text="{Binding Id}"
+                                            TextColor="Black"
+                                            VerticalOptions="EndAndExpand"
+                                            />
+
                                     </StackLayout>
                                 </Grid>
                             </Frame>
@@ -64,5 +79,3 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
-    
-    
