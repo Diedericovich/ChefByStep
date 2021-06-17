@@ -1,17 +1,19 @@
-﻿using ChefByStep.Models;
-using System;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-
-namespace ChefByStep.ViewModels
+﻿namespace ChefByStep.ViewModels
 {
+    using System;
+    using System.Diagnostics;
+
+    using Xamarin.Forms;
+
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ItemDetailViewModel : BaseViewModel
     {
         private string itemId;
+
         private string text;
+
         private string description;
+
         public string Id { get; set; }
 
         public string Text

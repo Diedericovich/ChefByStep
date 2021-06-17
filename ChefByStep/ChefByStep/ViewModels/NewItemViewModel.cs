@@ -1,12 +1,11 @@
-﻿using ChefByStep.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
-using Xamarin.Forms;
-
-namespace ChefByStep.ViewModels
+﻿namespace ChefByStep.ViewModels
 {
+    using System;
+
+    using ChefByStep.Models;
+
+    using Xamarin.Forms;
+
     public class NewItemViewModel : BaseViewModel
     {
         private string text;
@@ -22,8 +21,7 @@ namespace ChefByStep.ViewModels
 
         private bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+            return !string.IsNullOrWhiteSpace(text) && !string.IsNullOrWhiteSpace(description);
         }
 
         public string Text
@@ -50,11 +48,12 @@ namespace ChefByStep.ViewModels
         private async void OnSave()
         {
             Item newItem = new Item()
-            {
-                Id = Guid.NewGuid().ToString(),
-                Text = Text,
-                Description = Description
-            };
+                           {
+                               Id = Guid.NewGuid()
+                                        .ToString(),
+                               Text = Text,
+                               Description = Description
+                           };
 
             await DataStore.AddItemAsync(newItem);
 
