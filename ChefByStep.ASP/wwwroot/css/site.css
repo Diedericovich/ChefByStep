@@ -239,3 +239,6 @@ body {
 .step-list:target {
     display: none;
 }
+.detail-img{
+    width: 250px;
+}
