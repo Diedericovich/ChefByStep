@@ -15,15 +15,16 @@
             <SearchBar Placeholder="Find a Recipe"  />
 
             <CarouselView ItemsSource="{Binding Recipes}"
-                  PeekAreaInsets="100"
+                  PeekAreaInsets="40"
                   Loop="True"
-                  HeightRequest="300">
+                  HeightRequest="400"
+                  WidthRequest="300">
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame HeightRequest="280"
-                               WidthRequest="180"
+                            <Frame HeightRequest="400"
+                               WidthRequest="300"
                                BackgroundColor="white"
                                HasShadow="True"
                                CornerRadius="10"
@@ -31,11 +32,13 @@
                                Margin="10"
                                HorizontalOptions="CenterAndExpand">
 
-                                <Grid>
+                                <Grid HorizontalOptions="FillAndExpand"
+                                      >
                                     <StackLayout BackgroundColor="Black">
-                                        <Image Source="{Binding ImgUrl}"
-                                           Aspect="AspectFit"
-                                           Opacity="0.8" />
+                                        <Image Source="{Binding ImageUrl}"
+                                               HeightRequest="400"
+                                               Aspect="AspectFill"
+                                               Opacity="0.8" />
                                     </StackLayout>
                                     <StackLayout>
                                         <Image Source="icon_bookmark.png"
@@ -55,10 +58,7 @@
                                             <Image Source="icon_map1.png"
                                                HeightRequest="20"
                                                Aspect="AspectFit" />
-                                            <Label Text="{Binding Description}"
-                                               TextColor="white"
-                                               FontSize="14"
-                                               VerticalOptions="EndAndExpand" />
+                                            
                                         </StackLayout>
                                     </StackLayout>
 
@@ -123,23 +123,11 @@
                 VerticalOptions="FillAndExpand">
                             <Image Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg"
                                    Aspect="AspectFill"
-                                   Margin="5"
-                                   
-                                   ></Image>
+                                   Margin="5"></Image>
 
                         </Grid>
                     </pancake:PancakeView>
 
-                    <!--<Path Fill="red" 
-                          HorizontalOptions="Center" 
-                          Stroke="red" 
-                          Aspect="Uniform" 
-                          WidthRequest="80"
-                          Opacity="0.7"
-                          HeightRequest="80"
-                          Margin="20,80,-90,20"
-                          Data="m228.14355,216.34905c106.33335,-80.76219 212.66667,80.76219 318.99999,0l0,145.37192c-106.33332,80.7622 -212.66665,-80.76218 -318.99999,0l0,-145.37192z"/>-->
-                
                 </Grid>
 
                 <Grid>

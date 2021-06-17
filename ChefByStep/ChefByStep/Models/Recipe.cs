@@ -10,7 +10,7 @@
 
         public List<RecipeRating> Raitings { get; set; }
 
-        public string ImgUrl { get; set; }
+        public string ImageUrl { get; set; }
 
         public string Title { get; set; }
 

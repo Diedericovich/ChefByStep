@@ -11,14 +11,13 @@
         
     </ContentPage.BindingContext>
 
-
     <ContentPage.Content>
         <Grid>
             <StackLayout VerticalOptions="FillAndExpand">
                 <Grid>
 
                     <Frame HeightRequest="400" Padding="0" BackgroundColor="Black">
-                        <Image Source="{Binding SelectedRecipe.ImgUrl}"
+                        <Image Source="{Binding SelectedRecipe.ImageUrl}"
                            HeightRequest="400"
                            Aspect="AspectFill"
                            Opacity="0.9"/>
@@ -51,15 +50,17 @@
 
                     </StackLayout>
                 </Grid>
-
+                
                 <Grid VerticalOptions="FillAndExpand"
                       Margin="0,-20,0,0"
                       Padding="0">
 
-                    <Frame CornerRadius="25">
+                    <Frame CornerRadius="25"
+                           >
                         <StackLayout>
 
                             <xct:TabView
+                                        TabItemsSource="{Binding SelectedRecipe}"
                                         TabStripPlacement="Top"
                                         TabStripBackgroundColor="LightGray"
                                         TabStripHeight="60"
@@ -86,15 +87,43 @@
 
                                 <xct:TabViewItem
                                         Icon="info.png"
+                                        Text="Ingredients"
+                                        TextColor="Black"
+                                        TextColorSelected="red"
+                                        FontSize="16">
+                                    
+                                    <Grid>
+                                        <CollectionView ItemsSource="{Binding SelectedRecipe.Ingredients}" Margin="20">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label
+                                                        HorizontalOptions="Center"
+                                                        VerticalOptions="Center"
+                                                        Text="{Binding Name, StringFormat='*   {0}'}" />
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                        
+                                    </Grid>
+                                </xct:TabViewItem>
+                                
+                                <xct:TabViewItem
+                                        Icon="info.png"
                                         Text="Reviews"
                                         TextColor="Black"
                                         TextColorSelected="red"
                                         FontSize="16">
                                     <Grid>
-                                        <Label    
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center"
-                                        Text="Here are the reviews from users" />
+                                        <CollectionView ItemsSource="{Binding SelectedRecipe.Raitings}" Margin="20">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label
+                                                        HorizontalOptions="Center"
+                                                        VerticalOptions="Center"
+                                                        Text="{Binding Comment}" />
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
                                     </Grid>
                                 </xct:TabViewItem>
                             </xct:TabView>

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics;
+    using System.Threading.Tasks;
     using System.Windows.Input;
 
     using ChefByStep.Models;
@@ -13,11 +14,11 @@
     [QueryProperty(nameof(RecipeId), nameof(RecipeId))]
     public class DetailPageViewModel : BaseViewModel
     {
-        private MockRecipeRepo _repo;
+        private RecipeRepository _repo;
 
         public DetailPageViewModel()
         {
-            _repo = new MockRecipeRepo();
+            _repo = new RecipeRepository();
             SelectedRecipe = new Recipe();
             OnButtonClickedCommand = new Command(GoToStepsPage);
         }
@@ -62,11 +63,11 @@
             }
         }
 
-        private void LoadRecipe(int id)
+        private async Task LoadRecipe(int id)
         {
             try
             {
-                var recipe = _repo.FindRecipe(id);
+                var recipe = await _repo.GetRecipe(id);
                 SelectedRecipe = recipe;
             }
             catch (Exception)

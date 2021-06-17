@@ -14,15 +14,13 @@
             <CarouselView ItemsSource="{Binding SelectedRecipe.Steps}"
                   PeekAreaInsets="20"
                   Loop="False"
-                  HeightRequest="550"
-                
-             >
+                  HeightRequest="550">
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
                             <Frame BackgroundColor="YellowGreen"
-                                   HeightRequest="500"
+                                   HeightRequest="550"
                                    HasShadow="True"
                                    CornerRadius="10"
                                    Padding="0"
@@ -33,15 +31,22 @@
 
                                 <Grid>
                                     <StackLayout BackgroundColor="CornflowerBlue"
-                                                 Opacity="95">
-                                        <Label Text="{Binding DurationMin}"
-                                               Opacity="0.8" />
+                                                 Opacity="95"
+                                                 >
+                                        <Label Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"
+                                               FontSize="16"
+                                               FontAttributes="Bold"
+                                               Margin="30,5"
+                                               />
                                     </StackLayout>
                                     <StackLayout>
                                         <Label Text="{Binding Instruction}"
-                                               HeightRequest="60"
+                                               FontSize="18"
+                                               HeightRequest="360"
+                                               Margin="30"
                                                HorizontalOptions="EndAndExpand"
                                         />
+                                        
                                         <Label Text="{Binding Id}"
                                                TextColor="Black"
                                                FontSize="24"
