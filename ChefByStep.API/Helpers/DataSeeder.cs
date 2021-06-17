@@ -27,13 +27,55 @@ namespace ChefByStep.API.Helpers
                         Id = i + 1,
                         ImageUrl = line[2],
                         Title = line[0],
-                        Ingredients = new List<Ingredient>(),
                         Steps = new List<Step>(),
                         Description = line[4],
                         CreatedById = rand.Next(1, 5)
                     });
             }
             return recipes;
+        }
+
+        public static List<RecipeIngredient> GetRecipeIngredients()
+        {
+            string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
+            int counter = 0;
+            List<RecipeIngredient> recipeIngredients = new List<RecipeIngredient>();
+            for (int i = 0; i < lines.Length; i++)
+            {
+                var line = lines[i].Split(';');
+                string[] ingredientlines = line[3].Split('|').Distinct().ToArray();
+                for (int j = 0; j < ingredientlines.Length; j++)
+                {
+                    counter++;
+
+                    string[] ingredient = ingredientlines[j].Split(',').Distinct().ToArray();
+                    if (ingredient.Length > 1)
+                    {
+                        //ingredients.Add(ingredient[1].Trim().ToLower());
+                        var id = GetIngredientsFromCsv().FirstOrDefault(x => x.Name == ingredient[1].Trim().ToLower());
+                        recipeIngredients.Add(new RecipeIngredient
+                        {
+                            Id = counter,
+                            RecipeId = i + 1,
+                            IngredientId = id.Id,
+                            Amount = ingredient[0]
+                        }); ;
+                    }
+                    else
+                    {
+                        //ingredients.Add(ingredient[0].Trim().ToLower());
+                        var id = GetIngredientsFromCsv().FirstOrDefault(x => x.Name == ingredient[0].Trim().ToLower());
+                        recipeIngredients.Add(new RecipeIngredient
+                        {
+                            Id = counter,
+                            RecipeId = i + 1,
+                            IngredientId = id.Id,
+                            Amount = ""
+                        });
+                    }
+                }
+            }
+            return recipeIngredients;
         }
 
         public static List<User> GetUsers()
@@ -99,45 +141,45 @@ namespace ChefByStep.API.Helpers
             return ingredientList;
         }
 
-        public static void SeedRecipes(DatabaseContext context)
-        {
-            if (!context.Recipes.Any())
-            {
-                User tempuser = new User
-                {
-                    Name = "test"
-                };
-                context.Add(tempuser);
-                context.SaveChanges();
+        //public static void SeedRecipes(DatabaseContext context)
+        //{
+        //    if (!context.Recipes.Any())
+        //    {
+        //        User tempuser = new User
+        //        {
+        //            Name = "test"
+        //        };
+        //        context.Add(tempuser);
+        //        context.SaveChanges();
 
-                string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
-                for (int i = 0; i < lines.Length; i++)
-                {
-                    var line = lines[i].Split(';');
-                    Recipe temp = new Recipe
-                    {
-                        ImageUrl = line[2],
-                        Title = line[0],
-                        Ingredients = new List<Ingredient>(),
-                        Steps = new List<Step>(),
-                        Description = line[4],
-                        CreatedById = 1
-                    };
-                    string[] ingredients = line[3].Split('|').ToArray();
-                    foreach (var item in ingredients)
-                    {
-                        temp.Ingredients.Add(new Ingredient { Name = item });
-                    }
-                    string[] steps = line[5].Split('|').ToArray();
-                    foreach (var item in steps)
-                    {
-                        temp.Steps.Add(new Step { Instruction = item });
-                    }
+        //        string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
+        //        for (int i = 0; i < lines.Length; i++)
+        //        {
+        //            var line = lines[i].Split(';');
+        //            Recipe temp = new Recipe
+        //            {
+        //                ImageUrl = line[2],
+        //                Title = line[0],
+        //                Steps = new List<Step>(),
 
-                    context.Update(temp);
-                    context.SaveChanges();
-                }
-            }
-        }
+        //                Description = line[4],
+        //                CreatedById = 1
+        //            };
+        //            string[] ingredients = line[3].Split('|').ToArray();
+        //            foreach (var item in ingredients)
+        //            {
+        //                //temp.Ingredients.Add(new Ingredient { Name = item });
+        //            }
+        //            string[] steps = line[5].Split('|').ToArray();
+        //            foreach (var item in steps)
+        //            {
+        //                temp.Steps.Add(new Step { Instruction = item });
+        //            }
+
+        //            context.Update(temp);
+        //            context.SaveChanges();
+        //        }
+        //    }
+        //}
     }
 }

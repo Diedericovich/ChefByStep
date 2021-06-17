@@ -3,14 +3,16 @@ using ChefByStep.API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ChefByStep.API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210616232730_recipeingredient")]
+    partial class recipeingredient
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -443,7 +445,7 @@ namespace ChefByStep.API.Migrations
                         {
                             Id = 1,
                             CategoryId = 0,
-                            CreatedById = 4,
+                            CreatedById = 2,
                             Description = "A simple, scampi-inspired dinner that needs neither a lot of time, nor a lot of ingredients. The key is to swiftly simmer the shrimp and to rely on extrovert ingredients for seasoning. Lemon juice and lemon zest deliver loads of sunny acidity. So much so that we�re also using water, not stock, to stretch the brightness, and to ensure that there�s enough sauce for bread-sopping.",
                             ImageUrl = "https://images.food52.com/_51_B8XLkaL7wou2THrl1WXuadA=/1008x672/filters:format(webp)/3871c07e-9765-4a8d-9fdd-2f996094b105--2021-0518_speedy-shrimp_3x2_james-ransom-031.jpg",
                             Title = "Speedy Shrimp With Horseradish�Butter"
@@ -452,7 +454,7 @@ namespace ChefByStep.API.Migrations
                         {
                             Id = 2,
                             CategoryId = 0,
-                            CreatedById = 1,
+                            CreatedById = 3,
                             Description = "If you like a good mayonnaise-based chicken salad, but one with more candid flavors, you should try this recipe! With a glass of white wine it would feel like the perfect weekend luch.",
                             ImageUrl = "https://images.food52.com/OOqBZEjQhcOLodgRlnXoOfVI5RY=/1008x672/filters:format(webp)/d8634211-6145-4329-81ca-711c45e4750a--2017-0427_chicken-salad_james-ransom-297.jpg",
                             Title = "Chicken Salad"
@@ -461,7 +463,7 @@ namespace ChefByStep.API.Migrations
                         {
                             Id = 3,
                             CategoryId = 0,
-                            CreatedById = 4,
+                            CreatedById = 1,
                             Description = "Fish Pasta can be made with any flakey white fish. Snapper good but its best with fresh striped bass. Be very careful stirring the sauce: the fish should remain intact. The tomatoes should be fresh and cooked al crudo, till the juices are released but they are still a little raw. By adding the fish early on, its flavor infuses the whole sauce, so the tomatoes and fish are no longer separate entities, but fully integrated into the sauce. And the capers and olives reinforce the flavor of the fish with brine. It ends up being a more vibrant version of puttanesca. ",
                             ImageUrl = "https://images.food52.com/mlooIQOUxc3VtpQefZvmZiUY1Jw=/1008x672/filters:format(webp)/0afceb53-8c13-4b96-82ba-45235cf98176--fishpastalowres_2417.JPG",
                             Title = "Fish Pasta"
@@ -470,7 +472,7 @@ namespace ChefByStep.API.Migrations
                         {
                             Id = 4,
                             CategoryId = 0,
-                            CreatedById = 3,
+                            CreatedById = 1,
                             Description = "South Indian breakfast staple. Upma is a state of mind. The refrain is simple: Carb of choice, toasted in ghee-bloomed spices, then cooked with assorted vegetables and curry leaves and topped with tomato ketchup. In South India, the carb of choice is typically toasted semolina, thickened into a creamy, savory porridge. But it can also be made with bread. ",
                             ImageUrl = "https://images.food52.com/38ws8x4bhNB0a9zHq6ZSduhKXCY=/1008x672/filters:format(webp)/eb712a59-16c6-4f57-a6cf-8e523aa97e4e--2021-0312_bread-upma_3x2_mark-weinberg-193.jpg",
                             Title = "My Favorite Bread Upma "
@@ -479,7 +481,7 @@ namespace ChefByStep.API.Migrations
                         {
                             Id = 5,
                             CategoryId = 0,
-                            CreatedById = 3,
+                            CreatedById = 1,
                             Description = "Key Lime Cake tastes like summer. Beachy. Floral. Have you ever rubbed your fingers across a wicker armrest and gotten lost in the undulating cords like waves?  ",
                             ImageUrl = "https://images.food52.com/NL2-zUmt3I_hFG3qnUfdKY6-bZQ=/1008x672/filters:format(webp)/7247d84f-cd2f-49ab-af78-4714ce5b0f92--Fruit_Cake_Key_Lime_Cake.jpg",
                             Title = "Key Lime Cake"
@@ -509,498 +511,6 @@ namespace ChefByStep.API.Migrations
                     b.HasIndex("RecipeId");
 
                     b.ToTable("RecipeIngredients");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Amount = "2",
-                            IngredientId = 1,
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Amount = "3 tablespoons",
-                            IngredientId = 2,
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Amount = "2 tablespoons",
-                            IngredientId = 3,
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Amount = "",
-                            IngredientId = 4,
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Amount = "1 pound large to extra-large",
-                            IngredientId = 5,
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Amount = "1 handful",
-                            IngredientId = 6,
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Amount = "",
-                            IngredientId = 7,
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Amount = "",
-                            IngredientId = 8,
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Amount = "1/4 cup thinly sliced",
-                            IngredientId = 9,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Amount = "",
-                            IngredientId = 10,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Amount = "4 cups",
-                            IngredientId = 11,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Amount = "3 tablespoons",
-                            IngredientId = 12,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Amount = "1 cup",
-                            IngredientId = 13,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Amount = "1/4 cup",
-                            IngredientId = 14,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Amount = "2 teaspoons chopped",
-                            IngredientId = 15,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Amount = "1 tablespoon whole-grain",
-                            IngredientId = 16,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Amount = "1 tablespoon",
-                            IngredientId = 17,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Amount = "1",
-                            IngredientId = 18,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Amount = "1/4 cup",
-                            IngredientId = 19,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Amount = "",
-                            IngredientId = 20,
-                            RecipeId = 2
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Amount = "3 tablespoons",
-                            IngredientId = 19,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Amount = "2 cloves",
-                            IngredientId = 21,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Amount = "12",
-                            IngredientId = 22,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Amount = "1 pound",
-                            IngredientId = 23,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Amount = "1 tablespoon",
-                            IngredientId = 24,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Amount = "half a glass",
-                            IngredientId = 25,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Amount = "4",
-                            IngredientId = 26,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Amount = "1 packet",
-                            IngredientId = 27,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Amount = "",
-                            IngredientId = 28,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Amount = "2 tablespoons",
-                            IngredientId = 29,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Amount = "",
-                            IngredientId = 10,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Amount = "",
-                            IngredientId = 30,
-                            RecipeId = 3
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Amount = "2 tablespoons",
-                            IngredientId = 31,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Amount = "4 slices",
-                            IngredientId = 32,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Amount = "1/4 cup",
-                            IngredientId = 33,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Amount = "1/2 teaspoon",
-                            IngredientId = 34,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Amount = "1/2 teaspoon",
-                            IngredientId = 35,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Amount = "1 pinch",
-                            IngredientId = 36,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Amount = "1",
-                            IngredientId = 37,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Amount = "1",
-                            IngredientId = 9,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Amount = "1",
-                            IngredientId = 38,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Amount = "1 teaspoon",
-                            IngredientId = 10,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Amount = "5 to 6",
-                            IngredientId = 39,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Amount = "1/2 teaspoon",
-                            IngredientId = 40,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Amount = "1 cup",
-                            IngredientId = 41,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Amount = "1/4 cup",
-                            IngredientId = 42,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Amount = "1/4 cup",
-                            IngredientId = 43,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Amount = "1/4 cup",
-                            IngredientId = 44,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Amount = "2",
-                            IngredientId = 45,
-                            RecipeId = 4
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Amount = "",
-                            IngredientId = 46,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Amount = "1/2 cup",
-                            IngredientId = 47,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Amount = "4",
-                            IngredientId = 48,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 53,
-                            Amount = "1 can",
-                            IngredientId = 49,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 54,
-                            Amount = " 1 pinch",
-                            IngredientId = 50,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 55,
-                            Amount = "2 tablespoons",
-                            IngredientId = 51,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 56,
-                            Amount = "1 cup",
-                            IngredientId = 52,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 57,
-                            Amount = "1/4 cup",
-                            IngredientId = 53,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 58,
-                            Amount = "1/4 cup",
-                            IngredientId = 47,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 59,
-                            Amount = "1/2 cup",
-                            IngredientId = 54,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 60,
-                            Amount = "1 cup",
-                            IngredientId = 53,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 61,
-                            Amount = "1/4 cup",
-                            IngredientId = 55,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 62,
-                            Amount = "1/3 cup",
-                            IngredientId = 56,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 63,
-                            Amount = "1 1/2 cups",
-                            IngredientId = 57,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 64,
-                            Amount = "1/2 teaspoon",
-                            IngredientId = 50,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 65,
-                            Amount = "1/4 teaspoon",
-                            IngredientId = 58,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 66,
-                            Amount = "6",
-                            IngredientId = 59,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 67,
-                            Amount = "1 tablespoon",
-                            IngredientId = 60,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 68,
-                            Amount = "1/4 cup",
-                            IngredientId = 55,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 69,
-                            Amount = "1/2 cup",
-                            IngredientId = 61,
-                            RecipeId = 5
-                        },
-                        new
-                        {
-                            Id = 70,
-                            Amount = "",
-                            IngredientId = 62,
-                            RecipeId = 5
-                        });
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.RecipeRating", b =>

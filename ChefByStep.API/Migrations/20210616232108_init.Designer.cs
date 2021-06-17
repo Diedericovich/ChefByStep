@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChefByStep.API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20210616215626_init")]
+    [Migration("20210616232108_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -445,7 +445,7 @@ namespace ChefByStep.API.Migrations
                         {
                             Id = 1,
                             CategoryId = 0,
-                            CreatedById = 3,
+                            CreatedById = 2,
                             Description = "A simple, scampi-inspired dinner that needs neither a lot of time, nor a lot of ingredients. The key is to swiftly simmer the shrimp and to rely on extrovert ingredients for seasoning. Lemon juice and lemon zest deliver loads of sunny acidity. So much so that we�re also using water, not stock, to stretch the brightness, and to ensure that there�s enough sauce for bread-sopping.",
                             ImageUrl = "https://images.food52.com/_51_B8XLkaL7wou2THrl1WXuadA=/1008x672/filters:format(webp)/3871c07e-9765-4a8d-9fdd-2f996094b105--2021-0518_speedy-shrimp_3x2_james-ransom-031.jpg",
                             Title = "Speedy Shrimp With Horseradish�Butter"
@@ -454,7 +454,7 @@ namespace ChefByStep.API.Migrations
                         {
                             Id = 2,
                             CategoryId = 0,
-                            CreatedById = 3,
+                            CreatedById = 4,
                             Description = "If you like a good mayonnaise-based chicken salad, but one with more candid flavors, you should try this recipe! With a glass of white wine it would feel like the perfect weekend luch.",
                             ImageUrl = "https://images.food52.com/OOqBZEjQhcOLodgRlnXoOfVI5RY=/1008x672/filters:format(webp)/d8634211-6145-4329-81ca-711c45e4750a--2017-0427_chicken-salad_james-ransom-297.jpg",
                             Title = "Chicken Salad"
@@ -463,7 +463,7 @@ namespace ChefByStep.API.Migrations
                         {
                             Id = 3,
                             CategoryId = 0,
-                            CreatedById = 1,
+                            CreatedById = 3,
                             Description = "Fish Pasta can be made with any flakey white fish. Snapper good but its best with fresh striped bass. Be very careful stirring the sauce: the fish should remain intact. The tomatoes should be fresh and cooked al crudo, till the juices are released but they are still a little raw. By adding the fish early on, its flavor infuses the whole sauce, so the tomatoes and fish are no longer separate entities, but fully integrated into the sauce. And the capers and olives reinforce the flavor of the fish with brine. It ends up being a more vibrant version of puttanesca. ",
                             ImageUrl = "https://images.food52.com/mlooIQOUxc3VtpQefZvmZiUY1Jw=/1008x672/filters:format(webp)/0afceb53-8c13-4b96-82ba-45235cf98176--fishpastalowres_2417.JPG",
                             Title = "Fish Pasta"
@@ -486,6 +486,31 @@ namespace ChefByStep.API.Migrations
                             ImageUrl = "https://images.food52.com/NL2-zUmt3I_hFG3qnUfdKY6-bZQ=/1008x672/filters:format(webp)/7247d84f-cd2f-49ab-af78-4714ce5b0f92--Fruit_Cake_Key_Lime_Cake.jpg",
                             Title = "Key Lime Cake"
                         });
+                });
+
+            modelBuilder.Entity("ChefByStep.API.Entities.RecipeIngredient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
+
+                    b.HasIndex("RecipeId");
+
+                    b.ToTable("RecipeIngredients");
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.RecipeRating", b =>
@@ -1185,21 +1210,6 @@ namespace ChefByStep.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("IngredientRecipe", b =>
-                {
-                    b.Property<int>("IngredientsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RecipesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("IngredientsId", "RecipesId");
-
-                    b.HasIndex("RecipesId");
-
-                    b.ToTable("IngredientRecipe");
-                });
-
             modelBuilder.Entity("RecipeStep", b =>
                 {
                     b.Property<int>("RecipesId")
@@ -1256,6 +1266,25 @@ namespace ChefByStep.API.Migrations
                     b.Navigation("CreatedBy");
                 });
 
+            modelBuilder.Entity("ChefByStep.API.Entities.RecipeIngredient", b =>
+                {
+                    b.HasOne("ChefByStep.API.Entities.Ingredient", "Ingredient")
+                        .WithMany("Recipes")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ChefByStep.API.Entities.Recipe", "Recipe")
+                        .WithMany("Ingredients")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredient");
+
+                    b.Navigation("Recipe");
+                });
+
             modelBuilder.Entity("ChefByStep.API.Entities.RecipeRating", b =>
                 {
                     b.HasOne("ChefByStep.API.Entities.Recipe", "Recipe")
@@ -1273,21 +1302,6 @@ namespace ChefByStep.API.Migrations
                     b.Navigation("Recipe");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("IngredientRecipe", b =>
-                {
-                    b.HasOne("ChefByStep.API.Entities.Ingredient", null)
-                        .WithMany()
-                        .HasForeignKey("IngredientsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ChefByStep.API.Entities.Recipe", null)
-                        .WithMany()
-                        .HasForeignKey("RecipesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("RecipeStep", b =>
@@ -1335,8 +1349,15 @@ namespace ChefByStep.API.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ChefByStep.API.Entities.Ingredient", b =>
+                {
+                    b.Navigation("Recipes");
+                });
+
             modelBuilder.Entity("ChefByStep.API.Entities.Recipe", b =>
                 {
+                    b.Navigation("Ingredients");
+
                     b.Navigation("Ratings");
                 });
 

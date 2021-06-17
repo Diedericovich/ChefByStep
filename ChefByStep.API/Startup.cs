@@ -41,6 +41,7 @@ namespace ChefByStep.API
 
             services.AddDbContext<DatabaseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnectionString")));
+            services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
             services.AddScoped<IGenericRepo<Step>, GenericRepo<Step>>();
             services.AddScoped<IUserRepo, UserRepo>();

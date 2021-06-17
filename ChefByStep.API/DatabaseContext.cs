@@ -15,6 +15,7 @@ namespace ChefByStep.API
         public DbSet<RecipeRating> RecipeRatings { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<RecipeIngredient> RecipeIngredients { get; set; }
 
         public DatabaseContext(DbContextOptions options) : base(options)
         {
@@ -24,6 +25,11 @@ namespace ChefByStep.API
         {
             modelBuilder.BuildRelations();
             modelBuilder.Seed();
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.EnableSensitiveDataLogging();
         }
     }
 }

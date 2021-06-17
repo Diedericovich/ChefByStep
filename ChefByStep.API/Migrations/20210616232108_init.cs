@@ -74,24 +74,27 @@ namespace ChefByStep.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "IngredientRecipe",
+                name: "RecipeIngredients",
                 columns: table => new
                 {
-                    IngredientsId = table.Column<int>(type: "int", nullable: false),
-                    RecipesId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IngredientId = table.Column<int>(type: "int", nullable: false),
+                    RecipeId = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_IngredientRecipe", x => new { x.IngredientsId, x.RecipesId });
+                    table.PrimaryKey("PK_RecipeIngredients", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_IngredientRecipe_Ingredients_IngredientsId",
-                        column: x => x.IngredientsId,
+                        name: "FK_RecipeIngredients_Ingredients_IngredientId",
+                        column: x => x.IngredientId,
                         principalTable: "Ingredients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_IngredientRecipe_Recipes_RecipesId",
-                        column: x => x.RecipesId,
+                        name: "FK_RecipeIngredients_Recipes_RecipeId",
+                        column: x => x.RecipeId,
                         principalTable: "Recipes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -394,102 +397,22 @@ namespace ChefByStep.API.Migrations
                 columns: new[] { "Id", "CategoryId", "CreatedById", "Description", "ImageUrl", "Title" },
                 values: new object[,]
                 {
-                    { 3, 0, 1, "Fish Pasta can be made with any flakey white fish. Snapper good but its best with fresh striped bass. Be very careful stirring the sauce: the fish should remain intact. The tomatoes should be fresh and cooked al crudo, till the juices are released but they are still a little raw. By adding the fish early on, its flavor infuses the whole sauce, so the tomatoes and fish are no longer separate entities, but fully integrated into the sauce. And the capers and olives reinforce the flavor of the fish with brine. It ends up being a more vibrant version of puttanesca. ", "https://images.food52.com/mlooIQOUxc3VtpQefZvmZiUY1Jw=/1008x672/filters:format(webp)/0afceb53-8c13-4b96-82ba-45235cf98176--fishpastalowres_2417.JPG", "Fish Pasta" },
+                    { 1, 0, 2, "A simple, scampi-inspired dinner that needs neither a lot of time, nor a lot of ingredients. The key is to swiftly simmer the shrimp and to rely on extrovert ingredients for seasoning. Lemon juice and lemon zest deliver loads of sunny acidity. So much so that we�re also using water, not stock, to stretch the brightness, and to ensure that there�s enough sauce for bread-sopping.", "https://images.food52.com/_51_B8XLkaL7wou2THrl1WXuadA=/1008x672/filters:format(webp)/3871c07e-9765-4a8d-9fdd-2f996094b105--2021-0518_speedy-shrimp_3x2_james-ransom-031.jpg", "Speedy Shrimp With Horseradish�Butter" },
                     { 4, 0, 2, "South Indian breakfast staple. Upma is a state of mind. The refrain is simple: Carb of choice, toasted in ghee-bloomed spices, then cooked with assorted vegetables and curry leaves and topped with tomato ketchup. In South India, the carb of choice is typically toasted semolina, thickened into a creamy, savory porridge. But it can also be made with bread. ", "https://images.food52.com/38ws8x4bhNB0a9zHq6ZSduhKXCY=/1008x672/filters:format(webp)/eb712a59-16c6-4f57-a6cf-8e523aa97e4e--2021-0312_bread-upma_3x2_mark-weinberg-193.jpg", "My Favorite Bread Upma " },
                     { 5, 0, 2, "Key Lime Cake tastes like summer. Beachy. Floral. Have you ever rubbed your fingers across a wicker armrest and gotten lost in the undulating cords like waves?  ", "https://images.food52.com/NL2-zUmt3I_hFG3qnUfdKY6-bZQ=/1008x672/filters:format(webp)/7247d84f-cd2f-49ab-af78-4714ce5b0f92--Fruit_Cake_Key_Lime_Cake.jpg", "Key Lime Cake" },
-                    { 1, 0, 3, "A simple, scampi-inspired dinner that needs neither a lot of time, nor a lot of ingredients. The key is to swiftly simmer the shrimp and to rely on extrovert ingredients for seasoning. Lemon juice and lemon zest deliver loads of sunny acidity. So much so that we�re also using water, not stock, to stretch the brightness, and to ensure that there�s enough sauce for bread-sopping.", "https://images.food52.com/_51_B8XLkaL7wou2THrl1WXuadA=/1008x672/filters:format(webp)/3871c07e-9765-4a8d-9fdd-2f996094b105--2021-0518_speedy-shrimp_3x2_james-ransom-031.jpg", "Speedy Shrimp With Horseradish�Butter" },
-                    { 2, 0, 3, "If you like a good mayonnaise-based chicken salad, but one with more candid flavors, you should try this recipe! With a glass of white wine it would feel like the perfect weekend luch.", "https://images.food52.com/OOqBZEjQhcOLodgRlnXoOfVI5RY=/1008x672/filters:format(webp)/d8634211-6145-4329-81ca-711c45e4750a--2017-0427_chicken-salad_james-ransom-297.jpg", "Chicken Salad" }
+                    { 3, 0, 3, "Fish Pasta can be made with any flakey white fish. Snapper good but its best with fresh striped bass. Be very careful stirring the sauce: the fish should remain intact. The tomatoes should be fresh and cooked al crudo, till the juices are released but they are still a little raw. By adding the fish early on, its flavor infuses the whole sauce, so the tomatoes and fish are no longer separate entities, but fully integrated into the sauce. And the capers and olives reinforce the flavor of the fish with brine. It ends up being a more vibrant version of puttanesca. ", "https://images.food52.com/mlooIQOUxc3VtpQefZvmZiUY1Jw=/1008x672/filters:format(webp)/0afceb53-8c13-4b96-82ba-45235cf98176--fishpastalowres_2417.JPG", "Fish Pasta" },
+                    { 2, 0, 4, "If you like a good mayonnaise-based chicken salad, but one with more candid flavors, you should try this recipe! With a glass of white wine it would feel like the perfect weekend luch.", "https://images.food52.com/OOqBZEjQhcOLodgRlnXoOfVI5RY=/1008x672/filters:format(webp)/d8634211-6145-4329-81ca-711c45e4750a--2017-0427_chicken-salad_james-ransom-297.jpg", "Chicken Salad" }
                 });
-            migrationBuilder.InsertData(
-            table: "IngredientRecipe",
-            columns: new[] { "IngredientsId", "RecipesId" },
-            values: new object[,]
-            {
-                {1,1},
-                {2,1},
-                {3,1},
-                {4,1},
-                {5,1}
-            });
-            migrationBuilder.InsertData(
-            table: "RecipeStep",
-            columns: new[] { "RecipesId", "StepsId" },
-            values: new object[,]
-            {
-                    {1,1},
-                    {1,2},
-                    {1,3},
-                    {1,4},
-                    {1,5},
-
-                    {2,6},
-                    {2,7},
-                    {2,8},
-                    {2,9},
-                    {2,10},
-                    {2,11},
-                    {2,12},
-                    {2,13},
-                    {2,14},
-                    {2,15},
-
-                    {3,16},
-                    {3,17},
-                    {3,18},
-                    {3,19},
-                    {3,20},
-                    {3,21},
-                    {3,22},
-                    {3,23},
-                    {3,24},
-                    {3,25},
-                    {3,26},
-                    {3,27},
-                    {3,28},
-
-                    {4,30},
-                    {4,31},
-                    {4,32},
-                    {4,33},
-                    {4,34},
-                    {4,35},
-                    {4,36},
-                    {4,37},
-                    {4,38},
-                    {4,39},
-                    {4,40},
-                    {4,41},
-                    {4,42},
-                    {4,43},
-
-                    {5,44},
-                    {5,45},
-                    {5,46},
-                    {5,47},
-                    {5,48},
-                    {5,49},
-                    {5,50},
-                    {5,51},
-                    {5,52},
-                    {5,53},
-                    {5,54},
-                    {5,55},
-                    {5,56},
-                    {5,57},
-                    {5,58},
-                    {5,59},
-                    {5,60},
-                    {5,61},
-                    {5,62},
-                    {5,63},
-                    {5,64},
-                    {5,65},
-            });
 
             migrationBuilder.CreateIndex(
-                name: "IX_IngredientRecipe_RecipesId",
-                table: "IngredientRecipe",
-                column: "RecipesId");
+                name: "IX_RecipeIngredients_IngredientId",
+                table: "RecipeIngredients",
+                column: "IngredientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RecipeIngredients_RecipeId",
+                table: "RecipeIngredients",
+                column: "RecipeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_RecipeRatings_RecipeId",
@@ -520,7 +443,7 @@ namespace ChefByStep.API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "IngredientRecipe");
+                name: "RecipeIngredients");
 
             migrationBuilder.DropTable(
                 name: "RecipeRatings");

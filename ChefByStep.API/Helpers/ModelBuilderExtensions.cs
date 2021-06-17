@@ -48,6 +48,9 @@ namespace ChefByStep.API.Helpers
             modelBuilder.Entity<Ingredient>().HasData(
                 DataSeeder.GetIngredientsFromCsv()
                 );
+            modelBuilder.Entity<RecipeIngredient>().HasData(
+                DataSeeder.GetRecipeIngredients()
+                );
         }
     }
 }
