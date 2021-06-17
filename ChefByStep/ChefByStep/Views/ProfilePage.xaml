@@ -7,12 +7,17 @@
     <ContentPage.BindingContext>
         <vm:ProfilePageViewModel/>
     </ContentPage.BindingContext>
+    
+    
+    
+    
+    
 
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <StackLayout Margin="50">
             <Label Text="{Binding ActiveUser.ApplicationUser.Name}"/>
             <Label Text="{Binding ActiveUser.ApplicationUser.Id}"/>
         </StackLayout>
         
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 </ContentPage>

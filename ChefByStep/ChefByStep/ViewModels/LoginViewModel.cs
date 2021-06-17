@@ -51,7 +51,7 @@ namespace ChefByStep.ViewModels
         {
             User user = await _userRepo.FindUserByFirstName(Name);
 
-            if (user !=null)
+            if (user.Name !=null)
             {
                 ActiveUser.ApplicationUser = user;
                 Application.Current.MainPage = new AppShell();
