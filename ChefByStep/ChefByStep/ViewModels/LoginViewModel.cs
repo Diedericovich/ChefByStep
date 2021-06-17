@@ -1,7 +1,5 @@
 ﻿namespace ChefByStep.ViewModels
 {
-    using System;
-
     using ChefByStep.Models;
     using ChefByStep.Services.Repositories;
 
@@ -55,9 +53,10 @@
 
         private async void OnLoginClicked(object obj)
         {
-            User tempuser = await _userRepo.GetUser(Convert.ToInt32(FirstName));
+            User tempuser = await _userRepo.GetUser(1);
+            _userRepo.CurrentlyLoggedInUser = tempuser;
 
-            if (tempuser.FirstName == null)
+            if (_userRepo.CurrentlyLoggedInUser.Name == null)
             {
                 await Application.Current.MainPage.DisplayAlert("Login Failed", "Id or Password incorrect", "OK");
             }

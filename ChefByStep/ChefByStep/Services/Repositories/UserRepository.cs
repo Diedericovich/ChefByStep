@@ -1,23 +1,26 @@
-﻿using ChefByStep.Models;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChefByStep.Services.Repositories
+﻿namespace ChefByStep.Services.Repositories
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Threading.Tasks;
+
+    using ChefByStep.Models;
+
+    using Newtonsoft.Json;
+
     public class UserRepository
     {
-        private const string baseUrl = "https://10.0.2.2:44350/api/User";
+        // private const string baseUrl = "https://10.0.2.2:44350/api/User";
+        private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/Recipe";
+
+        public User CurrentlyLoggedInUser { get; set; }
 
         public async Task<User> GetUser(int id)
         {
             var url = $"{baseUrl}/{id}";
             var handler = new HttpClientHandler();
-            handler.ServerCertificateCustomValidationCallback
-                += (sender, certificate, chain, errors) => true;
+            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
 
             using (var client = new HttpClient(handler))
             {
@@ -33,7 +36,10 @@ namespace ChefByStep.Services.Repositories
                     }
                     else
                     {
-                        return new User { FirstName = "No data" };
+                        return new User
+                               {
+                                   FirstName = "No data"
+                               };
                     }
                 }
                 catch (Exception exception)
@@ -43,12 +49,11 @@ namespace ChefByStep.Services.Repositories
                 }
             }
         }
+
         public async Task<List<User>> GetAllUsers()
         {
-
             var handler = new HttpClientHandler();
-            handler.ServerCertificateCustomValidationCallback
-                += (sender, certificate, chain, errors) => true;
+            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
 
             using (var client = new HttpClient(handler))
             {
@@ -64,7 +69,13 @@ namespace ChefByStep.Services.Repositories
                     }
                     else
                     {
-                        return new List<User> { new User { FirstName = "No data" } };
+                        return new List<User>
+                               {
+                                   new User
+                                   {
+                                       FirstName = "No data"
+                                   }
+                               };
                     }
                 }
                 catch (Exception exception)
