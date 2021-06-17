@@ -12,9 +12,9 @@
     public class UserRepository
     {
         // private const string baseUrl = "https://10.0.2.2:44350/api/User";
-        private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/Recipe";
+        private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/User";
 
-        public User CurrentlyLoggedInUser { get; set; }
+        public User CurrentlyLoggedInUser { get; set; } = new User();
 
         public async Task<User> GetUser(int id)
         {
@@ -38,7 +38,7 @@
                     {
                         return new User
                                {
-                                   FirstName = "No data"
+                                   Name = "No data"
                                };
                     }
                 }
@@ -73,7 +73,7 @@
                                {
                                    new User
                                    {
-                                       FirstName = "No data"
+                                       Name = "No data"
                                    }
                                };
                     }
