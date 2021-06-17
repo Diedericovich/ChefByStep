@@ -21,7 +21,6 @@
                 <div>
                     <p>@Model.Description</p>
                 </div>
-
             </div>
         </div>
         @*<div class="col-sm-12 col-md-6 col-lg-6">
@@ -31,12 +30,12 @@
                 <ul>
                     @for (int i = 1; i < Model.Steps.Count; i++)
                     {*@
-                        @*<div class="step-div" id="steps" onclick="toggleStepByStep()">
-                            <p>Step: @i</p>
-                            <p id="step-intruction">@Model.Steps[i].Instruction</p>
-                        </div>*@
+        @*<div class="step-div" id="steps" onclick="toggleStepByStep()">
+                <p>Step: @i</p>
+                <p id="step-intruction">@Model.Steps[i].Instruction</p>
+            </div>*@
 
-                        @*<li class="li list-group-item accordion">
+        @*<li class="li list-group-item accordion">
                             <div class="step-list" id="steps" onclick="toggleStepByStep()">
                                 <p>Step: @i</p>
                                 <div id="step-div" onclick="myFunction()">
@@ -45,11 +44,10 @@
                             </div>
                         </li>
                     }
-
                 </ul>
             </div>*@
-        </div>
-        <div class="btn-cook">
-            <a class="btn nav-link" href="#start-cooking" onclick="toggleSteps()" id="startCooking">Start Cooking</a>
-        </div>
     </div>
+    <div class="btn-cook">
+        <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.Id">Start Cooking</a>
+    </div>
+</div>

@@ -47,3 +47,6 @@ function toggleStepByStep() {
     });
 }
 
+function changeToDone(int id) {
+}
+
