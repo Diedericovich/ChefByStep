@@ -16,14 +16,8 @@
 
 
     <ContentPage.Content>
-        <Grid BackgroundColor="{StaticResource PrimaryLightColor}">
-            <StackLayout
-                Padding="30"
-                VerticalOptions="CenterAndExpand"
-                >
-                <Entry
-                    x:Name="EntryUsername"
-                    Placeholder="User name"
+        <Grid>
+            <StackLayout Padding="30"             VerticalOptions="CenterAndExpand">                <Entry Text="{Binding Name}"                    x:Name="EntryUsername"                    Placeholder="User name"
                     Text="{Binding FirstName}"
                     />
                 <Entry

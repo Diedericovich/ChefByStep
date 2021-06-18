@@ -15,6 +15,7 @@
             Routing.RegisterRoute(nameof(DetailPage), typeof(DetailPage));
             Routing.RegisterRoute(nameof(RecipeStepsPage), typeof(RecipeStepsPage));
             Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
+            Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

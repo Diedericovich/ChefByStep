@@ -13,6 +13,12 @@
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding ActiveUser.ApplicationUser.Name, StringFormat='Hello, {0}'}"
+                     Command="{Binding GoToProfile}"
+                     />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <StackLayout>
             <SearchBar Placeholder="Find a Recipe" />

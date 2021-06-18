@@ -14,17 +14,7 @@
         // private const string baseUrl = "https://10.0.2.2:44350/api/User";
         private const string BaseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/User";
 
-        private static User _currentlyLoggedInUser;
-
-        public static User GetCurrentlyLoggedInUser()
-        {
-            return _currentlyLoggedInUser ?? (_currentlyLoggedInUser = new User());
-        }
-
-        internal UserRepository()
-        {
-        }
-
+ 
         public async Task<User> GetUser(int id)
         {
             var url = $"{BaseUrl}/{id}";
@@ -45,10 +35,7 @@
                     }
                     else
                     {
-                        return new User
-                               {
-                                   Name = "No data"
-                               };
+                        return new User { Name = "No data" };
                     }
                 }
                 catch (Exception exception)
@@ -78,13 +65,7 @@
                     }
                     else
                     {
-                        return new List<User>
-                               {
-                                   new User
-                                   {
-                                       Name = "No data"
-                                   }
-                               };
+                        return new List<User> { new User { Name = "No data" } };
                     }
                 }
                 catch (Exception exception)
@@ -94,5 +75,25 @@
                 }
             }
         }
+
+        public async Task<User> FindUserByFirstName(string name)
+        {
+            var ListOfUsers = await GetAllUsers();
+            User user = new User();
+            foreach (var item in ListOfUsers)
+            {
+                if (item.Name == name)
+                {
+                    user = item;
+                }
+                else
+                {
+                    Console.WriteLine("User not found");
+                }
+            }
+            return user;
+        }
+
+
     }
 }

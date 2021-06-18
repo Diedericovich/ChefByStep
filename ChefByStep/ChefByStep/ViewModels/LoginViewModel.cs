@@ -14,18 +14,16 @@
 
         public Command GuestCommand { get; }
 
-        private string firstName;
+        public Task DisplayAlert { get; private set; }
 
-        public string FirstName
+        private string name;
+
+        public string Name
         {
-            get
-            {
-                return firstName;
-            }
-            set
-            {
-                firstName = value;
-                OnPropertyChanged(nameof(FirstName));
+            get { return name; }
+            set { 
+                name = value;
+                OnPropertyChanged(nameof(Name));
             }
         }
 
@@ -51,19 +49,25 @@
             GuestCommand = new Command(GoToHomePage);
         }
 
-        private async void OnLoginClicked(object obj)
+        private async void OnLoginClicked()
         {
-            User tempuser = await _userRepo.GetUser(1);
+            User user = await _userRepo.FindUserByFirstName(Name);
 
-            if (_userRepo.GetUser(1) == null)
+            if (user.Name !=null)
             {
-                await Application.Current.MainPage.DisplayAlert("Login Failed", "Id or Password incorrect", "OK");
-            }
-            else
-            {
-                await SecureStorage.SetAsync("isLogged", "1");
+                ActiveUser.ApplicationUser = user;
                 Application.Current.MainPage = new AppShell();
+                return;
             }
+
+            await App.Current.MainPage.DisplayAlert("Welcome", "Wrong email or password, please try again", "Ok");
+            Name = string.Empty;
+            Password = string.Empty;
+            Application.Current.MainPage = new LoginPage();
+
+
+            //Application.Current.MainPage = new AppShell();
+            //await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
         }
 
         private async void GoToHomePage()

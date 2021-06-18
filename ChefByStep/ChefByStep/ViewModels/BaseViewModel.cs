@@ -7,6 +7,16 @@
 
     public class BaseViewModel : INotifyPropertyChanged
     {
+        
+        public ActiveUser ActiveUser { get; set; }
+        
+        public BaseViewModel()
+        {
+            ActiveUser = ActiveUser.GetInstance();
+        }
+        
+        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+
         bool isBusy = false;
 
         public bool IsBusy
