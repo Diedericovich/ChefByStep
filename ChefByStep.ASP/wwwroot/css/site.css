@@ -233,12 +233,15 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 .cooking-div:target {
     display: none;
 }
+
 .step-list:target {
     display: none;
 }
-.detail-img{
+
+.detail-img {
     width: 250px;
 }
