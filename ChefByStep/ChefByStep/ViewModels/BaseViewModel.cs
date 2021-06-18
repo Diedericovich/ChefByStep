@@ -1,13 +1,15 @@
-﻿using ChefByStep.Models;
-using ChefByStep.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using Xamarin.Forms;
-
-namespace ChefByStep.ViewModels
+﻿namespace ChefByStep.ViewModels
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+
+    using ChefByStep.Models;
+    using ChefByStep.Services;
+
+    using Xamarin.Forms;
+
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();

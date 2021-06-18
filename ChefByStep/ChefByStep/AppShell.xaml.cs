@@ -1,11 +1,11 @@
-﻿using ChefByStep.ViewModels;
-using ChefByStep.Views;
-using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
-
-namespace ChefByStep
+﻿namespace ChefByStep
 {
+    using System;
+
+    using ChefByStep.Views;
+
+    using Xamarin.Forms;
+
     public partial class AppShell : Xamarin.Forms.Shell
     {
         public AppShell()
@@ -13,6 +13,8 @@ namespace ChefByStep
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(DetailPage), typeof(DetailPage));
+            Routing.RegisterRoute(nameof(RecipeStepsPage), typeof(RecipeStepsPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
