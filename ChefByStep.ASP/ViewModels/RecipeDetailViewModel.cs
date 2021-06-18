@@ -1,11 +1,14 @@
 ﻿using ChefByStep.ASP.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ChefByStep.ASP.ViewModels
 {
+    [BindProperties]
     public class RecipeDetailViewModel
     {
         public int Id { get; set; }

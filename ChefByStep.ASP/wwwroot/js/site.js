@@ -46,6 +46,3 @@ function toggleStepByStep() {
         $('.li').eq(num).show();
     });
 }
-
-function changeToDone(int id) {
-}

@@ -41,7 +41,7 @@ namespace ChefByStep.ASP
             return View(viewModel);
         }
 
-        public async Task<ActionResult> StepsAsync(int id)
+        public async Task<ActionResult> Steps(int id)
         {
             Recipe recipe = await _service.GetRecipeAsync(id);
             RecipeDetailViewModel viewModel = _mapper.Map<RecipeDetailViewModel>(recipe);
