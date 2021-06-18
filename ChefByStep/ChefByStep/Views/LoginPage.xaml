@@ -34,14 +34,14 @@
                     />
                 <Button
                     x:Name="ButtonLogin"
-                    BackgroundColor="{StaticResource SecondaryDarkColor}"
+                    BackgroundColor="{StaticResource PrimaryDarkColor}"
                     Command="{Binding LoginCommand}"
                     Text="Login"
                     TextColor="White"
                     />
                 <Button
                     x:Name="GuestLogin"
-                    BackgroundColor="{StaticResource SecondaryDarkColor}"
+                    BackgroundColor="{StaticResource PrimaryVariantColor}"
                     Command="{Binding GuestCommand}"
                     Text="Continue as Guest"
                     TextColor="White"

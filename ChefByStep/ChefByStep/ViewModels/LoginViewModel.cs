@@ -59,7 +59,7 @@
         {
             User user = await _userRepo.FindUserByFirstName(Name);
 
-            if (user.Name !=null)
+            if (user.Name !=null && Password != null)
             {
                 ActiveUser.ApplicationUser = user;
                 Application.Current.MainPage = new AppShell();
