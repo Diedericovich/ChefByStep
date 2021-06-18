@@ -17,8 +17,14 @@
 
     <ContentPage.Content>
         <Grid>
-            <StackLayout Padding="30"             VerticalOptions="CenterAndExpand">                <Entry Text="{Binding Name}"                    x:Name="EntryUsername"                    Placeholder="User name"
-                    Text="{Binding FirstName}"
+            <StackLayout
+                Padding="30"
+                VerticalOptions="CenterAndExpand"
+                >
+                <Entry
+                    x:Name="EntryUsername"
+                    Placeholder="User name"
+                    Text="{Binding Name}"
                     />
                 <Entry
                     x:Name="EntryPassword"

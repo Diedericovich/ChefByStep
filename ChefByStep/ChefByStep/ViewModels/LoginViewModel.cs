@@ -1,9 +1,11 @@
 ﻿namespace ChefByStep.ViewModels
 {
+    using System.Threading.Tasks;
+
     using ChefByStep.Models;
     using ChefByStep.Services.Repositories;
+    using ChefByStep.Views;
 
-    using Xamarin.Essentials;
     using Xamarin.Forms;
 
     public class LoginViewModel : BaseViewModel
@@ -20,8 +22,12 @@
 
         public string Name
         {
-            get { return name; }
-            set { 
+            get
+            {
+                return name;
+            }
+            set
+            {
                 name = value;
                 OnPropertyChanged(nameof(Name));
             }
@@ -64,7 +70,6 @@
             Name = string.Empty;
             Password = string.Empty;
             Application.Current.MainPage = new LoginPage();
-
 
             //Application.Current.MainPage = new AppShell();
             //await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");

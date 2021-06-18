@@ -5,6 +5,8 @@
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
+    using ChefByStep.Models;
+
     public class BaseViewModel : INotifyPropertyChanged
     {
         
@@ -14,8 +16,6 @@
         {
             ActiveUser = ActiveUser.GetInstance();
         }
-        
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
         bool isBusy = false;
 
