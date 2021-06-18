@@ -12,7 +12,109 @@
         <local:RecipeStepsViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout
+        <StackLayout>
+            <Grid RowDefinitions="Auto, Auto, Auto"
+                  ColumnDefinitions="3*,*">
+                <Frame Grid.Row="0" 
+                       Grid.Column="0"
+                       BackgroundColor="{StaticResource PrimaryLightColor}"
+                       HorizontalOptions="FillAndExpand"
+                       Margin=" 0,10,0,0">
+                    <Label Text="{Binding SelectedRecipe.Title}"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                   />
+                </Frame>
+                <Frame Grid.Row="0" 
+                       Grid.Column="1"
+                       BackgroundColor="{StaticResource PrimaryLightColor}"
+                       HorizontalOptions="EndAndExpand"
+                       Margin=" 0,10,0,0">
+                    <Label Text="00:00"
+                   />
+                </Frame>
+
+                <CarouselView
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.RowSpan="1"
+                    HeightRequest="500"
+                    ItemsSource="{Binding SelectedRecipe.Steps}"
+                    Loop="False"
+                    PeekAreaInsets="20"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                >
+
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame
+                                Margin="10"
+                                Padding="0"
+                                BackgroundColor="{StaticResource ErrorColor}"
+                                CornerRadius="10"
+                                HasShadow="True"
+                                HeightRequest="500"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="Start"
+                                WidthRequest="500"
+                                >
+                                    <Grid>
+                                        <StackLayout
+                                        BackgroundColor="{StaticResource PrimaryLightColor}"
+                                        Opacity="95"
+                                        >
+                                            <Label
+                                            Margin="30,5"
+                                            FontAttributes="Bold" 
+                                            FontSize="16"
+                                            VerticalOptions="EndAndExpand"
+                                            HorizontalOptions="EndAndExpand"
+                                            Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"
+                                            />
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Label
+                                            Margin="30"
+                                            FontSize="18"
+                                            HeightRequest="360"
+                                            HorizontalOptions="EndAndExpand"
+                                            Text="{Binding Instruction}"
+                                            />
+
+                                            <Label
+                                            Margin="15,0"
+                                            FontAttributes="Bold"
+                                            FontSize="24"
+                                            Text="{Binding Id}"
+                                            TextColor="Black"
+                                            VerticalOptions="EndAndExpand"
+                                            />
+
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <Frame Grid.Row="2"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       HeightRequest="250"
+                       BackgroundColor="{StaticResource SecondaryVariantColor4}">
+                    <Label Text="Ingredients"
+                           HorizontalOptions="CenterAndExpand"
+                           FontSize="28"></Label>
+                </Frame>
+
+
+            </Grid>
+        </StackLayout>
+            <!--<StackLayout
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="CenterAndExpand"
             >
@@ -85,6 +187,6 @@
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
-        </StackLayout>
+        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>
