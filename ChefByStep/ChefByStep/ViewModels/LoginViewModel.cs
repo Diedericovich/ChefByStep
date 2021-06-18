@@ -54,9 +54,8 @@
         private async void OnLoginClicked(object obj)
         {
             User tempuser = await _userRepo.GetUser(1);
-            _userRepo.CurrentlyLoggedInUser = tempuser;
 
-            if (_userRepo.CurrentlyLoggedInUser.Name == null)
+            if (_userRepo.GetUser(1) == null)
             {
                 await Application.Current.MainPage.DisplayAlert("Login Failed", "Id or Password incorrect", "OK");
             }

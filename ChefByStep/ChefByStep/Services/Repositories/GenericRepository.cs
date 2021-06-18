@@ -5,29 +5,45 @@
     using System.Net.Http;
     using System.Threading.Tasks;
 
-    using ChefByStep.Models;
-
     using Newtonsoft.Json;
 
-    public class UserRepository
+    public class GenericRepository<T>
     {
-        // private const string baseUrl = "https://10.0.2.2:44350/api/User";
-        private const string BaseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/User";
+        private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/";
 
-        private static User _currentlyLoggedInUser;
-
-        public static User GetCurrentlyLoggedInUser()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return _currentlyLoggedInUser ?? (_currentlyLoggedInUser = new User());
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
+
+            using (var client = new HttpClient(handler))
+            {
+                try
+                {
+                    HttpResponseMessage message = await client.GetAsync(baseUrl);
+
+                    if (message.IsSuccessStatusCode)
+                    {
+                        string json = await message.Content.ReadAsStringAsync();
+                        List<T> result = JsonConvert.DeserializeObject<List<T>>(json);
+                        return result;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
+            }
         }
 
-        internal UserRepository()
+        public async Task<object> GetById(object id)
         {
-        }
-
-        public async Task<User> GetUser(int id)
-        {
-            var url = $"{BaseUrl}/{id}";
+            var url = $"{baseUrl}/{id}";
             var handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
 
@@ -40,15 +56,12 @@
                     if (message.IsSuccessStatusCode)
                     {
                         string json = await message.Content.ReadAsStringAsync();
-                        User result = JsonConvert.DeserializeObject<User>(json);
+                        T result = JsonConvert.DeserializeObject<T>(json);
                         return result;
                     }
                     else
                     {
-                        return new User
-                               {
-                                   Name = "No data"
-                               };
+                        return null;
                     }
                 }
                 catch (Exception exception)
@@ -59,40 +72,20 @@
             }
         }
 
-        public async Task<List<User>> GetAllUsers()
+        public void Insert(T obj)
         {
-            var handler = new HttpClientHandler();
-            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
+        }
 
-            using (var client = new HttpClient(handler))
-            {
-                try
-                {
-                    HttpResponseMessage message = await client.GetAsync(BaseUrl);
+        public void Update(T obj)
+        {
+        }
 
-                    if (message.IsSuccessStatusCode)
-                    {
-                        string json = await message.Content.ReadAsStringAsync();
-                        List<User> result = JsonConvert.DeserializeObject<List<User>>(json);
-                        return result;
-                    }
-                    else
-                    {
-                        return new List<User>
-                               {
-                                   new User
-                                   {
-                                       Name = "No data"
-                                   }
-                               };
-                    }
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception);
-                    throw;
-                }
-            }
+        public void Delete(object id)
+        {
+        }
+
+        public void Save()
+        {
         }
     }
 }
