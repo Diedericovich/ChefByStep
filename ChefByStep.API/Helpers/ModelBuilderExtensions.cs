@@ -51,6 +51,9 @@ namespace ChefByStep.API.Helpers
             modelBuilder.Entity<RecipeIngredient>().HasData(
                 DataSeeder.GetRecipeIngredients()
                 );
+            modelBuilder.Entity<RecipeRating>().HasData(
+                DataSeeder.GetRecipeRatings()
+                );
         }
     }
 }

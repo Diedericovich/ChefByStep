@@ -141,6 +141,31 @@ namespace ChefByStep.API.Helpers
             return ingredientList;
         }
 
+        public static List<RecipeRating> GetRecipeRatings()
+        {
+            List<RecipeRating> ratings = new List<RecipeRating>()
+            {
+                new RecipeRating
+                {
+                    UserId = 1,
+                    RecipeId = 1,
+                    Comment = "Verrrrrrrrry sweet",
+                    Rating = 10.0,
+                },
+                new RecipeRating
+                {
+                    UserId = 1,
+                    RecipeId = 2,
+                    Comment = "Awful sweet",
+                    Rating = 10.0,
+                },
+
+            };
+            return ratings;
+        }
+
+
+
         //public static void SeedRecipes(DatabaseContext context)
         //{
         //    if (!context.Recipes.Any())
@@ -181,5 +206,6 @@ namespace ChefByStep.API.Helpers
         //        }
         //    }
         //}
+
     }
 }
