@@ -16,6 +16,13 @@
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="CenterAndExpand"
             >
+            <Frame BackgroundColor="{StaticResource PrimaryLightColor}"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin=" 0,-5,0,0">
+                <Label Text="{Binding SelectedRecipe.Title}"
+                   />
+            </Frame>
+            
 
             <CarouselView
                 HeightRequest="550"
@@ -46,8 +53,10 @@
                                         >
                                         <Label
                                             Margin="30,5"
-                                            FontAttributes="Bold"
+                                            FontAttributes="Bold" 
                                             FontSize="16"
+                                            VerticalOptions="EndAndExpand"
+                                            HorizontalOptions="EndAndExpand"
                                             Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"
                                             />
                                     </StackLayout>
