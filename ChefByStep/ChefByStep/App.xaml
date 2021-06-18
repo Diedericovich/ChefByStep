@@ -12,7 +12,7 @@
 
 
 
-            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Primary">#60c6a3</Color>
             <Color x:Key="PrimaryColor">#78c6a3</Color>
             <Color x:Key="PrimaryDarkColor">#00914f</Color>
             <Color x:Key="PrimaryLightColor">#def1e8</Color>

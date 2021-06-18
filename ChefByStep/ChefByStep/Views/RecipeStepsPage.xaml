@@ -6,6 +6,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:detailvm="clr-namespace:ChefByStep.Models;assembly=ChefByStep"
     xmlns:local="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
+    xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:vm="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
     >
     <ContentPage.BindingContext>
@@ -27,6 +28,37 @@
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
+                            <pancakeView:PancakeView
+                                Margin="-50,20,30,-30"
+                                BackgroundColor="YellowGreen"
+                                Border="5"
+                                CornerRadius="50"
+                                HeightRequest="60"
+                                HorizontalOptions="EndAndExpand"
+                                VerticalOptions="StartAndExpand"
+                                WidthRequest="60"
+                                >
+                                <pancakeView:PancakeView.Shadow>
+                                    <pancakeView:DropShadow
+                                        BlurRadius="50"
+                                        Offset="0,0"
+                                        Color="Black"
+                                        />
+                                </pancakeView:PancakeView.Shadow>
+
+                                <Grid
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    >
+                                    <Label
+                                        FontSize="30"
+                                        Text="{Binding Id}"
+                                        TextColor="red"
+                                        />
+                                </Grid>
+
+
+                            </pancakeView:PancakeView>
                             <Frame
                                 Margin="10"
                                 Padding="0"
@@ -39,34 +71,44 @@
                                 WidthRequest="500"
                                 >
 
+
+
                                 <Grid>
+
                                     <StackLayout
-                                        BackgroundColor="{StaticResource PrimaryDarkColor}"
-                                        Opacity="95"
-                                        >
-                                        <Label
-                                            Margin="30,5"
-                                            FontAttributes="Bold"
-                                            FontSize="16"
-                                            Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"
-                                            />
-                                    </StackLayout>
+                                        BackgroundColor="{StaticResource PrimaryVariantColor}"
+                                        Opacity="85"
+                                        />
+
+
+
+                                    <Label
+                                        Margin="15,0"
+                                        FontAttributes="Bold"
+                                        FontSize="24"
+                                        HorizontalOptions="End"
+                                        Text="{Binding Id}"
+                                        TextColor="Black"
+                                        VerticalOptions="StartAndExpand"
+                                        />
+
+
+
                                     <StackLayout>
                                         <Label
                                             Margin="30"
                                             FontSize="18"
                                             HeightRequest="360"
-                                            HorizontalOptions="EndAndExpand"
+                                            HorizontalOptions="CenterAndExpand"
                                             Text="{Binding Instruction}"
+                                            VerticalTextAlignment="Center"
                                             />
 
                                         <Label
-                                            Margin="15,0"
+                                            Margin="30,5"
                                             FontAttributes="Bold"
-                                            FontSize="24"
-                                            Text="{Binding Id}"
-                                            TextColor="Black"
-                                            VerticalOptions="EndAndExpand"
+                                            FontSize="16"
+                                            Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"
                                             />
 
                                     </StackLayout>
