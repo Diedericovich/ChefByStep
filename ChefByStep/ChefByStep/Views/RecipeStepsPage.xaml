@@ -6,13 +6,185 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:detailvm="clr-namespace:ChefByStep.Models;assembly=ChefByStep"
     xmlns:local="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
-    xmlns:vm="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
-    >
+    xmlns:vm="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep" 
+    xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
     <ContentPage.BindingContext>
         <local:RecipeStepsViewModel />
     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
-        <StackLayout>
+        <Grid HorizontalOptions="FillAndExpand" 
+              VerticalOptions="FillAndExpand">
+            <Image Aspect="AspectFill" 
+               Source="{Binding SelectedRecipe.ImageUrl}"
+               HorizontalOptions="FillAndExpand" 
+               VerticalOptions="FillAndExpand"/>
+            <BoxView BackgroundColor="LightGray" Opacity="0.9"/>
+            <SwipeView x:Name="mainSwipeView" BackgroundColor="Transparent">
+                <SwipeView.BottomItems>
+                    <SwipeItems>
+                        <SwipeItemView>
+                            <Grid>
+                                <StackLayout 
+                                    HeightRequest="560"
+                                    Padding="25"
+                                    Spacing="20"
+                                    VerticalOptions="CenterAndExpand">
+                                    <CollectionView ItemsSource="{Binding SelectedRecipe.Ingredients}" Margin="20">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Label
+                                                     HorizontalOptions="Center"
+                                                     VerticalOptions="Center"
+                                                     Text="{Binding Name, StringFormat='*   {0}'}"
+                                                     FontSize="16"/>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+                            </Grid>
+                        </SwipeItemView>
+                    </SwipeItems>
+                </SwipeView.BottomItems>
+
+
+                <Grid x:Name="swipeContent">
+                    <pv:PancakeView BackgroundColor="{StaticResource SecondaryVariantColor4}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Padding="30">
+                                <pv:PancakeView 
+                                Padding="20,10" 
+                                Margin="-30,0,0,0"
+                                CornerRadius="0,20,0,20"
+                                BackgroundColor="{StaticResource PrimaryColor}"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalOptions="End"
+                                WidthRequest="200">
+                                    <StackLayout 
+                                                Spacing="20" 
+                                                Orientation="Horizontal">
+                                        <Image  Source="chef.png" 
+                                                WidthRequest="30"/>
+                                        <Label Text="{Binding SelectedRecipe.Title}"
+                                               TextColor="black"
+                                               FontSize="14"
+                                               VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </pv:PancakeView>
+                                <pv:PancakeView 
+                                                Padding="20,10" 
+                                                Margin="0,0,-30,0"
+                                                CornerRadius="20,0,20,0"
+                                                BackgroundColor="{StaticResource PrimaryColor}"
+                                                HorizontalOptions="EndAndExpand"
+                                                VerticalOptions="End">
+                                    <StackLayout Spacing="20" Orientation="Horizontal">
+                                        <Image Source="https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png" 
+                                           WidthRequest="30"/>
+                                        <Label Text="00:00"
+                                           TextColor="black"
+                                           FontSize="14"
+                                           VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </pv:PancakeView>
+                            </Grid>
+                            
+                            <StackLayout Grid.Row="1" 
+                                         Padding="10,-10">
+                                <CarouselView
+                                                HeightRequest="500"
+                                                ItemsSource="{Binding SelectedRecipe.Steps}"
+                                                Loop="False"
+                                                PeekAreaInsets="20"
+                                                HorizontalOptions="CenterAndExpand"
+                                                VerticalOptions="CenterAndExpand">  
+
+                                    <CarouselView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackLayout>
+                                                <Frame
+                                                        Margin="10"
+                                                        Padding="0"
+                                                        BackgroundColor="{StaticResource ErrorColor}"
+                                                        CornerRadius="10"
+                                                        HasShadow="True"
+                                                        HeightRequest="500"
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        VerticalOptions="Start"
+                                                        WidthRequest="500">
+                                                    <Grid>
+                                                        <StackLayout
+                                                                BackgroundColor="{StaticResource SecondaryVariantColor3}"
+                                                                Opacity="95">
+                                                            <Label
+                                                        Margin="30,5"
+                                                        FontAttributes="Bold" 
+                                                        FontSize="16"
+                                                        VerticalOptions="EndAndExpand"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"
+                                                        />
+                                                        </StackLayout>
+                                                        <StackLayout>
+                                                            <Label
+                                                                    Margin="30"
+                                                                    FontSize="18"
+                                                                    HeightRequest="360"
+                                                                    HorizontalOptions="CenterAndExpand"
+                                                                    VerticalOptions="CenterAndExpand"
+                                                                    Text="{Binding Instruction}"/>
+                                                            <Label
+                                                        Margin="15,0"
+                                                        FontAttributes="Bold"
+                                                        FontSize="24"
+                                                        Text="{Binding Id}"
+                                                        TextColor="Black"
+                                                        VerticalOptions="EndAndExpand"
+                                                        />
+
+                                                        </StackLayout>
+                                                    </Grid>
+                                                </Frame>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </CarouselView.ItemTemplate>
+                                </CarouselView>
+
+                            </StackLayout>
+                            
+                            <StackLayout
+                            Grid.Row="2" 
+                            Spacing="20" 
+                            Padding="0,0,0,0">
+                                <pv:PancakeView 
+                                Padding="20,10" 
+                                CornerRadius="20"
+                                BackgroundColor="{StaticResource PrimaryColor}"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand">
+                                    <StackLayout Spacing="20" Orientation="Horizontal">
+                                        <Image Source="https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png" 
+                                           WidthRequest="15"/>
+                                        <Label Text="Swipe up for Ingredients"
+                                           TextColor="black"
+                                           FontSize="14"
+                                           VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </pv:PancakeView>
+                            </StackLayout>
+                            
+                        </Grid>
+                    </pv:PancakeView>
+                </Grid>
+
+            </SwipeView>
+        </Grid>
+        <!--<StackLayout>
             <Grid RowDefinitions="Auto, Auto, Auto"
                   ColumnDefinitions="3*,*">
                 <Frame Grid.Row="0" 
@@ -101,19 +273,21 @@
                     </CarouselView.ItemTemplate>
                 </CarouselView>
 
-                <Frame Grid.Row="2"
+                <BoxView Grid.Row="2"
                        Grid.Column="0"
                        Grid.ColumnSpan="2"
-                       HeightRequest="250"
-                       BackgroundColor="{StaticResource SecondaryVariantColor4}">
-                    <Label Text="Ingredients"
-                           HorizontalOptions="CenterAndExpand"
-                           FontSize="28"></Label>
-                </Frame>
-
+                       Color="Teal"
+                       HeightRequest="350">
+                    <BoxView.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Up" Command="{Binding SwipeCommand}" CommandParameter="Up" />
+                    </BoxView.GestureRecognizers>
+                </BoxView>
 
             </Grid>
-        </StackLayout>
+        </StackLayout>-->
+        
+        
+        
             <!--<StackLayout
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="CenterAndExpand"
