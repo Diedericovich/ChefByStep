@@ -27,6 +27,12 @@
             <Color x:Key="SecondaryVariantColor5">#392F5A</Color>
             <Color x:Key="SecondaryVariantColor6">#EEC8E0</Color>
 
+            <Color x:Key="CrazyDark">#2E382E</Color>
+            <Color x:Key="CrazyRed">#D95D39</Color>
+            <Color x:Key="CrazyOrange">#F18805</Color>
+            <Color x:Key="CrazyYellow">#F0A202</Color>
+            
+
             <Color x:Key="ErrorColor">#B00020</Color>
 
             <Color x:Key="TextColor">#1d1d1d</Color>
