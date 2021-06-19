@@ -103,7 +103,7 @@ namespace ChefByStep.API.Helpers
                 for (int j = 0; j < steplines.Length; j++)
                 {
                     idcounter++;
-                    steps.Add(new Step { Instruction = steplines[j], Id = idcounter });
+                    steps.Add(new Step { Instruction = steplines[j].Trim(), Id = idcounter });
                 }
             }
             return steps;
@@ -159,12 +159,9 @@ namespace ChefByStep.API.Helpers
                     Comment = "Awful sweet",
                     Rating = 10.0,
                 },
-
             };
             return ratings;
         }
-
-
 
         //public static void SeedRecipes(DatabaseContext context)
         //{
@@ -206,6 +203,5 @@ namespace ChefByStep.API.Helpers
         //        }
         //    }
         //}
-
     }
 }
