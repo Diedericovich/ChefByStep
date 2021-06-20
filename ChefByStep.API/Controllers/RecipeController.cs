@@ -1,4 +1,5 @@
 ﻿using ChefByStep.API.Entities;
+using ChefByStep.API.Entities.DTOs;
 using ChefByStep.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -38,7 +39,7 @@ namespace ChefByStep.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<Recipe> GetRecipeAsync(int id)
+        public async Task<RecipeDto> GetRecipeAsync(int id)
         {
             return await _service.GetRecipeAsync(id);
         }

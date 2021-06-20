@@ -31,5 +31,21 @@ namespace ChefByStep.API.Repos
                 .Include(x => x.Ratings)
                 .ToListAsync();
         }
+
+        public async Task<User> GetByNameAsync(string name)
+        {
+            return await _context.Users
+                .Include(x => x.CompletedRecipes)
+                .Include(x => x.FavoriteRecipes)
+                .Include(x => x.CreatedRecipes)
+                .Include(x => x.Ratings)
+                .FirstOrDefaultAsync(x => x.Name == name);
+        }
+
+        public async Task<bool> UserExistsAsync(string name)
+        {
+            return await _context.Users
+                .AnyAsync(x => x.Name == name);
+        }
     }
 }

@@ -103,7 +103,7 @@ namespace ChefByStep.API.Helpers
                 for (int j = 0; j < steplines.Length; j++)
                 {
                     idcounter++;
-                    steps.Add(new Step { Instruction = steplines[j].Trim(), Id = idcounter });
+                    steps.Add(new Step { Instruction = steplines[j].Trim(), Id = idcounter, RecipeId = i + 1 });
                 }
             }
             return steps;

@@ -17,6 +17,7 @@ namespace ChefByStep.API.Repos
             return _context.Recipes
                 .Include(x => x.Ratings)
                 .Include(x => x.Ingredients)
+                .ThenInclude(x => x.Ingredient)
                 .Include(x => x.Steps)
                 .Include(x => x.CreatedBy)
                 .FirstOrDefaultAsync(x => x.Id == id);
@@ -26,8 +27,6 @@ namespace ChefByStep.API.Repos
         {
             return _context.Recipes
                 .Include(x => x.Ratings)
-                .Include(x => x.Ingredients)
-                .Include(x => x.Steps)
                 .ToListAsync();
         }
     }

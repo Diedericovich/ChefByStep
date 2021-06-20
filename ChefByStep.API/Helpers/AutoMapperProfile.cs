@@ -14,6 +14,15 @@ namespace ChefByStep.API.Helpers
         {
             CreateMap<Recipe, RecipeDto>()
                 .ForMember(dst => dst.CreatedBy, opt => opt.MapFrom(src => src.CreatedBy.Name))
+                .ForMember(dst => dst.Ingredients, opt => opt.MapFrom(src => src.Ingredients))
+                .ForMember(dst => dst.Steps, opt => opt.MapFrom(src => src.Steps))
+                .ReverseMap();
+            CreateMap<RecipeIngredient, RecipeIngredientDto>()
+                .ForMember(dst => dst.Ingredient, opt => opt.MapFrom(src => src.Ingredient))
+                .ReverseMap();
+            CreateMap<Ingredient, IngredientDto>()
+                .ReverseMap();
+            CreateMap<Step, StepDto>()
                 .ReverseMap();
         }
     }
