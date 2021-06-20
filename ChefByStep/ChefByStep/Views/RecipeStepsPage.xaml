@@ -18,31 +18,41 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
+        
         <Grid HorizontalOptions="FillAndExpand" 
               VerticalOptions="FillAndExpand">
-            <Image Aspect="AspectFill" 
-               Source="{Binding SelectedRecipe.ImageUrl}"
-               HorizontalOptions="FillAndExpand" 
-               VerticalOptions="FillAndExpand"/>
-            <BoxView BackgroundColor="LightGray" Opacity="0.9"/>
-            <SwipeView x:Name="mainSwipeView" BackgroundColor="Transparent">
+
+            <SwipeView x:Name="mainSwipeView" BackgroundColor="{StaticResource PrimaryDarkColor}">
                 <SwipeView.BottomItems>
                     <SwipeItems>
                         <SwipeItemView>
                             <Grid>
                                 <StackLayout 
-                                    HeightRequest="560"
+                                    HeightRequest="575"
                                     Padding="25"
                                     Spacing="20"
                                     VerticalOptions="CenterAndExpand">
                                     <CollectionView ItemsSource="{Binding SelectedRecipe.Ingredients}" Margin="20">
                                         <CollectionView.ItemTemplate>
                                             <DataTemplate>
-                                                <Label
-                                                     HorizontalOptions="Center"
-                                                     VerticalOptions="Center"
-                                                     Text="{Binding Name, StringFormat='*   {0}'}"
-                                                     FontSize="16"/>
+                                                <StackLayout Margin="0,3,0,0">
+                                                    <pv:PancakeView 
+                                                                Padding="3,7" 
+                                                                CornerRadius="20"
+                                                                BackgroundColor="{StaticResource CrazyDark}"
+                                                                HorizontalOptions="FillAndExpand"
+                                                                VerticalOptions="Start">
+                                                        <StackLayout Spacing="20" Orientation="Horizontal">
+                                                            <Image Source="checked.png" 
+                                                                WidthRequest="15"/>
+                                                            <Label Text="{Binding Name}"
+                                                               TextColor="white"
+                                                               FontSize="14"
+                                                               VerticalTextAlignment="Center"/>
+                                                        </StackLayout>
+                                                    </pv:PancakeView>
+                                                </StackLayout>
+
                                             </DataTemplate>
                                         </CollectionView.ItemTemplate>
                                     </CollectionView>
@@ -142,7 +152,6 @@
                                                                 </Grid>
                                                             </pv:PancakeView>
 
-
                                                             <Label
                                                                     Padding="10,-100,10,5"
                                                                     FontSize="18"
@@ -160,11 +169,11 @@
                                         </DataTemplate>
                                     </CarouselView.ItemTemplate>
                                 </CarouselView>
+
                                 <IndicatorView x:Name="indicatorView"
                                                IndicatorColor="LightGray"
                                                SelectedIndicatorColor="DarkGray"
-                                               HorizontalOptions="Center" />
-
+                                               HorizontalOptions="Center"/>
                             </StackLayout>
                             
                             <StackLayout
@@ -192,181 +201,6 @@
 
             </SwipeView>
         </Grid>
-
-
-
-        <!--<Grid HorizontalOptions="FillAndExpand" 
-              VerticalOptions="FillAndExpand">
-            <Image Aspect="AspectFill" 
-               Source="{Binding SelectedRecipe.ImageUrl}"
-               HorizontalOptions="FillAndExpand" 
-               VerticalOptions="FillAndExpand"/>
-            <BoxView BackgroundColor="LightGray" Opacity="0.9"/>
-            <SwipeView x:Name="mainSwipeView" BackgroundColor="Transparent">
-                <SwipeView.BottomItems>
-                    <SwipeItems>
-                        <SwipeItemView>
-                            <Grid>
-                                <StackLayout 
-                                    HeightRequest="560"
-                                    Padding="25"
-                                    Spacing="20"
-                                    VerticalOptions="CenterAndExpand">
-                                    <CollectionView ItemsSource="{Binding SelectedRecipe.Ingredients}" Margin="20">
-                                        <CollectionView.ItemTemplate>
-                                            <DataTemplate>
-                                                <Label
-                                                     HorizontalOptions="Center"
-                                                     VerticalOptions="Center"
-                                                     Text="{Binding Name, StringFormat='*   {0}'}"
-                                                     FontSize="16"/>
-                                            </DataTemplate>
-                                        </CollectionView.ItemTemplate>
-                                    </CollectionView>
-                                </StackLayout>
-                            </Grid>
-                        </SwipeItemView>
-                    </SwipeItems>
-                </SwipeView.BottomItems>
-
-
-                <Grid x:Name="swipeContent">
-                    <pv:PancakeView BackgroundColor="{StaticResource CrazyDark}">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid Padding="30">
-                                <pv:PancakeView 
-                                Padding="20,10" 
-                                Margin="-30,0,0,0"
-                                CornerRadius="0,20,0,20"
-                                BackgroundColor="{StaticResource CrazyYellow}"
-                                HorizontalOptions="StartAndExpand"
-                                VerticalOptions="End"
-                                WidthRequest="200">
-                                    <StackLayout 
-                                                Spacing="20" 
-                                                Orientation="Horizontal">
-                                        <Image  Source="chef.png" 
-                                                WidthRequest="30"/>
-                                        <Label Text="{Binding SelectedRecipe.Title}"
-                                               TextColor="black"
-                                               FontSize="14"
-                                               VerticalTextAlignment="Center"/>
-                                    </StackLayout>
-                                </pv:PancakeView>
-                                <pv:PancakeView 
-                                                Padding="20,10" 
-                                                Margin="0,0,-30,0"
-                                                CornerRadius="20,0,20,0"
-                                                BackgroundColor="{StaticResource CrazyYellow}"
-                                                HorizontalOptions="EndAndExpand"
-                                                VerticalOptions="End">
-                                    <StackLayout Spacing="20" Orientation="Horizontal">
-                                        <Image Source="https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png" 
-                                           WidthRequest="30"/>
-                                        <Label Text="00:00"
-                                           TextColor="black"
-                                           FontSize="14"
-                                           VerticalTextAlignment="Center"/>
-                                    </StackLayout>
-                                </pv:PancakeView>
-                            </Grid>
-
-                            <StackLayout Grid.Row="1" 
-                                         Padding="10,-10">
-                                <CarouselView
-                                                HeightRequest="500"
-                                                ItemsSource="{Binding SelectedRecipe.Steps}"
-                                                Loop="False"
-                                                PeekAreaInsets="20"
-                                                HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="CenterAndExpand">
-
-                                    <CarouselView.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackLayout >
-                                                <Frame
-                                                        Margin="10"
-                                                        Padding="0"
-                                                        BackgroundColor="{StaticResource ErrorColor}"
-                                                        CornerRadius="10"
-                                                        HasShadow="True"
-                                                        HeightRequest="500"
-                                                        HorizontalOptions="CenterAndExpand"
-                                                        VerticalOptions="Start"
-                                                        WidthRequest="500">
-                                                    <Grid>
-                                                        <StackLayout
-                                                                BackgroundColor="{StaticResource PrimaryVariantColor}"
-                                                                Opacity="95">
-                                                            <Label
-                                                                    Margin="30,5"
-                                                                    FontAttributes="Bold" 
-                                                                    FontSize="16"
-                                                                    VerticalOptions="EndAndExpand"
-                                                                    HorizontalOptions="EndAndExpand"
-                                                                    Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"/>
-                                                        </StackLayout>
-                                                        <StackLayout HorizontalOptions="CenterAndExpand"
-                                                                     VerticalOptions="CenterAndExpand">
-                                                            <Label
-                                                                    Margin="25"
-                                                                    FontSize="18"
-                                                                    HeightRequest="360"
-                                                                    HorizontalOptions="Center"
-                                                                    VerticalOptions="Center"
-                                                                    Text="{Binding Instruction}"/>
-                                                            <Label
-                                                                    Margin="15,0"
-                                                                    FontAttributes="Bold"
-                                                                    FontSize="24"
-                                                                    Text="{Binding Id}"
-                                                                    TextColor="Black"
-                                                                    VerticalOptions="EndAndExpand"/>
-                                                        </StackLayout>
-                                                    </Grid>
-                                                </Frame>
-                                            </StackLayout>
-                                        </DataTemplate>
-                                    </CarouselView.ItemTemplate>
-                                </CarouselView>
-
-                            </StackLayout>
-
-                            <StackLayout
-                            Grid.Row="2" 
-                            Spacing="20" 
-                            Padding="0,0,0,0">
-                                <pv:PancakeView 
-                                Padding="20,10" 
-                                CornerRadius="20"
-                                BackgroundColor="{StaticResource CrazyOrange}"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="CenterAndExpand">
-                                    <StackLayout Spacing="20" Orientation="Horizontal">
-                                        <Image Source="https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png" 
-                                           WidthRequest="15"/>
-                                        <Label Text="Swipe up for Ingredients"
-                                           TextColor="White"
-                                           FontSize="14"
-                                           VerticalTextAlignment="Center"/>
-                                    </StackLayout>
-                                </pv:PancakeView>
-                            </StackLayout>
-
-                        </Grid>
-                    </pv:PancakeView>
-                </Grid>
-
-            </SwipeView>
-        </Grid>-->
-
-
-
 
     </ContentPage.Content>
 </ContentPage>

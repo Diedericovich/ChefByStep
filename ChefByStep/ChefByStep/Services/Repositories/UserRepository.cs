@@ -11,8 +11,8 @@
 
     public class UserRepository
     {
-        // private const string baseUrl = "https://10.0.2.2:44350/api/User";
-        private const string BaseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/User";
+         private const string BaseUrl = "https://10.0.2.2:44350/api/User";
+        //private const string BaseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/User";
 
  
         public async Task<User> GetUser(int id)
