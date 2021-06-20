@@ -106,8 +106,7 @@
                                                 ItemsSource="{Binding SelectedRecipe.Steps}"
                                                 Loop="False"
                                                 PeekAreaInsets="20"
-                                                HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="CenterAndExpand">  
+                                                >  
                                     <CarouselView.ItemTemplate>
                                         <DataTemplate>
                                             <StackLayout >
@@ -115,43 +114,35 @@
                                                         Margin="10"
                                                         Padding="0"
                                                         BackgroundColor="{StaticResource ErrorColor}"
-                                                        CornerRadius="10"
+                                                        CornerRadius="15"
                                                         HasShadow="True"
                                                         HeightRequest="500"
-                                                        HorizontalOptions="CenterAndExpand"
-                                                        VerticalOptions="Start"
                                                         WidthRequest="500">
                                                     <Grid>
-
-                                                        <StackLayout
-                                                                BackgroundColor="{StaticResource PrimaryVariantColor}"
-                                                                Opacity="95">
-                                                            <Label
-                                                                    Margin="30,5"
-                                                                    FontAttributes="Bold" 
-                                                                    FontSize="16"
-                                                                    VerticalOptions="EndAndExpand"
-                                                                    HorizontalOptions="EndAndExpand"
-                                                                    Text="{Binding DurationMin, StringFormat=' Cooking time: {0}'}"/>
-                                                        </StackLayout>
-                                                        <StackLayout HorizontalOptions="CenterAndExpand"
-                                                                     VerticalOptions="CenterAndExpand">
-                                                            
-                                                            <Label
-                                                                    Margin="25"
-                                                                    FontSize="18"
-                                                                    HeightRequest="360"
-                                                                    HorizontalOptions="Center"
-                                                                    VerticalOptions="Center"
-                                                                    TextColor="white"
-                                                                    Text="{Binding Instruction}"/>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="6*"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <StackLayout Orientation="Vertical"
+                                                                     BackgroundColor="green">
                                                             <Label
                                                                     Margin="15,0"
                                                                     FontAttributes="Bold"
                                                                     FontSize="24"
                                                                     Text="{Binding Id}"
                                                                     TextColor="Black"
-                                                                    VerticalOptions="EndAndExpand"/>    
+                                                                    Grid.Column="0"/>
+
+                                                            <Label
+                                                                    Margin="25"
+                                                                    FontSize="18"
+                                                                    HeightRequest="360"
+                                                                    HorizontalTextAlignment="Center"
+                                                                    VerticalTextAlignment="Center"
+                                                                    TextColor="white"
+                                                                    Text="{Binding Instruction}"
+                                                                    Grid.Column="1"/>
+
                                                         </StackLayout>
                                                     </Grid>
                                                 </Frame>
@@ -169,12 +160,10 @@
                                 <pv:PancakeView 
                                 Padding="20,10" 
                                 CornerRadius="20"
-                                BackgroundColor="{StaticResource SecondaryVariantColor}"
+                                BackgroundColor="{StaticResource CrazyDark}"
                                 HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="CenterAndExpand">
                                     <StackLayout Spacing="20" Orientation="Horizontal">
-                                        <Image Source="https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png" 
-                                           WidthRequest="15"/>
                                         <Label Text="Swipe up for Ingredients"
                                            TextColor="White"
                                            FontSize="14"
