@@ -106,7 +106,7 @@
                                                 ItemsSource="{Binding SelectedRecipe.Steps}"
                                                 Loop="False"
                                                 PeekAreaInsets="20"
-                                                >  
+                                                IndicatorView="indicatorView">
                                     <CarouselView.ItemTemplate>
                                         <DataTemplate>
                                             <StackLayout >
@@ -160,6 +160,10 @@
                                         </DataTemplate>
                                     </CarouselView.ItemTemplate>
                                 </CarouselView>
+                                <IndicatorView x:Name="indicatorView"
+                                               IndicatorColor="LightGray"
+                                               SelectedIndicatorColor="DarkGray"
+                                               HorizontalOptions="Center" />
 
                             </StackLayout>
                             
