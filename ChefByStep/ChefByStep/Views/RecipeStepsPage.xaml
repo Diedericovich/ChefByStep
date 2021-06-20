@@ -119,22 +119,32 @@
                                                         HeightRequest="500"
                                                         WidthRequest="500">
                                                     <Grid>
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition Height="6*"/>
-                                                            <RowDefinition Height="*"/>
-                                                        </Grid.RowDefinitions>
-                                                        <StackLayout Orientation="Vertical"
-                                                                     BackgroundColor="green">
-                                                            <Label
-                                                                    Margin="15,0"
-                                                                    FontAttributes="Bold"
-                                                                    FontSize="24"
-                                                                    Text="{Binding Id}"
-                                                                    TextColor="Black"
-                                                                    Grid.Column="0"/>
+                                                        <StackLayout 
+                                                                     Orientation="Vertical"
+                                                                     BackgroundColor="{StaticResource CrazyGreen1}">
+
+                                                            <pv:PancakeView CornerRadius="50"
+                                                                            BackgroundColor="{StaticResource CrazyDark}"
+                                                                            HeightRequest="60"
+                                                                            WidthRequest="60"
+                                                                            HorizontalOptions="StartAndExpand"
+                                                                            VerticalOptions="StartAndExpand"
+                                                                            Margin="15,15,0,0">
+                                                                <pv:PancakeView.Shadow>
+                                                                    <pv:DropShadow Color="Black" BlurRadius="15" Offset="0,0" />
+                                                                </pv:PancakeView.Shadow>
+
+                                                                <Grid VerticalOptions="Center"
+                                                                      HorizontalOptions="Center">
+                                                                    <Label Text="{Binding Id}"
+                                                                           FontSize="22"
+                                                                           TextColor="white"/>
+                                                                </Grid>
+                                                            </pv:PancakeView>
+
 
                                                             <Label
-                                                                    Margin="25"
+                                                                    Padding="10,-100,10,5"
                                                                     FontSize="18"
                                                                     HeightRequest="360"
                                                                     HorizontalTextAlignment="Center"
@@ -142,8 +152,8 @@
                                                                     TextColor="white"
                                                                     Text="{Binding Instruction}"
                                                                     Grid.Column="1"/>
-
                                                         </StackLayout>
+                                                        
                                                     </Grid>
                                                 </Frame>
                                             </StackLayout>
