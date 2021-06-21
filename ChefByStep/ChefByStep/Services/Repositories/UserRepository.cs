@@ -9,14 +9,15 @@
 
     using Newtonsoft.Json;
 
-    public class RecipeRepository : IRecipeRepository
+    public class UserRepository
     {
-         private const string baseUrl = "https://10.0.2.2:44350/api/Recipe";
-        //private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/Recipe";
+         private const string BaseUrl = "https://10.0.2.2:44350/api/User";
+        //private const string BaseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/User";
 
-        public async Task<Recipe> GetRecipe(int id)
+ 
+        public async Task<User> GetUser(int id)
         {
-            var url = $"{baseUrl}/{id}";
+            var url = $"{BaseUrl}/{id}";
             var handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
 
@@ -29,15 +30,12 @@
                     if (message.IsSuccessStatusCode)
                     {
                         string json = await message.Content.ReadAsStringAsync();
-                        Recipe result = JsonConvert.DeserializeObject<Recipe>(json);
+                        User result = JsonConvert.DeserializeObject<User>(json);
                         return result;
                     }
                     else
                     {
-                        return new Recipe
-                               {
-                                   Title = "No data"
-                               };
+                        return new User { Name = "No data" };
                     }
                 }
                 catch (Exception exception)
@@ -48,7 +46,7 @@
             }
         }
 
-        public async Task<List<Recipe>> GetAllRecipes()
+        public async Task<List<User>> GetAllUsers()
         {
             var handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
@@ -57,23 +55,17 @@
             {
                 try
                 {
-                    HttpResponseMessage message = await client.GetAsync(baseUrl);
+                    HttpResponseMessage message = await client.GetAsync(BaseUrl);
 
                     if (message.IsSuccessStatusCode)
                     {
                         string json = await message.Content.ReadAsStringAsync();
-                        List<Recipe> result = JsonConvert.DeserializeObject<List<Recipe>>(json);
+                        List<User> result = JsonConvert.DeserializeObject<List<User>>(json);
                         return result;
                     }
                     else
                     {
-                        return new List<Recipe>
-                               {
-                                   new Recipe
-                                   {
-                                       Title = "No data"
-                                   }
-                               };
+                        return new List<User> { new User { Name = "No data" } };
                     }
                 }
                 catch (Exception exception)
@@ -83,5 +75,25 @@
                 }
             }
         }
+
+        public async Task<User> FindUserByFirstName(string name)
+        {
+            var ListOfUsers = await GetAllUsers();
+            User user = new User();
+            foreach (var item in ListOfUsers)
+            {
+                if (item.Name == name)
+                {
+                    user = item;
+                }
+                else
+                {
+                    Console.WriteLine("User not found");
+                }
+            }
+            return user;
+        }
+
+
     }
 }

@@ -1,21 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ChefByStep.App">
+<Application
+    x:Class="ChefByStep.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    >
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
     <Application.Resources>
         <ResourceDictionary>
+
             <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="PrimaryColor">#78c6a3</Color>
+            <Color x:Key="PrimaryDarkColor">#00914f</Color>
+            <Color x:Key="PrimaryLightColor">#def1e8</Color>
+            <Color x:Key="PrimaryVariantColor">#5bb188</Color>
+            <Color x:Key="PrimaryVariantColor2">#d7eee3</Color>
+
+            <Color x:Key="SecondaryColor">#c6789b</Color>
+            <Color x:Key="SecondaryDarkColor">#ab4c70</Color>
+            <Color x:Key="SecondaryLightColor">#f3e6ed</Color>
+            <Color x:Key="SecondaryVariantColor">#bb5076</Color>
+            <Color x:Key="SecondaryVariantColor2">#5e354d</Color>
+            <Color x:Key="SecondaryVariantColor3">#F2F6D0</Color>
+            <Color x:Key="SecondaryVariantColor4">#BEFFC7</Color>
+            <Color x:Key="SecondaryVariantColor5">#392F5A</Color>
+            <Color x:Key="SecondaryVariantColor6">#EEC8E0</Color>
+
+            <Color x:Key="CrazyDark">#2E382E</Color>
+            <Color x:Key="CrazyOrange">#F18805</Color>
+            <Color x:Key="CrazyYellow">#F0A202</Color>
+            <Color x:Key="CrazyGreen">#006400</Color>
+            <Color x:Key="CrazyGreen1">#228B22</Color>
+
+            <Color x:Key="ErrorColor">#B00020</Color>
+
+            <Color x:Key="TextColor">#1d1d1d</Color>
+            <Color x:Key="SecondaryTextColor">#ffffff</Color>
+
             <Style TargetType="Button">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
@@ -27,6 +57,6 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
-        </ResourceDictionary>        
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

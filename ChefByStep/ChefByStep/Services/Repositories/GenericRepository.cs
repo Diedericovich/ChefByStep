@@ -5,16 +5,43 @@
     using System.Net.Http;
     using System.Threading.Tasks;
 
-    using ChefByStep.Models;
-
     using Newtonsoft.Json;
 
-    public class RecipeRepository : IRecipeRepository
+    public class GenericRepository<T>
     {
-         private const string baseUrl = "https://10.0.2.2:44350/api/Recipe";
-        //private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/Recipe";
+        private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/";
 
-        public async Task<Recipe> GetRecipe(int id)
+        public async Task<IEnumerable<T>> GetAll()
+        {
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
+
+            using (var client = new HttpClient(handler))
+            {
+                try
+                {
+                    HttpResponseMessage message = await client.GetAsync(baseUrl);
+
+                    if (message.IsSuccessStatusCode)
+                    {
+                        string json = await message.Content.ReadAsStringAsync();
+                        List<T> result = JsonConvert.DeserializeObject<List<T>>(json);
+                        return result;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
+            }
+        }
+
+        public async Task<object> GetById(object id)
         {
             var url = $"{baseUrl}/{id}";
             var handler = new HttpClientHandler();
@@ -29,15 +56,12 @@
                     if (message.IsSuccessStatusCode)
                     {
                         string json = await message.Content.ReadAsStringAsync();
-                        Recipe result = JsonConvert.DeserializeObject<Recipe>(json);
+                        T result = JsonConvert.DeserializeObject<T>(json);
                         return result;
                     }
                     else
                     {
-                        return new Recipe
-                               {
-                                   Title = "No data"
-                               };
+                        return null;
                     }
                 }
                 catch (Exception exception)
@@ -48,40 +72,20 @@
             }
         }
 
-        public async Task<List<Recipe>> GetAllRecipes()
+        public void Insert(T obj)
         {
-            var handler = new HttpClientHandler();
-            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
+        }
 
-            using (var client = new HttpClient(handler))
-            {
-                try
-                {
-                    HttpResponseMessage message = await client.GetAsync(baseUrl);
+        public void Update(T obj)
+        {
+        }
 
-                    if (message.IsSuccessStatusCode)
-                    {
-                        string json = await message.Content.ReadAsStringAsync();
-                        List<Recipe> result = JsonConvert.DeserializeObject<List<Recipe>>(json);
-                        return result;
-                    }
-                    else
-                    {
-                        return new List<Recipe>
-                               {
-                                   new Recipe
-                                   {
-                                       Title = "No data"
-                                   }
-                               };
-                    }
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception);
-                    throw;
-                }
-            }
+        public void Delete(object id)
+        {
+        }
+
+        public void Save()
+        {
         }
     }
 }
