@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChefByStep.iOS", "ChefBySte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChefByStep", "ChefByStep\ChefByStep\ChefByStep.csproj", "{6CC74019-30A9-49A4-BAB8-46B44B9EDB02}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{168DA8EA-1836-4F3B-AE52-1F0863A136DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,7 +67,8 @@ Global
 		{46111C5F-016D-444C-B07D-532C90D8BBF2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{46111C5F-016D-444C-B07D-532C90D8BBF2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{46111C5F-016D-444C-B07D-532C90D8BBF2}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{02498DA0-9EA2-44B2-9791-ED97428F834E}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{02498DA0-9EA2-44B2-9791-ED97428F834E}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{02498DA0-9EA2-44B2-9791-ED97428F834E}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{02498DA0-9EA2-44B2-9791-ED97428F834E}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{02498DA0-9EA2-44B2-9791-ED97428F834E}.Debug|iPhone.Build.0 = Debug|iPhone
 		{02498DA0-9EA2-44B2-9791-ED97428F834E}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
@@ -90,6 +93,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46111C5F-016D-444C-B07D-532C90D8BBF2} = {168DA8EA-1836-4F3B-AE52-1F0863A136DB}
+		{02498DA0-9EA2-44B2-9791-ED97428F834E} = {168DA8EA-1836-4F3B-AE52-1F0863A136DB}
+		{6CC74019-30A9-49A4-BAB8-46B44B9EDB02} = {168DA8EA-1836-4F3B-AE52-1F0863A136DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4063011E-D752-493C-BA5D-2757C878FE36}

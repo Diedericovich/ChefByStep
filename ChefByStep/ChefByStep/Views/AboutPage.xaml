@@ -1,52 +1,228 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ChefByStep.Views.AboutPage"
-             xmlns:vm="clr-namespace:ChefByStep.ViewModels"
-             Title="{Binding Title}">
-    
+
+<ContentPage
+    x:Class="ChefByStep.Views.AboutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:vm="clr-namespace:ChefByStep.ViewModels"
+    Title="ChefByStep"
+    >
+
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
-                </ContentView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding ActiveUser.ApplicationUser.Name, StringFormat='Hello, {0}'}"
+                     Command="{Binding GoToProfile}"
+                     />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout>
+            <SearchBar Placeholder="Find a Recipe" />
+
+            <CarouselView
+                HeightRequest="400"
+                ItemsSource="{Binding Recipes}"
+                Loop="True"
+                PeekAreaInsets="40"
+                WidthRequest="300"
+                >
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame
+                                Margin="10"
+                                Padding="0"
+                                BackgroundColor="white"
+                                CornerRadius="10"
+                                HasShadow="True"
+                                HeightRequest="400"
+                                HorizontalOptions="CenterAndExpand"
+                                WidthRequest="300"
+                                >
+
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <StackLayout BackgroundColor="Black">
+                                        <Image
+                                            Aspect="AspectFill"
+                                            HeightRequest="400"
+                                            Opacity="0.8"
+                                            Source="{Binding ImageUrl}"
+                                            />
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Image
+                                            Margin="0,-10,0,0"
+                                            Aspect="AspectFit"
+                                            HeightRequest="60"
+                                            HorizontalOptions="EndAndExpand"
+                                            Source="icon_bookmark.png"
+                                            />
+                                        <Label
+                                            Margin="15,0"
+                                            FontAttributes="Bold"
+                                            FontSize="24"
+                                            Text="{Binding Title}"
+                                            TextColor="white"
+                                            VerticalOptions="EndAndExpand"
+                                            />
+
+                                        <StackLayout
+                                            Margin="15,-10,0,0"
+                                            Orientation="Horizontal"
+                                            >
+                                            <Image
+                                                Aspect="AspectFit"
+                                                HeightRequest="20"
+                                                Source="icon_map1.png"
+                                                />
+
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AboutViewModel}}, Path=ItemTapped}"
+                                            CommandParameter="{Binding .}"
+                                            NumberOfTapsRequired="1"
+                                            />
+                                    </Grid.GestureRecognizers>
+
+
+                                </Grid>
+                            </Frame>
+
+                        </StackLayout>
+
+
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <StackLayout>
+                <Grid>
+                    <Frame
+                        Margin="5"
+                        Padding="8"
+                        BorderColor="Gray"
+                        CornerRadius="5"
+                        HasShadow="True"
+                        >
+                        <StackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="Medium"
+                                HorizontalOptions="Center"
+                                Text="Welcome to CBS"
+                                />
+                            <BoxView
+                                HeightRequest="2"
+                                HorizontalOptions="Fill"
+                                Color="Gray"
+                                />
+                            <Label Text="Frames can wrap more complex layouts to create more complex UI components, such as this card!" />
+                        </StackLayout>
+                    </Frame>
+
+
+                </Grid>
+
+                <Grid>
+                    <pancake:PancakeView
+                        Margin="5,5,5,5"
+                        BackgroundColor="white"
+                        CornerRadius="0"
+                        HeightRequest="320"
+                        HorizontalOptions="Center"
+                        VerticalOptions="StartAndExpand"
+                        WidthRequest="320"
+                        >
+                        <pancake:PancakeView.Shadow>
+                            <pancake:DropShadow
+                                BlurRadius="50"
+                                Offset="0,0"
+                                Color="Black"
+                                />
+                        </pancake:PancakeView.Shadow>
+
+                        <Grid
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            >
+                            <Image
+                                Margin="5"
+                                Aspect="AspectFill"
+                                Source="https://greenkitchenstories.com/wp-content/uploads/2014/03/Beet_endive_salad_2.jpg"
+                                />
+                            <Label Text="Salads"
+                                   TextColor="Wheat"
+                                   VerticalOptions="EndAndExpand"
+                                   HorizontalOptions="EndAndExpand"
+                                   Margin="15"
+                                   FontSize="30"
+                                   />
+
+                        </Grid>
+                    </pancake:PancakeView>
+
+                </Grid>
+
+                <Grid>
+                    <pancake:PancakeView
+                        Margin="5,5,5,5"
+                        BackgroundColor="white"
+                        CornerRadius="0"
+                        HeightRequest="180"
+                        HorizontalOptions="Center"
+                        VerticalOptions="StartAndExpand"
+                        WidthRequest="180"
+                        >
+                        <pancake:PancakeView.Shadow>
+                            <pancake:DropShadow
+                                BlurRadius="15"
+                                Offset="0,0"
+                                Color="Black"
+                                />
+                        </pancake:PancakeView.Shadow>
+
+                        <Grid
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            >
+                            <Image
+                                Margin="5"
+                                Aspect="AspectFill"
+                                Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg"
+                                />
+
+                        </Grid>
+                    </pancake:PancakeView>
+                    <Path
+                        Margin="35,-110,-90,20"
+                        Aspect="Uniform"
+                        Data="m354.76354,165.175l29.99999,0l0,44.79998l-15,11.20001l-15,-11.20001l0.00002,-44.79998z"
+                        Fill="red"
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        Opacity="0.9"
+                        Stroke="red"
+                        WidthRequest="30"
+                        />
+
+                </Grid>
+
+
             </StackLayout>
+
+
         </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Start developing now" FontSize="Title"/>
-                <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="0,0,0,0"/>
-                <Label FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Learn more at "/>
-                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-            </StackLayout>
-        </ScrollView>
-    </Grid>
+
+
+    </ScrollView>
+
 
 </ContentPage>
