@@ -2,13 +2,13 @@
 
 <div class="overview">
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
+        <div >
             <div>
                 <img src="@Model.ImageUrl" />
-                <div>@Model.Title</div>
+                <h3>@Model.Title</h3>
             </div>
-            <div>
-                <div>
+            <div >
+                <div class="float-left">
                     @foreach (var ingredient in @Model.Ingredients)
                     {
                         <ul>
@@ -20,6 +20,13 @@
                 </div>
                 <div>
                     <p>@Model.Description</p>
+                </div>
+                <div>
+                    @foreach (var rating in @Model.Ratings)
+                    {
+                        <p>@rating.Rating</p>
+                    }
+
                 </div>
 
             </div>
