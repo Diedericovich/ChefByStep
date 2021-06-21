@@ -149,12 +149,8 @@
                                 </xyt:TabViewItem>
                             </xyt:TabView>
                         </Grid>-->
-
-
-
-
                     </Frame>
-
+                    
                     <pancake:PancakeView CornerRadius="50"
                            BackgroundColor="white"
                            HeightRequest="60"
@@ -162,9 +158,11 @@
                            HorizontalOptions="EndAndExpand"
                            VerticalOptions="StartAndExpand"
                            Margin="0,-35,35,0"
+                           
+                                        
                            >
                         <pancake:PancakeView.Shadow>
-                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0"/>
+                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0" />
                         </pancake:PancakeView.Shadow>
 
                         <Grid VerticalOptions="Center"

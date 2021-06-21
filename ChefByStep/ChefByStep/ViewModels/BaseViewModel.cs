@@ -6,29 +6,48 @@
     using System.Runtime.CompilerServices;
 
     using ChefByStep.Models;
-    using ChefByStep.Services;
-
-    using Xamarin.Forms;
 
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        
+        public ActiveUser ActiveUser { get; set; }
+        
+        public BaseViewModel()
+        {
+            ActiveUser = ActiveUser.GetInstance();
+        }
 
         bool isBusy = false;
+
         public bool IsBusy
         {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
+            get
+            {
+                return isBusy;
+            }
+            set
+            {
+                SetProperty(ref isBusy, value);
+            }
         }
 
         string title = string.Empty;
+
         public string Title
         {
-            get { return title; }
-            set { SetProperty(ref title, value); }
+            get
+            {
+                return title;
+            }
+            set
+            {
+                SetProperty(ref title, value);
+            }
         }
 
-        protected bool SetProperty<T>(ref T backingStore, T value,
+        protected bool SetProperty<T>(
+            ref T backingStore,
+            T value,
             [CallerMemberName] string propertyName = "",
             Action onChanged = null)
         {
@@ -42,7 +61,9 @@
         }
 
         #region INotifyPropertyChanged
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
@@ -51,6 +72,7 @@
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         #endregion
     }
 }

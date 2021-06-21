@@ -60,5 +60,6 @@
                 Debug.WriteLine("Failed to load place");
             }
         }
+
     }
 }
