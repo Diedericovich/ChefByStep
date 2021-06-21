@@ -34,12 +34,6 @@
             <Color x:Key="CrazyGreen">#006400</Color>
             <Color x:Key="CrazyGreen1">#228B22</Color>
 
-
-            <Color x:Key="Green1">#004d00</Color>
-            <Color x:Key="Green2">#003300</Color>
-            <Color x:Key="Green3">#001900</Color>
-            
-
             <Color x:Key="ErrorColor">#B00020</Color>
 
             <Color x:Key="TextColor">#1d1d1d</Color>
