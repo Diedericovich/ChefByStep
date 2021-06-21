@@ -28,7 +28,6 @@
             <Color x:Key="SecondaryVariantColor6">#EEC8E0</Color>
 
             <Color x:Key="CrazyDark">#2E382E</Color>
-            <Color x:Key="CrazyRed">#D95D39</Color>
             <Color x:Key="CrazyOrange">#F18805</Color>
             <Color x:Key="CrazyYellow">#F0A202</Color>
             <Color x:Key="CrazyGreen">#006400</Color>
