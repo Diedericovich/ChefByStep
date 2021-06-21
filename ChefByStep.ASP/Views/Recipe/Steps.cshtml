@@ -3,7 +3,7 @@
     int j = 1;
 }
 
-<div class="overview">
+<div class="overview-steps">
     @*<div class="row">
             <div class="col-sm-12 col-md-3 col-lg-4">
                 <img src="@Model.ImageUrl" style="width:250px;" />
@@ -63,34 +63,42 @@
         </div>*@
     <div><h2>@Model.Title</h2></div>
     
-    <div id="scene">
-        <div id="left-zone">
-            <ul class="list">
-                @foreach (var step in Model.Steps)
-                {
-                    <li class="item">
-                        @if (j == 1)
-                        {
-                            <input type="radio" id="radio_@j" name="basic_carousel" value="@step" checked />
-                        }
-                        else
-                        {
-                            <input type="radio" id="radio_@j" name="basic_carousel" value="@step" />
+    <div class="steps">
+        <div id="scene">
+            <div id="left-zone">
+                <ul class="list">
+                    @foreach (var step in Model.Steps)
+                    {
+                        <li class="item">
+                            @if (j == 1)
+                            {
+                                <input type="radio" id="radio_@j" name="basic_carousel" value="@step" checked />
+                            }
+                            else
+                            {
+                                <input type="radio" id="radio_@j" name="basic_carousel" value="@step" />
 
-                        }
-                        <label for="radio_@j" class="label">Step @j </label>
-                        <div class="content">
-                            <p>@step.Instruction</p>
-                        </div>
-                    </li>
-                    j++;
-                }
-            </ul>
+                            }
+                            <label for="radio_@j" class="label">Step @j </label>
+                            <div class="content">
+                                <p>@step.Instruction</p>
+                            </div>
+                        </li>
+                        j++;
+                    }
+                </ul>
 
+            </div>
+            <div id="middle-border"></div>
+            <div id="right-zone"></div>
         </div>
-        <div id="middle-border"></div>
-        <div id="right-zone"></div>
     </div>
-
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        @foreach (var ingredient in Model.Ingredients)
+        {
+            <p>@ingredient.Amount @ingredient.Ingredient.Name</p>
+        }
+    </div>
 
 </div>

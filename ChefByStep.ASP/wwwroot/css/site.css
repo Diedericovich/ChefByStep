@@ -149,6 +149,7 @@ body {
     margin-top: 5%;
 }
 
+
 .random-recipe {
     font-size: 1em;
     font-family: Britannic;
@@ -329,17 +330,18 @@ ol.carousel-indicators {
 
 
 
-    body #scene {
-        display: flex;
+    .overview-steps #scene {
+        display: block;
         align-items: center;
-        width: 66%;
-        height: 50%;
-        position: absolute;
+        width: inherit;
+        height: fit-content;
+        position: relative;
         top: 10%;
         bottom: 0;
         left: 0;
         right: 0;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
         background-color: #fff;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         overflow: hidden;
@@ -467,4 +469,21 @@ ol.carousel-indicators {
             width: 100%;
             flex-grow: 3;
         }
- 
+
+.overview-steps {
+    display: block;
+    background-color: #fff;
+    padding: 5%;
+    height: auto;
+}
+
+    /*.overview-steps h2 {
+        display: block;
+        background-color: #fff;
+        margin-bottom: 10px;
+        height: auto;
+    }
+
+.ingredients {
+    display: block;
+}*/
