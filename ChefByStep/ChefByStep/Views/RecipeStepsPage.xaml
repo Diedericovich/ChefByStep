@@ -31,7 +31,6 @@
                             <pancakeView:PancakeView
                                 Margin="-50,20,30,-30"
                                 BackgroundColor="YellowGreen"
-                                Border="5"
                                 CornerRadius="50"
                                 HeightRequest="60"
                                 HorizontalOptions="EndAndExpand"
