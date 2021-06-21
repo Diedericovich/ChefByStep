@@ -344,6 +344,8 @@ ol.carousel-indicators {
         margin-bottom: 5%;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 2%;
+        padding-bottom: 2%;
         background-color: #fff;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         overflow: hidden;
@@ -442,8 +444,7 @@ ol.carousel-indicators {
 
                         body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label {
                             color: RGBA(120,198,163,0.75);
-                            
-                            border-right: solid 4px RGBA(120,198,163,0.75);
+                            border-right: solid 4px #78c6a3;
                             
                         }
 
@@ -479,13 +480,15 @@ ol.carousel-indicators {
     height: auto;
 }
 
-    /*.overview-steps h2 {
-        display: block;
-        background-color: #fff;
-        margin-bottom: 10px;
-        height: auto;
+    .overview-steps h2 {
+        padding-bottom: 10px;
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.24);
+        margin-bottom: 5%;
     }
+.ingredients p{
+    line-height: 15px;
+}
+.ingredients img {
+    width: 550px;
 
-.ingredients {
-    display: block;
-}*/
+}

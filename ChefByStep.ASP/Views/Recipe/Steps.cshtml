@@ -93,12 +93,20 @@
             <div id="right-zone"></div>
         </div>
     </div>
+
     <div class="ingredients">
         <h2>Ingredients</h2>
-        @foreach (var ingredient in Model.Ingredients)
-        {
-            <p>@ingredient.Amount @ingredient.Ingredient.Name</p>
-        }
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-5">
+                @foreach (var ingredient in Model.Ingredients)
+                {
+                    <p>@ingredient.Amount @ingredient.Ingredient.Name</p>
+                }
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-7">
+            <img src="@Model.ImageUrl" />
+            </div>
+        </div>
     </div>
 
 </div>
