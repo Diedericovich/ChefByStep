@@ -80,7 +80,7 @@
                     </Grid.RowDefinitions>
                     <Label Text="{Binding CurrentUser.ActiveUser.Name, StringFormat='Hi {0}'}" FontSize="22"/>
                 </Grid>
-                <Entry Grid.Row="1" Placeholder="Email" FontSize="16" Keyboard="Email" Text="{Binding EMail}"/>
+                <Entry Grid.Row="1" Placeholder="User Name" FontSize="16" Keyboard="Telephone"  Text="{Binding Name}"/>
                 <Entry Grid.Row="2" Placeholder="Password" FontSize="16" IsPassword="True" Text="{Binding Password}"/>
                 <Button Text="LogIn" Command="{Binding LoginCommand}" 
                         Background="#00914f" 
