@@ -301,3 +301,170 @@ ol.carousel-indicators {
 .carousel-control-next-icon .carousel-control-prev-icon {
     background-color: #78c6a3;
 }
+
+/*------------------------------------------- STEPS OVERVIEW -------------------------------------------------------------------*/
+@keyframes slidein {
+    0% {
+        top: -400px;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@keyframes slideout {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: -400px;
+        opacity: 0;
+    }
+}
+
+
+
+    body #scene {
+        display: flex;
+        align-items: center;
+        width: 66%;
+        height: 50%;
+        position: absolute;
+        top: 10%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        overflow: hidden;
+    }
+
+        body #scene #left-zone {
+            background: #fff;
+            height: 75%;
+            flex-grow: 0;
+            display: flex;
+            width: 250px;
+            align-items: center;
+            justify-content: left;
+        }
+
+            body #scene #left-zone .list {
+                display: flex;
+                list-style: none;
+                align-content: stretch;
+                flex-direction: column;
+                flex-grow: 1;
+                margin: 0;
+                padding: 0;
+            }
+
+                body #scene #left-zone .list li.item input[type="radio"] {
+                    display: none;
+                }
+
+                    body #scene #left-zone .list li.item input[type="radio"] ~ label {
+                        display: block;
+                        opacity: 0.5;
+                        height: 50px;
+                        font-size: 2em;
+                        margin-left: 10%;
+                        line-height: 50px;
+                    }
+
+                        body #scene #left-zone .list li.item input[type="radio"] ~ label:first-letter {
+                            text-transform: uppercase;
+                        }
+
+                        body #scene #left-zone .list li.item input[type="radio"] ~ label:hover {
+                            opacity: 0.75;
+                            cursor: pointer;
+                        }
+
+                        body #scene #left-zone .list li.item input[type="radio"] ~ label.label:before {
+                            content: " ";
+                            display: block;
+                            position: absolute;
+                            width: 50px;
+                            height: 50px;
+                            margin-left: 15px;
+                        }
+
+                        
+
+                    body #scene #left-zone .list li.item input[type="radio"] ~ .content {
+                        position: absolute;
+                        left: 10%;
+                        bottom: 20%;
+                        top: 80%;
+                        width: 100%;
+                        height: 100%;
+                        animation-duration: 0.75s;
+                        animation-name: slideout;
+                        animation-timing-function: ease-out;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                        body #scene #left-zone .list li.item input[type="radio"] ~ .content.content h1 {
+                            color: RGBA(120,198,163,0.75);
+                            text-align: center;
+                        }
+
+                        
+
+                        body #scene #left-zone .list li.item input[type="radio"] ~ .content h1:first-letter {
+                            text-transform: uppercase;
+                        }
+
+                        body #scene #left-zone .list li.item input[type="radio"] ~ .content p {
+                            max-width: 50%;
+                            text-align: center;
+                        }
+
+                    body #scene #left-zone .list li.item input[type="radio"]:checked ~ label {
+                        opacity: 1;
+                        animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                    }
+
+                        body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label {
+                            color: RGBA(120,198,163,0.75);
+                            
+                            border-right: solid 4px RGBA(120,198,163,0.75);
+                            
+                        }
+
+
+
+                    body #scene #left-zone .list li.item input[type="radio"]:checked ~ .content {
+                        animation-duration: 0.75s;
+                        animation-name: slidein;
+                        animation-fill-mode: forwards;
+                        animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                        text-align: center;
+                    }
+
+        body #scene #middle-border {
+            background-color: #eee;
+            height: 75%;
+            flex-grow: 1;
+            max-width: 2px;
+            z-index: 0;
+        }
+
+        body #scene #right-zone {
+            background: #fff;
+            height: 100%;
+            width: 100%;
+            flex-grow: 3;
+        }
+ 
