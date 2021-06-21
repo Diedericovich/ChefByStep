@@ -13,7 +13,7 @@ namespace ChefByStep.API.Helpers
         public AutoMapperProfile()
         {
             CreateMap<Recipe, RecipeDto>()
-                .ForMember(dst => dst.CreatedBy, opt => opt.MapFrom(src => src.CreatedBy.Name))
+                .ForMember(dst => dst.CreatedByUser, opt => opt.MapFrom(src => src.CreatedBy.Name))
                 .ForMember(dst => dst.Ingredients, opt => opt.MapFrom(src => src.Ingredients))
                 .ForMember(dst => dst.Steps, opt => opt.MapFrom(src => src.Steps))
                 .ReverseMap();

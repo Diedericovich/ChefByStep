@@ -13,6 +13,7 @@ namespace ChefByStep.ASP.Helpers
         public AutoMapperProfile()
         {
             CreateMap<Recipe, RecipeDetailViewModel>().ReverseMap();
+            CreateMap<RecipeIngredient, Ingredient>().ReverseMap();
         }
         
     }

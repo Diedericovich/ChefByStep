@@ -5,11 +5,8 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.ASP.Models
 {
-    public class Account : BaseModel
+    public class BaseModel
     {
-
-        public string Email { get; set; }
-
-        public string Password { get; set; }
+        public int Id { get; set; }
     }
 }

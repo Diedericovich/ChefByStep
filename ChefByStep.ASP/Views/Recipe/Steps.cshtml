@@ -6,10 +6,12 @@
 <div class="overview">
     <div class="row">
         <div class="col-sm-12 col-md-3 col-lg-4">
+            <img src="@Model.ImageUrl" style="width:250px;" />
             <h2>@Model.Title</h2>
+            
             @foreach (var ingredient in Model.Ingredients)
             {
-                <p>@ingredient.Name</p>
+                <p>@ingredient.Amount @ingredient.Ingredient.Name</p>
             }
         </div>
         <div class="col-sm-12 col-md-9 col-lg-8">

@@ -14,7 +14,7 @@ namespace ChefByStep.ASP.Models
         public List<RecipeRating> Ratings { get; set; }
         public string ImageUrl { get; set; }
         public string Title { get; set; }
-        public List<Ingredient> Ingredients { get; set; }
+        public List<RecipeIngredient> Ingredients { get; set; }
         public List<Step> Steps { get; set; }
         [NotMapped]
         public ApplicationUser CreatedBy { get; set; }
