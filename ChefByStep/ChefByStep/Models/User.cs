@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ChefByStep.Models
+﻿namespace ChefByStep.Models
 {
-    public class User: BaseModel
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int AcoountId { get; set; }
-        public int RoleIdn { get; set; }
-        public List<Recipe> CreateRecipe { get; set; }
-        public List<Recipe> FavoriteRecipes { get; set; }
-        public List<Recipe> Completedrecipe { get; set; }
-        public List<RecipeRating> Ratings { get; set; }
+    using System.Collections.Generic;
 
+    public class User : BaseModel
+    {
+        public int AccountId { get; set; }
+
+        public int RoleId { get; set; }
+
+        public string Name { get; set; }
+
+        public List<Recipe> CreatedRecipe { get; set; }
+
+        public List<Recipe> FavoriteRecipes { get; set; }
+
+        public List<Recipe> CompletedRecipes { get; set; }
+
+        public List<RecipeRating> Rating { get; set; }
     }
 }

@@ -39,9 +39,22 @@ namespace ChefByStep.API.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<User> GetUserAsync(int id)
+        public async Task<ActionResult<User>> GetUserAsync(int id)
         {
             return await _service.GetUserAsync(id);
+        }
+
+        [HttpGet("{name}")]
+        public async Task<ActionResult<User>> GetUserByNameAsync(string name)
+        {
+            if (await _service.UserExistsAsync(name))
+            {
+                return await _service.GetUserByNameAsync(name);
+            }
+            else
+            {
+                return BadRequest("User not found");
+            }
         }
 
         [HttpGet]

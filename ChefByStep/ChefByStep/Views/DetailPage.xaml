@@ -11,14 +11,13 @@
         
     </ContentPage.BindingContext>
 
-
     <ContentPage.Content>
         <Grid>
             <StackLayout VerticalOptions="FillAndExpand">
                 <Grid>
 
                     <Frame HeightRequest="400" Padding="0" BackgroundColor="Black">
-                        <Image Source="{Binding SelectedRecipe.ImgUrl}"
+                        <Image Source="{Binding SelectedRecipe.ImageUrl}"
                            HeightRequest="400"
                            Aspect="AspectFill"
                            Opacity="0.9"/>
@@ -51,15 +50,17 @@
 
                     </StackLayout>
                 </Grid>
-
+                
                 <Grid VerticalOptions="FillAndExpand"
                       Margin="0,-20,0,0"
                       Padding="0">
 
-                    <Frame CornerRadius="25">
+                    <Frame CornerRadius="25"
+                           >
                         <StackLayout>
 
                             <xct:TabView
+                                        TabItemsSource="{Binding SelectedRecipe}"
                                         TabStripPlacement="Top"
                                         TabStripBackgroundColor="LightGray"
                                         TabStripHeight="60"
@@ -86,61 +87,65 @@
 
                                 <xct:TabViewItem
                                         Icon="info.png"
+                                        Text="Ingredients"
+                                        TextColor="Black"
+                                        TextColorSelected="red"
+                                        FontSize="16">
+                                    
+                                    <Grid>
+                                        <CollectionView ItemsSource="{Binding SelectedRecipe.Ingredients}" Margin="20">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label
+                                                        HorizontalOptions="Center"
+                                                        VerticalOptions="Center"
+                                                        Text="{Binding Ingredient.Name, StringFormat='*   {0}'}" />
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                        
+                                    </Grid>
+                                </xct:TabViewItem>
+                                
+                                <xct:TabViewItem
+                                        Icon="info.png"
                                         Text="Reviews"
                                         TextColor="Black"
                                         TextColorSelected="red"
                                         FontSize="16">
                                     <Grid>
-                                        <Label    
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center"
-                                        Text="Here are the reviews from users" />
+                                        <CollectionView ItemsSource="{Binding SelectedRecipe.Ratings}" Margin="20">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label
+                                                        HorizontalOptions="Center"
+                                                        VerticalOptions="Center"
+                                                        Text="{Binding Comment}" />
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
                                     </Grid>
                                 </xct:TabViewItem>
                             </xct:TabView>
 
-
-                            <!--<Label Text="{Binding SelectedPlace.Description}"
-                                   FontSize="18"
-                                   Margin="10,20"/>-->
                         </StackLayout>
 
-
-
-                        <!--Xamarin Community Toolkit , using for tabs-->
-                        <!--<Grid>
-                            <xyt:TabView Style="{StaticResource TabStyle}">
-                                <xyt:TabViewItem >
-                                    <Grid BackgroundColor="Red">
-                                    </Grid>
-                                </xyt:TabViewItem>
-                                <xyt:TabViewItem>
-                                    <Grid BackgroundColor="Blue">
-                                    </Grid>
-                                </xyt:TabViewItem>
-                            </xyt:TabView>
-                        </Grid>-->
-
-
-
-
                     </Frame>
-
+                    
                     <pancake:PancakeView CornerRadius="50"
                            BackgroundColor="white"
                            HeightRequest="60"
                            WidthRequest="60"
                            HorizontalOptions="EndAndExpand"
                            VerticalOptions="StartAndExpand"
-                           Margin="0,-35,35,0"
-                           >
+                           Margin="0,-35,35,0">
                         <pancake:PancakeView.Shadow>
-                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0"/>
+                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0" />
                         </pancake:PancakeView.Shadow>
 
                         <Grid VerticalOptions="Center"
                               HorizontalOptions="Center">
-                            <Label Text="{Binding SelectedPlace.Rating}"
+                            <Label Text="7"
                                    FontSize="22"
                                    TextColor="red"/>
                         </Grid>

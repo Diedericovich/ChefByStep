@@ -34,6 +34,1382 @@ namespace ChefByStep.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ingredients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "lemon",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "unsalted butter",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "prepared horseradish",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "kosher salt",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "shrimp",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "chopped dill",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "crusty bread",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "hot pasta",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "sliced red onion",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "salt",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "roasted chicken",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "peppadews peppers",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "marinated artichoke hearts",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "chopped smoked almonds",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "chopped thyme",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "whole-grain mustard",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "sherry vinegar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "extra virgin olive oil",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "black pepper",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "olive oil",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "garlic",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "olive",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Name = "white fish",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Name = "salted capers",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "white wine",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "chopped tomatoe",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Name = "spaghetti",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Name = "chopped parsley",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Name = "salt and pepper",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Name = "neutral oil",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Name = "sourdough bread",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Name = "raw cashews",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Name = "black mustard seeds",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Name = "urad dal",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Name = "asafetida",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Name = "shallot",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Name = "chopped green chile",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Name = "curry leaves",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Name = "ground turmeric",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Name = "small cauliflower florets",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Name = "frozen peas",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Name = "plain full-fat yogurt",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Name = "cilantro",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Name = "fried egg",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Name = "key lime juice",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Name = "large egg yolk",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Name = "condensed milk",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Name = "coarse salt",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Name = "cornstarch",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Name = "cream cheese",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Name = "granulated sugar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Name = "graham crackers",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Name = "egg white",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Name = "all-purpose flour",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Name = "cake flour",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Name = "baking soda",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Name = "egg",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Name = "pure vanilla extract",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Name = "buttermilk",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Name = "cherry tomatoe",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Name = "ear corn",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Name = "large sliced summer squash",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Name = "red onion",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Name = "penne pasta",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Name = "torn basil leaves",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Name = "fresh oregano leaves",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Name = "pine nuts",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 68,
+                            Name = "almond flour",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 69,
+                            Name = "confectioners' sugar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 70,
+                            Name = "cinnamon",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 71,
+                            Name = "cocoa powder",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 72,
+                            Name = "cream of tartar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 73,
+                            Name = "mexican chocolate",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 74,
+                            Name = "heavy cream",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 75,
+                            Name = "chicken stock",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 76,
+                            Name = "white pepper",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 77,
+                            Name = "orzo",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 78,
+                            Name = "dash sugar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 79,
+                            Name = "dill sprig",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 80,
+                            Name = "brie",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 81,
+                            Name = "tomatoe",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 82,
+                            Name = "basil leaves",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 83,
+                            Name = "dash sea salt",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 84,
+                            Name = "dash pepper",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 85,
+                            Name = "curly pasta",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 86,
+                            Name = "zest of lemon",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 87,
+                            Name = "chopped strawberries",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 88,
+                            Name = "lemon juice",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 89,
+                            Name = "sea salt",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 90,
+                            Name = "baking powder",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 91,
+                            Name = "fine sea salt",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 92,
+                            Name = "whole milk",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 93,
+                            Name = "strawberry pur�e",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 94,
+                            Name = "vanilla extract",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 95,
+                            Name = "water",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 96,
+                            Name = "lemon curd",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 97,
+                            Name = "red beans",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 98,
+                            Name = "bay leaf",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 99,
+                            Name = "onion",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 100,
+                            Name = "chile",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 101,
+                            Name = "coriander seed",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 102,
+                            Name = "beef short ribs",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 103,
+                            Name = "yellow onion",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 104,
+                            Name = "oregano",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 105,
+                            Name = "tomato paste",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 106,
+                            Name = "fire roasted tomato",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 107,
+                            Name = "chocolate stout",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 108,
+                            Name = "tortilla chips",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 109,
+                            Name = "lime",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 110,
+                            Name = "ground beef",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 111,
+                            Name = "jalape�o",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 112,
+                            Name = "chili powder",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 113,
+                            Name = "barbecue sauce",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 114,
+                            Name = "cheddar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 115,
+                            Name = "sweet onion",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 116,
+                            Name = "hamburger buns",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 117,
+                            Name = "potato chips",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 118,
+                            Name = "dill pickles",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 119,
+                            Name = "iceberg lettuce",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 120,
+                            Name = "red pepper flakes",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 121,
+                            Name = "herbes de provence",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 122,
+                            Name = "red wine",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 123,
+                            Name = "worcestershire sauce",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 124,
+                            Name = "cremini mushrooms",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 125,
+                            Name = "carrots",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 126,
+                            Name = "mashed potatoes",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 127,
+                            Name = "panko bread crumbs",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 128,
+                            Name = "parsley",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 129,
+                            Name = "brown sugar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 130,
+                            Name = "soy sauce",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 131,
+                            Name = "sparkling dessert wine",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 132,
+                            Name = "sesame oil",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 133,
+                            Name = "green onions",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 134,
+                            Name = "beef tenderloin",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 135,
+                            Name = "cucumber",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 136,
+                            Name = "gochugaru",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 137,
+                            Name = "sugar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 138,
+                            Name = "rice vinegar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 139,
+                            Name = "mayonnaise",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 140,
+                            Name = "red wine vinegar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 141,
+                            Name = "blue cheese",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 142,
+                            Name = "rosemary",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 143,
+                            Name = "garlic powder",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 144,
+                            Name = "ground beef brisket",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 145,
+                            Name = "cumin",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 146,
+                            Name = "oil",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 147,
+                            Name = "brioche bun",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 148,
+                            Name = "arugula",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 149,
+                            Name = "onion powder",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 150,
+                            Name = "paprika",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 151,
+                            Name = "pepper",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 152,
+                            Name = "sirloin flap steak",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 153,
+                            Name = "black beans",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 154,
+                            Name = "chile powder",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 155,
+                            Name = "cumin powder",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 156,
+                            Name = "lime juice",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 157,
+                            Name = "soft sandwich rolls",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 158,
+                            Name = "avocado",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 159,
+                            Name = "sour cream",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 160,
+                            Name = "flour",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 161,
+                            Name = "beef stock",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 162,
+                            Name = "butter puff-pastry",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 163,
+                            Name = "cheddar cheese",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 164,
+                            Name = "beef chuck roast",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 165,
+                            Name = "green bell pepper",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 166,
+                            Name = "red bell pepper",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 167,
+                            Name = "ground cumin",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 168,
+                            Name = "beef broth",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 169,
+                            Name = "crushed tomatoes",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 170,
+                            Name = "pimiento",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 171,
+                            Name = "ground pork",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 172,
+                            Name = "ground veal",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 173,
+                            Name = "dried basil",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 174,
+                            Name = "milk",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 175,
+                            Name = "white bread",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 176,
+                            Name = "onions",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 177,
+                            Name = "blackberries",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 178,
+                            Name = "light brown sugar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 179,
+                            Name = "ground ginger",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 180,
+                            Name = "cayenne pepper",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 181,
+                            Name = "american cheese",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 182,
+                            Name = "vegetable oil",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 183,
+                            Name = "pickle",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 184,
+                            Name = "butter",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 185,
+                            Name = "raw buckwheat groats",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 186,
+                            Name = "almond milk",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 187,
+                            Name = "maple syrup",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 188,
+                            Name = "ground flax meal",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 189,
+                            Name = "coconut",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 190,
+                            Name = "ricotta",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 191,
+                            Name = "lemon zest",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 192,
+                            Name = "blueberries",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 193,
+                            Name = "almond extract",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 194,
+                            Name = "hamburger patty",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 195,
+                            Name = "english muffin",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 196,
+                            Name = "pesto",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 197,
+                            Name = "provolone cheese",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 198,
+                            Name = "bacon",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 199,
+                            Name = "banana",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 200,
+                            Name = "yoghurt",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 201,
+                            Name = "apple",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 202,
+                            Name = "rolled oats",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 203,
+                            Name = "spelt flour",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 204,
+                            Name = "almonds",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 205,
+                            Name = "walnuts",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 206,
+                            Name = "quinoa flakes",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 207,
+                            Name = "coconut flakes",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 208,
+                            Name = "dried apple rings",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 209,
+                            Name = "dried cranberries",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 210,
+                            Name = "pumpkin seeds",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 211,
+                            Name = "chia seeds",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 212,
+                            Name = "dried figs",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 213,
+                            Name = "ginger",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 214,
+                            Name = "orange juice",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 215,
+                            Name = "goldenberries",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 216,
+                            Name = "goji berries",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 217,
+                            Name = "dried mulberries",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 218,
+                            Name = "cacao nibs",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 219,
+                            Name = "butternut squash",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 220,
+                            Name = "nutmeg",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 221,
+                            Name = "salted butter",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 222,
+                            Name = "confectioners sugar",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 223,
+                            Name = "chocolate chips",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 224,
+                            Name = "coconut milk",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 225,
+                            Name = "chocolate",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 226,
+                            Name = "dark rum",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 227,
+                            Name = "eggs",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 228,
+                            Name = "whipping cream",
+                            Quantity = 0.0
+                        },
+                        new
+                        {
+                            Id = 229,
+                            Name = "cognac",
+                            Quantity = 0.0
+                        });
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.Recipe", b =>
@@ -63,6 +1439,2909 @@ namespace ChefByStep.API.Migrations
                     b.HasIndex("CreatedById");
 
                     b.ToTable("Recipes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 0,
+                            CreatedById = 2,
+                            Description = "A simple scampi-inspired dinner that needs neither a lot of time nor a lot of ingredients. The key is to swiftly simmer the shrimp and to rely on extrovert ingredients for seasoning. Lemon juice and lemon zest deliver loads of sunny acidity. So much so that we are also using water, not stock, to stretch the brightness, and to ensure that there is enough sauce for bread-sopping",
+                            ImageUrl = "https://images.food52.com/_51_B8XLkaL7wou2THrl1WXuadA=/1008x672/filters:format(webp)/3871c07e-9765-4a8d-9fdd-2f996094b105--2021-0518_speedy-shrimp_3x2_james-ransom-031.jpg",
+                            Title = "Speedy Shrimp With Horseradish�Butter"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "If you like a good mayonnaise-based chicken salad, but one with more candid flavors, you should try this recipe! With a glass of white wine it feels like the perfect weekend lunch",
+                            ImageUrl = "https://images.food52.com/OOqBZEjQhcOLodgRlnXoOfVI5RY=/1008x672/filters:format(webp)/d8634211-6145-4329-81ca-711c45e4750a--2017-0427_chicken-salad_james-ransom-297.jpg",
+                            Title = "Chicken Salad"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "Fish Pasta can be made with any flakey white fish. Snapper good but its best with fresh striped bass. Be very careful stirring the sauce: the fish should remain intact. The tomatoes should be fresh and cooked al crudo, till the juices are released but they are still a little raw. By adding the fish early on, its flavor infuses the whole sauce, so the tomatoes and fish are no longer separate entities, but fully integrated into the sauce. And the capers and olives reinforce the flavor of the fish with brine",
+                            ImageUrl = "https://images.food52.com/mlooIQOUxc3VtpQefZvmZiUY1Jw=/1008x672/filters:format(webp)/0afceb53-8c13-4b96-82ba-45235cf98176--fishpastalowres_2417.JPG",
+                            Title = "Fish Pasta"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "People know upma as a South Indian breakfast staple, but its more. Upma is a state of mind. The refrain is simple: Carb of choice, toasted in ghee-bloomed spices, then cooked with assorted vegetables and curry leaves and topped with tomato ketchup. In South India the carb of choice is typically toasted semolina, thickened into a creamy, savory porridge. But it can also be made with bread. Bread upma can be made in two contrasting ways. This version captures the best of both",
+                            ImageUrl = "https://images.food52.com/38ws8x4bhNB0a9zHq6ZSduhKXCY=/1008x672/filters:format(webp)/eb712a59-16c6-4f57-a6cf-8e523aa97e4e--2021-0312_bread-upma_3x2_mark-weinberg-193.jpg",
+                            Title = "My Favorite Bread Upma"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 0,
+                            CreatedById = 4,
+                            Description = "Key Lime Cake tastes like summer. Beachy. Floral. Have you ever rubbed your fingers across a wicker armrest and gotten lost in the undulating cords like waves",
+                            ImageUrl = "https://images.food52.com/NL2-zUmt3I_hFG3qnUfdKY6-bZQ=/1008x672/filters:format(webp)/7247d84f-cd2f-49ab-af78-4714ce5b0f92--Fruit_Cake_Key_Lime_Cake.jpg",
+                            Title = "Key Lime Cake"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "Think of this recipe as summer in a bowl. The sweet corn, bursting cherry tomatoes, and tender zucchini lighten up a savory, satisfying bowl of pasta. Proof that meatless dishes can be quick, easy, and a joy to eat",
+                            ImageUrl = "https://images.food52.com/9-Z62AhfnO7vECg7gARyZVGIW9A=/1008x672/filters:format(webp)/fc3db569-3b62-4126-a92c-9598b7fdb120--food52_07-24-12-7723.jpg",
+                            Title = "Penne with Sweet Summer Vegetables, Pine Nuts and�Herbs"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryId = 0,
+                            CreatedById = 4,
+                            Description = "In the Mexican city of Oaxaca, almonds are ground into a rough paste with cacao, cinnamon, and sugar and hardened into thin fingers of chocolate. The distinctive mixture is used in the city's famous mole sauces and melted into rich hot chocolate which the Oaxacans drink more regularly than coffee. The warm, spicy smell of toasted cacao, cinnamon and almonds fills the city, as crowded storefront grinders are endlessly turning and the mercado stalls are crowded with vendors selling secret family recipes. Ideal for inspiration and make macarons with the same flavors",
+                            ImageUrl = "https://images.food52.com/fLevsOXvNogpjdYZFItNUwPVf-4=/1008x672/filters:format(webp)/3e4baffa-29dc-4e2e-aa6a-2f42f1f4414a--033010F_869.JPG",
+                            Title = "Oaxacan Cinnamon Chocolate Macarons"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryId = 0,
+                            CreatedById = 2,
+                            Description = "The name of this classic Greek soup emulsion of lemon and eggs comes from its two main ingredients: egg (avgo) and lemon juice (lemono). The key to this soup is tempering the egg and lemon mixture by slowly adding hot stock and then whisking constantly to prevent the eggs from curdling. You then stir the mixture into the soup, which becomes all velvety lush lemony goodness. A Greek salad and warm pita bread are wonderful accompaniments to this soup",
+                            ImageUrl = "https://images.food52.com/Y4T3Uk-cKn799bjhWySmQJ9YxIA=/1008x672/filters:format(webp)/2311e33a-47e9-4504-99e4-dd3d61337348--2017-1212_egglands-best-sponsored_greek-soup-holiday_3x2_mark-weinberg_0128.jpg",
+                            Title = "Greek Lemon Soup - Avgolemono"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CategoryId = 0,
+                            CreatedById = 3,
+                            Description = "Alot of people make a summer pasta alla Caprese like this: the pasta�raw garlic or onion, tomatoes, basil, olive oil and fresh mozzarella. This recipe replaces the mozarella with brie. A bold but satisfying choice! A fine Brie is just as delicious at room temperature smeared on crusty bread as it is warm, oozing out of flaky pastry. And it's REALLY good folded into a fresh tomatoey, garlicky sauce for pasta. Put aside any residual anti-Brie sentiments and give this one a shot before tomatoes disappear for the year. You won't regret it",
+                            ImageUrl = "https://images.food52.com/i8P83CvSSFTTVWinAuWJuXqAHFo=/1008x672/filters:format(webp)/547d4b4b-dfa0-494a-9415-04a97a103f05--20120804_food52_08-20-12-1466.jpg",
+                            Title = "Pasta with Tomatoes, Garlic, Basil & Brie"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CategoryId = 0,
+                            CreatedById = 3,
+                            Description = "This is variant on the boxed strawberry cake but made with fresh strawberries. It takes a bit of time to reduce the strawberry mixture to a thick, jammy pur�e, but it's worth it, since it gets used both in the cake and also the frosting to create a beautiful - and delicious - swirl effect. Its best decorated with lemon wedges and/or strawberries but you can never miss with sprinkles",
+                            ImageUrl = "https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg",
+                            Title = "Strawberry Lemonade Cupcakes"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "We love a good pot of chili, and our kitchen has turned out dozens of variations over the years. Boneless grass-fed beef short ribs, trimmed and cut into chunks, with a puree of chiles and spices, added fire-roasted tomatoes and some rich dark beer.",
+                            ImageUrl = "https://images.food52.com/VZkTIa68tHfebPSUso6QEyFV5X0=/1008x672/filters:format(webp)/2535541d-3f88-433e-b52e-43d8ea83350e--food52_02-07-12-8044.jpeg",
+                            Title = "Short Rib Chili"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CategoryId = 0,
+                            CreatedById = 2,
+                            Description = "A way to combine some tailgate favorites: burgers, barbecue, and chips. You will need either a cold beer or a Texas tea to wash this bad boy down!",
+                            ImageUrl = "https://images.food52.com/GbbciGi20Daa9DrE_TDPc63Ty2g=/1008x672/filters:format(webp)/133eb19c-b40f-46cb-a8c5-0251afd60969--2014-0715_jalapeno-cheddar-burger-004.jpg",
+                            Title = "Texas Tailgate Burger"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CategoryId = 0,
+                            CreatedById = 3,
+                            Description = "My take on boeuf bourguignon skips a couple ingredients�namely the bacon, whose fat traditionally adds luscious flavor to the classic French stew, and the flour, which would otherwise serve as a thickener for the sauce. I find that boneless beef short ribs, which are marbled with fat and collagen, do all the heavy lifting in this recipe and help you arrive at a final stew that�s just as glossy, satisfying, and full of deep, savory flavor as the original.",
+                            ImageUrl = "https://images.food52.com/T4h0NggW-s84P3TvGLm2e556Xuk=/1008x672/filters:format(webp)/8ed76823-4e2e-45e0-b8be-a459eb1a915c--2020-0303_boeuf-bourguignon-for-one_3x2_ty-mecham.jpg",
+                            Title = "Beef Short Rib Bourguignon With Garlicky Panko Gremolata"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "An American-Korean hybrid, much sweeter than traditional bulgogi, served on a bed of white rice.",
+                            ImageUrl = "https://images.food52.com/8uquQ9jEsWl-YGubwhZZbfEXSBo=/1008x672/filters:format(webp)/59d62ed1-e083-404e-ad5a-34876e435dac--2018-0503_moms-bulgogi-cucumber-kimchi-salad_3x2_rocky-luten_049.jpg",
+                            Title = "Bulgogi with Cucumber Kimchi Salad"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CategoryId = 0,
+                            CreatedById = 2,
+                            Description = "This stovetop blue cheese burger recipe makes a single portion. But because it's exactly for one, the math to double or quadruple or octuple the patty is fairly simple. Scale up as many times as you want�no matter what you do, make a lot of the blue cheese mayo. You won't be sorry.",
+                            ImageUrl = "https://images.food52.com/choh0ovckbNRzRvpo6Y7hXBOjqU=/1008x672/filters:format(webp)/f55f7e17-489f-43ac-9097-a9da39d9701b--2019-0618_blue-cheese-burger-for-one_3x2_bobbi-lin_4166.jpg",
+                            Title = "Blue Cheese Burger"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = " A go-to, weeknight torta with steak, beans, jalape�os, and avocado. That comes together in under an hour.",
+                            ImageUrl = "https://images.food52.com/qgtCvxOACjNWH-Q8rPfNOzMQZYE=/1008x672/filters:format(webp)/f0e586ed-75e1-4d0b-a902-b2523e570638--2014-0923_steak-and-bean-torta-018.jpg",
+                            Title = "Steak and Bean Torta"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CategoryId = 0,
+                            CreatedById = 2,
+                            Description = "These mince and cheese pies feature ground beef encased in a thick, dark, beefy gravy interspersed with pockets of melted white cheddar cheese.",
+                            ImageUrl = "https://images.food52.com/EYhpqWDzO1OpxcmCUmsQF8FjQDg=/1008x672/filters:format(webp)/936c251b-b56b-4e31-8407-71ea86c72f3e--2018-0308_new-zealand-gas-station-beef-cheese-pies_3x2_james-ransom-0122.jpg",
+                            Title = "New Zealand-Style Beef & Cheddar Pies"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CategoryId = 0,
+                            CreatedById = 4,
+                            Description = "A traditional beef stew from Cuba made with shredded beef that is often served with black beans and rice.",
+                            ImageUrl = "https://images.food52.com/w-E3753Js_MvtbsBVHEQU_pOAso=/1008x672/filters:format(webp)/9c0278c5-ed16-4912-b8f5-1a3ccd3e5f09--2019-0618_ropa-vieja_3x2_bobbi-lin_4189.jpg",
+                            Title = "Ropa Vieja"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "For the best traditional meatloaf recipe relying on the classic triumvirate of ground veal, beef and pork. A little bread and milk. Garlic, onion and Worcestershire sauce. All are thoughtfully balanced, producing a savory, light-textured loaf.",
+                            ImageUrl = "https://images.food52.com/SEoIY3KjCVcA_NwGD52FNaXydYM=/1008x672/filters:format(webp)/29e35312-3021-4491-9662-2d6d6f41b35e--2019-0423_meatloaf-with-blackberry-bbq-sauce_3x2_julia-gartland_0929.jpg",
+                            Title = "Meatloaf with Blackberry Barbecue Sauce"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "For the uninitiated, a Juicy Lucy is a burger where the cheese is set inside the beef instead of on top. The result of hot beef fat dripping onto a highly meltable cheese results in a molten concoction that brings immense amounts of joy.",
+                            ImageUrl = "https://images.food52.com/KSs_q5YjQ-eGX1oG4bpHldx127I=/1008x672/filters:format(webp)/4b97e80b-0b9a-4522-8876-4a83015b2091--2018-0123_juicy-lucy-2-ways_3x2_james-ransom_0231.jpg",
+                            Title = "Minnesota Juicy Lucy"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CategoryId = 0,
+                            CreatedById = 4,
+                            Description = "This recipe has all of the satisfaction and comfort of hot cereal, sans heat, which makes it perfect for summer. Feel free to get creative with toppings and mix-ins!",
+                            ImageUrl = "https://images.food52.com/96QJqyGLA0LoV4PoKQRX8FtD_Mk=/1008x672/filters:format(webp)/7e8c0fab-197f-419e-9687-d0b826c4e2ba--recipe1.jpg",
+                            Title = "Raw Buckwheat Breakfast Porridge"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CategoryId = 0,
+                            CreatedById = 4,
+                            Description = "Three-bite pancakes topped with blueberries and a creamy maple butter that melts ever so slightly atop the warm pancakes.",
+                            ImageUrl = "https://images.food52.com/sVihu6JyjCqAfzYCAgi63iumezY=/1008x672/filters:format(webp)/6948eb72-b218-4f07-878d-83a1bd25e1fe--food52_04-17-12-8757.jpeg",
+                            Title = "Ricotta Hotcakes with Maple Butter"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CategoryId = 0,
+                            CreatedById = 4,
+                            Description = "Who said burgers were for dinner? When piled high with bacon and a delicate fried egg and then smashed between a toasted english muffin, they are just begging to be eaten for breakfast.",
+                            ImageUrl = "https://images.food52.com/vi8yjvxGPI4PY1tXj1YPwpZ9k-Q=/1008x672/filters:format(webp)/cca18c11-98fa-4c59-8214-bf08030b3be5--Jun_17_2014_2674_edited-1.jpg",
+                            Title = "Pesto Bacon Breakfast Burger"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CategoryId = 0,
+                            CreatedById = 3,
+                            Description = "This muffin recipe is loaded with fruit, veggies and nuts so it gives you everything you need for a little morning or afternoon pick up!",
+                            ImageUrl = "https://images.food52.com/69T0RTYvZH4VEMs_hhnxNyvOCwE=/1008x672/filters:format(webp)/717fccd2-48db-4812-830f-3eeaa4435e00--IMG_8013.JPG",
+                            Title = "Breakfast carrot cake muffins"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CategoryId = 0,
+                            CreatedById = 4,
+                            Description = "These bars are gluten free, refined sugar free and oil free. The only fat is the natural fat in the quinoa. They are packed with slow release energy and lean proteins as well as essential amino acids.",
+                            ImageUrl = "https://images.food52.com/8Kp-okomWEUp51v5gcP5Dgzs19g=/1008x672/filters:format(webp)/7be5de7c-5360-44ca-83a4-ce794b42da42--NobakequinoabarsF52_copy.jpg",
+                            Title = "No bake quinoa breakfast bar"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "Whisk up your chia, toss on some superfood berries, like goji berries, goldenberries, and mulberries, a few cashews, and bam. Rockin' raw vegan power breakfast.",
+                            ImageUrl = "https://images.food52.com/9R1JMNstuZlJ6-7HTlJEsnD2dLs=/1008x672/filters:format(webp)/0cb64378-a8e1-4ce2-a61a-15160e607ef2--Superfood_Berry_Chia_Breakfast.jpg",
+                            Title = "Superfood Berry Chia Breakfast"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CategoryId = 0,
+                            CreatedById = 3,
+                            Description = "Somewhere pleasantly between pumpkin and butterscotch, a very original take on a seasonal loaf cake. Your whole house will smell like rich, nutty brown butter since it's in both the cake and the icing.",
+                            ImageUrl = "https://images.food52.com/73wSsJKEia05pf9F0ZZqTQLBk5c=/1008x672/filters:format(webp)/31eb95c5-4299-4321-a66d-877ae5625628--2016-0204_brown-butter-and-butternut-loaf_james-ransom-012.jpg",
+                            Title = "Brown Butter and Butternut Loaf"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CategoryId = 0,
+                            CreatedById = 3,
+                            Description = "Sandwich buttery caramel between layers of melted semisweet chocolate and finely chopped almonds.",
+                            ImageUrl = "https://images.food52.com/1cN4KGunMq_qzcugQa6d3RXPZPA=/1008x672/filters:format(webp)/3a109bf4-c892-44c9-ab26-ec940081fa9a--2014-1124_chocolate-almond-toffee-010.jpg",
+                            Title = "Scottish Toffee"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            CategoryId = 0,
+                            CreatedById = 3,
+                            Description = "This fondue is silken and almost custardy, punctuated with rum and vanilla and generously salted, the way we like caramel to be. Not surprisingly, it is quite rich and sweet, and we found our favorite dipping instrument ended up being salty, extra-dark pretzels.",
+                            ImageUrl = "https://images.food52.com/jIsJ6SEO8_LtNjMw9Z5y9280PGM=/1008x672/filters:format(webp)/d687384c-0945-4379-925a-2955606b8b3c--022211F_206.JPG",
+                            Title = "Coconut Cajeta & Chocolate Fondue"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            CategoryId = 0,
+                            CreatedById = 1,
+                            Description = "Lighter, frothier, and more refined than your classic one-cup-and-you're-out eggnog, this playful variation will keep the party going strong. The cognac shines through in every sip, so be sure to crack open the good stuff.",
+                            ImageUrl = "https://images.food52.com/V1FO_XjnoNVhshY7CHZ9bnDMUBI=/1008x672/filters:format(webp)/7b1c12c1-1c2e-40ba-a391-ffa89d9ce499--2015-1207_warm-egg-nog_james-ransom-022_1-.jpg",
+                            Title = "Warm Eggnog"
+                        });
+                });
+
+            modelBuilder.Entity("ChefByStep.API.Entities.RecipeIngredient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
+
+                    b.HasIndex("RecipeId");
+
+                    b.ToTable("RecipeIngredients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = "2",
+                            IngredientId = 1,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = "3 tablespoons",
+                            IngredientId = 2,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = "2 tablespoons",
+                            IngredientId = 3,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Amount = "",
+                            IngredientId = 4,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Amount = "1 pound",
+                            IngredientId = 5,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Amount = "1 handful",
+                            IngredientId = 6,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Amount = "",
+                            IngredientId = 7,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Amount = "",
+                            IngredientId = 8,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Amount = "1/4 cup",
+                            IngredientId = 9,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Amount = "",
+                            IngredientId = 10,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Amount = "4 cups",
+                            IngredientId = 11,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Amount = "3 tablespoons",
+                            IngredientId = 12,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Amount = "1 cup",
+                            IngredientId = 13,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Amount = "1/4 cup",
+                            IngredientId = 14,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Amount = "2 teaspoons",
+                            IngredientId = 15,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Amount = "1 tablespoon",
+                            IngredientId = 16,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Amount = "1 tablespoon",
+                            IngredientId = 17,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Amount = "1",
+                            IngredientId = 1,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Amount = "1/4 cup",
+                            IngredientId = 18,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Amount = "",
+                            IngredientId = 19,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Amount = "3 tablespoons",
+                            IngredientId = 20,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Amount = "2 cloves",
+                            IngredientId = 21,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Amount = "12",
+                            IngredientId = 22,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Amount = "1 pound",
+                            IngredientId = 23,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Amount = "1 tablespoon",
+                            IngredientId = 24,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Amount = "1/2 glass",
+                            IngredientId = 25,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Amount = "4",
+                            IngredientId = 26,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Amount = "1 packet",
+                            IngredientId = 27,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Amount = "2 tablespoon",
+                            IngredientId = 28,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Amount = "",
+                            IngredientId = 29,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Amount = "2 tablespoons",
+                            IngredientId = 30,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Amount = "4 slices",
+                            IngredientId = 31,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Amount = "1/4 cup",
+                            IngredientId = 32,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 33,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 34,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Amount = "1 pinch",
+                            IngredientId = 35,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Amount = "1",
+                            IngredientId = 36,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Amount = "1",
+                            IngredientId = 37,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Amount = "1 teaspoon",
+                            IngredientId = 4,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Amount = "6",
+                            IngredientId = 38,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 39,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Amount = "1 cup",
+                            IngredientId = 40,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Amount = "1/4 cup",
+                            IngredientId = 41,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Amount = "1/4 cup",
+                            IngredientId = 42,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Amount = "1/4 cup roughly chopped",
+                            IngredientId = 43,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Amount = "2",
+                            IngredientId = 44,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Amount = "1/2 cup",
+                            IngredientId = 45,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Amount = "4",
+                            IngredientId = 46,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Amount = "14 ounce",
+                            IngredientId = 47,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Amount = "1 pinch",
+                            IngredientId = 48,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Amount = "2 tablespoons",
+                            IngredientId = 49,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Amount = "1 cup",
+                            IngredientId = 50,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Amount = "2 1/4 cup",
+                            IngredientId = 51,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Amount = "1/4 cup",
+                            IngredientId = 45,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Amount = "1/2 cup",
+                            IngredientId = 52,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Amount = "4",
+                            IngredientId = 53,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Amount = "1/4 cup",
+                            IngredientId = 30,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Amount = "1/3 cup",
+                            IngredientId = 54,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Amount = "1 1/2 cups",
+                            IngredientId = 55,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 48,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Amount = "1/4 teaspoon",
+                            IngredientId = 56,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Amount = "6",
+                            IngredientId = 57,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Amount = "1 tablespoon",
+                            IngredientId = 58,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Amount = "1/2 cup",
+                            IngredientId = 59,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Amount = "2",
+                            IngredientId = 60,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Amount = "2",
+                            IngredientId = 61,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Amount = "2",
+                            IngredientId = 62,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 68,
+                            Amount = "1 large chopped ",
+                            IngredientId = 63,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 69,
+                            Amount = "2 cloves",
+                            IngredientId = 21,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 70,
+                            Amount = "4 tablespoons",
+                            IngredientId = 20,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 71,
+                            Amount = "8 ounces",
+                            IngredientId = 64,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 72,
+                            Amount = "1/3 cup",
+                            IngredientId = 65,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 73,
+                            Amount = "1 tablespoon",
+                            IngredientId = 66,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 74,
+                            Amount = "",
+                            IngredientId = 48,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 75,
+                            Amount = "",
+                            IngredientId = 19,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 76,
+                            Amount = "1/4 cup",
+                            IngredientId = 67,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 77,
+                            Amount = "4",
+                            IngredientId = 53,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 78,
+                            Amount = "3/4 cup",
+                            IngredientId = 51,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 79,
+                            Amount = "1 cup",
+                            IngredientId = 68,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 80,
+                            Amount = "1 1/2 cup",
+                            IngredientId = 69,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 81,
+                            Amount = "2 teaspoons",
+                            IngredientId = 70,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 82,
+                            Amount = "3 teaspoons",
+                            IngredientId = 71,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 83,
+                            Amount = "1 pinch",
+                            IngredientId = 10,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 84,
+                            Amount = "1 pinch",
+                            IngredientId = 72,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 85,
+                            Amount = "1 1/4 cup",
+                            IngredientId = 73,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 86,
+                            Amount = "1 tablespoon",
+                            IngredientId = 2,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 87,
+                            Amount = "2 tablespoons",
+                            IngredientId = 74,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 88,
+                            Amount = "8 cups",
+                            IngredientId = 75,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 89,
+                            Amount = "1 1/2 teaspoons",
+                            IngredientId = 4,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 90,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 76,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 91,
+                            Amount = "1 1/2 cup",
+                            IngredientId = 77,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 92,
+                            Amount = "1",
+                            IngredientId = 78,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 93,
+                            Amount = "4",
+                            IngredientId = 57,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 94,
+                            Amount = "3",
+                            IngredientId = 1,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 95,
+                            Amount = "1/4 cup",
+                            IngredientId = 6,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 96,
+                            Amount = "1",
+                            IngredientId = 79,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 97,
+                            Amount = "3/4 pound",
+                            IngredientId = 80,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 98,
+                            Amount = "4",
+                            IngredientId = 81,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 99,
+                            Amount = "2 cloves",
+                            IngredientId = 21,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 100,
+                            Amount = "1/2 cup",
+                            IngredientId = 82,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 101,
+                            Amount = "3/4 cup",
+                            IngredientId = 20,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 102,
+                            Amount = "1",
+                            IngredientId = 83,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 103,
+                            Amount = "1",
+                            IngredientId = 84,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 104,
+                            Amount = "1 pound",
+                            IngredientId = 85,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 105,
+                            Amount = "2 cups",
+                            IngredientId = 51,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 106,
+                            Amount = "1",
+                            IngredientId = 86,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 107,
+                            Amount = "1 1/2 pounds",
+                            IngredientId = 87,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 108,
+                            Amount = "1/4 cup",
+                            IngredientId = 88,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 109,
+                            Amount = "1 pinch",
+                            IngredientId = 89,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 110,
+                            Amount = "1 2/3 cups",
+                            IngredientId = 54,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 111,
+                            Amount = "1 teaspoon",
+                            IngredientId = 90,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 112,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 56,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 113,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 91,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 114,
+                            Amount = "1 1/3 cup",
+                            IngredientId = 2,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 115,
+                            Amount = "5",
+                            IngredientId = 53,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 116,
+                            Amount = "1/2 cup",
+                            IngredientId = 92,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 117,
+                            Amount = "1/3 cup",
+                            IngredientId = 93,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 118,
+                            Amount = "1 teaspoon",
+                            IngredientId = 94,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 119,
+                            Amount = "1 pinch",
+                            IngredientId = 72,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 120,
+                            Amount = "1/4 cup",
+                            IngredientId = 95,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 121,
+                            Amount = "1/2 cup",
+                            IngredientId = 96,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 122,
+                            Amount = "1/2 pound",
+                            IngredientId = 97,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 123,
+                            Amount = "2 1/2 cups",
+                            IngredientId = 95,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 124,
+                            Amount = "1",
+                            IngredientId = 98,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 125,
+                            Amount = "1",
+                            IngredientId = 99,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 126,
+                            Amount = "4",
+                            IngredientId = 100,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 127,
+                            Amount = "1 tablespoon",
+                            IngredientId = 101,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 128,
+                            Amount = "1 teaspoon",
+                            IngredientId = 48,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 129,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 70,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 130,
+                            Amount = "1 tablespoon",
+                            IngredientId = 71,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 131,
+                            Amount = "1 kosher",
+                            IngredientId = 89,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 132,
+                            Amount = "1 1/2 pounds boneless",
+                            IngredientId = 102,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 133,
+                            Amount = "1 splash",
+                            IngredientId = 30,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 134,
+                            Amount = "2 cups",
+                            IngredientId = 103,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 135,
+                            Amount = "2 large cloves",
+                            IngredientId = 21,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 136,
+                            Amount = "1 tablespoon",
+                            IngredientId = 104,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 137,
+                            Amount = "1 tablespoon",
+                            IngredientId = 105,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 138,
+                            Amount = "1.28oz",
+                            IngredientId = 106,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 139,
+                            Amount = "1 cup",
+                            IngredientId = 107,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 140,
+                            Amount = "1/2 cup",
+                            IngredientId = 108,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 141,
+                            Amount = "1",
+                            IngredientId = 109,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 142,
+                            Amount = "2 pounds",
+                            IngredientId = 110,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 143,
+                            Amount = "1 cup",
+                            IngredientId = 111,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 144,
+                            Amount = "1 teaspoon",
+                            IngredientId = 10,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 145,
+                            Amount = "1 teaspoon",
+                            IngredientId = 19,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 146,
+                            Amount = "1 teaspoon",
+                            IngredientId = 112,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 147,
+                            Amount = "1 1/2 cups",
+                            IngredientId = 113,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 148,
+                            Amount = "2 cups shredded",
+                            IngredientId = 114,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 149,
+                            Amount = "1/2 cup diced",
+                            IngredientId = 115,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 150,
+                            Amount = "6",
+                            IngredientId = 116,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 151,
+                            Amount = "1 handful barbecue-flavored",
+                            IngredientId = 117,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 152,
+                            Amount = "1 piece",
+                            IngredientId = 118,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 153,
+                            Amount = "1 handful chopped",
+                            IngredientId = 119,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 154,
+                            Amount = "1/2 pound boneless",
+                            IngredientId = 102,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 155,
+                            Amount = "1 pinch",
+                            IngredientId = 10,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 156,
+                            Amount = "1 pinch",
+                            IngredientId = 19,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 157,
+                            Amount = "2 tablespoons",
+                            IngredientId = 20,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 158,
+                            Amount = "1 large",
+                            IngredientId = 36,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 159,
+                            Amount = "4 cloves",
+                            IngredientId = 21,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 160,
+                            Amount = "1 tablespoon",
+                            IngredientId = 105,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 161,
+                            Amount = "1/2 teaspoon crushed",
+                            IngredientId = 120,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 162,
+                            Amount = "1 teaspoon",
+                            IngredientId = 121,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 163,
+                            Amount = "1",
+                            IngredientId = 98,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 164,
+                            Amount = "1 cup",
+                            IngredientId = 122,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 165,
+                            Amount = "1 cup",
+                            IngredientId = 95,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 166,
+                            Amount = "2 teaspoons",
+                            IngredientId = 123,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 167,
+                            Amount = "4 ounces",
+                            IngredientId = 124,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 168,
+                            Amount = "2 small",
+                            IngredientId = 125,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 169,
+                            Amount = "",
+                            IngredientId = 126,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 170,
+                            Amount = "2 tablespoons",
+                            IngredientId = 127,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 171,
+                            Amount = "1/2 zested",
+                            IngredientId = 1,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 172,
+                            Amount = "1/4 cup chopped fresh",
+                            IngredientId = 128,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 173,
+                            Amount = "1 teaspoon",
+                            IngredientId = 20,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 174,
+                            Amount = "3 cups packed light",
+                            IngredientId = 129,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 175,
+                            Amount = "1 1/2 cups",
+                            IngredientId = 130,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 176,
+                            Amount = "5 tablespoons",
+                            IngredientId = 131,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 177,
+                            Amount = "4 tablespoons",
+                            IngredientId = 132,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 178,
+                            Amount = "4",
+                            IngredientId = 133,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 179,
+                            Amount = "4 cloves",
+                            IngredientId = 21,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 180,
+                            Amount = "1 teaspoon",
+                            IngredientId = 19,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 181,
+                            Amount = "4 to 5 pounds thinly sliced",
+                            IngredientId = 134,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 182,
+                            Amount = "2 English",
+                            IngredientId = 135,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 183,
+                            Amount = "1 to 2 teaspoons",
+                            IngredientId = 136,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 184,
+                            Amount = "2 teaspoons",
+                            IngredientId = 137,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 185,
+                            Amount = "1 teaspoon",
+                            IngredientId = 138,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 186,
+                            Amount = "1/2 to 1 teaspoons",
+                            IngredientId = 4,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 187,
+                            Amount = "1/4 cup",
+                            IngredientId = 139,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 188,
+                            Amount = "1 teaspoon",
+                            IngredientId = 140,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 189,
+                            Amount = "1 1/2 ounces strong",
+                            IngredientId = 141,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 190,
+                            Amount = "1/2 teaspoon fresh",
+                            IngredientId = 142,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 191,
+                            Amount = "1/4 teaspoon",
+                            IngredientId = 143,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 192,
+                            Amount = "1 pinch",
+                            IngredientId = 137,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 193,
+                            Amount = "1 pinch",
+                            IngredientId = 4,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 194,
+                            Amount = "",
+                            IngredientId = 19,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 195,
+                            Amount = "1/4 pound",
+                            IngredientId = 144,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 196,
+                            Amount = "1 tablespoon raw grated",
+                            IngredientId = 99,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 197,
+                            Amount = "1 teaspoon",
+                            IngredientId = 123,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 198,
+                            Amount = "1/2 teaspoon ground",
+                            IngredientId = 145,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 199,
+                            Amount = "1/2 teaspoon ground",
+                            IngredientId = 70,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 200,
+                            Amount = "Grape-seed or other high-heat",
+                            IngredientId = 146,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 201,
+                            Amount = "1",
+                            IngredientId = 147,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 202,
+                            Amount = "1 small handful",
+                            IngredientId = 148,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 203,
+                            Amount = "2 cloves",
+                            IngredientId = 21,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 204,
+                            Amount = "1 teaspoon",
+                            IngredientId = 149,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 205,
+                            Amount = "1 teaspoon smoked",
+                            IngredientId = 150,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 206,
+                            Amount = "1 teaspoon",
+                            IngredientId = 151,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 207,
+                            Amount = "2 tablespoons",
+                            IngredientId = 146,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 208,
+                            Amount = "1 pound",
+                            IngredientId = 152,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 209,
+                            Amount = "1/2 cup",
+                            IngredientId = 17,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 210,
+                            Amount = "1/4 cup",
+                            IngredientId = 95,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 211,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 10,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 212,
+                            Amount = "1 teaspoon",
+                            IngredientId = 137,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 213,
+                            Amount = "1 small",
+                            IngredientId = 63,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 214,
+                            Amount = "1",
+                            IngredientId = 111,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 215,
+                            Amount = "1 can",
+                            IngredientId = 153,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 216,
+                            Amount = "1/4 teaspoon",
+                            IngredientId = 154,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 217,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 155,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 218,
+                            Amount = "2 teaspoons",
+                            IngredientId = 156,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 219,
+                            Amount = "",
+                            IngredientId = 157,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 220,
+                            Amount = "sliced",
+                            IngredientId = 158,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 221,
+                            Amount = "",
+                            IngredientId = 43,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 222,
+                            Amount = "",
+                            IngredientId = 159,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 223,
+                            Amount = "1 tablespoon",
+                            IngredientId = 20,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 224,
+                            Amount = "1 small finely diced",
+                            IngredientId = 99,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 225,
+                            Amount = "1 clove",
+                            IngredientId = 21,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 226,
+                            Amount = "1 pound lean",
+                            IngredientId = 110,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 227,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 10,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 228,
+                            Amount = "3 tablespoons",
+                            IngredientId = 160,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 229,
+                            Amount = "1 1/2 cups",
+                            IngredientId = 161,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 230,
+                            Amount = "1 teaspoon",
+                            IngredientId = 123,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 231,
+                            Amount = "2 450-gram packages pre-rolled",
+                            IngredientId = 162,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 232,
+                            Amount = "3/4 cup (100g) aged white",
+                            IngredientId = 163,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 233,
+                            Amount = "1",
+                            IngredientId = 57,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 234,
+                            Amount = "2 pounds",
+                            IngredientId = 164,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 235,
+                            Amount = "",
+                            IngredientId = 10,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 236,
+                            Amount = "",
+                            IngredientId = 151,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 237,
+                            Amount = "1/4 cup",
+                            IngredientId = 20,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 238,
+                            Amount = "1 large",
+                            IngredientId = 103,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 239,
+                            Amount = "1 large",
+                            IngredientId = 165,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 240,
+                            Amount = "1 large",
+                            IngredientId = 166,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 241,
+                            Amount = "6 cloves",
+                            IngredientId = 21,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 242,
+                            Amount = "1 teaspoon dried",
+                            IngredientId = 104,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 243,
+                            Amount = "2 teaspoons",
+                            IngredientId = 167,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 244,
+                            Amount = "2 teaspoons sweet",
+                            IngredientId = 150,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 245,
+                            Amount = "1/2 cup dry",
+                            IngredientId = 25,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 246,
+                            Amount = "1 cup",
+                            IngredientId = 168,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 247,
+                            Amount = "16 ounces",
+                            IngredientId = 169,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 248,
+                            Amount = "1 cup",
+                            IngredientId = 170,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 249,
+                            Amount = "1/4 cup chopped fresh",
+                            IngredientId = 128,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 250,
+                            Amount = "1/2 pound",
+                            IngredientId = 110,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 251,
+                            Amount = "1/2 pound",
+                            IngredientId = 171,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 252,
+                            Amount = "1/2 pound",
+                            IngredientId = 172,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 253,
+                            Amount = "1/2 cup diced",
+                            IngredientId = 103,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 254,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 173,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 255,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 4,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 256,
+                            Amount = "1/2 teaspoon cracked",
+                            IngredientId = 19,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 257,
+                            Amount = "3 cloves",
+                            IngredientId = 21,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 258,
+                            Amount = "1 tablespoon",
+                            IngredientId = 123,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 259,
+                            Amount = "1",
+                            IngredientId = 57,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 260,
+                            Amount = "3/4 cup",
+                            IngredientId = 174,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 261,
+                            Amount = "3 pieces",
+                            IngredientId = 175,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 262,
+                            Amount = "(for sauce) 2 small quartered",
+                            IngredientId = 176,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 263,
+                            Amount = "(for sauce) 2 cloves",
+                            IngredientId = 21,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 264,
+                            Amount = "(for sauce) 2 cups",
+                            IngredientId = 177,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 265,
+                            Amount = "(for sauce) 1/2 cup",
+                            IngredientId = 178,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 266,
+                            Amount = "(for sauce) 1 tablespoon",
+                            IngredientId = 179,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 267,
+                            Amount = "(for sauce) 1 teaspoon",
+                            IngredientId = 180,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 268,
+                            Amount = "(for sauce) generous pinch",
+                            IngredientId = 10,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 269,
+                            Amount = "(for sauce) generous pinch",
+                            IngredientId = 19,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 270,
+                            Amount = "2 pounds",
+                            IngredientId = 110,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 271,
+                            Amount = "4 slices",
+                            IngredientId = 181,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 272,
+                            Amount = "",
+                            IngredientId = 10,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 273,
+                            Amount = "",
+                            IngredientId = 151,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 274,
+                            Amount = "",
+                            IngredientId = 182,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 275,
+                            Amount = "1",
+                            IngredientId = 103,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 276,
+                            Amount = "Sliced",
+                            IngredientId = 183,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 277,
+                            Amount = "4 soft",
+                            IngredientId = 116,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 278,
+                            Amount = "1 tablespoon",
+                            IngredientId = 184,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 279,
+                            Amount = "2 cups",
+                            IngredientId = 185,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 280,
+                            Amount = "1 cup",
+                            IngredientId = 186,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 281,
+                            Amount = "1/4 cup",
+                            IngredientId = 187,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 282,
+                            Amount = "1 teaspoon",
+                            IngredientId = 70,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 283,
+                            Amount = "1 teaspoon",
+                            IngredientId = 94,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 284,
+                            Amount = "1 tablespoon",
+                            IngredientId = 188,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 285,
+                            Amount = "1 pinch",
+                            IngredientId = 89,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 286,
+                            Amount = "1/3 cup shredded unsweetened",
+                            IngredientId = 189,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 287,
+                            Amount = "2 cups",
+                            IngredientId = 190,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 288,
+                            Amount = "1/2 cup",
+                            IngredientId = 174,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 289,
+                            Amount = "4",
+                            IngredientId = 57,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 290,
+                            Amount = "1 tablespoon",
+                            IngredientId = 137,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 291,
+                            Amount = "1 cup",
+                            IngredientId = 160,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 292,
+                            Amount = "1 teaspoon",
+                            IngredientId = 90,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 293,
+                            Amount = "1/4 teaspoon",
+                            IngredientId = 10,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 294,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 191,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 295,
+                            Amount = "1 tablespoon",
+                            IngredientId = 184,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 296,
+                            Amount = "2 cups",
+                            IngredientId = 192,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 297,
+                            Amount = "1/2 cup softened",
+                            IngredientId = 184,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 298,
+                            Amount = "1/4 cup",
+                            IngredientId = 187,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 299,
+                            Amount = "1/2 teaspoon",
+                            IngredientId = 193,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 300,
+                            Amount = "1 Grilled",
+                            IngredientId = 194,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 301,
+                            Amount = "1 toasted",
+                            IngredientId = 195,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 302,
+                            Amount = "2 tablespoons",
+                            IngredientId = 196,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 303,
+                            Amount = "1 piece",
+                            IngredientId = 197,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 304,
+                            Amount = "2 pieces Thick Sliced",
+                            IngredientId = 198,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 305,
+                            Amount = "1 Fried",
+                            IngredientId = 57,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 306,
+                            Amount = "2 tablespoons Pickled",
+                            IngredientId = 63,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 307,
+                            Amount = "60 milliliters",
+                            IngredientId = 20,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 308,
+                            Amount = "70 milliliters",
+                            IngredientId = 187,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 309,
+                            Amount = "1",
+                            IngredientId = 199,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 310,
+                            Amount = "150 grams plain",
+                            IngredientId = 200,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 311,
+                            Amount = "1",
+                            IngredientId = 57,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 312,
+                            Amount = "1",
+                            IngredientId = 201,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 313,
+                            Amount = "2-3",
+                            IngredientId = 125,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 314,
+                            Amount = "1 teaspoon",
+                            IngredientId = 90,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 315,
+                            Amount = "1 teaspoon",
+                            IngredientId = 70,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 316,
+                            Amount = "100 grams",
+                            IngredientId = 202,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 317,
+                            Amount = "150 grams",
+                            IngredientId = 203,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 318,
+                            Amount = "100 grams chopped",
+                            IngredientId = 204,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 319,
+                            Amount = "",
+                            IngredientId = 205,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 320,
+                            Amount = "150g ",
+                            IngredientId = 206,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 321,
+                            Amount = "50g flaked",
+                            IngredientId = 204,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 322,
+                            Amount = "25g",
+                            IngredientId = 207,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 323,
+                            Amount = "6 ",
+                            IngredientId = 208,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 324,
+                            Amount = "25g",
+                            IngredientId = 209,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 325,
+                            Amount = "2 tablespoons",
+                            IngredientId = 210,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 326,
+                            Amount = "1 tablespoon",
+                            IngredientId = 211,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 327,
+                            Amount = "3",
+                            IngredientId = 212,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 328,
+                            Amount = "Small piece fresh",
+                            IngredientId = 213,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 329,
+                            Amount = "100ml Fresh ",
+                            IngredientId = 214,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 330,
+                            Amount = "2 tablespoons",
+                            IngredientId = 211,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 331,
+                            Amount = "1/2 cup",
+                            IngredientId = 186,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 332,
+                            Amount = "1 teaspoon",
+                            IngredientId = 94,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 333,
+                            Amount = "1/2 teaspoon Ground",
+                            IngredientId = 70,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 334,
+                            Amount = "2 tablespoons",
+                            IngredientId = 215,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 335,
+                            Amount = "2 tablespoons",
+                            IngredientId = 216,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 336,
+                            Amount = "2 tablespoons",
+                            IngredientId = 217,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 337,
+                            Amount = "2 tablespoons",
+                            IngredientId = 32,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 338,
+                            Amount = "1 teaspoon Raw",
+                            IngredientId = 218,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 339,
+                            Amount = "1 cup",
+                            IngredientId = 2,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 340,
+                            Amount = "3 large",
+                            IngredientId = 57,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 341,
+                            Amount = "1 1/2 cups",
+                            IngredientId = 137,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 342,
+                            Amount = "1/2 cup packed",
+                            IngredientId = 178,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 343,
+                            Amount = "2 cups pureed roasted",
+                            IngredientId = 219,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 344,
+                            Amount = "3 cups",
+                            IngredientId = 160,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 345,
+                            Amount = "1 teaspoon",
+                            IngredientId = 10,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 346,
+                            Amount = "2 teaspoons",
+                            IngredientId = 90,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 347,
+                            Amount = "2 teaspoons",
+                            IngredientId = 56,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 348,
+                            Amount = "1/2 teaspoon ground",
+                            IngredientId = 220,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 349,
+                            Amount = "5 tablespoons",
+                            IngredientId = 221,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 350,
+                            Amount = "1 1/2 cups",
+                            IngredientId = 222,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 351,
+                            Amount = "1 teaspoon",
+                            IngredientId = 94,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 352,
+                            Amount = "1 cup finely chopped",
+                            IngredientId = 204,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 353,
+                            Amount = "18 ounces",
+                            IngredientId = 223,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 354,
+                            Amount = "1 cup",
+                            IngredientId = 2,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 355,
+                            Amount = "1 cup",
+                            IngredientId = 129,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 356,
+                            Amount = "1 pinch",
+                            IngredientId = 4,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 357,
+                            Amount = "1 teaspoon",
+                            IngredientId = 94,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 358,
+                            Amount = "",
+                            IngredientId = 89,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 359,
+                            Amount = "2 13.5 ounce cans",
+                            IngredientId = 224,
+                            RecipeId = 29
+                        },
+                        new
+                        {
+                            Id = 360,
+                            Amount = "1 cup",
+                            IngredientId = 178,
+                            RecipeId = 29
+                        },
+                        new
+                        {
+                            Id = 361,
+                            Amount = "3/4 teaspoon",
+                            IngredientId = 4,
+                            RecipeId = 29
+                        },
+                        new
+                        {
+                            Id = 362,
+                            Amount = "3 ounces bittersweet",
+                            IngredientId = 225,
+                            RecipeId = 29
+                        },
+                        new
+                        {
+                            Id = 363,
+                            Amount = "2 teaspoons",
+                            IngredientId = 94,
+                            RecipeId = 29
+                        },
+                        new
+                        {
+                            Id = 364,
+                            Amount = "3 tablespoons",
+                            IngredientId = 226,
+                            RecipeId = 29
+                        },
+                        new
+                        {
+                            Id = 365,
+                            Amount = "8 large",
+                            IngredientId = 227,
+                            RecipeId = 30
+                        },
+                        new
+                        {
+                            Id = 366,
+                            Amount = "3/4 cup granulated",
+                            IngredientId = 137,
+                            RecipeId = 30
+                        },
+                        new
+                        {
+                            Id = 367,
+                            Amount = "1/8 teaspoon",
+                            IngredientId = 10,
+                            RecipeId = 30
+                        },
+                        new
+                        {
+                            Id = 368,
+                            Amount = "4 cups",
+                            IngredientId = 92,
+                            RecipeId = 30
+                        },
+                        new
+                        {
+                            Id = 369,
+                            Amount = "1/2 cup",
+                            IngredientId = 228,
+                            RecipeId = 30
+                        },
+                        new
+                        {
+                            Id = 370,
+                            Amount = "1 tablespoon",
+                            IngredientId = 94,
+                            RecipeId = 30
+                        },
+                        new
+                        {
+                            Id = 371,
+                            Amount = "1 cup",
+                            IngredientId = 229,
+                            RecipeId = 30
+                        },
+                        new
+                        {
+                            Id = 372,
+                            Amount = "1",
+                            IngredientId = 220,
+                            RecipeId = 30
+                        });
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.RecipeRating", b =>
@@ -84,6 +4363,22 @@ namespace ChefByStep.API.Migrations
                     b.HasIndex("RecipeId");
 
                     b.ToTable("RecipeRatings");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            RecipeId = 1,
+                            Comment = "Verrrrrrrrry sweet",
+                            Rating = 10.0
+                        },
+                        new
+                        {
+                            UserId = 1,
+                            RecipeId = 2,
+                            Comment = "Awful sweet",
+                            Rating = 10.0
+                        });
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.Step", b =>
@@ -102,9 +4397,1424 @@ namespace ChefByStep.API.Migrations
                     b.Property<bool>("IsDone")
                         .HasColumnType("bit");
 
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("RecipeId");
+
                     b.ToTable("Steps");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DurationMin = 0,
+                            Instruction = "Finely grate the zest of 1 lemon and set aside",
+                            IsDone = false,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DurationMin = 0,
+                            Instruction = "Now juice both lemons into about 6 tablespoons",
+                            IsDone = false,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DurationMin = 0,
+                            Instruction = "Add enough cold water to reach half a cup of liquid total",
+                            IsDone = false,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DurationMin = 0,
+                            Instruction = "Melt 1 and a half tablespoons of butter in a large skillet over medium heat",
+                            IsDone = false,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DurationMin = 0,
+                            Instruction = "Stir in 1 tablespoon of horseradish, the lemon water, and a big pinch of salt",
+                            IsDone = false,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DurationMin = 0,
+                            Instruction = "As soon as that comes to a boil, add the shrimp and another big pinch of salt. Simmer for 2 to 4 minutes flipping each shrimp halfway through, until pink and firm",
+                            IsDone = false,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DurationMin = 0,
+                            Instruction = "Stir in the remaining 1 and a half tablespoons of butter and 1 tablespoon of horseradish",
+                            IsDone = false,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DurationMin = 0,
+                            Instruction = "Top with the lemon zest and dill, plus a sprinkle of salt",
+                            IsDone = false,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DurationMin = 0,
+                            Instruction = "serve with crusty bread for mopping up the sauce",
+                            IsDone = false,
+                            RecipeId = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DurationMin = 0,
+                            Instruction = "Sprinkle the onion with salt and toss to coat",
+                            IsDone = false,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            DurationMin = 0,
+                            Instruction = "Let sit for 15 minutes",
+                            IsDone = false,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            DurationMin = 0,
+                            Instruction = "Squeeze the onions to drain any juices",
+                            IsDone = false,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            DurationMin = 0,
+                            Instruction = "In a bowl toss together the onion, chicken, peppadews, artichoke hearts and almonds",
+                            IsDone = false,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 14,
+                            DurationMin = 0,
+                            Instruction = "In a small bowl, whisk together the thyme, mustard and vinegar. Gradually whisk in the oil. Season with salt and pepper",
+                            IsDone = false,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 15,
+                            DurationMin = 0,
+                            Instruction = "Pour the dressing over the chicken and fold together. Squeeze in lemon juice",
+                            IsDone = false,
+                            RecipeId = 2
+                        },
+                        new
+                        {
+                            Id = 16,
+                            DurationMin = 0,
+                            Instruction = "chop tomatoes roughly",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 17,
+                            DurationMin = 0,
+                            Instruction = "dice garlic",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 18,
+                            DurationMin = 0,
+                            Instruction = "deskin fish and cut into bite sized chunks",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 19,
+                            DurationMin = 0,
+                            Instruction = "saute three tablespoons of oil with garlic for two minutes over medium heat",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 20,
+                            DurationMin = 0,
+                            Instruction = "add fish, stirring carefully until browned",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 21,
+                            DurationMin = 0,
+                            Instruction = "once browned, add salt and pepper, then half glass of white wine and turn up heat",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 22,
+                            DurationMin = 0,
+                            Instruction = "stir carefully till wine is nearly evaporated",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 23,
+                            DurationMin = 0,
+                            Instruction = "meantime heat pot of hot water for pasta, generously salted",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 24,
+                            DurationMin = 0,
+                            Instruction = "when wine is nearly evaporated, reduce heat, add tomatoes and cook for 10 minutes",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 25,
+                            DurationMin = 0,
+                            Instruction = "add capers, parsley and olives",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 26,
+                            DurationMin = 0,
+                            Instruction = "when the tomato juice is released and the sauce is just thickening, turn off heat",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 27,
+                            DurationMin = 0,
+                            Instruction = "cook pasta al dente",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 28,
+                            DurationMin = 0,
+                            Instruction = "carefully add the sauce to the pasta over a little heat and stir gently for a minute or two",
+                            IsDone = false,
+                            RecipeId = 3
+                        },
+                        new
+                        {
+                            Id = 29,
+                            DurationMin = 0,
+                            Instruction = "In a wok set over medium-high heat, add 1 tablespoon of oil and heat until shimmering",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 30,
+                            DurationMin = 0,
+                            Instruction = "Add the cubed bread and raw cashews to the pan and toast in oil until crunchy and golden brown, shaking the pan frequently and tossing the bread so it doesn't burn. This will take 5 to 6 minutes",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 31,
+                            DurationMin = 0,
+                            Instruction = "Remove the toasted bread and cashews and set aside",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 32,
+                            DurationMin = 0,
+                            Instruction = "Lower the flame to medium and add the second tablespoon of cooking fat to the pan, heating until its shimmering",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 33,
+                            DurationMin = 0,
+                            Instruction = "Add the mustard seeds, urad dal and asafetida and shake the pan vigorously to coat everything in the fat. In 20 to 30 seconds the seeds will burst and the dal will become a deeply golden-brown color",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 34,
+                            DurationMin = 0,
+                            Instruction = "Add the onions, chile, salt, turmeric, curry leaves and stir to combine",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 35,
+                            DurationMin = 0,
+                            Instruction = "raise the heat to medium-high and cook until the onions have softened and turned translucent",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 36,
+                            DurationMin = 0,
+                            Instruction = "Add the cauliflower florets and stir, cooking for 3 to 5 minutes longer until they have softened and are completely coated with the spice and onion mixture",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 37,
+                            DurationMin = 0,
+                            Instruction = "Add the reserved bread and cashews to the pan with the vegetables and stir everything together, ensuring the onion mixture and cauliflower florets are evenly dispersed with the bread. Cook together for about a minute more",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 38,
+                            DurationMin = 0,
+                            Instruction = "Add the peas and cook for another minute",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 39,
+                            DurationMin = 0,
+                            Instruction = "Carefully drizzle the yogurt over the upma and stir to combine so the bread and vegetables are completely coated",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 40,
+                            DurationMin = 0,
+                            Instruction = "Cook for 2 to 3 minutes more, stirring only occasionally, so the upma browns and crisps up some more, helped along with the lactose sugar in the yogurt",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 41,
+                            DurationMin = 0,
+                            Instruction = "Once the upma has crisped up to your desired texture, divide among bowls",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 42,
+                            DurationMin = 0,
+                            Instruction = "Add chopped cilantro and a fried egg",
+                            IsDone = false,
+                            RecipeId = 4
+                        },
+                        new
+                        {
+                            Id = 43,
+                            DurationMin = 0,
+                            Instruction = "Do yourself a favor and make the filling the night before you plan to assemble this cake. Have a fine-mesh sieve and a large bowl on standby near the stove. Squeeze every last drop of juice from the limes and combine in a small saucepan with the yolks, condensed milk, salt and cornstarch. Whisk everything together until it's nice and smooth and then set over medium heat. Dont stop whisking",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 44,
+                            DurationMin = 0,
+                            Instruction = "Reduce the temperature a bit as the mixture thickens dramatically and keep whisking as it boils for 2 minutes",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 45,
+                            DurationMin = 0,
+                            Instruction = "Strain the mixture through the fine-mesh sieve into the bowl and stir gently with a rubber spatula to let off some of the steam",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 46,
+                            DurationMin = 0,
+                            Instruction = "Add the cream cheese, one or two pieces at a time, and stir until all of it has been incorporated",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 47,
+                            DurationMin = 0,
+                            Instruction = "Place a piece of plastic film or wax paper directly on the surface of the custard to prevent a skin from forming and refrigerate until firm, at least 4 hours, preferably overnight",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 48,
+                            DurationMin = 0,
+                            Instruction = "Make the lime soaker by stirring the sugar into the juice until it's dissolved. Set aside",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 49,
+                            DurationMin = 0,
+                            Instruction = "Use a serrated knife to trim the domes from the tops of the cakes and slice each in half horizontally to create four layers. Place one layer on a serving platter and brush the top with about 2 tablespoons of the soaker. Stir the lime filling briefly to loosen it. Then use a small offset spatula to spread about one-third of the filling over the cake, getting it right up to the edge. Scatter a third of the graham cracker crumbs over the filling and top with another layer of cake. Continue assembling in this manner with the remaining filling and cake layers. Slide a long wooden skewer vertically through the center of the cake if it feels wobbly. Chill the assembled cake until you are ready to make the meringue",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 50,
+                            DurationMin = 0,
+                            Instruction = "To make a Swiss meringue, place the egg whites and sugar in the heatproof bowl of an electric mixer. Set the bowl over a pan of gently simmering water and heat, whisking occasionally, until the sugar is dissolved and the mixture reads 160F (71C) on a thermometer",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 51,
+                            DurationMin = 0,
+                            Instruction = "Transfer the bowl to the mixer and whip on high speed until firm peaks form, about 5 minutes",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 52,
+                            DurationMin = 0,
+                            Instruction = "Remove the skewer from the chilled cake and dollop the meringue on top, piling it high",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 53,
+                            DurationMin = 0,
+                            Instruction = "Gently brown the meringue with a kitchen torch",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 54,
+                            DurationMin = 0,
+                            Instruction = "Serve at cool room temperature",
+                            IsDone = false,
+                            RecipeId = 5
+                        },
+                        new
+                        {
+                            Id = 55,
+                            DurationMin = 0,
+                            Instruction = "Preheat oven to 450 degrees. Set a pot of boiled water on the stove to boil",
+                            IsDone = false,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 56,
+                            DurationMin = 0,
+                            Instruction = "Toss vegetables and garlic with olive oil and season well with salt and pepper, but keep the corn separate",
+                            IsDone = false,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 57,
+                            DurationMin = 0,
+                            Instruction = "Divide all vegetables save corn onto baking sheets and start roasting them for 35 to 40 minutes. Fifteen minutes before the end of the roasting process, add the corn which cooks a little faster than the other vegetables",
+                            IsDone = false,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 58,
+                            DurationMin = 0,
+                            Instruction = "If you're using the pine nuts, now is the time to toast them gently in a large frying pan set over medium heat. Stir them continually and remove them as soon as they�re becoming golden",
+                            IsDone = false,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 59,
+                            DurationMin = 0,
+                            Instruction = "Cook pasta till tender but slightly al dente. Drain and return to pot, reserving a small amount of the cooking liquid",
+                            IsDone = false,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 60,
+                            DurationMin = 0,
+                            Instruction = "Add the roast vegetables, along with remaining 1 tbsp olive oil and a tiny bit of the cooking liquid, to the pasta. Toss in the basil and oregano. Top with toasted pine nuts if desired",
+                            IsDone = false,
+                            RecipeId = 6
+                        },
+                        new
+                        {
+                            Id = 61,
+                            DurationMin = 0,
+                            Instruction = "Measure egg whites and allow to sit at room temperature for 24 hours in a covered bowl. Aging the whites helps them thin and will create a better textured macaron",
+                            IsDone = false,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 62,
+                            DurationMin = 0,
+                            Instruction = "Line two cookie pans with parchment paper and trace 1.5 inch circles on the paper, keeping the circles about one inch apart. Preheat your oven to 300 degrees F",
+                            IsDone = false,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 63,
+                            DurationMin = 0,
+                            Instruction = "Pulse the almond flour, confectioners' sugar, cinnamon, and cocoa in a food processor until it is a finely mixed powder. Sift into a large bowl",
+                            IsDone = false,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 64,
+                            DurationMin = 0,
+                            Instruction = "Put egg whites in stainless steel bowl and beat on low with a hand mixer until frothy. Add salt and cream of tartar, and slowly mix in the granulated sugar. Once the sugar is all incorporated, increase mixer speed to medium and beat until meringue forms stiff peaks.The meringue should look glossy and remain in place when the bowl is tipped on its side",
+                            IsDone = false,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 65,
+                            DurationMin = 0,
+                            Instruction = "Using a silicone spatula, fold the almond and sugar mixture into the egg whites one-third at a time. You do not have to be gentle, instead use brisk strokes to fold the mixture together completely, this will help reduce the air in the meringue and keep the macaroons from being too puffy",
+                            IsDone = false,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 66,
+                            DurationMin = 0,
+                            Instruction = "Spoon the mixture into a pastry bag or a ziplock. If using a zip-top bag, cut off a 1/4-inch tip from the corner. Pipe the mixture in a spiral to fill each 1.5-inch circle on the parchment paper. Allow the unbaked cookies to sit out for 30 minutes, until the cookies have a matte texture and are no longer sticky",
+                            IsDone = false,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 67,
+                            DurationMin = 0,
+                            Instruction = "Bake for 12 to 15 minutes. Allow to cool and then peel very gently off the parchment paper",
+                            IsDone = false,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 68,
+                            DurationMin = 0,
+                            Instruction = "Make ganache while the cookies cool. Melt chocolate in double boiler. Whisk in heavy cream and butter and stir mixture over gently boiling water until it is smooth and shiny",
+                            IsDone = false,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 69,
+                            DurationMin = 0,
+                            Instruction = "When the cookies and filling are cool, spread or pipe the ganache on the flat side of one macaron and create a sandwich with a second one",
+                            IsDone = false,
+                            RecipeId = 7
+                        },
+                        new
+                        {
+                            Id = 70,
+                            DurationMin = 0,
+                            Instruction = "bring stock to a boil in a large saucepan. Lower heat to a simmer and add salt, pepper, and orzo. Cook until al dente, about 8 minutes. Remove from heat. Set aside 2 cups of stock",
+                            IsDone = false,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 71,
+                            DurationMin = 0,
+                            Instruction = "beat egg whites in a medium-size bowl until soft peaks form",
+                            IsDone = false,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 72,
+                            DurationMin = 0,
+                            Instruction = "Beat in the egg yolks and lemon juice. Pour 2 cups of reserved hot stock slowly into the lemon and egg mixture, whisking continuously until all is incorporated. Return soup to medium-low heat and whisk in lemon-egg mixture. Add chicken stock back into the soup and simmer until thickened slightly, about 20 minutes",
+                            IsDone = false,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 73,
+                            DurationMin = 0,
+                            Instruction = "ladle into warm bowls and garnish with white pepper, chopped dill, a dill sprig, and sliced lemon",
+                            IsDone = false,
+                            RecipeId = 8
+                        },
+                        new
+                        {
+                            Id = 74,
+                            DurationMin = 0,
+                            Instruction = "Put the Brie in the freezer for about 20 minutes to firm up a little. This will make it easier to cut when the time comes",
+                            IsDone = false,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 75,
+                            DurationMin = 0,
+                            Instruction = "Roughly chop the tomatoes and put them in a large serving bowl. Finely chop the garlic and add it to the bowl. Chiffonade or roughly chop the basil and add that to the bowl too. Pour in the olive oil and add a generous amount of salt and pepper. Gently stir everything together",
+                            IsDone = false,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 76,
+                            DurationMin = 0,
+                            Instruction = "Once the Brie is firm enough, cut it into 1/2-inch cubes and add these to the bowl. Gently fold to combine the cheese with the rest of the ingredients. Cover the bowl and let it sit at room temperature for at least 2 to 8 hours -- the longer the better",
+                            IsDone = false,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 77,
+                            DurationMin = 0,
+                            Instruction = "bring a large pot of heavily salted water to a boil and cook the pasta until just al dente. Strain it and tip it into the bowl with the sauce. Fold everything together until it is well combined, the Brie has begun to melt, and the pasta is slicked with cheese and tomato goodness. Serve immediately with a big green salad",
+                            IsDone = false,
+                            RecipeId = 9
+                        },
+                        new
+                        {
+                            Id = 78,
+                            DurationMin = 0,
+                            Instruction = "Make the pur�e: In a small bowl and rub the granulated sugar and lemon zest together. In a medium pot toss the strawberries and lemon juice to combine. Add the sugar and salt tossing everything to combine. Cook over medium heat stirring frequently until the mixture becomes saucy and the strawberries start to break down in 8 to 10 minutes",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 79,
+                            DurationMin = 0,
+                            Instruction = "Use an immersion blender to pur�e the mixture in the pot. Continue to cook the mixture over medium-low heat stirring often until it reduces to 2/3 cup in 10 to 15 minutes more. Cool completely before using. This can be done up to 2 days ahead and refrigerated",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 80,
+                            DurationMin = 0,
+                            Instruction = "Make the cake: Heat the oven to 350 degrees F/175 degrees C. Line two 12-cup muffin tins with cupcake liners",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 81,
+                            DurationMin = 0,
+                            Instruction = "In the bowl of an electric mixer fitted with the paddle attachment mix the flour, sugar, baking powder, baking soda and salt to combine. Drop half tablespoon-size portions of butter into the bowl and mix on low speed until the butter is distributed and the mixture looks a bit crumbly",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 82,
+                            DurationMin = 0,
+                            Instruction = "In a large liquid measuring cup whisk the egg whites, milk, strawberry pur�e, vanilla, and lemon zest to combine. Add this mixture in two equal additions mixing on medium speed until the batter is smooth and combined and scraping well after each addition. If desired tint the batter deeper pink with food coloring",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 83,
+                            DurationMin = 0,
+                            Instruction = "Scoop the batter into the prepared pan using an ice cream scoop filling each cavity three-quarters full",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 84,
+                            DurationMin = 0,
+                            Instruction = "Bake the cupcakes until a toothpick inserted into the center comes out clean (or with just a few moist crumbs) in 17 to 20 minutes. Cool completely",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 85,
+                            DurationMin = 0,
+                            Instruction = "Make the lemon curd buttercream: Place the egg whites and cream of tartar in the bowl of an electric mixer fitted with the whisk attachment. In a medium saucepan combine the sugar and water and bring to a boil over medium heat. Stir until the mixture begins to bubble but as soon as it begins to boil, stop stirring. If necessary dip a brush in cool water to brush away granules of sugar that appear on the side of the pot",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 86,
+                            DurationMin = 0,
+                            Instruction = "Cook the sugar mixture until it reads 235 degrees F/115 degrees C. Begin whipping the egg whites on medium speed raising to medium-high speed once the mixture looks frothy. When the sugar mixture reaches 240 degrees F remove the pot from the heat and gradually add the hot sugar syrup to the mixer in a slow steady stream. Continue whipping until the meringue has reached full volume and the bowl is no longer warm to the touch for 5 to 6 minutes",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 87,
+                            DurationMin = 0,
+                            Instruction = "With the mixer running on medium speed gradually add the butter a few tablespoons at a time mixing to fully combine before adding more. This will take several minutes and the mixture will look light and fluffy. Remove the bowl from the mixer and mix in the lemon curd with a silicone spatula. I use sort of a folding motion to incorporate it, because it helps to deflate the frosting a bit and make it smoother.",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 88,
+                            DurationMin = 0,
+                            Instruction = "Gently fold the strawberry pur�e into the frosting, drizzling it in about a third at a time and folding it a few times but not incorporating it fully. Use an ice cream scoop to transfer swirled frosting on top of each cupcake and use a small offset spatula to swirl it",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 89,
+                            DurationMin = 0,
+                            Instruction = "Top with a lemon slice and a strawberry half",
+                            IsDone = false,
+                            RecipeId = 10
+                        },
+                        new
+                        {
+                            Id = 90,
+                            DurationMin = 0,
+                            Instruction = "Pick over the beans to remove any stones or debris, and place them in a large pot. Add the water, bay leaf and onion, cover the pot, and bring it to a boil. Let boil for 2 minutes, then turn off the heat and let the beans stand, undrained, for an hour. Discard the onion and bay leaf.",
+                            IsDone = false,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 91,
+                            DurationMin = 0,
+                            Instruction = "Using kitchen shears, snip off the stems of the dried peppers and shake out most of the seeds. Toast the peppers in a dry skillet until they are fragrant and beginning to soften, then place them in a bowl and cover them with the 2 cups of boiling water. Let soak until they are very soft.",
+                            IsDone = false,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 92,
+                            DurationMin = 0,
+                            Instruction = "Toast the coriander and cumin seeds in the same dry skillet until fragrant. Transfer to a mortar and pestle, add the coarse salt, and grind. Place the softened peppers with their soaking liquid in a blender, adding the ground coriander/cumin mixture, the cinnamon, the chipotle powder, the cocoa powder, and the roasted bell pepper. Puree until smooth and set aside.",
+                            IsDone = false,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 93,
+                            DurationMin = 0,
+                            Instruction = "Cut the short ribs into bite-sized chunks, season well with salt, and set aside. Place a small amount of oil in a deep, heavy-bottomed pot and warm until shimmering. Brown the short rib pieces in batches, removing them to a plate or platter as you finish browning.",
+                            IsDone = false,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 94,
+                            DurationMin = 0,
+                            Instruction = "Add the chopped onion and a pinch of salt and cook until translucent. Add the garlic and marjoram or Mexican oregano and cook until fragrant. Clear a space in the bottom of the pot, add the tomato paste, and cook for a minute until it gets a little caramelized before stirring it through the onion mixture.",
+                            IsDone = false,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 95,
+                            DurationMin = 0,
+                            Instruction = "Return the short ribs to the pot with any juices that have accumulated on the plate or platter, then add the chile puree, the beans with their cooking liquid, and the fire-roasted tomatoes. Add the stout and stir to incorporate. Cover and simmer over low heat for at least 3-4 hours, until the beans and beef are fully tender.",
+                            IsDone = false,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 96,
+                            DurationMin = 0,
+                            Instruction = "Add the crushed tortilla chips about an hour before serving, stirring them in so they break down and thicken the chili. Taste for salt and add a bit more if necessary, stir in the fresh lime juice off the heat, then serve with garnishes and plenty of cold beer.",
+                            IsDone = false,
+                            RecipeId = 11
+                        },
+                        new
+                        {
+                            Id = 97,
+                            DurationMin = 0,
+                            Instruction = "Heat your grill to medium-high. Brush the grill with oil to prevent sticking.",
+                            IsDone = false,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 98,
+                            DurationMin = 0,
+                            Instruction = "To make the patties, combine the beef, jalape�os, salt, pepper, and chili powder in a large bowl, handling it as little as possible. Shape into 6 patties to fit the bun size. Loosely cover with plastic wrap and set aside.",
+                            IsDone = false,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 99,
+                            DurationMin = 0,
+                            Instruction = "Prepare the barbecue cheese: Mix the barbecue sauce, cheese, and onions and set it aside. Do not refrigerate (you will be using it shortly and you don�t want it to be really cold).",
+                            IsDone = false,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 100,
+                            DurationMin = 0,
+                            Instruction = "Place the patties on the grill rack and cook, turning once, until they're cooked to your preference, 5 to 7 minutes on each side for medium. In the last 3 minutes of grilling, carefully place equal amounts of the barbecue cheese on each patty. During the last 2 minutes of grilling, place the buns cut side-down, on the outer edges of the rack to toast lightly.",
+                            IsDone = false,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 101,
+                            DurationMin = 0,
+                            Instruction = "To assemble the burgers, place an equal layer of barbecue kettle chips on each bottom bun. Add a cheese-covered patty on top, followed by a layer of pickles and an equal amount of lettuce. Add the bun tops and serve with an ice-cold beer or a big ol' pitcher of tea.",
+                            IsDone = false,
+                            RecipeId = 12
+                        },
+                        new
+                        {
+                            Id = 102,
+                            DurationMin = 0,
+                            Instruction = "Preheat the oven to 325 degrees F. Generously season the short ribs with salt and pepper and heat a small (1 1/2 to 3�quart) oven-safe saucepan over medium-high heat. Add 1 tablespoon olive oil and sear the short ribs, 2 to 3 minutes per side, until browned on all over. Remove meat to a plate, leaving rendered fat in the pan.",
+                            IsDone = false,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 103,
+                            DurationMin = 0,
+                            Instruction = "Add the shallot, garlic, tomato paste, red pepper flakes, herbes de Provence, and bay leaf",
+                            IsDone = false,
+                            RecipeId = 13
+                        },
+                        new
+                        {
+                            Id = 104,
+                            DurationMin = 0,
+                            Instruction = "Marinate the bulgogi: In a large bowl, whisk together the brown sugar, soy sauce, wine, sesame oil, green onions, garlic, and pepper until well combined. Add the beef and coat it completely in marinade. Cover and refrigerate for 4 to 5 hours.",
+                            IsDone = false,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 105,
+                            DurationMin = 0,
+                            Instruction = "To make the cucumber kimchi salad: In a medium bowl, combine the cucumbers, green onions, garlic, gochugaru, sugar, vinegar, sesame oil, and salt to taste and stir gently. Cover and refrigerate until ready to serve.",
+                            IsDone = false,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 106,
+                            DurationMin = 0,
+                            Instruction = "Prepare a hot grill. If the pieces of beef are so small that they may fall through the grates, use a grilling skillet or place a sheet of foil on the grill.",
+                            IsDone = false,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 107,
+                            DurationMin = 0,
+                            Instruction = "Grill the beef on both sides until medium-well, 3 to 5 minutes, flipping halfway through cooking. Don�t crowd the skillet or foil, so do this in batches if necessary. As you finish each batch, transfer it to a serving platter and continue with the remaining beef.",
+                            IsDone = false,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 108,
+                            DurationMin = 0,
+                            Instruction = "Serve the bulgogi on top of steamed rice. Garnish with green onion and toasted sesame seeds and spoon the cucumber kimchi salad alongside.",
+                            IsDone = false,
+                            RecipeId = 14
+                        },
+                        new
+                        {
+                            Id = 109,
+                            DurationMin = 0,
+                            Instruction = "For the mayo, mix all of the ingredients together and set aside. If not using right away, keep in an airtight container in the fridge.",
+                            IsDone = false,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 110,
+                            DurationMin = 0,
+                            Instruction = "For the burger, gently mix together the ground beef, onion, Worcestershire, rosemary, cumin, cinnamon, salt, and pepper until just combined. Form into a single patty, about the size of your burger bun, making sure to press a shallow indentation in the center so it stays flat when you sear it.",
+                            IsDone = false,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 111,
+                            DurationMin = 0,
+                            Instruction = "Brush the prepared patty with some oil and plop onto a hot griddle or small frying pan, cooking 3 minutes on the first side and 2 on the second. (Or until the internal temperature reaches 145F for medium-rare and 160F for medium.) Let rest about 5 minutes.",
+                            IsDone = false,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 112,
+                            DurationMin = 0,
+                            Instruction = "To assemble, lay the bottom bun with a healthy pile of arugula, then the warm brisket patty (which will wilt the lettuce slightly), followed by the top bun, which should be smeared generously with the prepared blue cheese mayo.",
+                            IsDone = false,
+                            RecipeId = 15
+                        },
+                        new
+                        {
+                            Id = 113,
+                            DurationMin = 0,
+                            Instruction = "Mix together the garlic, onion powder, paprika, pepper, and 2 tablespoons of oil. Toss the steak in the marinade to coat and let it sit at room temperature 30 minutes or refrigerate it for up to 8 hours. Heat the grill to medium-high. Season the steak with salt and grill until its internal temperature reaches 125 degrees F and it is nicely browned. Let the steak rest for ten minutes before slicing it very thinly against the grain.",
+                            IsDone = false,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 114,
+                            DurationMin = 0,
+                            Instruction = "Heat the vinegar, water, salt, and sugar in a saucepan. Add the onion and jalape�o and let simmer for a couple of minutes. Set aside to cool.",
+                            IsDone = false,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 115,
+                            DurationMin = 0,
+                            Instruction = "Mash the beans with chipotle, cumin, lime, and salt and pepper. Taste the mixture and add salt and acid as needed. Add a spoon or two of water and heat gently before serving.",
+                            IsDone = false,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 116,
+                            DurationMin = 0,
+                            Instruction = "Toast the insides of the rolls slightly, then top them with the beans, steak, pickled vegetables, avocado slices, cilantro, and a drizzle of crema.",
+                            IsDone = false,
+                            RecipeId = 16
+                        },
+                        new
+                        {
+                            Id = 117,
+                            DurationMin = 0,
+                            Instruction = "Heat oil in a large frying pan over medium heat. Add onion, cook, stirring often until tender and starting to brown on the edges, about 2-3 minutes. Add garlic, cook 1 minute. Add ground beef to pan and cook, breaking up with a wooden spoon, until no pink remains, about 5-6 minutes.",
+                            IsDone = false,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 118,
+                            DurationMin = 0,
+                            Instruction = "Stir in salt and a few cracks of black pepper. Sprinkle flour over beef and cook, 1 minute. Pour in beef stock and Worcestershire sauce. Bring to a boil, scraping all the brown bits off the bottom of the pan. Reduce heat to medium-low and let simmer until gravy has reduced and thickened, about 6-8 minutes.",
+                            IsDone = false,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 119,
+                            DurationMin = 0,
+                            Instruction = "Scrape beef mixture into a bowl and let cool to room temperature. Cover and refrigerate until completely chilled, this will take at least 1-2 hours. The filling can easily be made the day before.",
+                            IsDone = false,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 120,
+                            DurationMin = 0,
+                            Instruction = "Remove puff pastry from fridge. Roll sheets to 1/8-inch thick. Cut puff pastry into twelve 4-inch rounds and twelve 3-inch rounds. Pre-mark where you will cut each round as you will have just enough dough for all the rounds. Place onto a parchment-lined baking sheet and let chill in the fridge for 30 minutes.",
+                            IsDone = false,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 121,
+                            DurationMin = 0,
+                            Instruction = "Lightly grease a 12-cup muffin tin. Place larger puff pastry rounds in the base of each muffin tin, pressing along the sides so they are flush with the bottom and sides of the tin. The dough should slightly overlap the rims, stretch dough slightly if needed.",
+                            IsDone = false,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 122,
+                            DurationMin = 0,
+                            Instruction = "Remove the chilled beef mixture from the fridge. Stir in the diced cheese. Evenly divide filling between each pie, packing them right to the top.",
+                            IsDone = false,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 123,
+                            DurationMin = 0,
+                            Instruction = "Whisk the egg in a bowl. Brush the edges of the pastry overlap with the egg mixture and top with smaller pastry rounds. Press around the edges of the pies using the tines of a fork to create a seal. Cut a small slit into the top of each pie. Use the remaining egg to brush the tops of each pie. Place the tray in the freezer to chill for 15 mins before baking.",
+                            IsDone = false,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 124,
+                            DurationMin = 0,
+                            Instruction = "While the pies are chilling preheat the oven to 425 degrees F. Bake pies for 20-25 minutes, until golden brown. Let cool 10 minutes before serving.",
+                            IsDone = false,
+                            RecipeId = 17
+                        },
+                        new
+                        {
+                            Id = 125,
+                            DurationMin = 0,
+                            Instruction = "Season beef liberally with salt and freshly ground black pepper.",
+                            IsDone = false,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 126,
+                            DurationMin = 0,
+                            Instruction = "Heat olive oil in a pot over high heat. Add the beef and brown on all sides. Then transfer to a plate.",
+                            IsDone = false,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 127,
+                            DurationMin = 0,
+                            Instruction = "Add the onion and peppers to the pot and cook over medium heat for 15 to 20 minutes until caramelized. Add the garlic, oregano, cumin, and paprika. Cook for another minute. Add the white wine and bring to a boil, scraping the bottom of the pan with the flat edge of a spatula to deglaze.",
+                            IsDone = false,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 128,
+                            DurationMin = 0,
+                            Instruction = "Add the beef broth and crushed tomatoes. Bring to a simmer.",
+                            IsDone = false,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 129,
+                            DurationMin = 0,
+                            Instruction = "Return the beef to the pot. Bring to a simmer and cover for 2 to 3 hours or until the beef is fork-tender.",
+                            IsDone = false,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 130,
+                            DurationMin = 0,
+                            Instruction = "Transfer the beef to a plate and shred. Return shredded beef to sauce.Stir in the olives (optional). Simmer uncovered for 30 minutes to thicken.",
+                            IsDone = false,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 131,
+                            DurationMin = 0,
+                            Instruction = "Stir in the parsley and season with salt and pepper to taste. Serve over white rice.",
+                            IsDone = false,
+                            RecipeId = 18
+                        },
+                        new
+                        {
+                            Id = 132,
+                            DurationMin = 0,
+                            Instruction = "Make the Sauce: Add the above ingredients to a blender, and puree until nice and smooth. Add this to a small pot, and cook on medium to low heat for about 20 minutes. Stir, and remove from the heat. When you make the meatloaf, add the sauce to the top before baking, and spread on the plate before serving.",
+                            IsDone = false,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 133,
+                            DurationMin = 0,
+                            Instruction = "Heat your oven to 350 degrees F. In a large bowl, combine all of your ingredients, with the exception of the bbq sauce. Get in there, get dirty and greasy from the meat. Once combined, add to your bread/loaf pan which is typically 5�9. Shape into the pan, then add your sauce to the top, roughly a half cup. Place in the oven for nearly one hour and 25 minutes.",
+                            IsDone = false,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 134,
+                            DurationMin = 0,
+                            Instruction = "Once cooked, remove from the oven and let it cool for roughly five minutes. In the meantime, warm up more of the bbq sauce. Remove the loaf to a serving dish, and drizzle the sauce on the top. Serve with your favorite sides. I served mine with mashed potatoes. Trust me, this one is really delicious.",
+                            IsDone = false,
+                            RecipeId = 19
+                        },
+                        new
+                        {
+                            Id = 135,
+                            DurationMin = 0,
+                            Instruction = "Separate the burger into 8 pieces and create 1/4-inch thick patties out of each one.",
+                            IsDone = false,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 136,
+                            DurationMin = 0,
+                            Instruction = "Fold the American cheese slices in half, twice, making a square, and stick into the middle of four of the patties, gently pressing down into the meat",
+                            IsDone = false,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 137,
+                            DurationMin = 0,
+                            Instruction = "Place the other four patties on top of the patties that have the cheese, pinch to seal the edges, and form into perfect burgers roughly 3/4-inches thick. It's very important to seal it in! Season the patties liberally with salt and a few cracks of freshly ground black pepper and each side.",
+                            IsDone = false,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 138,
+                            DurationMin = 0,
+                            Instruction = "Pour a little oil on a cast iron pan and set it over medium-high heat. Once the oil begins to shimmer, gently place in your burgers in the pan. Cook until a hard caramelized crust forms on the bottom of the burger (3-5 minutes), flip, and repeat. Cook for an additional 3-5 minutes, remove from the heat, and set aside to rest.",
+                            IsDone = false,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 139,
+                            DurationMin = 0,
+                            Instruction = "Add your butter and onions to the pan and cook in the residual oil and beef fat until the onions soften and start to brown (approx. 3-5 minutes). Remove onions from the pan and set aside.",
+                            IsDone = false,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 140,
+                            DurationMin = 0,
+                            Instruction = "Place your buns down on the pan and lightly toast to warm through (30 seconds-1 minute). Place your burgers on the buns, top with the onions and pickle chips, and enjoy!",
+                            IsDone = false,
+                            RecipeId = 20
+                        },
+                        new
+                        {
+                            Id = 141,
+                            DurationMin = 0,
+                            Instruction = "Place the buckwheat groats in a food processor and pulse a few times to break down. add the almond milk, maple syrup, cinnamon, vanilla bean, flax, and sea salt, and process till the mixture has a smooth consistency (but with some texture remaining).",
+                            IsDone = false,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 142,
+                            DurationMin = 0,
+                            Instruction = "Pulse in the coconut and adjust seasonings. Divide porridge into four bowls and serve, topped with fresh berries, chopped nuts, or sliced bananas.",
+                            IsDone = false,
+                            RecipeId = 21
+                        },
+                        new
+                        {
+                            Id = 143,
+                            DurationMin = 0,
+                            Instruction = "Make the maple butter first: dump the softened butter into a bowl, add the maple syrup, and mash together thoroughly with a fork. Add the almond extract and continue mixing until everything is combined. Scrape into a small bowl and set aside or refrigerate if not using within the hour.",
+                            IsDone = false,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 144,
+                            DurationMin = 0,
+                            Instruction = "Onto the hotcakes: Whisk together the ricotta, milk, egg yolks, and sugar. Sprinkle over with the flour, baking powder, and salt, and mix until just combined. Stir in the lemon zest.",
+                            IsDone = false,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 145,
+                            DurationMin = 0,
+                            Instruction = "In a separate bowl, whisk the egg whites for as long as your forearms will let you, through the foamy stage until they start to form peaks (you can use a mixer for this, but for me, breakfast and electronics don't mix). Gently fold the egg whites into the ricotta mixture. Add a little milk if the batter looks dry - this will depend largely on the quality and freshness of your ricotta.",
+                            IsDone = false,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 146,
+                            DurationMin = 0,
+                            Instruction = "Melt the butter in a large skillet over medium heat. Plop in about two tablespoons of batter per hotcake and cook for two minutes, until the undersides are golden, adjusting the heat as necessary. Flip and cook another two minutes or so, until cooked through, and remove to a plate. Continue until you have a pile of hotcakes. Serve with maple butter and blueberries.",
+                            IsDone = false,
+                            RecipeId = 22
+                        },
+                        new
+                        {
+                            Id = 147,
+                            DurationMin = 0,
+                            Instruction = "Moments before burger is done grilling, place provolone cheese slice atop of the grilled hamburger patty and allow to melt.",
+                            IsDone = false,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 148,
+                            DurationMin = 0,
+                            Instruction = "Spread 1 tablespoon of pesto onto the top and bottom pieces of the toasted english muffin",
+                            IsDone = false,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 149,
+                            DurationMin = 0,
+                            Instruction = "Atop the pesto on the bottom half of the english muffin, place the provolone covered hamburger patty, crispy bacon, fried egg, and pickled red onions.",
+                            IsDone = false,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 150,
+                            DurationMin = 0,
+                            Instruction = "Top with the other half of the toasted english muffin, and enjoy your meal!",
+                            IsDone = false,
+                            RecipeId = 23
+                        },
+                        new
+                        {
+                            Id = 151,
+                            DurationMin = 0,
+                            Instruction = "Blend yoghurt, banana, maple syrup and oil or melted butter with a blender. Whisk in the egg. Also using a blender, blend the oats so you get oat flour. Mix oat flour with spelt flour, salt, cinnamon, baking powder and optionally cardamom and almond flour. Peel carrots and the apple and grate finely.",
+                            IsDone = false,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 152,
+                            DurationMin = 0,
+                            Instruction = "Add the flour-mixture to the yoghurt-egg-mixture and fold in carefully. Add grated carrots and apple as well as the chopped almonds. Place the batter in 12 muffins tins. If you like you can add some chopped walnuts on top.",
+                            IsDone = false,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 153,
+                            DurationMin = 0,
+                            Instruction = "Bake the muffins in the preheated oven at 175 degrees C (347 degrees F) for about 20 minutes.",
+                            IsDone = false,
+                            RecipeId = 24
+                        },
+                        new
+                        {
+                            Id = 154,
+                            DurationMin = 0,
+                            Instruction = "Place quinoa flakes, almonds and coconut into a non stick frying pan and lightly toast over a medium heat",
+                            IsDone = false,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 155,
+                            DurationMin = 0,
+                            Instruction = "Leave to cool and then place into a food processor with all ingredients except the juice",
+                            IsDone = false,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 156,
+                            DurationMin = 0,
+                            Instruction = "Place the dough into a lined dish or silicone mold and flatten with down with the back of a fork",
+                            IsDone = false,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 157,
+                            DurationMin = 0,
+                            Instruction = "Cover with clingfilm and place into the freezer for two hours before transferring to the fridge",
+                            IsDone = false,
+                            RecipeId = 25
+                        },
+                        new
+                        {
+                            Id = 158,
+                            DurationMin = 0,
+                            Instruction = "Start by soaking your chia seeds in the sunflower or almond milk. Whisk well with a fork and make sure to break up any clumps. Whisk in the vanilla powder and cinnamon. Let sit for 5 minutes, stir again, and place in the fridge 30 minutes or overnight.",
+                            IsDone = false,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 159,
+                            DurationMin = 0,
+                            Instruction = "After 30 minutes or in the morning, top with berries and cashews.",
+                            IsDone = false,
+                            RecipeId = 26
+                        },
+                        new
+                        {
+                            Id = 160,
+                            DurationMin = 0,
+                            Instruction = "Preheat your oven to 350 degrees F, and grease two 9-inch loaf pans. In a large frying pan, heat the butter over medium high heat. It will melt first, and then start to foam. Turn the heat down to medium. Stir the melted butter almost constantly, scraping any browning bits from the bottom of the pan. When the butter has turned a brown color and smells rich and nutty, remove it from the heat. (This should take about 7 minutes). Allow it to cool for about 10 minutes.",
+                            IsDone = false,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 161,
+                            DurationMin = 0,
+                            Instruction = "In the bowl of a standing mixer, beat together the eggs and sugars on high speed for several minutes, until the color has lightened. Scrape in the browned butter and beat for another couple of minutes, until the mixture is smooth.",
+                            IsDone = false,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 162,
+                            DurationMin = 0,
+                            Instruction = "Add the pur�ed squash to the wet ingredients and beat until smooth and uniformly mixed in.",
+                            IsDone = false,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 163,
+                            DurationMin = 0,
+                            Instruction = "In a small bowl, combine the flour, salt, baking powder, baking soda, and nutmeg. Add this to the wet ingredients, and mix on low until fully incorporated.",
+                            IsDone = false,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 164,
+                            DurationMin = 0,
+                            Instruction = "Divide the batter evenly into the 2 prepared loaf pans and bake for about 50 minutes, until a tester comes out clean. Take the bread out of the loaf pans and allow to cool completely before glazing.",
+                            IsDone = false,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 165,
+                            DurationMin = 0,
+                            Instruction = "Brown the butter in a pan, just as described in step 2 for the bread and allow to cool for about 10 minutes. Scrape the butter into a mixing bowl.",
+                            IsDone = false,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 166,
+                            DurationMin = 0,
+                            Instruction = "Sift the confectioner's sugar to remove lumps. Then whisk the vanilla into the butter. Next, whisk in confectioner's sugar until your reach a spreadable consistency.",
+                            IsDone = false,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 167,
+                            DurationMin = 0,
+                            Instruction = "Spread the icing onto the loaves, and allow to set for about 30 minutes before slicing.",
+                            IsDone = false,
+                            RecipeId = 27
+                        },
+                        new
+                        {
+                            Id = 168,
+                            DurationMin = 0,
+                            Instruction = "Put half the nuts and half the chocolate chips onto a cookie sheet.",
+                            IsDone = false,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 169,
+                            DurationMin = 0,
+                            Instruction = "Using a candy thermometer to monitor, cook butter and brown sugar over medium-high heat in medium-sized pot until you reach \"hard crack\" stage -- 300� F. Stir constantly. This will take about 15 minutes.",
+                            IsDone = false,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 170,
+                            DurationMin = 0,
+                            Instruction = "Remove the pot from heat and quickly add salt and vanilla.",
+                            IsDone = false,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 171,
+                            DurationMin = 0,
+                            Instruction = "Carefully pour the caramel mixture over the mix of nuts and chocolate. Sprinkle remaining chocolate over hot mixture. When melted, smooth out with the back of large spoon. Sprinkle remaining nuts and gently press into the toffee. If you like salted caramels, you may want to sprinkle some good-quality sea salt on top of the candy.",
+                            IsDone = false,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 172,
+                            DurationMin = 0,
+                            Instruction = "Freeze one hour before breaking into pieces for storage -- or snacking.",
+                            IsDone = false,
+                            RecipeId = 28
+                        },
+                        new
+                        {
+                            Id = 173,
+                            DurationMin = 0,
+                            Instruction = "Combine coconut milk, brown sugar, and salt in a 12-inch or larger heavy skillet. Heat over medium heat until sugar dissolves, stirring occasionally. Increase heat to medium-high and cook until reduced and thickened, stirring more frequently as the mixture thickens",
+                            IsDone = false,
+                            RecipeId = 29
+                        },
+                        new
+                        {
+                            Id = 174,
+                            DurationMin = 0,
+                            Instruction = "In a large mixing bowl, beat the egg yolks on high speed until thick and creamy. Add sugar and beat on high again until very light, about 3 to 5 minutes. Add salt and beat to combine. Set aside. In another large bowl, beat the egg whites to stiff peaks. Set aside.",
+                            IsDone = false,
+                            RecipeId = 30
+                        },
+                        new
+                        {
+                            Id = 175,
+                            DurationMin = 0,
+                            Instruction = "In a saucepan, heat the milk, cream, and vanilla over medium heat. Do not boil. When small bubbles begin to appear, whisk the hot milk into the yolk mixture. Add the beaten whites and the cognac and stir until everything is incorporated.",
+                            IsDone = false,
+                            RecipeId = 30
+                        },
+                        new
+                        {
+                            Id = 176,
+                            DurationMin = 0,
+                            Instruction = "Fill a punch bowl and let everyone serve themselves, or pour egg nog into serving cups and sprinkle a generous amount of freshly grated nutmeg on top. Drink hot.",
+                            IsDone = false,
+                            RecipeId = 30
+                        });
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.User", b =>
@@ -126,36 +5836,36 @@ namespace ChefByStep.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
 
-            modelBuilder.Entity("IngredientRecipe", b =>
-                {
-                    b.Property<int>("IngredientsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RecipesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("IngredientsId", "RecipesId");
-
-                    b.HasIndex("RecipesId");
-
-                    b.ToTable("IngredientRecipe");
-                });
-
-            modelBuilder.Entity("RecipeStep", b =>
-                {
-                    b.Property<int>("RecipesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StepsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("RecipesId", "StepsId");
-
-                    b.HasIndex("StepsId");
-
-                    b.ToTable("RecipeStep");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 0,
+                            Name = "Frieda",
+                            RoleId = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountId = 0,
+                            Name = "Alberto",
+                            RoleId = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccountId = 0,
+                            Name = "Octaaf",
+                            RoleId = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AccountId = 0,
+                            Name = "Gert",
+                            RoleId = 0
+                        });
                 });
 
             modelBuilder.Entity("RecipeUser", b =>
@@ -170,7 +5880,7 @@ namespace ChefByStep.API.Migrations
 
                     b.HasIndex("CompletedRecipesId");
 
-                    b.ToTable("UserCompletedRecipe");
+                    b.ToTable("UserCompletedRecipes");
                 });
 
             modelBuilder.Entity("RecipeUser1", b =>
@@ -185,18 +5895,37 @@ namespace ChefByStep.API.Migrations
 
                     b.HasIndex("FavouritedById");
 
-                    b.ToTable("UserFavouritedRecipe");
+                    b.ToTable("UserFavouriteRecipes");
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.Recipe", b =>
                 {
                     b.HasOne("ChefByStep.API.Entities.User", "CreatedBy")
-                        .WithMany("CreatedRecipe")
+                        .WithMany("CreatedRecipes")
                         .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("CreatedBy");
+                });
+
+            modelBuilder.Entity("ChefByStep.API.Entities.RecipeIngredient", b =>
+                {
+                    b.HasOne("ChefByStep.API.Entities.Ingredient", "Ingredient")
+                        .WithMany("Recipes")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ChefByStep.API.Entities.Recipe", "Recipe")
+                        .WithMany("Ingredients")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredient");
+
+                    b.Navigation("Recipe");
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.RecipeRating", b =>
@@ -208,7 +5937,7 @@ namespace ChefByStep.API.Migrations
                         .IsRequired();
 
                     b.HasOne("ChefByStep.API.Entities.User", "User")
-                        .WithMany("Rating")
+                        .WithMany("Ratings")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -218,34 +5947,15 @@ namespace ChefByStep.API.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("IngredientRecipe", b =>
+            modelBuilder.Entity("ChefByStep.API.Entities.Step", b =>
                 {
-                    b.HasOne("ChefByStep.API.Entities.Ingredient", null)
-                        .WithMany()
-                        .HasForeignKey("IngredientsId")
+                    b.HasOne("ChefByStep.API.Entities.Recipe", "Recipe")
+                        .WithMany("Steps")
+                        .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ChefByStep.API.Entities.Recipe", null)
-                        .WithMany()
-                        .HasForeignKey("RecipesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("RecipeStep", b =>
-                {
-                    b.HasOne("ChefByStep.API.Entities.Recipe", null)
-                        .WithMany()
-                        .HasForeignKey("RecipesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ChefByStep.API.Entities.Step", null)
-                        .WithMany()
-                        .HasForeignKey("StepsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Recipe");
                 });
 
             modelBuilder.Entity("RecipeUser", b =>
@@ -278,16 +5988,25 @@ namespace ChefByStep.API.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ChefByStep.API.Entities.Ingredient", b =>
+                {
+                    b.Navigation("Recipes");
+                });
+
             modelBuilder.Entity("ChefByStep.API.Entities.Recipe", b =>
                 {
+                    b.Navigation("Ingredients");
+
                     b.Navigation("Ratings");
+
+                    b.Navigation("Steps");
                 });
 
             modelBuilder.Entity("ChefByStep.API.Entities.User", b =>
                 {
-                    b.Navigation("CreatedRecipe");
+                    b.Navigation("CreatedRecipes");
 
-                    b.Navigation("Rating");
+                    b.Navigation("Ratings");
                 });
 #pragma warning restore 612, 618
         }

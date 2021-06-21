@@ -1,12 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace ChefByStep.API.Repos
+﻿namespace ChefByStep.API.Repos
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using Microsoft.EntityFrameworkCore;
+
     public class GenericRepo<T> : IGenericRepo<T> where T : class
     {
-        internal DatabaseContext _context;
+        public DatabaseContext _context;
 
         public GenericRepo(DatabaseContext context)
         {

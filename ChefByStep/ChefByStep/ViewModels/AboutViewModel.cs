@@ -1,7 +1,9 @@
 ﻿namespace ChefByStep.ViewModels
 {
+    using System;
     using System.Collections.ObjectModel;
-
+    using System.Threading.Tasks;
+    using System.Windows.Input;
     using ChefByStep.Models;
     using ChefByStep.Services.Repositories;
     using ChefByStep.Views;
@@ -10,13 +12,20 @@
 
     public class AboutViewModel : BaseViewModel
     {
-        private MockRecipeRepo _repo;
+        private RecipeRepository _repo;
+        public ICommand GoToProfile { get;}
 
         public AboutViewModel()
         {
-            _repo = new MockRecipeRepo();
+            _repo = new RecipeRepository();
+            GoToProfile = new Command(GoToProfilePage);
             ShowAllTheRecipes();
             ItemTapped = new Command<Recipe>(OnRecipeSelected);
+        }
+
+        private async void GoToProfilePage()
+        {
+            await Shell.Current.GoToAsync(nameof(ProfilePage));
         }
 
         private ObservableCollection<Recipe> recipes;
@@ -37,17 +46,9 @@
 
         public Command<Recipe> ItemTapped { get; }
 
-        // private IMockRecipeRepo _repo;
-        // public AboutViewModel(IMockRecipeRepo repo)
-        // {
-        // _repo = repo;
-        // ShowAllTheRecipes();
-        // //ItemTapped = new Command<Recipe>(OnPlaceSelected);
-
-        // }
-        private void ShowAllTheRecipes()
+        private async Task ShowAllTheRecipes()
         {
-            var recipes = _repo.GetAllRecipes();
+            var recipes = await _repo.GetAllRecipes();
             Recipes = new ObservableCollection<Recipe>(recipes);
         }
 

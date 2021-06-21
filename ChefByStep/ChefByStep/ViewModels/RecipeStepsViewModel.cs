@@ -2,7 +2,7 @@
 {
     using System;
     using System.Diagnostics;
-
+    using System.Threading.Tasks;
     using ChefByStep.Models;
     using ChefByStep.Services.Repositories;
 
@@ -41,18 +41,18 @@
             }
         }
 
-        private MockRecipeRepo _repo;
+        private RecipeRepository _repo;
 
         public RecipeStepsViewModel()
         {
-            _repo = new MockRecipeRepo();
+            _repo = new RecipeRepository();
         }
 
-        private void LoadRecipe(int id)
+        private async Task LoadRecipe(int id)
         {
             try
             {
-                var recipe = _repo.FindRecipe(id);
+                var recipe = await _repo.GetRecipe(id);
                 SelectedRecipe = recipe;
             }
             catch (Exception)
@@ -60,5 +60,6 @@
                 Debug.WriteLine("Failed to load place");
             }
         }
+
     }
 }

@@ -32,7 +32,7 @@
                                   Id = 1,
                                   Description = "The sea in your plate",
                                   Title = "Sushi",
-                                  ImgUrl = "sushi.jpg",
+                                  ImageUrl = "sushi.jpg",
                                   Steps = new List<Step>
                                           {
                                               new Step()
@@ -71,14 +71,14 @@
                                   Id = 2,
                                   Description = "Fresh, homemade pasta",
                                   Title = "Pasta",
-                                  ImgUrl = "pasta.jpg",
+                                  ImageUrl = "pasta.jpg",
                               },
                               new Recipe
                               {
                                   Id = 3,
                                   Description = "Napoli style",
                                   Title = "Pizza",
-                                  ImgUrl = "pizza.jpg",
+                                  ImageUrl = "pizza.jpg",
                               }
                           };
 

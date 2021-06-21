@@ -8,6 +8,7 @@ namespace ChefByStep.API.Entities
         public string Instruction { get; set; }
         public int DurationMin { get; set; }
         public bool IsDone { get; set; }
-        public List<Recipe> Recipes { get; set; }
+        public int RecipeId { get; set; }
+        public Recipe Recipe { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using ChefByStep.API.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace ChefByStep.API.Helpers
 {
@@ -8,19 +7,11 @@ namespace ChefByStep.API.Helpers
     {
         public static void BuildRelations(this ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                .HasMany(x => x.CompletedRecipes)
-                .WithMany(x => x.CompletedBy)
-                .UsingEntity(x => x.ToTable("UserCompletedRecipe"));
-            modelBuilder.Entity<User>()
-                .HasMany(x => x.FavoriteRecipes)
-                .WithMany(x => x.FavouritedBy)
-                .UsingEntity(x => x.ToTable("UserFavouritedRecipe"));
             modelBuilder.Entity<RecipeRating>()
                 .HasKey(x => new { x.UserId, x.RecipeId });
             modelBuilder.Entity<RecipeRating>()
                 .HasOne<User>(x => x.User)
-                .WithMany(x => x.Rating)
+                .WithMany(x => x.Ratings)
                 .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<RecipeRating>()
@@ -28,15 +19,41 @@ namespace ChefByStep.API.Helpers
                 .WithMany(x => x.Ratings)
                 .HasForeignKey(x => x.RecipeId)
                 .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Recipe>()
+                .HasOne(x => x.CreatedBy)
+                .WithMany(x => x.CreatedRecipes)
+                .HasForeignKey(x => x.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Recipe>()
+                .HasMany(x => x.CompletedBy)
+                .WithMany(x => x.CompletedRecipes)
+                .UsingEntity(x => x.ToTable("UserCompletedRecipes"));
+            modelBuilder.Entity<Recipe>()
+                .HasMany(x => x.FavouritedBy)
+                .WithMany(x => x.FavoriteRecipes)
+                .UsingEntity(x => x.ToTable("UserFavouriteRecipes"));
         }
 
         public static void Seed(this ModelBuilder modelBuilder)
         {
-            BuildRecipes(modelBuilder);
-        }
-
-        private static void BuildRecipes(ModelBuilder modelBuilder)
-        {
+            modelBuilder.Entity<User>().HasData(
+                DataSeeder.GetUsers()
+                );
+            modelBuilder.Entity<Step>().HasData(
+                DataSeeder.GetStepsFromCsv()
+                );
+            modelBuilder.Entity<Recipe>().HasData(
+                DataSeeder.GetRecipesFromCsv()
+                );
+            modelBuilder.Entity<Ingredient>().HasData(
+                DataSeeder.GetIngredientsFromCsv()
+                );
+            modelBuilder.Entity<RecipeIngredient>().HasData(
+                DataSeeder.GetRecipeIngredients()
+                );
+            modelBuilder.Entity<RecipeRating>().HasData(
+                DataSeeder.GetRecipeRatings()
+                );
         }
     }
 }
