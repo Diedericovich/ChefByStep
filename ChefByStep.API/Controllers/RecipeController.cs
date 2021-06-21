@@ -1,4 +1,5 @@
 ﻿using ChefByStep.API.Entities;
+using ChefByStep.API.Entities.DTOs;
 using ChefByStep.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace ChefByStep.API.Controllers
 {
     [ApiController, Route("api/[controller]")]
-    public class RecipeController: ControllerBase
+    public class RecipeController : ControllerBase
     {
         private IRecipeService _service;
 
@@ -23,7 +24,7 @@ namespace ChefByStep.API.Controllers
             await _service.AddRecipeAsync(recipe);
         }
 
-        [HttpDelete("{id})")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteRecipeAsync(int id)
         {
             try
@@ -38,7 +39,7 @@ namespace ChefByStep.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<Recipe> GetRecipeAsync(int id)
+        public async Task<RecipeDto> GetRecipeAsync(int id)
         {
             return await _service.GetRecipeAsync(id);
         }
@@ -62,6 +63,5 @@ namespace ChefByStep.API.Controllers
                 return BadRequest(e.Message);
             }
         }
-
     }
 }

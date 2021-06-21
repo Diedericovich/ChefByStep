@@ -8,6 +8,6 @@
 
         public double Quantity { get; set; }
 
-        public List<Recipe> Recipes { get; set; }
+        public List<RecipeIngredient> Recipes { get; set; }
     }
 }

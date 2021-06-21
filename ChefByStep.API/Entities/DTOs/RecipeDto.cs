@@ -1,20 +1,21 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ChefByStep.API.Entities
+namespace ChefByStep.API.Entities.DTOs
 {
-    public class Recipe
+    public class RecipeDto
     {
         public int Id { get; set; }
-        public int CreatedById { get; set; }
+        public string CreatedBy { get; set; }
         public int CategoryId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public List<RecipeRating> Ratings { get; set; }
-        public List<RecipeIngredient> Ingredients { get; set; }
-        public List<Step> Steps { get; set; }
-        public User CreatedBy { get; set; }
+        public List<RecipeIngredientDto> Ingredients { get; set; }
+        public List<StepDto> Steps { get; set; }
         public List<User> FavouritedBy { get; set; }
         public List<User> CompletedBy { get; set; }
     }

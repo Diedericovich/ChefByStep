@@ -9,7 +9,7 @@ namespace ChefByStep.API.Controllers
 {
     [ApiController, Route("api/[controller]")]
 
-    public class RecipeRatingController: ControllerBase
+    public class RecipeRatingController : ControllerBase
     {
         private IRecipeRatingService _service;
 
@@ -24,7 +24,7 @@ namespace ChefByStep.API.Controllers
             await _service.AddRecipeRatingAsync(recipeRating);
         }
 
-        [HttpDelete("{id})")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteRecipeRatingAsync(int id)
         {
             try

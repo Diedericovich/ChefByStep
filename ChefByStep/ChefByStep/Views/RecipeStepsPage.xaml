@@ -44,7 +44,7 @@
                                                             <StackLayout Spacing="20" Orientation="Horizontal">
                                                                 <Image Source="checked.png" 
                                                                 WidthRequest="15"/>
-                                                                <Label Text="{Binding Name}"
+                                                                <Label Text="{Binding Ingredient.Name}"
                                                                TextColor="white"
                                                                FontSize="12"
                                                                VerticalTextAlignment="Center"/>
