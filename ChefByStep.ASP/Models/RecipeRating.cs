@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.ASP.Models
 {
-    public class RecipeRating
+    public class RecipeRating : BaseModel
     {
-        public int Id { get; set; }
         public ApplicationUser User { get; set; }
         public Recipe Recipe { get; set; }
         public string Comment { get; set; }
