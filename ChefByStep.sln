@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChefByStep.ASP", "ChefByStep.ASP\ChefByStep.ASP.csproj", "{051D8278-AB06-42F2-9EE6-17822DF699F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{36024A1A-69E3-4E59-9F4E-C381AE66087F} = {36024A1A-69E3-4E59-9F4E-C381AE66087F}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChefByStep.API", "ChefByStep.API\ChefByStep.API.csproj", "{36024A1A-69E3-4E59-9F4E-C381AE66087F}"
 EndProject

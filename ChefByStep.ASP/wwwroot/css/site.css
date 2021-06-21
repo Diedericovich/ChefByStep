@@ -280,8 +280,7 @@ ol.carousel-indicators {
     
 }
 
-    ol.carousel-indicators li,
-    ol.carousel-indicators li.active {
+    ol.carousel-indicators li {
         float: left;
         width: 33%;
         height: 10px;

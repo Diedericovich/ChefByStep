@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.ASP.Models
 {
-    public class Account
+    public class Account 
     {
         public int Id { get; set; }
 
