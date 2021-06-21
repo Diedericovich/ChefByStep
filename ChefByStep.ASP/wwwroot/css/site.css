@@ -190,7 +190,23 @@ body {
 
 .recipe-img {
     width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: RGBA(120,198,163,0.75);
 }
+
+.recipe-row a {
+    text-decoration: none;
+    color: #fff;
+}
+
+    .recipe-row a:hover {
+        color: #fff;
+    }
+
+    .recipe-row a:visited {
+        color: #fff;
+    }
 
 .centered {
     position: absolute;
@@ -207,4 +223,81 @@ body {
     transform: translate(-50%, -50%);
     background-color: RGBA(120,198,163,0.75);
     font-size: 20px;
+}
+
+.btn-cook {
+    background-color: RGBA(120,198,163,0.59);
+    width: 20%;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cooking-div:target {
+    display: none;
+}
+.step-list:target {
+    display: none;
+}
+.detail-img{
+    width: 250px;
+}
+
+.vert .carousel-item-next.carousel-item-left,
+.vert .carousel-item-prev.carousel-item-right {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.vert .carousel-item-next,
+.vert .active.carousel-item-right {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100% 0);
+}
+
+.vert .carousel-item-prev,
+.vert .active.carousel-item-left {
+    -webkit-transform: translate3d(0,-100%, 0);
+    transform: translate3d(0,-100%, 0);
+}
+
+.centered-carousel {
+    height: 500px;
+    background-color: RGBA(120,198,163,0.59);
+    text-align: center;
+    padding-top: 20%;
+}
+.carousel-control-prev .carousel-control-next {
+    width: 100%;
+}
+ol.carousel-indicators {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    
+}
+
+    ol.carousel-indicators li,
+    ol.carousel-indicators li.active {
+        float: left;
+        width: 33%;
+        height: 10px;
+        margin: 0;
+        border-radius: 0;
+        border: 0;
+        background: RGBA(120,198,163,0.40);
+        border-left: 1px solid;
+        border-color: #78c6a3;
+        
+    }
+
+        ol.carousel-indicators li.active {
+            background: RGBA(120,198,163,0.75);
+        }
+
+.carousel-control-next-icon .carousel-control-prev-icon {
+    background-color: #78c6a3;
 }
