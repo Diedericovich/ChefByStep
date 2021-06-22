@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ChefByStep.ASP.Models
+﻿namespace ChefByStep.ASP.Models
 {
+    using System.Collections.Generic;
+
     public class ApplicationUser : BaseModel
     {
         public Account Account { get; set; }
