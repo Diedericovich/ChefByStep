@@ -1,105 +1,91 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ChefByStep.ViewModels"
              x:Class="ChefByStep.Views.ProfilePage">
 
     <ContentPage.BindingContext>
-        <vm:ProfilePageViewModel/>
+        <vm:ProfilePageViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
 
         <StackLayout>
-            <Image Grid.Row="0" 
-               Source="https://cdn.pixabay.com/photo/2013/01/05/21/02/art-74050_1280.jpg" 
-               VerticalOptions="Center"
-               WidthRequest="300"
-               HeightRequest="450"
-               Aspect="AspectFill"
-               />
-            <Frame HasShadow="False" 
-                CornerRadius="40"
-                Margin="0,-180,0,0"
-                VerticalOptions="FillAndExpand">
+            <Image Grid.Row="0"
+                   Source="https://cdn.pixabay.com/photo/2013/01/05/21/02/art-74050_1280.jpg"
+                   VerticalOptions="Center"
+                   WidthRequest="300"
+                   HeightRequest="450"
+                   Aspect="AspectFill" />
+            <Frame HasShadow="False"
+                   CornerRadius="40"
+                   Margin="0,-180,0,0"
+                   VerticalOptions="FillAndExpand">
                 <Grid RowDefinitions="Auto, Auto, Auto, Auto"
                       ColumnDefinitions="*,*,*">
                     <ImageButton Grid.Row="0"
-                            Grid.Column="0"
-                            HeightRequest="56"
-                            WidthRequest="56"
-                            CornerRadius="28"
-                            BackgroundColor="{StaticResource Primary}"
-                            Source="https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Mail-512.png"
-                            VerticalOptions="Start"
-                            HorizontalOptions="Start"
-                            />
+                                 Grid.Column="0"
+                                 HeightRequest="56"
+                                 WidthRequest="56"
+                                 CornerRadius="28"
+                                 BackgroundColor="{StaticResource Primary}"
+                                 Source="https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Mail-512.png"
+                                 VerticalOptions="Start"
+                                 HorizontalOptions="Start" />
                     <Label Grid.Row="0"
                            Grid.Column="1"
                            Text="{Binding ActiveUser.ApplicationUser.Name}"
                            FontSize="32"
                            VerticalOptions="Start"
-                           HorizontalOptions="Start"/>
+                           HorizontalOptions="Start" />
 
                     <ImageButton Grid.Row="1"
-                            Grid.Column="0"
-                            HeightRequest="56"
-                            WidthRequest="56"
-                            CornerRadius="28"
-                            BackgroundColor="{StaticResource Primary}"
-                            Source="https://www.pngjoy.com/pngm/208/4073575_services-icon-email-icon-png-round-transparent-png.png"
-                            VerticalOptions="Start"
-                            HorizontalOptions="Start"
-                            />
+                                 Grid.Column="0"
+                                 HeightRequest="56"
+                                 WidthRequest="56"
+                                 CornerRadius="28"
+                                 BackgroundColor="{StaticResource Primary}"
+                                 Source="https://www.pngjoy.com/pngm/208/4073575_services-icon-email-icon-png-round-transparent-png.png"
+                                 VerticalOptions="Start"
+                                 HorizontalOptions="Start" />
                     <Label Grid.Row="1"
                            Grid.Column="1"
                            Text="{Binding ActiveUser.ApplicationUser.Id}"
                            FontSize="32"
                            VerticalOptions="Start"
-                           HorizontalOptions="Start"/>
+                           HorizontalOptions="Start" />
 
                     <ImageButton Grid.Row="2"
-                            Grid.Column="0"
-                            HeightRequest="56"
-                            WidthRequest="56"
-                            CornerRadius="28"
-                            BackgroundColor="{StaticResource Primary}"
-                            Source="https://icons-for-free.com/iconfiles/png/512/heart+like+icon-1320087274738400236.png"
-                            VerticalOptions="Start"
-                            HorizontalOptions="Start"
-                            />
+                                 Grid.Column="0"
+                                 HeightRequest="56"
+                                 WidthRequest="56"
+                                 CornerRadius="28"
+                                 BackgroundColor="{StaticResource Primary}"
+                                 Source="https://icons-for-free.com/iconfiles/png/512/heart+like+icon-1320087274738400236.png"
+                                 VerticalOptions="Start"
+                                 HorizontalOptions="Start" />
                     <Label Grid.Row="2"
                            Grid.Column="1"
                            Text="Number of Liked Recipes"
                            FontSize="22"
                            VerticalOptions="Start"
-                           HorizontalOptions="Start"/>
+                           HorizontalOptions="Start" />
                     <Button Grid.Row="6"
                             Grid.Column="0"
                             Grid.ColumnSpan="3"
                             Text="See Liked Recipes"
-                            CornerRadius="10"
-                            />
+                            CornerRadius="10" />
 
                 </Grid>
             </Frame>
         </StackLayout>
-        
-         
-        
-       
-
-
-
-
-        
-
 
 
         <!--<StackLayout Margin="50">
             <Label Text="{Binding ActiveUser.ApplicationUser.Name}"/>
             <Label Text="{Binding ActiveUser.ApplicationUser.Id}"/>
         </StackLayout>-->
-        
+
     </ContentPage.Content>
 </ContentPage>
