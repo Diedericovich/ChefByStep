@@ -4,7 +4,7 @@
 
     using ChefByStep.ASP.Models;
 
-    public class RecipeDetailViewModel
+    public class RecipeCategoryViewModel
     {
         public int Id { get; set; }
 
@@ -14,10 +14,6 @@
 
         public string ImageUrl { get; set; }
 
-        public List<Step> Steps { get; set; }
-
-        public List<RecipeIngredient> Ingredients { get; set; }
-
-        public List<RecipeRating> Ratings { get; set; }
+        public Category RecipeCategory { get; set; }
     }
 }
