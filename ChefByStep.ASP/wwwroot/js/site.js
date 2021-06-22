@@ -20,6 +20,25 @@ function toggleSteps() {
     }
 }
 
+
+function toggleCategories() {
+    var selectedCategories = document.getElementById('breakfast');
+
+    var displaySetting = selectedCategories.style.display;
+
+    var startCooking = document.getElementById('breakfast');
+
+    if (displaySetting == 'block') {
+        selectedCategories.style.display = 'none';
+        startCooking.innerHTML = 'DO Stuff Breakfast';
+    }
+    else {
+        selectedCategories.style.display = 'block';
+        startCooking.innerHTML = 'Stop Cooking';
+    }
+}
+
+
 function toggleStepByStep() {
     var prev = $('.prev');
     var next = $('.next');
