@@ -1,9 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model RecipeViewModel
 @{
     Random random = new Random();
-    int randomId = random.Next(1, 5);
+    int randomId = random.Next(1, 30);
+    int randomId2 = random.Next(1, 30);
+    int randomId3 = random.Next(1, 30);
+    int randomId4 = random.Next(1, 30);
+
+    Recipe recipe1 = new Recipe();
+    Recipe recipe2 = new Recipe();
+    Recipe recipe3 = new Recipe();
+
+    recipe1 = Model.Recipes.ElementAt(randomId2);
+    recipe2 = Model.Recipes.ElementAt(randomId3);
+    recipe3 = Model.Recipes.ElementAt(randomId4);
 }
 <div class="overview">
     <div>
@@ -36,24 +48,24 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" alt="First slide">
+                    <img class="d-block w-100" src="@recipe1.ImageUrl" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Strawberry Lemonade Cupcakes</h5>
-                        <p>This is my take on that boxed strawberry cake (you know the one...it’s pink), but mine is made with fresh strawberries. It takes a bit of time to reduce the strawberry mixture to a thick, jammy purée, but it's worth it, since it gets used both in the cake and also the frosting to create a beautiful—and delicious—swirl effect. I like these best decorated with lemon wedges and/or strawberries, but you can never miss with sprinkles! —Erin Jeanne McDowell</p>
+                        <h5>@recipe1.Title</h5>
+                        <p>@recipe1.Description</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images.food52.com/i8P83CvSSFTTVWinAuWJuXqAHFo=/1008x672/filters:format(webp)/547d4b4b-dfa0-494a-9415-04a97a103f05--20120804_food52_08-20-12-1466.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="@recipe2.ImageUrl" alt="Second slide">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Pasta with Tomatoes, Garlic, Basil & Brie</h5>
-                        <p>Today I'm sharing the Stubbs rendition, which uses less olive oil (Rosso and Lukins' version calls for 1 whole cup for just 1 1/2 pounds of pasta!) and slightly less garlic and basil, but plenty of tomatoes and Brie with the rind on, which I believe is key to the endeavor. I highly recommend you cast aside any residual anti-Brie sentiments and give this one a shot before tomatoes disappear for the year. You won't regret it. —Merrill Stubbs</p>
+                        <h5>@recipe2.Title</h5>
+                        <p>@recipe2.Description</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images.food52.com/Y4T3Uk-cKn799bjhWySmQJ9YxIA=/1008x672/filters:format(webp)/2311e33a-47e9-4504-99e4-dd3d61337348--2017-1212_egglands-best-sponsored_greek-soup-holiday_3x2_mark-weinberg_0128.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="@recipe3.ImageUrl" alt="Third slide">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Greek Lemon Soup</h5>
-                        <p>The name of this classic Greek soup emulsion of lemon and eggs comes from its two main ingredients: egg (avgo) and lemon juice (lemono). The key to this soup is tempering the egg and lemon mixture by slowly adding hot stock and then whisking constantly to prevent the eggs from curdling. You then stir the mixture into the soup, which becomes all velvety lush lemony goodness. A Greek salad and warm pita bread are wonderful accompaniments to this soup. —ChristineQ</p>
+                        <h5>@recipe3.Title</h5>
+                        <p>@recipe3.Description</p>
                     </div>
                 </div>
             </div>
