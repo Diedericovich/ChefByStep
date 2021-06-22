@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class Recipe: BaseModel
+    public class Recipe : BaseModel
     {
         public int CategoryID { get; set; }
 
