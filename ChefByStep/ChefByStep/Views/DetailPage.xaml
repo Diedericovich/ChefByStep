@@ -17,10 +17,13 @@
                 <Grid>
 
                     <Frame HeightRequest="400" Padding="0" BackgroundColor="Black">
+
+                     
                         <Image Source="{Binding SelectedRecipe.ImageUrl}"
-                           HeightRequest="400"
-                           Aspect="AspectFill"
-                           Opacity="0.9"/>
+                               HeightRequest="400"
+                               Aspect="AspectFill"
+                               Opacity="0.9"/>
+
                     </Frame>
                     <StackLayout VerticalOptions="EndAndExpand">
                         <Grid>
@@ -28,7 +31,7 @@
                                 <ColumnDefinition Width="5*"/>
                                 <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
-
+                            <Button x:Name="ButtonFavourite" Text="Add to favourites" Command="{Binding OnButtonUserRecipeFavourite}"></Button>
                             <Label Text="{Binding SelectedRecipe.Title}"
                                TextColor="White"
                                FontSize="32"

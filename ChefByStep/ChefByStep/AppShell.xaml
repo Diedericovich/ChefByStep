@@ -111,6 +111,16 @@
     </FlyoutItem>
 
     <FlyoutItem
+        Title="My Recipes"
+        Icon="icon_about.png"
+    >
+        <ShellContent
+            ContentTemplate="{DataTemplate local:UserFavouriteRecipesPage}"
+            Route="AboutPage"
+        />
+    </FlyoutItem>
+
+    <FlyoutItem
         Title="Login"
         Icon="icon_feed.png"
         >

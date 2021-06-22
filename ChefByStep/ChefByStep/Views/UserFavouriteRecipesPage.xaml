@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
+             xmlns:vm="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
+             x:Class="ChefByStep.Views.UserFavouriteRecipesPage">
+
+
+    <ContentPage.BindingContext>
+        <viewModels:UserFavouriteRecipesViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <CarouselView
+                HeightRequest="400"
+                ItemsSource="{Binding .ActiveUser.ApplicationUser.FavoriteRecipes}"
+                Loop="True"
+                PeekAreaInsets="40"
+                WidthRequest="300"
+                >
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame
+                                Margin="10"
+                                Padding="0"
+                                BackgroundColor="white"
+                                CornerRadius="10"
+                                HasShadow="True"
+                                HeightRequest="400"
+                                HorizontalOptions="CenterAndExpand"
+                                WidthRequest="300"
+                                >
+
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <StackLayout BackgroundColor="Black">
+                                        <Image
+                                            Aspect="AspectFill"
+                                            HeightRequest="400"
+                                            Opacity="0.8"
+                                            Source="{Binding ImageUrl}"
+                                            />
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Image
+                                            Margin="0,-10,0,0"
+                                            Aspect="AspectFit"
+                                            HeightRequest="60"
+                                            HorizontalOptions="EndAndExpand"
+                                            Source="icon_bookmark.png"
+                                            />
+                                        <Label
+                                            Margin="15,0"
+                                            FontAttributes="Bold"
+                                            FontSize="24"
+                                            Text="{Binding Title}"
+                                            TextColor="white"
+                                            VerticalOptions="EndAndExpand"
+                                            />
+
+                                        <StackLayout
+                                            Margin="15,-10,0,0"
+                                            Orientation="Horizontal"
+                                            >
+                                            <Image
+                                                Aspect="AspectFit"
+                                                HeightRequest="20"
+                                                Source="icon_map1.png"
+                                                />
+
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UserFavouriteRecipesViewModel}}, Path=ItemTapped}"
+                                            CommandParameter="{Binding .}"
+                                            NumberOfTapsRequired="1"
+                                            />
+                                    </Grid.GestureRecognizers>
+
+
+                                </Grid>
+                            </Frame>
+
+                        </StackLayout>
+
+
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

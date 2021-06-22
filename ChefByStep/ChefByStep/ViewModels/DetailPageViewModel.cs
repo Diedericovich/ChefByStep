@@ -21,6 +21,13 @@
             _repo = new RecipeRepository();
             SelectedRecipe = new Recipe();
             OnButtonClickedCommand = new Command(GoToStepsPage);
+            OnButtonUserRecipeFavourite = new Command(AddRecipeToUserFavourites);
+        }
+
+        private async void AddRecipeToUserFavourites()
+        {
+            this.ActiveUser.ApplicationUser.FavoriteRecipes.Add(SelectedRecipe);
+            
         }
 
         public async void GoToStepsPage()
@@ -32,6 +39,7 @@
         }
 
         public ICommand OnButtonClickedCommand { get; }
+        public ICommand OnButtonUserRecipeFavourite { get; }
 
         private Recipe selectedRecipe;
 
