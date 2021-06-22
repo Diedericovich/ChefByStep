@@ -33,6 +33,16 @@
             return View(viewModel);
         }
 
+        //public async Task<ActionResult> IndexAsync(RecipeViewModel viewModel)
+        //{
+        //    ICollection<Recipe> recipes = await _service.GetRecipesAsync();
+        //    var viewModel = new RecipeViewModel
+        //    {
+        //        Recipes = _mapper.Map<ICollection<Recipe>>(recipes)
+        //    };
+        //    return View(viewModel);
+        //}
+
         // GET: RecipeController/Details/5
         public async Task<ActionResult> DetailAsync(int id)
         {

@@ -9,7 +9,7 @@ namespace ChefByStep.ASP.Models
     public class Recipe
     {
         public int Id { get; set; }
-        public int CategoryId { get; set; }
+        public Category CategoryId { get; set; }
         public string Description { get; set; }
         public List<RecipeRating> Ratings { get; set; }
         public string ImageUrl { get; set; }

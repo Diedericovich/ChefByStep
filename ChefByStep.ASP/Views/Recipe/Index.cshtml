@@ -12,12 +12,9 @@
         </ul>
     </div>
     <div class="row recipe-row">
-        @if (#breakfast == checked)
-        {
-
-        }
         @foreach (var recipe in Model.Recipes)
         {
+        <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card overview-tile" style="width: 18rem;">
                 <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
                     <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
@@ -26,6 +23,7 @@
                     </div>
                 </a>
             </div>
+        </div>
         }
     </div>
 </div>
