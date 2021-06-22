@@ -16,5 +16,6 @@ namespace ChefByStep.API.Services
         Task<RecipeDto> GetRecipeAsync(int id);
 
         Task UpdateRecipeAsync(Recipe recipe);
+        Task<IEnumerable<Recipe>> GetAllByCategory(int categoryId);
     }
 }

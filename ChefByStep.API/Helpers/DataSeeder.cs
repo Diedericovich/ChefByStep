@@ -25,6 +25,7 @@ namespace ChefByStep.API.Helpers
                     new Recipe
                     {
                         Id = i + 1,
+                        CategoryId = Convert.ToInt32(line[1]),
                         ImageUrl = line[2],
                         Title = line[0],
                         Steps = new List<Step>(),
