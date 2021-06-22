@@ -16,7 +16,7 @@
       
             <CarouselView
                 HeightRequest="400"
-                ItemsSource="{Binding .ActiveUser.ApplicationUser.FavoriteRecipes}"
+                ItemsSource="{Binding ActiveUser.ApplicationUser.FavoriteRecipes}"
                 Loop="True"
                 PeekAreaInsets="40"
                 WidthRequest="300"

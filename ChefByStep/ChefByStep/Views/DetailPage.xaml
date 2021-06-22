@@ -14,9 +14,14 @@
   
 
     <ContentPage.Content>
-        <Grid>
-            <StackLayout VerticalOptions="FillAndExpand">
+
+
+       
+            <StackLayout>
+
+         
                 <Grid>
+             
 
                     <Frame HeightRequest="400" Padding="0" BackgroundColor="Black">
 
@@ -26,60 +31,57 @@
                                Aspect="AspectFill"
                                Opacity="0.9"/>
 
-
-
                     </Frame>
-                    <pancake:PancakeView BackgroundColor="#bc91d7" CornerRadius="60,0,0,60" HorizontalOptions="FillAndExpand" HeightRequest="150">
-                        <Image Source="unicorn.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" />
 
-                    </pancake:PancakeView>
-                    <Button x:Name="ButtonFavourite" Text="Add to favourites" Command="{Binding OnButtonUserRecipeFavourite}"></Button>
+                    <pancake:PancakeView CornerRadius="45">
+                        <Grid HorizontalOptions="EndAndExpand"
+                              VerticalOptions="StartAndExpand"
+                              Margin="0,15,15,0"
+                              >
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:DetailPageViewModel}}, Path=OnButtonUserRecipeFavourite}"
+                                    CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="1"
+                                />
+                            </Grid.GestureRecognizers>
+
+                        <Image HeightRequest="30" WidthRequest="50" x:Name="ButtonFavourite" Source="heart.png"></Image>
+                        </Grid>
+                </pancake:PancakeView>
+
 
                     <StackLayout VerticalOptions="EndAndExpand">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="5*"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                         
-                            <Label Text="{Binding SelectedRecipe.Title}"
-                               TextColor="White"
-                               FontSize="32"
-                               FontAttributes="Bold"
-                               Margin="15"
-                               />
-                            <!--<StackLayout Grid.Column="1"
-                                         VerticalOptions="Center">
-                                <Label Text="4,6*"
-                                   
-                                   TextColor="Red"
-                                   FontSize="24"
-                                   FontAttributes="Bold"
-                                   Margin="15"
-                                   />
-                            </StackLayout>-->
 
-                        </Grid>
+
+                    <Label Text="{Binding SelectedRecipe.Title}"
+                               TextColor="White"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               Margin="15"></Label>
+                     
 
                     </StackLayout>
+
+
+
                 </Grid>
                 
                 <Grid VerticalOptions="FillAndExpand"
                       Margin="0,-20,0,0"
                       Padding="0">
 
-                    <Frame CornerRadius="25"
-                           >
+                    <Frame CornerRadius="25">
                         <StackLayout>
 
                             <xct:TabView
                                         TabItemsSource="{Binding SelectedRecipe}"
                                         TabStripPlacement="Top"
                                         TabStripBackgroundColor="LightGray"
-                                        TabStripHeight="60"
+                                        TabStripHeight="65"
                                         TabIndicatorColor="red"
                                         TabContentBackgroundColor="Transparent"
-                                        Margin="-20">
+                                        Margin="-35">
 
                                 <xct:TabViewItem
                                         Icon="triangle.png"
@@ -94,7 +96,7 @@
                                         VerticalOptions="Start"
                                         Text="{Binding SelectedRecipe.Description}"
                                         TextColor="black"
-                                        Margin=" 30"/>
+                                        Margin=" 35"/>
                                     </Grid>
                                 </xct:TabViewItem>
 
@@ -151,7 +153,7 @@
                            WidthRequest="60"
                            HorizontalOptions="EndAndExpand"
                            VerticalOptions="StartAndExpand"
-                           Margin="0,-35,35,0">
+                           Margin="0,-35,35,35">
                         <pancake:PancakeView.Shadow>
                             <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0" />
                         </pancake:PancakeView.Shadow>
@@ -184,7 +186,6 @@
 
             </StackLayout>
 
-        </Grid>
     </ContentPage.Content>
 
 
