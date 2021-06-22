@@ -1,30 +1,26 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ChefByStep.ASP
+﻿namespace ChefByStep.ASP.Controllers
 {
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+
     public class ApplicationUserController : Controller
     {
         // GET: ApplicationUserController
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         // GET: ApplicationUserController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return this.View();
         }
 
         // GET: ApplicationUserController/Create
         public ActionResult Create()
         {
-            return View();
+            return this.View();
         }
 
         // POST: ApplicationUserController/Create
@@ -34,18 +30,18 @@ namespace ChefByStep.ASP
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return this.RedirectToAction(nameof(this.Index));
             }
             catch
             {
-                return View();
+                return this.View();
             }
         }
 
         // GET: ApplicationUserController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return this.View();
         }
 
         // POST: ApplicationUserController/Edit/5
@@ -55,18 +51,18 @@ namespace ChefByStep.ASP
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return this.RedirectToAction(nameof(this.Index));
             }
             catch
             {
-                return View();
+                return this.View();
             }
         }
 
         // GET: ApplicationUserController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return this.View();
         }
 
         // POST: ApplicationUserController/Delete/5
@@ -76,11 +72,11 @@ namespace ChefByStep.ASP
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return this.RedirectToAction(nameof(this.Index));
             }
             catch
             {
-                return View();
+                return this.View();
             }
         }
     }

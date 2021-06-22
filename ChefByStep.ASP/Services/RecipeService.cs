@@ -1,18 +1,20 @@
-﻿using ChefByStep.ASP.Data;
-using ChefByStep.ASP.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ChefByStep.ASP.Services
+﻿namespace ChefByStep.ASP.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using ChefByStep.ASP.Data;
+    using ChefByStep.ASP.Models;
+
     public class RecipeService : IRecipeService
     {
-        private IRecipeRepo _repo;
+        private readonly IRecipeRepo _repo;
+
         public RecipeService(IRecipeRepo repo)
         {
-            _repo = repo;
+            this._repo = repo;
         }
 
         public async Task<IList<Recipe>> GetRecipesAsync()
@@ -20,9 +22,10 @@ namespace ChefByStep.ASP.Services
             IList<Recipe> recipes = await _repo.GetRecipesAsync();
             return recipes;
         }
+
         public async Task<Recipe> GetRecipeAsync(int id)
         {
-            var recipe = await _repo.GetRecipeAsync(id);
+            var recipe = await this._repo.GetRecipeAsync(id);
             return recipe;
         }
     }
