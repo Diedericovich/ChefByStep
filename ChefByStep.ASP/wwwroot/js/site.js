@@ -13,8 +13,7 @@ function toggleSteps() {
     if (displaySetting == 'block') {
         mySteps.style.display = 'none';
         startCooking.innerHTML = 'Start Cooking';
-    }
-    else {
+    } else {
         mySteps.style.display = 'block';
         startCooking.innerHTML = 'Stop Cooking';
     }
@@ -24,18 +23,19 @@ function toggleSteps() {
 function toggleCategories() {
     var selectedCategories = document.getElementById('breakfast');
 
-    var displaySetting = selectedCategories.style.display;
+    //var displaySetting = selectedCategories.style.display;
+    selectedCategories.style.hide = true;
+    /*   var startCooking = document.getElementById('breakfast');*/
 
-    var startCooking = document.getElementById('breakfast');
+    //if (displaySetting == 'block') {
+    //    selectedCategories.style.display = 'none';
+    //    startCooking.innerHTML = 'DO Stuff Breakfast';
+    //} else {
+    //    selectedCategories.style.display = 'block';
+    //    startCooking.innerHTML = 'Stop Cooking';
+    //}
 
-    if (displaySetting == 'block') {
-        selectedCategories.style.display = 'none';
-        startCooking.innerHTML = 'DO Stuff Breakfast';
-    }
-    else {
-        selectedCategories.style.display = 'block';
-        startCooking.innerHTML = 'Stop Cooking';
-    }
+
 }
 
 
@@ -47,27 +47,29 @@ function toggleStepByStep() {
     $('.li').hide();
     $('.li').eq(0).show();
 
-    next.on('click', function () {
-        $('.li').hide();
-        num++;
-        if (num > 3) {
-            num = 0;
-        }
-        $('.li').eq(num).show();
-    });
+    next.on('click',
+        function() {
+            $('.li').hide();
+            num++;
+            if (num > 3) {
+                num = 0;
+            }
+            $('.li').eq(num).show();
+        });
 
-    prev.on('click', function () {
-        $('.li').hide();
-        num--;
-        if (num < 0) {
-            num = 3;
-        }
-        $('.li').eq(num).show();
-    });
+    prev.on('click',
+        function() {
+            $('.li').hide();
+            num--;
+            if (num < 0) {
+                num = 3;
+            }
+            $('.li').eq(num).show();
+        });
 }
 
 var checkList = document.getElementById('list1');
-checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
+checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
     if (checkList.classList.contains('visible'))
         checkList.classList.remove('visible');
     else
