@@ -42,6 +42,11 @@ namespace ChefByStep.API.Services
             return recipeList;
         }
 
+        public async Task<IEnumerable<Recipe>> GetAllByCategory(int categoryId)
+        {
+            return await _recipeRepo.GetAllByCategory(categoryId);
+        }
+
         public async Task UpdateRecipeAsync(Recipe recipe)
         {
             await _recipeRepo.UpdateAsync(recipe);

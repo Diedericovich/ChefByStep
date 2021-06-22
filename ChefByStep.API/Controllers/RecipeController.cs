@@ -50,6 +50,12 @@ namespace ChefByStep.API.Controllers
             return await _service.GetAllRecipesAsync();
         }
 
+        [HttpGet("ByCategory/{categoryId}")]
+        public async Task<IEnumerable<Recipe>> GetAllByCategory(int categoryId)
+        {
+            return await _service.GetAllByCategory(categoryId);
+        }
+
         [HttpPut]
         public async Task<ActionResult> UpdateRecipeAsync(Recipe recipe)
         {
