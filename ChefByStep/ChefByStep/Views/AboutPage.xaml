@@ -6,7 +6,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:vm="clr-namespace:ChefByStep.ViewModels"
-    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    
     xmlns:generic="clr-namespace:System.Collections.Generic;assembly=netstandard"
     Title="ChefByStep"
     >
@@ -24,28 +24,14 @@
     <ScrollView>
         <StackLayout>
             <SearchBar Placeholder="Find a Recipe" />
-            <buttons:SfSegmentedControl          SelectionTextColor = "White"
-                                                 HeightRequest="80"
-                                                 VisibleSegmentsCount="6"
-                                                 Color="Transparent" 
-                                                 BorderColor="#929292"
-                                                 SelectedIndex="1"
-                                                 FontColor="#929292"
-                                                 BackgroundColor="Transparent" >
-                <generic:List x:TypeArguments="x:String">
-                    <x:String>Breakfast</x:String>
-                    <x:String>Lunch</x:String>
-                    <x:String>Dinner</x:String>
-                </generic:List>
-                </buttons:SfSegmentedControl>
 
-                <CarouselView
+            <CarouselView
                 HeightRequest="400"
                 ItemsSource="{Binding Recipes}"
                 Loop="True"
                 PeekAreaInsets="40"
-                WidthRequest="300"
-                >
+                WidthRequest="300">
+
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
