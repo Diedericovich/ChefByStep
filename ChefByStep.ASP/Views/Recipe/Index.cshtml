@@ -1,17 +1,17 @@
 ﻿@model RecipeViewModel
 
-<div class="overview">
+<div class="overview list-container">
     <h2>Our recipes</h2>
     <div id="myBtnContainer">
-        <button class="btn active btn-filter" onclick="filterSelection('all')"> Show all</button>
-        @foreach (var category in Enum.GetNames(typeof(Category)))
+        <button class="btn btn-filter active" onclick="filterSelection('all')"> Show all</button>
+        @*@foreach (var category in Enum.GetNames(typeof(Category)))
         {
             <button class="btn" onclick="filterSelection('@category')"> @category</button>
-        }
-        @*<button class="btn" onclick="filterSelection('breakfast')"> Breakfast</button>
-        <button class="btn" onclick="filterSelection('lunch')"> Lunch</button>
-        <button class="btn" onclick="filterSelection('dinner')"> Dinner</button>
-        <button class="btn" onclick="filterSelection('dessert')"> Dessert</button>*@
+        }*@
+        <button class="btn btn-filter" onclick="filterSelection('Breakfast')"> Breakfast</button>
+        <button class="btn btn-filter" onclick="filterSelection('Lunch')"> Lunch</button>
+        <button class="btn btn-filter" onclick="filterSelection('Dinner')"> Dinner</button>
+        <button class="btn btn-filter" onclick="filterSelection('Dessert')"> Dessert</button>
     </div>
     
     @*<div id="list1" class="dropdown-check-list" tabindex="100">
@@ -26,7 +26,7 @@
 <div class="row recipe-row">
     @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Breakfast))
     {
-        <div class="filterDiv @Category.Breakfast col-sm-12 col-md-6 col-lg-4">
+        <div class="filterDiv @Category.Breakfast show col-sm-12 col-md-6 col-lg-4">
             <div class="card overview-tile" style="width: 18rem;">
                 <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
                     <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
@@ -39,7 +39,7 @@
     }
     @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Lunch))
     {
-        <div class="filterDiv @Category.Lunch col-sm-12 col-md-6 col-lg-4">
+        <div class="filterDiv @Category.Lunch show col-sm-12 col-md-6 col-lg-4">
             <div class="card overview-tile" style="width: 18rem;">
                 <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
                     <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
@@ -52,7 +52,7 @@
     }
     @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dinner))
     {
-        <div class="filterDiv @Category.Dinner col-sm-12 col-md-6 col-lg-4">
+        <div class="filterDiv @Category.Dinner show col-sm-12 col-md-6 col-lg-4">
             <div class="card overview-tile" style="width: 18rem;">
                 <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
                     <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
@@ -65,7 +65,7 @@
     }
     @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dessert))
     {
-        <div class="filterDiv @Category.Dessert col-sm-12 col-md-6 col-lg-4">
+        <div class="filterDiv @Category.Dessert show col-sm-12 col-md-6 col-lg-4">
             <div class="card overview-tile" style="width: 18rem;">
                 <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
                     <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">

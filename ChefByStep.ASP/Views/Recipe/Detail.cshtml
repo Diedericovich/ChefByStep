@@ -4,21 +4,22 @@
     <div class="row">
         <div >
             <div>
-                <img src="@Model.ImageUrl" />
+                <img src="@Model.ImageUrl" class="detail-img"/>
                 <h3>@Model.Title</h3>
             </div>
-            <div >
-                <div class="float-left">
-                    @foreach (var ingredient in @Model.Ingredients)
-                    {
-                        <ul>
-                            <li>
+            <div class="row">
+                <div class="col-sm-12 col-md-2 col-lg-3">
+                        @foreach (var ingredient in @Model.Ingredients)
+                        {
+
+                            <p class="ingredients-list">
+                                @ingredient.Amount
                                 @ingredient.Ingredient.Name
-                            </li>
-                        </ul>
-                    }
-                </div>
-                <div>
+                            </p>
+
+                        }
+                    </div>
+                <div class="col-sm-12 col-md-10 col-lg-9">
                     <p>@Model.Description</p>
                 </div>
                 <div>
@@ -31,30 +32,7 @@
 
             </div>
         </div>
-        @*<div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="cooking-div" id="start-cooking">
-                <a href="#" class="prev" onclick="prev()">Previous</a>
-                <a href="#" class="next" onclick="next()">Next</a>
-                <ul>
-                    @for (int i = 1; i < Model.Steps.Count; i++)
-                    {*@
-                        @*<div class="step-div" id="steps" onclick="toggleStepByStep()">
-                            <p>Step: @i</p>
-                            <p id="step-intruction">@Model.Steps[i].Instruction</p>
-                        </div>*@
 
-                        @*<li class="li list-group-item accordion">
-                            <div class="step-list" id="steps" onclick="toggleStepByStep()">
-                                <p>Step: @i</p>
-                                <div id="step-div" onclick="myFunction()">
-                                    <p class="collapse" id="step-intruction">@Model.Steps[i].Instruction</p>
-                                </div>
-                            </div>
-                        </li>
-                    }
-
-                </ul>
-            </div>*@
         </div>
         <div class="btn-cook">
             <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.Id">Start Cooking</a>

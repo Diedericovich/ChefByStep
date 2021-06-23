@@ -4,63 +4,6 @@
 }
 
 <div class="overview-steps">
-    @*<div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-4">
-                <img src="@Model.ImageUrl" style="width:250px;" />
-                <h2>@Model.Title</h2>
-
-                @foreach (var ingredient in Model.Ingredients)
-                {
-                    <p>@ingredient.Amount @ingredient.Ingredient.Name</p>
-                }
-            </div>
-            <div class="col-sm-12 col-md-9 col-lg-8">
-                <div id="carouselExampleControls" class="carousel vert slide centered-carousel" data-ride="carousel" data-interval="false">
-                    <ol class="carousel-indicators">
-                        @for (int i = 0; i < Model.Steps.Count; i++)
-                        {
-                            if (i == 1)
-                            {
-                                <li data-target="#carouselExampleIndicators" data-slide-to="@i" class="active"></li>
-                            }
-                            else
-                            {
-                                <li data-target="#carouselExampleIndicators" data-slide-to="@i"></li>
-                            }
-
-                        }
-                    </ol>
-                    <div class="carousel-inner">
-                        @foreach (var step in Model.Steps)
-                        {
-                            if (@j == 1)
-                            {
-                                <div class="carousel-item active">
-                                    <h3>Step @j</h3>
-                                    <p>@step.Instruction</p>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="carousel-item">
-                                    <h3>Step @j</h3>
-                                    <p>@step.Instruction</p>
-                                </div>
-                            }
-                            j++;
-                        }
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon rounded-circle" aria-hidden="true"></span>
-                        <span class="sr-only-up"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon rounded-circle" aria-hidden="true"></span>
-                        <span class="sr-only-down"></span>
-                    </a>
-                </div>
-            </div>
-        </div>*@
     <div><h2>@Model.Title</h2></div>
     
     <div class="steps">
