@@ -1,5 +1,15 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿
+/*
+1. NAVBAR
+2. STICKY FOOTER
+3. HEADER
+4. BODY
+5. HOME CAROUSEL
+6. STEP OVERVIEW
+7. OVERVIEW FILTER
+8. SEARCHBAR CSS
+*/
+
 
 /*------------------------------------------------------------------------------------- NAVBAR ---------------------------------------------------------------------------------------*/
 a.navbar-brand {
