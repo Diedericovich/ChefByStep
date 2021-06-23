@@ -1,5 +1,6 @@
 using ChefByStep.ASP.Data;
 using ChefByStep.ASP.Helpers;
+using ChefByStep.ASP.Models;
 using ChefByStep.ASP.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,14 +31,17 @@ namespace ChefByStep.ASP
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IRecipeRepo, RecipeRepo>();
+            services.AddScoped<IUserRepo, UserRepo>();
+
             services.AddScoped<IRecipeService, RecipeService>();
+            services.AddScoped<IUserService, UserService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddControllersWithViews();

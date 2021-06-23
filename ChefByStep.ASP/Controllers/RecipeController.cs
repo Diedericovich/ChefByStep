@@ -26,9 +26,11 @@
         public async Task<ActionResult> IndexAsync()
         {
             ICollection<Recipe> recipes = await _service.GetRecipesAsync();
+            string test = User.Identity.Name;
             var viewModel = new RecipeViewModel
             {
-                Recipes = _mapper.Map<ICollection<Recipe>>(recipes)
+                Recipes = _mapper.Map<ICollection<Recipe>>(recipes),
+                Name = test
             };
             return View(viewModel);
         }
