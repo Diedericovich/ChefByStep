@@ -26,6 +26,15 @@ namespace ChefByStep.ASP.Data
             return result;
         }
 
+        public async Task<ApiUser> GetUserByNameAsync(string name)
+        {
+            url = GenerateUrl(name);
+            HttpResponseMessage message = await GetHttpResponseMessageAsync(url);
+            ApiUser result = await GetEntityFromJsonAsync(message);
+
+            return result;
+        }
+
         public async Task<IList<ApiUser>> GetUsersAsync()
         {
             url = $"{ apiUrl}/api/User";
@@ -35,17 +44,17 @@ namespace ChefByStep.ASP.Data
             return result;
         }
 
-        //public async Task<ActionResult> PostUserAsync(ApiUser user)
-        //{
-        //    url = $"{ apiUrl}/api/User";
-        //    var client = new HttpClient();
-        //    HttpResponseMessage message = await client.PostAsJsonAsync<ApiUser>(url, user);
-        //    var result = message.Result;
-        //    if (result.IsSuccessStatusCode)
-        //    {
-        //        return RedirectToAction("Index");
-        //    }
-        //}
+        public async Task PostUserAsync(ApiUser user)
+        {
+            url = $"{ apiUrl}/api/User";
+            var client = new HttpClient();
+            HttpResponseMessage message = await client.PostAsJsonAsync<ApiUser>(url, user);
+            //var result = message.Result;
+            //if (result.IsSuccessStatusCode)
+            //{
+            //    return RedirectToAction("Index");
+            //}
+        }
 
         private async Task<HttpResponseMessage> GetHttpResponseMessageAsync(string url)
         {
@@ -97,6 +106,16 @@ namespace ChefByStep.ASP.Data
             }
 
             return $"{apiUrl}/api/User/{id}";
+        }
+
+        private string GenerateUrl(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+
+            return $"{apiUrl}/api/User/{name}";
         }
     }
 }

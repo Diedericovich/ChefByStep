@@ -28,9 +28,15 @@ namespace ChefByStep.ASP.Services
             return user;
         }
 
-        //public async Task PostUser(ApiUser user)
-        //{
-        //    await _rep
-        //}
+        public async Task<ApiUser> GetUserByNameAsync(string name)
+        {
+            var user = await _repo.GetUserByNameAsync(name);
+            return user;
+        }
+
+        public async Task PostUser(ApiUser user)
+        {
+            await _repo.PostUserAsync(user);
+        }
     }
 }
