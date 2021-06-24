@@ -50,7 +50,6 @@
         <div class="addcommentsbox">
             <form asp-controller="Recipe" asp-action="Detail" method="post">
                 <input value="@Model.RecipeDetailVm.Id" asp-for="RecipeRatingVm.RecipeId" hidden></input>
-
                 <input asp-for="RecipeRatingVm.Comment" class="form-control" placeholder="Write your comment here"/>
                 <input asp-for="RecipeRatingVm.Rating" type="number" placeholder="Rate the recipe"/>
                 <span asp-validation-for="RecipeRatingVm.Recipe" class="text-danger"></span>
