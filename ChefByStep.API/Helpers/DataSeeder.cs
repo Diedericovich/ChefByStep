@@ -28,6 +28,8 @@ namespace ChefByStep.API.Helpers
                         CategoryId = Convert.ToInt32(line[1]),
                         ImageUrl = line[2],
                         Title = line[0],
+                        PrepTimeInMin = Convert.ToInt32(line[6]),
+                        CookTimeInMin = Convert.ToInt32(line[7]),
                         Steps = new List<Step>(),
                         Description = line[4],
                         CreatedById = rand.Next(1, 5)
