@@ -1,12 +1,11 @@
-﻿using ChefByStep.ASP.Data;
-using ChefByStep.ASP.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ChefByStep.ASP.Services
+﻿namespace ChefByStep.ASP.Services
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using ChefByStep.ASP.Data;
+    using ChefByStep.ASP.Models;
+
     public class UserService : IUserService
     {
         private IUserRepo _repo;
