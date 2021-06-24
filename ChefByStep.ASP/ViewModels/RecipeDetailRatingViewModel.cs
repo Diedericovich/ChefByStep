@@ -4,6 +4,6 @@
     {
         public RecipeDetailViewModel RecipeDetailVm { get; set; }
 
-        public RecipeDetailRatingViewModel RecipeDetailRatingVm { get; set; }
+        public RecipeRatingViewModel RecipeRatingVm { get; set; }
     }
 }

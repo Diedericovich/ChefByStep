@@ -121,5 +121,17 @@
                 return View();
             }
         }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        //(IFormCollection collection)
+        public ActionResult Comment(IFormCollection collection)
+        {
+            
+                return View();
+        }
     }
 }

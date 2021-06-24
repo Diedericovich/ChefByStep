@@ -1,12 +1,9 @@
-﻿using ChefByStep.ASP.Models;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ChefByStep.ASP.ViewModels
+﻿namespace ChefByStep.ASP.ViewModels
 {
+    using System.Collections.Generic;
+
+    using ChefByStep.ASP.Models;
+
     public class RecipeDetailViewModel
     {
         public int Id { get; set; }

@@ -1,4 +1,9 @@
 ﻿@model RecipeDetailRatingViewModel
+<style type="text/css">
+    .addcommentsbox { }
+
+    .recipe-comments { }
+</style>
 
 
 <div class="overview">
@@ -42,7 +47,15 @@
 
     <div>
         <h2>Add a comment</h2>
-        <div class="addcommentbox"><form></form>
+        <div class="addcommentsbox">
+            <form asp-controller="Recipe" asp-action="Comment">
+                <input value="@Model.RecipeDetailVm.Id" asp-for="RecipeRatingVm.RecipeId" hidden></input>
+
+                <input asp-for="RecipeRatingVm.Comment" class="form-control" placeholder="Write your comment here"/>
+                <input asp-for="RecipeRatingVm.Rating" type="number" placeholder="Rate the recipe"/>
+                <span asp-validation-for="RecipeRatingVm.Recipe" class="text-danger"></span>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 
