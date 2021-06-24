@@ -8,7 +8,7 @@ namespace ChefByStep.API.Entities
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(250), MinLength(10)]
+        [MinLength(10)]
         public string Instruction { get; set; }
 
         public int DurationMin { get; set; }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChefByStep.API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20210624193953_init")]
+    [Migration("20210624211707_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,9 @@ namespace ChefByStep.API.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(35)
+                        .HasColumnType("nvarchar(35)");
 
                     b.HasKey("Id");
 
@@ -1484,16 +1486,22 @@ namespace ChefByStep.API.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<int>("PrepTimeInMin")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(75)
+                        .HasColumnType("nvarchar(75)");
 
                     b.HasKey("Id");
 
@@ -1518,7 +1526,7 @@ namespace ChefByStep.API.Migrations
                             Id = 2,
                             CategoryId = 2,
                             CookTimeInMin = 5,
-                            CreatedById = 2,
+                            CreatedById = 4,
                             Description = "If you like a good mayonnaise-based chicken salad, but one with more candid flavors, you should try this recipe! With a glass of white wine it feels like the perfect weekend lunch",
                             ImageUrl = "https://images.food52.com/OOqBZEjQhcOLodgRlnXoOfVI5RY=/1008x672/filters:format(webp)/d8634211-6145-4329-81ca-711c45e4750a--2017-0427_chicken-salad_james-ransom-297.jpg",
                             PrepTimeInMin = 20,
@@ -1529,8 +1537,8 @@ namespace ChefByStep.API.Migrations
                             Id = 3,
                             CategoryId = 3,
                             CookTimeInMin = 25,
-                            CreatedById = 2,
-                            Description = "Fish Pasta can be made with any flakey white fish. Snapper good but its best with fresh striped bass. Be very careful stirring the sauce: the fish should remain intact. The tomatoes should be fresh and cooked al crudo, till the juices are released but they are still a little raw. By adding the fish early on, its flavor infuses the whole sauce, so the tomatoes and fish are no longer separate entities, but fully integrated into the sauce. And the capers and olives reinforce the flavor of the fish with brine",
+                            CreatedById = 1,
+                            Description = "Fish Pasta can be made with any flakey white fish. Snapper good but its best with fresh striped bass.",
                             ImageUrl = "https://images.food52.com/GvZ5Q60UMuuk_k7qcMztS1vWziw=/1008x672/filters:format(webp)/1e35cfe9-2665-4d8a-8aae-340d3ecb46e3--pasta-social-club-brothy-tomato-pasta.jpeg",
                             PrepTimeInMin = 10,
                             Title = "Fish Pasta"
@@ -1540,7 +1548,7 @@ namespace ChefByStep.API.Migrations
                             Id = 4,
                             CategoryId = 1,
                             CookTimeInMin = 20,
-                            CreatedById = 2,
+                            CreatedById = 1,
                             Description = "People know upma as a South Indian breakfast staple, but its more. Upma is a state of mind. The refrain is simple: Carb of choice, toasted in ghee-bloomed spices, then cooked with assorted vegetables and curry leaves and topped with tomato ketchup. In South India the carb of choice is typically toasted semolina, thickened into a creamy, savory porridge. But it can also be made with bread. Bread upma can be made in two contrasting ways. This version captures the best of both",
                             ImageUrl = "https://images.food52.com/38ws8x4bhNB0a9zHq6ZSduhKXCY=/1008x672/filters:format(webp)/eb712a59-16c6-4f57-a6cf-8e523aa97e4e--2021-0312_bread-upma_3x2_mark-weinberg-193.jpg",
                             PrepTimeInMin = 10,
@@ -1551,7 +1559,7 @@ namespace ChefByStep.API.Migrations
                             Id = 5,
                             CategoryId = 3,
                             CookTimeInMin = 20,
-                            CreatedById = 3,
+                            CreatedById = 4,
                             Description = "Think of this recipe as summer in a bowl. The sweet corn, bursting cherry tomatoes, and tender zucchini lighten up a savory, satisfying bowl of pasta. Proof that meatless dishes can be quick, easy, and a joy to eat",
                             ImageUrl = "https://images.food52.com/9-Z62AhfnO7vECg7gARyZVGIW9A=/1008x672/filters:format(webp)/fc3db569-3b62-4126-a92c-9598b7fdb120--food52_07-24-12-7723.jpg",
                             PrepTimeInMin = 10,
@@ -1562,8 +1570,8 @@ namespace ChefByStep.API.Migrations
                             Id = 6,
                             CategoryId = 4,
                             CookTimeInMin = 15,
-                            CreatedById = 2,
-                            Description = "In the Mexican city of Oaxaca, almonds are ground into a rough paste with cacao, cinnamon, and sugar and hardened into thin fingers of chocolate. The distinctive mixture is used in the city's famous mole sauces and melted into rich hot chocolate which the Oaxacans drink more regularly than coffee. The warm, spicy smell of toasted cacao, cinnamon and almonds fills the city, as crowded storefront grinders are endlessly turning and the mercado stalls are crowded with vendors selling secret family recipes. Ideal for inspiration and make macarons with the same flavors",
+                            CreatedById = 1,
+                            Description = "In the Mexican city of Oaxaca, almonds are ground into a rough paste with cacao, cinnamon, and sugar and hardened into thin fingers of chocolate.ily recipes.",
                             ImageUrl = "https://images.food52.com/fLevsOXvNogpjdYZFItNUwPVf-4=/1008x672/filters:format(webp)/3e4baffa-29dc-4e2e-aa6a-2f42f1f4414a--033010F_869.JPG",
                             PrepTimeInMin = 1560,
                             Title = "Oaxacan Cinnamon Chocolate Macarons"
@@ -1585,7 +1593,7 @@ namespace ChefByStep.API.Migrations
                             CategoryId = 3,
                             CookTimeInMin = 15,
                             CreatedById = 3,
-                            Description = "Alot of people make a summer pasta alla Caprese like this: the pasta–raw garlic or onion, tomatoes, basil, olive oil and fresh mozzarella. This recipe replaces the mozarella with brie. A bold but satisfying choice! A fine Brie is just as delicious at room temperature smeared on crusty bread as it is warm, oozing out of flaky pastry. And it's REALLY good folded into a fresh tomatoey, garlicky sauce for pasta. Put aside any residual anti-Brie sentiments and give this one a shot before tomatoes disappear for the year. You won't regret it",
+                            Description = "Alot of people make a summer pasta alla Caprese like this: the pasta–raw garlic or onion, tomatoes, basil, olive oil and fresh mozzarella.",
                             ImageUrl = "https://images.food52.com/i8P83CvSSFTTVWinAuWJuXqAHFo=/1008x672/filters:format(webp)/547d4b4b-dfa0-494a-9415-04a97a103f05--20120804_food52_08-20-12-1466.jpg",
                             PrepTimeInMin = 480,
                             Title = "Pasta with Tomatoes, Garlic, Basil & Brie"
@@ -1595,7 +1603,7 @@ namespace ChefByStep.API.Migrations
                             Id = 9,
                             CategoryId = 3,
                             CookTimeInMin = 265,
-                            CreatedById = 2,
+                            CreatedById = 4,
                             Description = "We love a good pot of chili, and our kitchen has turned out dozens of variations over the years. Boneless grass-fed beef short ribs, trimmed and cut into chunks, with a puree of chiles and spices, added fire-roasted tomatoes and some rich dark beer.",
                             ImageUrl = "https://images.food52.com/VZkTIa68tHfebPSUso6QEyFV5X0=/1008x672/filters:format(webp)/2535541d-3f88-433e-b52e-43d8ea83350e--food52_02-07-12-8044.jpeg",
                             PrepTimeInMin = 130,
@@ -1606,7 +1614,7 @@ namespace ChefByStep.API.Migrations
                             Id = 10,
                             CategoryId = 2,
                             CookTimeInMin = 15,
-                            CreatedById = 3,
+                            CreatedById = 4,
                             Description = "A way to combine some tailgate favorites: burgers, barbecue, and chips. You will need either a cold beer or a Texas tea to wash this bad boy down!",
                             ImageUrl = "https://images.food52.com/GbbciGi20Daa9DrE_TDPc63Ty2g=/1008x672/filters:format(webp)/133eb19c-b40f-46cb-a8c5-0251afd60969--2014-0715_jalapeno-cheddar-burger-004.jpg",
                             PrepTimeInMin = 15,
@@ -1639,7 +1647,7 @@ namespace ChefByStep.API.Migrations
                             Id = 13,
                             CategoryId = 2,
                             CookTimeInMin = 5,
-                            CreatedById = 4,
+                            CreatedById = 1,
                             Description = "This stovetop blue cheese burger recipe makes a single portion. But because it's exactly for one, the math to double or quadruple or octuple the patty is fairly simple. Scale up as many times as you want—no matter what you do, make a lot of the blue cheese mayo. You won't be sorry.",
                             ImageUrl = "https://images.food52.com/choh0ovckbNRzRvpo6Y7hXBOjqU=/1008x672/filters:format(webp)/f55f7e17-489f-43ac-9097-a9da39d9701b--2019-0618_blue-cheese-burger-for-one_3x2_bobbi-lin_4166.jpg",
                             PrepTimeInMin = 15,
@@ -1661,7 +1669,7 @@ namespace ChefByStep.API.Migrations
                             Id = 15,
                             CategoryId = 4,
                             CookTimeInMin = 45,
-                            CreatedById = 3,
+                            CreatedById = 4,
                             Description = "These mince and cheese pies feature ground beef encased in a thick, dark, beefy gravy interspersed with pockets of melted white cheddar cheese.",
                             ImageUrl = "https://images.food52.com/EYhpqWDzO1OpxcmCUmsQF8FjQDg=/1008x672/filters:format(webp)/936c251b-b56b-4e31-8407-71ea86c72f3e--2018-0308_new-zealand-gas-station-beef-cheese-pies_3x2_james-ransom-0122.jpg",
                             PrepTimeInMin = 180,
@@ -1672,7 +1680,7 @@ namespace ChefByStep.API.Migrations
                             Id = 16,
                             CategoryId = 3,
                             CookTimeInMin = 180,
-                            CreatedById = 3,
+                            CreatedById = 4,
                             Description = "A traditional beef stew from Cuba made with shredded beef that is often served with black beans and rice.",
                             ImageUrl = "https://images.food52.com/w-E3753Js_MvtbsBVHEQU_pOAso=/1008x672/filters:format(webp)/9c0278c5-ed16-4912-b8f5-1a3ccd3e5f09--2019-0618_ropa-vieja_3x2_bobbi-lin_4189.jpg",
                             PrepTimeInMin = 10,
@@ -1683,7 +1691,7 @@ namespace ChefByStep.API.Migrations
                             Id = 17,
                             CategoryId = 2,
                             CookTimeInMin = 105,
-                            CreatedById = 2,
+                            CreatedById = 3,
                             Description = "For the best traditional meatloaf recipe relying on the classic triumvirate of ground veal, beef and pork. A little bread and milk. Garlic, onion and Worcestershire sauce. All are thoughtfully balanced, producing a savory, light-textured loaf.",
                             ImageUrl = "https://images.food52.com/SEoIY3KjCVcA_NwGD52FNaXydYM=/1008x672/filters:format(webp)/29e35312-3021-4491-9662-2d6d6f41b35e--2019-0423_meatloaf-with-blackberry-bbq-sauce_3x2_julia-gartland_0929.jpg",
                             PrepTimeInMin = 15,
@@ -1694,7 +1702,7 @@ namespace ChefByStep.API.Migrations
                             Id = 18,
                             CategoryId = 2,
                             CookTimeInMin = 15,
-                            CreatedById = 3,
+                            CreatedById = 2,
                             Description = "For the uninitiated, a Juicy Lucy is a burger where the cheese is set inside the beef instead of on top. The result of hot beef fat dripping onto a highly meltable cheese results in a molten concoction that brings immense amounts of joy.",
                             ImageUrl = "https://images.food52.com/KSs_q5YjQ-eGX1oG4bpHldx127I=/1008x672/filters:format(webp)/4b97e80b-0b9a-4522-8876-4a83015b2091--2018-0123_juicy-lucy-2-ways_3x2_james-ransom_0231.jpg",
                             PrepTimeInMin = 15,
@@ -1705,7 +1713,7 @@ namespace ChefByStep.API.Migrations
                             Id = 19,
                             CategoryId = 1,
                             CookTimeInMin = 15,
-                            CreatedById = 3,
+                            CreatedById = 2,
                             Description = "This recipe has all of the satisfaction and comfort of hot cereal, sans heat, which makes it perfect for summer. Feel free to get creative with toppings and mix-ins!",
                             ImageUrl = "https://images.food52.com/96QJqyGLA0LoV4PoKQRX8FtD_Mk=/1008x672/filters:format(webp)/7e8c0fab-197f-419e-9687-d0b826c4e2ba--recipe1.jpg",
                             PrepTimeInMin = 15,
@@ -1716,7 +1724,7 @@ namespace ChefByStep.API.Migrations
                             Id = 20,
                             CategoryId = 1,
                             CookTimeInMin = 10,
-                            CreatedById = 4,
+                            CreatedById = 2,
                             Description = "Three-bite pancakes topped with blueberries and a creamy maple butter that melts ever so slightly atop the warm pancakes.",
                             ImageUrl = "https://images.food52.com/sVihu6JyjCqAfzYCAgi63iumezY=/1008x672/filters:format(webp)/6948eb72-b218-4f07-878d-83a1bd25e1fe--food52_04-17-12-8757.jpeg",
                             PrepTimeInMin = 5,
@@ -1727,7 +1735,7 @@ namespace ChefByStep.API.Migrations
                             Id = 21,
                             CategoryId = 1,
                             CookTimeInMin = 15,
-                            CreatedById = 1,
+                            CreatedById = 2,
                             Description = "Who said burgers were for dinner? When piled high with bacon and a delicate fried egg and then smashed between a toasted english muffin, they are just begging to be eaten for breakfast.",
                             ImageUrl = "https://images.food52.com/vi8yjvxGPI4PY1tXj1YPwpZ9k-Q=/1008x672/filters:format(webp)/cca18c11-98fa-4c59-8214-bf08030b3be5--Jun_17_2014_2674_edited-1.jpg",
                             PrepTimeInMin = 10,
@@ -1738,7 +1746,7 @@ namespace ChefByStep.API.Migrations
                             Id = 22,
                             CategoryId = 1,
                             CookTimeInMin = 35,
-                            CreatedById = 4,
+                            CreatedById = 1,
                             Description = "This muffin recipe is loaded with fruit, veggies and nuts so it gives you everything you need for a little morning or afternoon pick up!",
                             ImageUrl = "https://images.food52.com/69T0RTYvZH4VEMs_hhnxNyvOCwE=/1008x672/filters:format(webp)/717fccd2-48db-4812-830f-3eeaa4435e00--IMG_8013.JPG",
                             PrepTimeInMin = 10,
@@ -1749,7 +1757,7 @@ namespace ChefByStep.API.Migrations
                             Id = 23,
                             CategoryId = 1,
                             CookTimeInMin = 25,
-                            CreatedById = 2,
+                            CreatedById = 1,
                             Description = "These bars are gluten free, refined sugar free and oil free. The only fat is the natural fat in the quinoa. They are packed with slow release energy and lean proteins as well as essential amino acids.",
                             ImageUrl = "https://images.food52.com/8Kp-okomWEUp51v5gcP5Dgzs19g=/1008x672/filters:format(webp)/7be5de7c-5360-44ca-83a4-ce794b42da42--NobakequinoabarsF52_copy.jpg",
                             PrepTimeInMin = 5,
@@ -1760,7 +1768,7 @@ namespace ChefByStep.API.Migrations
                             Id = 24,
                             CategoryId = 1,
                             CookTimeInMin = 15,
-                            CreatedById = 1,
+                            CreatedById = 4,
                             Description = "Whisk up your chia, toss on some superfood berries, like goji berries, goldenberries, and mulberries, a few cashews, and bam. Rockin' raw vegan power breakfast.",
                             ImageUrl = "https://images.food52.com/9R1JMNstuZlJ6-7HTlJEsnD2dLs=/1008x672/filters:format(webp)/0cb64378-a8e1-4ce2-a61a-15160e607ef2--Superfood_Berry_Chia_Breakfast.jpg",
                             PrepTimeInMin = 5,
@@ -1771,7 +1779,7 @@ namespace ChefByStep.API.Migrations
                             Id = 25,
                             CategoryId = 4,
                             CookTimeInMin = 50,
-                            CreatedById = 1,
+                            CreatedById = 2,
                             Description = "Somewhere pleasantly between pumpkin and butterscotch, a very original take on a seasonal loaf cake. Your whole house will smell like rich, nutty brown butter since it's in both the cake and the icing.",
                             ImageUrl = "https://images.food52.com/73wSsJKEia05pf9F0ZZqTQLBk5c=/1008x672/filters:format(webp)/31eb95c5-4299-4321-a66d-877ae5625628--2016-0204_brown-butter-and-butternut-loaf_james-ransom-012.jpg",
                             PrepTimeInMin = 30,
@@ -1782,7 +1790,7 @@ namespace ChefByStep.API.Migrations
                             Id = 26,
                             CategoryId = 4,
                             CookTimeInMin = 35,
-                            CreatedById = 1,
+                            CreatedById = 3,
                             Description = "Sandwich buttery caramel between layers of melted semisweet chocolate and finely chopped almonds.",
                             ImageUrl = "https://images.food52.com/1cN4KGunMq_qzcugQa6d3RXPZPA=/1008x672/filters:format(webp)/3a109bf4-c892-44c9-ab26-ec940081fa9a--2014-1124_chocolate-almond-toffee-010.jpg",
                             PrepTimeInMin = 10,
@@ -1793,7 +1801,7 @@ namespace ChefByStep.API.Migrations
                             Id = 27,
                             CategoryId = 4,
                             CookTimeInMin = 30,
-                            CreatedById = 3,
+                            CreatedById = 2,
                             Description = "This fondue is silken and almost custardy, punctuated with rum and vanilla and generously salted, the way we like caramel to be. Not surprisingly, it is quite rich and sweet, and we found our favorite dipping instrument ended up being salty, extra-dark pretzels.",
                             ImageUrl = "https://images.food52.com/jIsJ6SEO8_LtNjMw9Z5y9280PGM=/1008x672/filters:format(webp)/d687384c-0945-4379-925a-2955606b8b3c--022211F_206.JPG",
                             PrepTimeInMin = 15,
@@ -1804,7 +1812,7 @@ namespace ChefByStep.API.Migrations
                             Id = 28,
                             CategoryId = 4,
                             CookTimeInMin = 10,
-                            CreatedById = 2,
+                            CreatedById = 4,
                             Description = "Lighter, frothier, and more refined than your classic one-cup-and-you're-out eggnog, this playful variation will keep the party going strong. The cognac shines through in every sip, so be sure to crack open the good stuff.",
                             ImageUrl = "https://images.food52.com/V1FO_XjnoNVhshY7CHZ9bnDMUBI=/1008x672/filters:format(webp)/7b1c12c1-1c2e-40ba-a391-ffa89d9ce499--2015-1207_warm-egg-nog_james-ransom-022_1-.jpg",
                             PrepTimeInMin = 10,
@@ -1815,7 +1823,7 @@ namespace ChefByStep.API.Migrations
                             Id = 29,
                             CategoryId = 3,
                             CookTimeInMin = 35,
-                            CreatedById = 2,
+                            CreatedById = 1,
                             Description = "It's saucy, flavorful, fresh, and it comes together in about half an hour. I developed these chicken and lettuce wraps while on Whole 30, so they fit that bill if you need 'em to.",
                             ImageUrl = "https://images.food52.com/98RdFLSan-TMm1PBpHR3Q8KdjpU=/1008x672/filters:format(webp)/75d05b4e-f802-4dca-9ec5-bfe3fb8addbd--more_crop_2018-1026_whole-30-spicy-braised-chicken-lettuce-cups_3x2_mark-weinberg_258.png",
                             PrepTimeInMin = 20,
@@ -1826,7 +1834,7 @@ namespace ChefByStep.API.Migrations
                             Id = 30,
                             CategoryId = 3,
                             CookTimeInMin = 15,
-                            CreatedById = 3,
+                            CreatedById = 1,
                             Description = "This recipe is a great way to use up old bread. The lemon and olive oil soaks into the dry bread to make it soft and delicious again. And paired with the chicken breast, you have a balanced meal that covers all four food groups.",
                             ImageUrl = "https://images.food52.com/yR3Erett-FXFT91HMKv-M8P1i3k=/1008x672/filters:format(webp)/1ed94431-2e36-457c-a2ac-f0f35d904826--2018-1019_anita-lo-pan-roasted-chicken-breast-with-broccoli-panzanella-3x2_ty-mecham_001.jpeg",
                             PrepTimeInMin = 10,
@@ -1837,7 +1845,7 @@ namespace ChefByStep.API.Migrations
                             Id = 31,
                             CategoryId = 3,
                             CookTimeInMin = 60,
-                            CreatedById = 2,
+                            CreatedById = 4,
                             Description = "Like many baked dishes, this lasagna is even tastier the day after it is prepared, as the flavors meld together as it sits. The combination of the pine nuts and the golden raisins makes for some unique tastes",
                             ImageUrl = "https://images.food52.com/WazrFsvHZ_SxVgSAKeisVz23vZk=/1008x672/filters:format(webp)/71e3bb10-e3d8-4f9d-bb42-12c1d3f71075--2018-0228_vegetable-lasagna_3x2_jenny-huang_02.jpg",
                             PrepTimeInMin = 15,
@@ -1870,7 +1878,7 @@ namespace ChefByStep.API.Migrations
                             Id = 34,
                             CategoryId = 4,
                             CookTimeInMin = 40,
-                            CreatedById = 4,
+                            CreatedById = 1,
                             Description = "Fold melted butter into warmed carrots, whole and condensed milk, sugar, and raisins. Combine with flour and baking powder and bake the mixture in a sheet tray, with slivered almonds on top.",
                             ImageUrl = "https://images.food52.com/TryQTUPJzvZfd5tBED9Cy7mnvjc=/1008x672/filters:format(webp)/2ab2b843-26f9-415f-9a5c-3e9bafa03220--2015-0824_carrot-halwa-blondie-bars_bobbi-lin_8387.jpg",
                             PrepTimeInMin = 10,
@@ -1881,7 +1889,7 @@ namespace ChefByStep.API.Migrations
                             Id = 35,
                             CategoryId = 4,
                             CookTimeInMin = 30,
-                            CreatedById = 2,
+                            CreatedById = 1,
                             Description = "An ethereal cloud of cream shot through with cherry and almond. We allow the sweet, juicy cherries to shine by doing very little to them, a touch of sugar, lemon juice and almond extract makes it perfect",
                             ImageUrl = "https://images.food52.com/7nPicB4QPiDUjhRciiw-XrAu56w=/1008x672/filters:format(webp)/afa0e9b1-6ef5-4bb3-ac13-a73b626b7dae--062910F_434.JPG",
                             PrepTimeInMin = 15,
@@ -1892,7 +1900,7 @@ namespace ChefByStep.API.Migrations
                             Id = 36,
                             CategoryId = 4,
                             CookTimeInMin = 30,
-                            CreatedById = 3,
+                            CreatedById = 4,
                             Description = "An easy olive oil cake enriched with almond meal and topped with grape halves.",
                             ImageUrl = "https://images.food52.com/toHR4VyPmlr4VjteDVkdkJVNgSY=/1008x672/filters:format(webp)/55c3aae0-4027-4362-89dd-afda9b6ba9aa--GrapeCake3.jpeg",
                             PrepTimeInMin = 5,
@@ -1903,7 +1911,7 @@ namespace ChefByStep.API.Migrations
                             Id = 37,
                             CategoryId = 4,
                             CookTimeInMin = 20,
-                            CreatedById = 3,
+                            CreatedById = 2,
                             Description = "An easy hot chocolate recipe to have up your sleeve all winter long.",
                             ImageUrl = "https://images.food52.com/64Y9tg-NfafQY_AW1A29PHBc-B8=/1008x672/filters:format(webp)/2d344647-0180-4afd-a43e-0381b4c535ce--wildcard_cardamom-hot-chocolate_food52_mark_weinberg_13-12-10_0026.jpg",
                             PrepTimeInMin = 5,
@@ -1925,7 +1933,7 @@ namespace ChefByStep.API.Migrations
                             Id = 39,
                             CategoryId = 2,
                             CookTimeInMin = 10,
-                            CreatedById = 3,
+                            CreatedById = 1,
                             Description = "uicy tomatoes, creamy mozzarella and briny kalamatas break up any potential monotony, and diced red onion, basil and parsley keep the dish from feeling heavy.",
                             ImageUrl = "https://images.food52.com/E_QTqOWj9th4uD7ZtrNzDwlePN4=/1008x672/filters:format(webp)/fa4a2c19-ec5b-4b2b-a29d-3feb3850325c--2018-0712_summer-farro-salad_3x2_rocky-luten_021.jpg",
                             PrepTimeInMin = 15,
@@ -1936,7 +1944,7 @@ namespace ChefByStep.API.Migrations
                             Id = 40,
                             CategoryId = 2,
                             CookTimeInMin = 30,
-                            CreatedById = 1,
+                            CreatedById = 4,
                             Description = "This is an Indian summer soup, a soup for the liminal season. Tart, crisp apples like Honeycrisp, Gravenstein, or Granny Smith are paramount. Equally good hot or cold, it's a smooth mélange of tart, crisp apples, celery stalks, leaves and all.",
                             ImageUrl = "https://images.food52.com/xjCz2BTVzieHggwHPv1js4ghTr0=/1008x672/filters:format(webp)/9938f2c9-9992-4447-b6f2-4e136bd2a917--Y75A0076.jpg",
                             PrepTimeInMin = 20,
@@ -1958,7 +1966,7 @@ namespace ChefByStep.API.Migrations
                             Id = 42,
                             CategoryId = 2,
                             CookTimeInMin = 15,
-                            CreatedById = 2,
+                            CreatedById = 1,
                             Description = "Run-of-the-mill tabouli has a way of getting water-logged too easily. By replacing the normal tomato and cucumber with sturdy nuts and crunchy celery, drbabs has effectively solved that problem. Pack the smart garnishes (yogurt, feta, and extra spice), and take this on your longest trip -- we dare you.",
                             ImageUrl = "https://images.food52.com/y8Gl0Gvz2dCtiPsXtbWF7aJP0L0=/1008x672/filters:format(webp)/29950cdc-6aa6-42d2-9b5d-1210624f1e15--2013-0813_finalist_tabouli-007.jpg",
                             PrepTimeInMin = 60,
@@ -1969,7 +1977,7 @@ namespace ChefByStep.API.Migrations
                             Id = 43,
                             CategoryId = 2,
                             CookTimeInMin = 15,
-                            CreatedById = 3,
+                            CreatedById = 4,
                             Description = "Simple and flavorful, this is a perfect last-minute side for a weeknight dinner or big-batch potluck addition. The recipe below only calls for 3 ears of corn, but the proportions are easy to triple or quadruple when it’s party time.",
                             ImageUrl = "https://images.food52.com/h0QdlPCPvkWsqH3HPL-V-avlvIk=/1008x672/filters:format(webp)/6b307a76-dbac-460a-9492-1f72aae43aea--2015-0804_sriricha-lime-thai-corn-salad_bobbi-lin_5833.jpg",
                             PrepTimeInMin = 5,
@@ -1980,7 +1988,7 @@ namespace ChefByStep.API.Migrations
                             Id = 44,
                             CategoryId = 1,
                             CookTimeInMin = 5,
-                            CreatedById = 1,
+                            CreatedById = 3,
                             Description = "Savory, crispy French toast. Salty, with a heavy kick of black pepper.",
                             ImageUrl = "https://images.food52.com/Y9cnQzj0xxn8hMYwJWKXcwO2u0I=/1008x672/filters:format(webp)/9343c2d7-2f68-45db-b008-c34097861d23--2017-0118_crispy-salt-and-pepper-french-toast_mark-weinberg_227.jpg",
                             PrepTimeInMin = 5,
@@ -2007,7 +2015,8 @@ namespace ChefByStep.API.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Amount")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("IngredientId")
                         .HasColumnType("int");
@@ -5696,6 +5705,7 @@ namespace ChefByStep.API.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Comment")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Rating")
@@ -5784,6 +5794,7 @@ namespace ChefByStep.API.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Instruction")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDone")
@@ -7420,7 +7431,9 @@ namespace ChefByStep.API.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
