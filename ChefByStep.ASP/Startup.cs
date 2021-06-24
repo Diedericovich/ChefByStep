@@ -32,9 +32,14 @@ namespace ChefByStep.ASP
         {
             services.AddScoped<IRecipeRepo, RecipeRepo>();
             services.AddScoped<IUserRepo, UserRepo>();
+            services.AddScoped<IRecipeRatingRepo, RecipeRatingRepo>();
+
 
             services.AddScoped<IRecipeService, RecipeService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IRecipeRatingService, RecipeRatingService>();
+
+
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

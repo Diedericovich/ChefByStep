@@ -14,19 +14,23 @@
 
     public class RecipeController : Controller
     {
-        private readonly IRecipeService _service;
+        private readonly IRecipeService _recipeService;
+        private readonly IUserService _userService;
+        private readonly IRecipeRatingService _ratingService;
 
         private readonly IMapper _mapper;
 
-        public RecipeController(IRecipeService service, IMapper mapper)
+        public RecipeController(IRecipeService recipeService, IMapper mapper, IRecipeRatingService ratingService, IUserService userService)
         {
-            _service = service;
+            _recipeService = recipeService;
+            _ratingService = ratingService;
+            _userService = userService;
             _mapper = mapper;
         }
 
         public async Task<ActionResult> IndexAsync()
         {
-            ICollection<Recipe> recipes = await _service.GetRecipesAsync();
+            ICollection<Recipe> recipes = await _recipeService.GetRecipesAsync();
             string test = User.Identity.Name;
             var viewModel = new RecipeViewModel { Recipes = _mapper.Map<ICollection<Recipe>>(recipes), Name = test };
             return View(viewModel);
@@ -35,7 +39,7 @@
 
         public async Task<ActionResult> DetailAsync(int id)
         {
-            Recipe recipe = await _service.GetRecipeAsync(id);
+            Recipe recipe = await _recipeService.GetRecipeAsync(id);
             RecipeDetailRatingViewModel viewModel = new RecipeDetailRatingViewModel();
             viewModel.RecipeDetailVm = _mapper.Map<RecipeDetailViewModel>(recipe);
             return View(viewModel);
@@ -43,15 +47,25 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DetailAsync(RecipeDetailRatingViewModel vm)
+        public async Task<ActionResult> DetailAsync(RecipeDetailRatingViewModel vm)
         {
+            var recipeRating = this._mapper.Map<RecipeRating>(vm.RecipeRatingVm);
+
+            string name = User.Identity.Name;
+            var user = await _userService.GetUserByNameAsync(name);
+            recipeRating.UserId = user.Id;
+            this._ratingService.PostRecipeRating(recipeRating);
+
             var temp = vm.RecipeRatingVm.RecipeId;
+
+
+
             return RedirectToAction($"Detail", temp);
         }
 
         public async Task<ActionResult> StepsAsync(int id)
         {
-            Recipe recipe = await _service.GetRecipeAsync(id);
+            Recipe recipe = await _recipeService.GetRecipeAsync(id);
             RecipeDetailViewModel viewModel = _mapper.Map<RecipeDetailViewModel>(recipe);
 
             return View(viewModel);
