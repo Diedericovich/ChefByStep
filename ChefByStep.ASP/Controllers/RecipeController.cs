@@ -51,6 +51,14 @@
             return View(viewModel);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DetailAsync(RecipeDetailRatingViewModel vm)
+        {
+            var temp = vm.RecipeRatingVm.RecipeId;
+            return RedirectToAction($"Detail", temp);
+        }
+
         public async Task<ActionResult> StepsAsync(int id)
         {
             Recipe recipe = await _service.GetRecipeAsync(id);
@@ -120,18 +128,6 @@
             {
                 return View();
             }
-        }
-
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-
-        //(IFormCollection collection)
-        public ActionResult Comment(IFormCollection collection)
-        {
-            
-                return View();
         }
     }
 }
