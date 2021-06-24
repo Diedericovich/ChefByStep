@@ -14,6 +14,7 @@ namespace ChefByStep.ASP.Helpers
         {
             CreateMap<Recipe, RecipeDetailViewModel>().ReverseMap();
             CreateMap<RecipeIngredient, Ingredient>().ReverseMap();
+
         }
         
     }

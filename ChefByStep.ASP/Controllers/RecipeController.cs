@@ -15,6 +15,7 @@
     public class RecipeController : Controller
     {
         private readonly IRecipeService _service;
+
         private readonly IMapper _mapper;
 
         public RecipeController(IRecipeService service, IMapper mapper)
@@ -27,11 +28,7 @@
         {
             ICollection<Recipe> recipes = await _service.GetRecipesAsync();
             string test = User.Identity.Name;
-            var viewModel = new RecipeViewModel
-            {
-                Recipes = _mapper.Map<ICollection<Recipe>>(recipes),
-                Name = test
-            };
+            var viewModel = new RecipeViewModel { Recipes = _mapper.Map<ICollection<Recipe>>(recipes), Name = test };
             return View(viewModel);
         }
 
@@ -49,8 +46,8 @@
         public async Task<ActionResult> DetailAsync(int id)
         {
             Recipe recipe = await _service.GetRecipeAsync(id);
-            RecipeDetailViewModel viewModel = _mapper.Map<RecipeDetailViewModel>(recipe);
-
+            RecipeDetailRatingViewModel viewModel = new RecipeDetailRatingViewModel();
+            viewModel.RecipeDetailVm = _mapper.Map<RecipeDetailViewModel>(recipe);
             return View(viewModel);
         }
 
