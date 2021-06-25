@@ -28,12 +28,12 @@ namespace ChefByStep.ASP.Models
         public List<Step> Steps { get; set; }
 
         [NotMapped]
-        public ApplicationUser CreatedBy { get; set; }
+        public ApiUser CreatedBy { get; set; }
 
         [NotMapped]
-        public List<ApplicationUser> FavouritedBy { get; set; }
+        public List<ApiUser> FavouritedBy { get; set; }
 
         [NotMapped]
-        public List<ApplicationUser> CompletedBy { get; set; }
+        public List<ApiUser> CompletedBy { get; set; }
     }
 }

@@ -3,3 +3,39 @@
 *@
 @{
 }
+@model RecipeCreateViewModel
+
+<form>
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ImageUrl"></label>
+        <input class="form-control" asp-for="ImageUrl" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PrepTimeInMin"></label>
+        <input class="form-control" asp-for="PrepTimeInMin" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CookTimeInMin"></label>
+        <input class="form-control" asp-for="CookTimeInMin" />
+    </div>
+
+    <input asp-for="CreatedByUser" hidden />
+
+    <input type="text" asp-for="Steps[0].Instruction" class="form-control" />
+        <input type="text" name="Steps[1].Instruction" class="form-control" />
+        <input type="text" name="Steps[2].Instruction" class="form-control" />
+
+    <button class="btn btn-primary" type="submit">Add Recipe</button>
+</form>
