@@ -13,6 +13,8 @@ namespace ChefByStep.API.Entities.DTOs
         public string Title { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
+        public int PrepTimeInMin { get; set; }
+        public int CookTimeInMin { get; set; }
         public List<RecipeRating> Ratings { get; set; }
         public List<RecipeIngredientDto> Ingredients { get; set; }
         public List<StepDto> Steps { get; set; }
