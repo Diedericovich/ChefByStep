@@ -19,6 +19,9 @@ namespace ChefByStep.ASP.Models
         public string ImageUrl { get; set; }
 
         public string Title { get; set; }
+        public string CreatedByUser { get; set; }
+        public int PrepTimeInMin { get; set; }
+        public int CookTimeInMin { get; set; }
 
         public List<RecipeIngredient> Ingredients { get; set; }
 

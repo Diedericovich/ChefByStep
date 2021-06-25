@@ -24,7 +24,7 @@
                             }
                             <label for="radio_@j" class="label">Step @j </label>
                             <div class="content">
-                                <p>@step.Instruction</p>
+                                <p class="steps-instruction">@step.Instruction</p>
                             </div>
                         </li>
                         j++;
@@ -35,6 +35,17 @@
             <div id="middle-border"></div>
             <div id="right-zone"></div>
         </div>
+    </div>
+    <div class="detail-minutes">
+        <div class="row detail-min-row">
+            <p class="col-sm-12 col-md-6 col-lg-6 detail-time-left">Preparation time: </p>
+            <p class="col-sm-12 col-md-6 col-lg-6 detail-time-right">Cooking time: </p>
+        </div>
+        <div class="row detail-min-row">
+            <p class="col-sm-12 col-md-6 col-lg-6 detail-time-left">@Model.PrepTimeInMin min </p>
+            <p class="col-sm-12 col-md-6 col-lg-6 detail-time-right">@Model.CookTimeInMin min</p>
+        </div>
+
     </div>
 
     <div class="ingredients">
