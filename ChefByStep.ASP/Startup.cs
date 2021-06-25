@@ -34,16 +34,13 @@ namespace ChefByStep.ASP
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IRecipeRatingRepo, RecipeRatingRepo>();
 
-
             services.AddScoped<IRecipeService, RecipeService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRecipeRatingService, RecipeRatingService>();
 
-
-
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("LocalConnection")));
+                    Configuration.GetConnectionString("ConnectionSQLServer")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)

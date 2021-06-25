@@ -9,6 +9,5 @@ namespace ChefByStep.ASP.ViewModels
     public class RecipeViewModel
     {
         public ICollection<Recipe> Recipes { get; set; }
-        public string Name { get; set; }
     }
 }
