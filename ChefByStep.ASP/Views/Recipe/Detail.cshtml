@@ -1,11 +1,17 @@
-﻿@model RecipeDetailViewModel
+﻿@model RecipeDetailRatingViewModel
+<style type="text/css">
+    .addcommentsbox { }
+
+    .recipe-comments { }
+</style>
+
 
 <div class="overview">
     <div class="row">
         <div >
             <div>
-                <img src="@Model.ImageUrl" class="detail-img"/>
-                <h3>@Model.Title</h3>
+                <img src="@Model.RecipeDetailVm.ImageUrl"/>
+                <h3>@Model.RecipeDetailVm.Title</h3>
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-2 col-lg-3">
@@ -22,19 +28,35 @@
                 <div class="col-sm-12 col-md-10 col-lg-9">
                     <p>@Model.Description</p>
                 </div>
-                <div>
-                    @foreach (var rating in @Model.Ratings)
-                    {
-                        <p>@rating.Rating</p>
-                    }
-
-                </div>
 
             </div>
         </div>
 
-        </div>
-        <div class="btn-cook">
-            <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.Id">Start Cooking</a>
+
+    </div>
+    <div class="btn-cook">
+        <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
+    </div>
+    <div class="recipe-comments">
+        <ul>
+            @foreach (var comment in @Model.RecipeDetailVm.Ratings)
+            {
+                <li>@comment.Comment</li>
+            }
+        </ul>
+    </div>
+
+    <div>
+        <h2>Add a comment</h2>
+        <div class="addcommentsbox">
+            <form asp-controller="Recipe" asp-action="Detail" method="post">
+                <input value="@Model.RecipeDetailVm.Id" asp-for="RecipeRatingVm.RecipeId" hidden></input>
+                <input asp-for="RecipeRatingVm.Comment" class="form-control" placeholder="Write your comment here"/>
+                <input asp-for="RecipeRatingVm.Rating" type="number" placeholder="Rate the recipe"/>
+                <span asp-validation-for="RecipeRatingVm.Recipe" class="text-danger"></span>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
+
+</div>

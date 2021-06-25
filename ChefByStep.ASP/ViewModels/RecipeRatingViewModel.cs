@@ -1,6 +1,9 @@
-﻿namespace ChefByStep.ASP.Models
+﻿namespace ChefByStep.ASP.ViewModels
 {
-    public class RecipeRating
+    using ChefByStep.ASP.Models;
+
+    public class RecipeRatingViewModel
+
     {
         public int UserId { get; set; }
 

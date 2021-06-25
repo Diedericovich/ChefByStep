@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ChefByStep.API.Entities
+namespace ChefByStep.ASP.Models
 {
-    public class User
+    public class ApiUser
     {
         public int Id { get; set; }
 
@@ -14,8 +13,6 @@ namespace ChefByStep.API.Entities
 
         public int RoleId { get; set; }
 
-        [Required]
-        [MaxLength(50)]
         public string Name { get; set; }
 
         public List<Recipe> CreatedRecipes { get; set; }

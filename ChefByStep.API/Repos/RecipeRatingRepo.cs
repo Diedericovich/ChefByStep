@@ -14,11 +14,10 @@ namespace ChefByStep.API.Repos.Interfaces
 
         public override async Task<RecipeRating> GetAsync(int id)
         {
-            //return await _context.RecipeRatings
-            //        .Include(x => x.UserId)
-            //        .Include(x => x.RecipeId)
-            //        .FirstOrDefaultAsync(x => x.Id == id);
-            throw new NotImplementedException();
+            return await _context.RecipeRatings
+                    .Include(x => x.UserId)
+                    .Include(x => x.RecipeId)
+                    .FirstOrDefaultAsync(x => x.UserId == id);
         }
 
         public override async Task<List<RecipeRating>> GetAllAsync()
