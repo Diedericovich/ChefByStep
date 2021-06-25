@@ -1,18 +1,79 @@
 ﻿@model RecipeViewModel
-
 <div class="overview">
-    <h2>All recipes</h2>
-    <div class="row recipe-row">
-        @foreach (var recipe in Model.Recipes)
+    <h2>Our recipes</h2>
+    <div id="myBtnContainer">
+        <button class="btn active btn-filter" onclick="filterSelection('all')"> Show all</button>
+        @foreach (var category in Enum.GetNames(typeof(Category)))
         {
-            <div class="col-sm-12 col-md-6 col-lg-3 overview-tile">
-                <a class="nav-link" asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
-                    <img class="recipe-img" src="@recipe.ImageUrl" />
+            <button class="btn" onclick="filterSelection('@category')"> @category</button>
+        }
+        @*<button class="btn" onclick="filterSelection('breakfast')"> Breakfast</button>
+            <button class="btn" onclick="filterSelection('lunch')"> Lunch</button>
+            <button class="btn" onclick="filterSelection('dinner')"> Dinner</button>
+            <button class="btn" onclick="filterSelection('dessert')"> Dessert</button>*@
+    </div>
 
-                    <div class="centered">@recipe.Title</div>
-                </a>
+    @*<div id="list1" class="dropdown-check-list" tabindex="100">
+            <span class="anchor">Filter</span>
+            <ul class="items">
+                <li><input type="checkbox" id="breakfast" />Breakfast </li>
+                <li><input type="checkbox" id="lunch" />Lunch</li>
+                <li><input type="checkbox" id="dinner" />Dinner </li>
+                <li><input type="checkbox" id="dessert" />Dessert </li>
+            </ul>
+        </div>*@
+    <div class="row recipe-row">
+        @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Breakfast))
+        {
+            <div class="filterDiv @Category.Breakfast col-sm-12 col-md-6 col-lg-4">
+                <div class="card overview-tile" style="width: 18rem;">
+                    <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                        <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="recipe-overview-text">@recipe.Title</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+        @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Lunch))
+        {
+            <div class="filterDiv @Category.Lunch col-sm-12 col-md-6 col-lg-4">
+                <div class="card overview-tile" style="width: 18rem;">
+                    <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                        <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="recipe-overview-text">@recipe.Title</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+        @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dinner))
+        {
+            <div class="filterDiv @Category.Dinner col-sm-12 col-md-6 col-lg-4">
+                <div class="card overview-tile" style="width: 18rem;">
+                    <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                        <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="recipe-overview-text">@recipe.Title</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+        @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dessert))
+        {
+            <div class="filterDiv @Category.Dessert col-sm-12 col-md-6 col-lg-4">
+                <div class="card overview-tile" style="width: 18rem;">
+                    <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                        <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="recipe-overview-text">@recipe.Title</h5>
+                        </div>
+                    </a>
+                </div>
             </div>
         }
     </div>
 </div>
-

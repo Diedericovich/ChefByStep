@@ -1,15 +1,21 @@
-﻿@model RecipeDetailViewModel
+﻿@model RecipeDetailRatingViewModel
+<style type="text/css">
+    .addcommentsbox { }
+
+    .recipe-comments { }
+</style>
+
 
 <div class="overview">
     <div class="row">
         <div >
             <div>
-                <img src="@Model.ImageUrl" />
-                <h3>@Model.Title</h3>
+                <img src="@Model.RecipeDetailVm.ImageUrl"/>
+                <h3>@Model.RecipeDetailVm.Title</h3>
             </div>
             <div >
                 <div class="float-left">
-                    @foreach (var ingredient in @Model.Ingredients)
+                    @foreach (var ingredient in @Model.RecipeDetailVm.Ingredients)
                     {
                         <ul>
                             <li>
@@ -19,44 +25,37 @@
                     }
                 </div>
                 <div>
-                    <p>@Model.Description</p>
-                </div>
-                <div>
-                    @foreach (var rating in @Model.Ratings)
-                    {
-                        <p>@rating.Rating</p>
-                    }
-
+                    <p>@Model.RecipeDetailVm.Description</p>
                 </div>
 
             </div>
         </div>
-        @*<div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="cooking-div" id="start-cooking">
-                <a href="#" class="prev" onclick="prev()">Previous</a>
-                <a href="#" class="next" onclick="next()">Next</a>
-                <ul>
-                    @for (int i = 1; i < Model.Steps.Count; i++)
-                    {*@
-                        @*<div class="step-div" id="steps" onclick="toggleStepByStep()">
-                            <p>Step: @i</p>
-                            <p id="step-intruction">@Model.Steps[i].Instruction</p>
-                        </div>*@
 
-                        @*<li class="li list-group-item accordion">
-                            <div class="step-list" id="steps" onclick="toggleStepByStep()">
-                                <p>Step: @i</p>
-                                <div id="step-div" onclick="myFunction()">
-                                    <p class="collapse" id="step-intruction">@Model.Steps[i].Instruction</p>
-                                </div>
-                            </div>
-                        </li>
-                    }
 
-                </ul>
-            </div>*@
-        </div>
-        <div class="btn-cook">
-            <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.Id">Start Cooking</a>
+    </div>
+    <div class="btn-cook">
+        <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
+    </div>
+    <div class="recipe-comments">
+        <ul>
+            @foreach (var comment in @Model.RecipeDetailVm.Ratings)
+            {
+                <li>@comment.Comment</li>
+            }
+        </ul>
+    </div>
+
+    <div>
+        <h2>Add a comment</h2>
+        <div class="addcommentsbox">
+            <form asp-controller="Recipe" asp-action="Detail" method="post">
+                <input value="@Model.RecipeDetailVm.Id" asp-for="RecipeRatingVm.RecipeId" hidden></input>
+                <input asp-for="RecipeRatingVm.Comment" class="form-control" placeholder="Write your comment here"/>
+                <input asp-for="RecipeRatingVm.Rating" type="number" placeholder="Rate the recipe"/>
+                <span asp-validation-for="RecipeRatingVm.Recipe" class="text-danger"></span>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
+
+</div>

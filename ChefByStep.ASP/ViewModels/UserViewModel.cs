@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.ASP.ViewModels
 {
-    public class RecipeViewModel
+    public class UserViewModel
     {
-        public ICollection<Recipe> Recipes { get; set; }
+        public ApiUser User { get; set; }
     }
 }

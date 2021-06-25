@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace ChefByStep.ASP.Models
 {
-    public class Account : BaseModel
+    public enum Category
     {
-
-        public string Email { get; set; }
-
-        public string Password { get; set; }
+        Breakfast = 1,
+        Lunch = 2,
+        Dinner = 3,
+        Dessert = 4,
     }
 }

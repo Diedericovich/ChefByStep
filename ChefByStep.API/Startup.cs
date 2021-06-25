@@ -3,6 +3,7 @@ using ChefByStep.API.Helpers;
 using ChefByStep.API.Repos;
 using ChefByStep.API.Repos.Interfaces;
 using ChefByStep.API.Services;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,15 +34,14 @@ namespace ChefByStep.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddNewtonsoftJson(options =>
-            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChefByStep.API", Version = "v1" });
-            });
+            services.AddControllers().AddNewtonsoftJson(
+                options => options.SerializerSettings.ReferenceLoopHandling =
+                               Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddSwaggerGen(
+                c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChefByStep.API", Version = "v1" }); });
 
             services.AddDbContext<DatabaseContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnectionString")));
+                options => options.UseSqlServer(Configuration.GetConnectionString("OnlineConnection")));
             services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
             services.AddCors();
@@ -75,10 +76,7 @@ namespace ChefByStep.API
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
