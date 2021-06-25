@@ -13,6 +13,9 @@
         public string Description { get; set; }
 
         public string ImageUrl { get; set; }
+        public string CreatedByUser { get; set; }
+        public int PrepTimeInMin { get; set; }
+        public int CookTimeInMin { get; set; }
 
         public List<Step> Steps { get; set; }
 

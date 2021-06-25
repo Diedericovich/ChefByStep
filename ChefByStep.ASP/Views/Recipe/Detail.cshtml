@@ -1,62 +1,139 @@
 ﻿@model RecipeDetailRatingViewModel
 <style type="text/css">
-    .addcommentsbox { }
+    .addcommentsbox {
+    }
 
-    .recipe-comments { }
+    .recipe-comments {
+    }
 </style>
+@{
+    double totalRating = 0;
+    double averageRating = 0;
+    if (Model.RecipeDetailVm.Ratings.Count == 0)
+    {
+        averageRating = 3.0;
+    }
+    else
+    {
+        @foreach (var rating in Model.RecipeDetailVm.Ratings)
+        {
+            totalRating += rating.Rating;
+        }
+        averageRating = totalRating / Model.RecipeDetailVm.Ratings.Count;
+    }
 
+}
 
 <div class="overview">
     <div class="row">
-        <div >
-            <div>
-                <img src="@Model.RecipeDetailVm.ImageUrl"/>
-                <h3>@Model.RecipeDetailVm.Title</h3>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-2 col-lg-3">
-                        @foreach (var ingredient in @Model.Ingredients)
-                        {
-
-                            <p class="ingredients-list">
-                                @ingredient.Amount
-                                @ingredient.Ingredient.Name
-                            </p>
-
-                        }
-                    </div>
-                <div class="col-sm-12 col-md-10 col-lg-9">
-                    <p>@Model.Description</p>
+        <div class="col-sm-12 col-md-10 col-lg-9">
+            <img class="detail-img" src="@Model.RecipeDetailVm.ImageUrl" />
+            <h3 class="detail-title">
+                @Model.RecipeDetailVm.Title
+                <p class="average-rating">
+                    @switch (averageRating)
+                    {
+                        case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                            break;
+                        case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                            break;
+                        case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                            break;
+                        case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
+                            break;
+                        case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
+                            break;
+                        default:
+                            break;
+                    }
+                    (@Model.RecipeDetailVm.Ratings.Count reviews)
+                </p>
+            </h3>
+            <p>@Model.RecipeDetailVm.Description</p>
+            <p>- @Model.RecipeDetailVm.CreatedByUser</p>
+            <div class="detail-minutes">
+                <div class="row detail-min-row">
+                    <p class="col-sm-12 col-md-6 col-lg-6 detail-time-left">Preparation time: </p>
+                    <p class="col-sm-12 col-md-6 col-lg-6 detail-time-right">Cooking time: </p>
+                </div>
+                <div class="row detail-min-row">
+                    <p class="col-sm-12 col-md-6 col-lg-6 detail-time-left">@Model.RecipeDetailVm.PrepTimeInMin min </p>
+                    <p class="col-sm-12 col-md-6 col-lg-6 detail-time-right">@Model.RecipeDetailVm.CookTimeInMin min</p>
                 </div>
 
             </div>
         </div>
 
+        <div class="col-sm-12 col-md-2 col-lg-3  ">
+            <div class="detail-ingredients-list">
+                <h5 class="detail-ingredients-title">Ingredients:</h5>
+                @foreach (var ingredient in @Model.RecipeDetailVm.Ingredients)
+                {
+                    <p class="detail-ingredient">
+                        @ingredient.Amount
+                        @ingredient.Ingredient.Name
+                    </p>
+
+                }
+            </div>
+            <div class="btn-cook">
+                <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
+            </div>
+        </div>
 
     </div>
-    <div class="btn-cook">
-        <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
-    </div>
+
+
+
     <div class="recipe-comments">
-        <ul>
-            @foreach (var comment in @Model.RecipeDetailVm.Ratings)
-            {
-                <li>@comment.Comment</li>
-            }
-        </ul>
+        <h3>Comments:</h3>
+        @foreach (var comment in @Model.RecipeDetailVm.Ratings)
+        {
+            <div class="card">
+                <div class="card-body">@comment.Comment</div>
+                <div class="comment-rating">
+                    @switch (comment.Rating)
+                    {
+                        case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                            break;
+                        case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                            break;
+                        case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                            break;
+                        case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
+                            break;
+                        case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
+                            break;
+                        default:
+                            break;
+                    }
+                </div>
+                <div class="comment-name">- @comment.User.Name</div>
+            </div>
+        }
+
     </div>
 
     <div>
-        <h2>Add a comment</h2>
+        <h3>Add a comment</h3>
         <div class="addcommentsbox">
             <form asp-controller="Recipe" asp-action="Detail" method="post">
-                <input value="@Model.RecipeDetailVm.Id" asp-for="RecipeRatingVm.RecipeId" hidden></input>
-                <input asp-for="RecipeRatingVm.Comment" class="form-control" placeholder="Write your comment here"/>
-                <input asp-for="RecipeRatingVm.Rating" type="number" placeholder="Rate the recipe"/>
+                <input value="@Model.RecipeDetailVm.Id" asp-for="RecipeRatingVm.RecipeId" hidden />
+                <textarea class="form-control mb-2" asp-for="RecipeRatingVm.Comment" placeholder="Write your comment here"></textarea>
+
+                <label asp-for="RecipeRatingVm.Rating"></label>
+                <select  asp-for="RecipeRatingVm.Rating" >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                @*<input class="input-rating" asp-for="RecipeRatingVm.Rating" type="number" placeholder="Rate the recipe" />*@
                 <span asp-validation-for="RecipeRatingVm.Recipe" class="text-danger"></span>
-                <button type="submit">Submit</button>
+
+                <button class="btn btn-comment" type="submit">Submit</button>
             </form>
         </div>
     </div>
-
 </div>
