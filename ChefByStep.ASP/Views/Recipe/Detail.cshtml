@@ -13,19 +13,20 @@
                 <img src="@Model.RecipeDetailVm.ImageUrl"/>
                 <h3>@Model.RecipeDetailVm.Title</h3>
             </div>
-            <div >
-                <div class="float-left">
-                    @foreach (var ingredient in @Model.RecipeDetailVm.Ingredients)
-                    {
-                        <ul>
-                            <li>
+            <div class="row">
+                <div class="col-sm-12 col-md-2 col-lg-3">
+                        @foreach (var ingredient in @Model.Ingredients)
+                        {
+
+                            <p class="ingredients-list">
+                                @ingredient.Amount
                                 @ingredient.Ingredient.Name
-                            </li>
-                        </ul>
-                    }
-                </div>
-                <div>
-                    <p>@Model.RecipeDetailVm.Description</p>
+                            </p>
+
+                        }
+                    </div>
+                <div class="col-sm-12 col-md-10 col-lg-9">
+                    <p>@Model.Description</p>
                 </div>
 
             </div>
