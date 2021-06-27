@@ -19,32 +19,7 @@
         public async Task<User> GetUser(int id)
         {
             var url = $"{BaseUrl}/{id}";
-            var handler = new HttpClientHandler();
-            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
-
-            using (var client = new HttpClient(handler))
-            {
-                try
-                {
-                    HttpResponseMessage message = await client.GetAsync(url);
-
-                    if (message.IsSuccessStatusCode)
-                    {
-                        string json = await message.Content.ReadAsStringAsync();
-                        User result = JsonConvert.DeserializeObject<User>(json);
-                        return result;
-                    }
-                    else
-                    {
-                        return new User { Name = "No data" };
-                    }
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception);
-                    throw;
-                }
-            }
+            return await GetUser(url);
         }
 
         public async Task<List<User>> GetAllUsers()
@@ -79,25 +54,12 @@
 
         public async Task<User> FindUserByFirstName(string name)
         {
-            var ListOfUsers = await GetAllUsers();
-            User user = new User();
-            foreach (var item in ListOfUsers)
-            {
-                if (item.Name == name)
-                {
-                    user = item;
-                }
-                else
-                {
-                    Console.WriteLine("User not found");
-                }
-            }
-            return user;
+            var url = $"{BaseUrl}/{name}";
+            return await GetUser(url);
         }
 
-        public async Task<bool> UpdateUser(User user)
+        private static async Task<User> GetUser(string url)
         {
-            var content = JsonConvert.SerializeObject(user);
             var handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
 
@@ -105,7 +67,39 @@
             {
                 try
                 {
-                    HttpResponseMessage message = await client.PutAsync(BaseUrl, new StringContent(content, Encoding.UTF8, "application/json"));
+                    HttpResponseMessage message = await client.GetAsync(url);
+
+                    if (message.IsSuccessStatusCode)
+                    {
+                        string json = await message.Content.ReadAsStringAsync();
+                        User result = JsonConvert.DeserializeObject<User>(json);
+                        return result;
+                    }
+                    else
+                    {
+                        return new User { Name = "No data" };
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
+            }
+        }
+
+        public async Task<bool> UpdateUser(User user)
+        {
+            string jsonString = JsonConvert.SerializeObject(user);
+            var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
+
+            using (var client = new HttpClient(handler))
+            {
+                try
+                {
+                    HttpResponseMessage message = await client.PutAsync(BaseUrl, httpContent);
 
                     if (message.IsSuccessStatusCode)
                     {

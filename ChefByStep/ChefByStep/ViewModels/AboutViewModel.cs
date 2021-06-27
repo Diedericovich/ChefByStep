@@ -13,7 +13,7 @@
     public class AboutViewModel : BaseViewModel
     {
         private RecipeRepository _repo;
-        public ICommand GoToProfile { get;}
+        public ICommand GoToProfile { get; }
 
         public AboutViewModel()
         {
@@ -21,6 +21,7 @@
             GoToProfile = new Command(GoToProfilePage);
             ShowAllTheRecipes();
             ItemTapped = new Command<Recipe>(OnRecipeSelected);
+            CategoryTapped = new Command<string>(OnCategorySelected);
         }
 
         private async void GoToProfilePage()
@@ -45,6 +46,7 @@
         }
 
         public Command<Recipe> ItemTapped { get; }
+        public Command<string> CategoryTapped { get; }
 
         private async Task ShowAllTheRecipes()
         {
@@ -55,6 +57,12 @@
         private async void OnRecipeSelected(Recipe recipe)
         {
             await Shell.Current.GoToAsync($"{nameof(DetailPage)}?{nameof(DetailPageViewModel.RecipeId)}={recipe.Id}");
+        }
+
+        private async void OnCategorySelected(string id)
+        {
+            int categoryId = Convert.ToInt32(id);
+            await Shell.Current.GoToAsync($"{nameof(RecipeCategoryPage)}?{nameof(RecipeCategoryViewModel.CategoryId)}={categoryId}");
         }
     }
 }

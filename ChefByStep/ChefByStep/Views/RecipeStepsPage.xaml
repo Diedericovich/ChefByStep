@@ -46,7 +46,6 @@
                                                                 WidthRequest="15" />
                                                             <Label Text="{Binding Ingredient.Name}"
                                                                TextColor="white"
-                                                               FontSize="12"
                                                                VerticalTextAlignment="Center" />
                                                         </StackLayout>
                                                     </pv:PancakeView>
@@ -76,13 +75,13 @@
                                 BackgroundColor="{StaticResource SecondaryVariantColor3}"
                                 HorizontalOptions="StartAndExpand"
                                 VerticalOptions="End"
-                                WidthRequest="200">
+                                WidthRequest="150">
                                     <StackLayout
                                                 Spacing="20"
                                                 Orientation="Horizontal">
                                         <Image  Source="chef.png"
                                                 WidthRequest="30" />
-                                        <Label Text="{Binding SelectedRecipe.Title}"
+                                        <Label Text="{Binding SelectedRecipe.CreatedByUser}"
                                                TextColor="black"
                                                FontSize="14"
                                                VerticalTextAlignment="Center" />
@@ -96,12 +95,12 @@
                                                 HorizontalOptions="EndAndExpand"
                                                 VerticalOptions="End">
                                     <StackLayout Spacing="20" Orientation="Horizontal">
-                                        <Image Source="https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png"
+                                        <Image Source="clock.png"
                                            WidthRequest="30" />
-                                        <Label Text="00:00"
-                                           TextColor="black"
-                                           FontSize="14"
-                                           VerticalTextAlignment="Center" />
+                                        <Label Text="{Binding SelectedRecipe.CookingTime}"
+                                               TextColor="black"
+                                               FontSize="14"
+                                               VerticalTextAlignment="Center" />
                                     </StackLayout>
                                 </pv:PancakeView>
                             </Grid>
@@ -128,7 +127,7 @@
                                                     <Grid>
                                                         <StackLayout
                                                                      Orientation="Vertical"
-                                                                     BackgroundColor="{StaticResource CrazyGreen1}">
+                                                                     BackgroundColor="white">
 
                                                             <pv:PancakeView CornerRadius="50"
                                                                             BackgroundColor="{StaticResource CrazyDark}"
@@ -155,7 +154,7 @@
                                                                     HeightRequest="360"
                                                                     HorizontalTextAlignment="Center"
                                                                     VerticalTextAlignment="Center"
-                                                                    TextColor="white"
+                                                                    TextColor="Black"
                                                                     Text="{Binding Instruction}"
                                                                     Grid.Column="1" />
                                                         </StackLayout>

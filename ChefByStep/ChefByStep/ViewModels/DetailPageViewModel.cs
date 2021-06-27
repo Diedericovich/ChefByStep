@@ -5,6 +5,7 @@
     using ChefByStep.Views;
     using System;
     using System.Diagnostics;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Input;
     using Xamarin.Forms;
@@ -29,6 +30,8 @@
             if (!ActiveUser.ApplicationUser.FavoriteRecipes.Contains(selectedRecipe))
             {
                 this.ActiveUser.ApplicationUser.FavoriteRecipes.Add(SelectedRecipe);
+                SelectedRecipe.IsFavorited = true;
+                FavoriteButton = "heartfull.png";
                 await _userRepo.UpdateUser(ActiveUser.ApplicationUser);
             }
         }
@@ -74,16 +77,56 @@
             }
         }
 
+        private string favoriteButton;
+
+        public string FavoriteButton
+        {
+            get { return favoriteButton; }
+            set
+            {
+                favoriteButton = value;
+                OnPropertyChanged(nameof(FavoriteButton));
+            }
+        }
+
         private async Task LoadRecipe(int id)
         {
             try
             {
                 var recipe = await _repo.GetRecipe(id);
+                recipe.AverageRating = CalculateAverageRating(recipe);
+                if (ActiveUser.ApplicationUser.FavoriteRecipes.FirstOrDefault(x => x.Title == recipe.Title) != null)
+                {
+                    recipe.IsFavorited = true;
+                    FavoriteButton = "heartfull.png";
+                }
+                else
+                {
+                    FavoriteButton = "heartblack.png";
+                }
                 SelectedRecipe = recipe;
             }
             catch (Exception)
             {
-                Debug.WriteLine("Failed to load place");
+                Debug.WriteLine("Failed to load recipes");
+            }
+        }
+
+        private static int CalculateAverageRating(Recipe recipe)
+        {
+            int averageRating = 0;
+            if (recipe.Ratings.Count == 0)
+            {
+                return 3;
+            }
+            else
+            {
+                foreach (var rating in recipe.Ratings)
+                {
+                    averageRating += Convert.ToInt32(rating.Rating);
+                }
+                int result = averageRating / recipe.Ratings.Count;
+                return result;
             }
         }
     }

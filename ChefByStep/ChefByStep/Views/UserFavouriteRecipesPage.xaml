@@ -3,97 +3,91 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
              xmlns:vm="clr-namespace:ChefByStep.ViewModels;assembly=ChefByStep"
-             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="ChefByStep.Views.UserFavouriteRecipesPage">
 
-
     <ContentPage.BindingContext>
-        <viewModels:UserFavouriteRecipesViewModel/>
+        <viewModels:UserFavouriteRecipesViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                     Command="{Binding RefreshCommand}">
 
-      
-            <CarouselView
-                HeightRequest="400"
-                ItemsSource="{Binding ActiveUser.ApplicationUser.FavoriteRecipes}"
-                Loop="True"
-                PeekAreaInsets="40"
-                WidthRequest="300"
-                >
-
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Frame
-                                Margin="10"
+            <ScrollView>
+                <StackLayout>
+                    <Grid WidthRequest="600">
+                        <Frame
+                        Margin="20"
+                        BorderColor="Gray"
+                        CornerRadius="5"
+                        HasShadow="True">
+                            <StackLayout>
+                                <Label
+                                FontAttributes="Bold"
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="Favourite Recipes" />
+                                <BoxView
+                                HeightRequest="2"
+                                HorizontalOptions="Fill"
+                                Color="Gray" />
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                    <FlexLayout Wrap="Wrap"
+                        JustifyContent="SpaceEvenly"
+                        BindableLayout.ItemsSource="{Binding ActiveUser.ApplicationUser.FavoriteRecipes}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame
                                 Padding="0"
+                                Margin="3,10,3,10"
                                 BackgroundColor="white"
                                 CornerRadius="10"
                                 HasShadow="True"
-                                HeightRequest="400"
+                                HeightRequest="150"
                                 HorizontalOptions="CenterAndExpand"
-                                WidthRequest="300"
-                                >
+                                WidthRequest="150">
 
-                                <Grid HorizontalOptions="FillAndExpand">
-                                    <StackLayout BackgroundColor="Black">
-                                        <Image
+                                        <Grid HorizontalOptions="FillAndExpand">
+                                            <StackLayout BackgroundColor="Black">
+                                                <Image
                                             Aspect="AspectFill"
-                                            HeightRequest="400"
+                                            HeightRequest="150"
                                             Opacity="0.8"
-                                            Source="{Binding ImageUrl}"
-                                            />
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Image
+                                            Source="{Binding ImageUrl}" />
+                                            </StackLayout>
+                                            <StackLayout>
+                                                <Image
                                             Margin="0,-10,0,0"
                                             Aspect="AspectFit"
                                             HeightRequest="60"
                                             HorizontalOptions="EndAndExpand"
                                             Source="icon_bookmark.png"
-                                            />
-                                        <Label
-                                            Margin="15,0"
+                                            IsVisible="false" />
+                                                <Label
+                                            Margin="15,0,15,15"
                                             FontAttributes="Bold"
-                                            FontSize="24"
+                                            FontSize="20"
                                             Text="{Binding Title}"
                                             TextColor="white"
-                                            VerticalOptions="EndAndExpand"
-                                            />
-
-                                        <StackLayout
-                                            Margin="15,-10,0,0"
-                                            Orientation="Horizontal"
-                                            >
-                                            <Image
-                                                Aspect="AspectFit"
-                                                HeightRequest="20"
-                                                Source="icon_map1.png"
-                                                />
-
-                                        </StackLayout>
-                                    </StackLayout>
-
-                                    <Grid.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:UserFavouriteRecipesViewModel}}, Path=ItemTapped}"
+                                            VerticalOptions="EndAndExpand" />
+                                            </StackLayout>
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:UserFavouriteRecipesViewModel}}, Path=ItemTapped}"
                                             CommandParameter="{Binding .}"
-                                            NumberOfTapsRequired="1"
-                                            />
-                                    </Grid.GestureRecognizers>
-
-
-                                </Grid>
-                            </Frame>
-
-                        </StackLayout>
-
-
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
-
-        </StackLayout>
+                                            NumberOfTapsRequired="1" />
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>
