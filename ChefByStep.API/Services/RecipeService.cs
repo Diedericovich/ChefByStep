@@ -47,6 +47,11 @@ namespace ChefByStep.API.Services
             return await _recipeRepo.GetAllByCategory(categoryId);
         }
 
+        public async Task<IEnumerable<Recipe>> GetAllBySearch(string searchText)
+        {
+            return await _recipeRepo.GetBySearchAsync(searchText);
+        }
+
         public async Task UpdateRecipeAsync(Recipe recipe)
         {
             await _recipeRepo.UpdateAsync(recipe);

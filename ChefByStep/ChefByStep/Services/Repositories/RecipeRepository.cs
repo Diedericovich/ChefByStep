@@ -120,5 +120,42 @@
                 }
             }
         }
+
+        public async Task<List<Recipe>> GetAllRecipesBySearch(string searchText)
+        {
+            var url = $"{baseUrl}/Search/{searchText}";
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
+
+            using (var client = new HttpClient(handler))
+            {
+                try
+                {
+                    HttpResponseMessage message = await client.GetAsync(url);
+
+                    if (message.IsSuccessStatusCode)
+                    {
+                        string json = await message.Content.ReadAsStringAsync();
+                        List<Recipe> result = JsonConvert.DeserializeObject<List<Recipe>>(json);
+                        return result;
+                    }
+                    else
+                    {
+                        return new List<Recipe>
+                               {
+                                   new Recipe
+                                   {
+                                       Title = "No data"
+                                   }
+                               };
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
+            }
+        }
     }
 }

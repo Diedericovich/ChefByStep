@@ -19,8 +19,10 @@
 
     <ScrollView>
         <StackLayout>
-            <SearchBar Placeholder="Find a Recipe"
-                       SearchCommand="" />
+            <SearchBar x:Name="searchBar"
+                       Placeholder="Find a Recipe"
+                       SearchCommand="{Binding SearchRecipe}"
+                       SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}" />
 
             <CarouselView
                 HeightRequest="400"

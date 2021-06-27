@@ -1,6 +1,7 @@
 ﻿namespace ChefByStep.ViewModels
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
     using System.Threading.Tasks;
@@ -23,6 +24,7 @@
             ShowAllTheRecipes();
             ItemTapped = new Command<Recipe>(OnRecipeSelected);
             CategoryTapped = new Command<string>(OnCategorySelected);
+            SearchRecipe = new Command<string>(OnSearchRecipe);
         }
 
         private async void GoToProfilePage()
@@ -48,6 +50,7 @@
 
         public Command<Recipe> ItemTapped { get; }
         public Command<string> CategoryTapped { get; }
+        public Command<string> SearchRecipe { get; }
 
         private async Task ShowAllTheRecipes()
         {
@@ -71,6 +74,14 @@
         {
             int categoryId = Convert.ToInt32(id);
             await Shell.Current.GoToAsync($"{nameof(RecipeCategoryPage)}?{nameof(RecipeCategoryViewModel.CategoryId)}={categoryId}");
+        }
+
+        private async void OnSearchRecipe(string searchText)
+        {
+            //await Shell.Current.GoToAsync($"{nameof(SearchRecipePage)}?{nameof(SearchRecipeViewModel.SearchText)}={searchText}");
+            var recipes = await _repo.GetAllRecipesBySearch(searchText);
+
+            Recipes = new ObservableCollection<Recipe>(recipes);
         }
     }
 }
