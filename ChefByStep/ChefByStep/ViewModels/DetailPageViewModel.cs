@@ -1,24 +1,24 @@
 ﻿namespace ChefByStep.ViewModels
 {
+    using ChefByStep.Models;
+    using ChefByStep.Services.Repositories;
+    using ChefByStep.Views;
     using System;
     using System.Diagnostics;
     using System.Threading.Tasks;
     using System.Windows.Input;
-
-    using ChefByStep.Models;
-    using ChefByStep.Services.Repositories;
-    using ChefByStep.Views;
-
     using Xamarin.Forms;
 
     [QueryProperty(nameof(RecipeId), nameof(RecipeId))]
     public class DetailPageViewModel : BaseViewModel
     {
         private RecipeRepository _repo;
+        private UserRepository _userRepo;
 
         public DetailPageViewModel()
         {
             _repo = new RecipeRepository();
+            _userRepo = new UserRepository();
             SelectedRecipe = new Recipe();
             OnButtonClickedCommand = new Command(GoToStepsPage);
             OnButtonUserRecipeFavourite = new Command(AddRecipeToUserFavourites);
@@ -26,8 +26,11 @@
 
         private async void AddRecipeToUserFavourites()
         {
-            this.ActiveUser.ApplicationUser.FavoriteRecipes.Add(SelectedRecipe);
-            
+            if (!ActiveUser.ApplicationUser.FavoriteRecipes.Contains(selectedRecipe))
+            {
+                this.ActiveUser.ApplicationUser.FavoriteRecipes.Add(SelectedRecipe);
+                await _userRepo.UpdateUser(ActiveUser.ApplicationUser);
+            }
         }
 
         public async void GoToStepsPage()
