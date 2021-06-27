@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -72,6 +73,13 @@ namespace ChefByStep.ViewModels
             try
             {
                 var recipes = await _repo.GetAllRecipesByCategory(id);
+                foreach (var recipe in recipes)
+                {
+                    if (ActiveUser.ApplicationUser.FavoriteRecipes.FirstOrDefault(x => x.Title == recipe.Title) != null)
+                    {
+                        recipe.IsFavorited = true;
+                    }
+                }
                 Recipes = new ObservableCollection<Recipe>(recipes);
                 switch (id)
                 {

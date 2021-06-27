@@ -46,7 +46,10 @@
                                                                 WidthRequest="15" />
                                                             <Label Text="{Binding Ingredient.Name}"
                                                                TextColor="white"
-                                                               VerticalTextAlignment="Center" />
+                                                               VerticalTextAlignment="Center"/>
+                                                            <Label Text="{Binding Amount, StringFormat=', {0}'}"
+                                                                   TextColor="white"
+                                                                   Margin="-10,0,0,0"/>
                                                         </StackLayout>
                                                     </pv:PancakeView>
                                                 </StackLayout>

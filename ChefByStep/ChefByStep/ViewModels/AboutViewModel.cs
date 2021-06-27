@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Input;
     using ChefByStep.Models;
@@ -51,6 +52,13 @@
         private async Task ShowAllTheRecipes()
         {
             var recipes = await _repo.GetAllRecipes();
+            foreach (var recipe in recipes)
+            {
+                if (ActiveUser.ApplicationUser.FavoriteRecipes.FirstOrDefault(x => x.Title == recipe.Title) != null)
+                {
+                    recipe.IsFavorited = true;
+                }
+            }
             Recipes = new ObservableCollection<Recipe>(recipes);
         }
 

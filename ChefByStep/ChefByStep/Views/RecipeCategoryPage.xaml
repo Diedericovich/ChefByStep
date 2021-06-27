@@ -59,7 +59,7 @@
                                             HeightRequest="60"
                                             HorizontalOptions="EndAndExpand"
                                             Source="icon_bookmark.png"
-                                            IsVisible="false" />
+                                            IsVisible="{Binding IsFavorited}" />
                                             <Label
                                             Margin="15,0,15,15"
                                             FontAttributes="Bold"

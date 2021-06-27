@@ -19,7 +19,8 @@
 
     <ScrollView>
         <StackLayout>
-            <SearchBar Placeholder="Find a Recipe" />
+            <SearchBar Placeholder="Find a Recipe"
+                       SearchCommand="" />
 
             <CarouselView
                 HeightRequest="400"
@@ -56,7 +57,7 @@
                                             HeightRequest="60"
                                             HorizontalOptions="EndAndExpand"
                                             Source="icon_bookmark.png"
-                                            IsVisible="False" />
+                                            IsVisible="{Binding IsFavorited}" />
                                         <Label
                                             Margin="15,0"
                                             FontAttributes="Bold"

@@ -118,7 +118,7 @@
                                         <CollectionView.ItemTemplate>
                                             <DataTemplate>
                                                 <Frame BorderColor="Black" CornerRadius="10">
-                                                    <StackLayout Orientation="Horizontal">
+                                                    <StackLayout Orientation="Vertical">
                                                         <Label Text="{Binding Comment,StringFormat='`{0}`'}"></Label>
                                                         <Label Text="{Binding User.Name, StringFormat='-{0}'}" FontAttributes="Bold"></Label>
                                                     </StackLayout>
