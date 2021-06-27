@@ -17,6 +17,7 @@ namespace ChefByStep.API.Repos
         {
             return await _context.Recipes
                 .Include(x => x.Ratings)
+                .ThenInclude(x => x.User)
                 .Include(x => x.Ingredients)
                 .ThenInclude(x => x.Ingredient)
                 .Include(x => x.Steps)
