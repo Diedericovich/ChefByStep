@@ -14,12 +14,12 @@ namespace ChefByStep.API.Entities
         [MaxLength(75), MinLength(5)]
         public string Title { get; set; }
 
-        [Required]
-        [MaxLength(500), MinLength(5)]
+        //[Required]
+        //[MaxLength(500), MinLength(5)]
         public string Description { get; set; }
 
-        [Required]
-        [MaxLength(250), MinLength(5)]
+        //[Required]
+        //[MaxLength(250), MinLength(5)]
         public string ImageUrl { get; set; }
 
         public int PrepTimeInMin { get; set; }
