@@ -41,7 +41,7 @@ namespace ChefByStep.API
                 c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChefByStep.API", Version = "v1" }); });
 
             services.AddDbContext<DatabaseContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options => options.UseSqlServer(Configuration.GetConnectionString("OnlineConnection")));
             services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
             services.AddCors();

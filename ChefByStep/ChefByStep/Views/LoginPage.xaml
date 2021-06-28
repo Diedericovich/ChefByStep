@@ -80,14 +80,14 @@
                     </Grid.RowDefinitions>
                     <!--<Label Text="{Binding CurrentUser.ActiveUser.Name, StringFormat='Hi {0}'}" FontSize="22"/>-->
                 </Grid>
-                <Entry Grid.Row="1" Placeholder="User Name" FontSize="16" Text="{Binding Name}"/>
-                <Entry Grid.Row="2" Placeholder="Password" FontSize="16" IsPassword="True" Text="{Binding Password}"/>
+                <Entry Grid.Row="2" Placeholder="User Name" FontSize="16" Text="{Binding Name}"/>
+                <Entry Grid.Row="3" Placeholder="Password" FontSize="16" IsPassword="True" Text="{Binding Password}"/>
                 <Button Text="LogIn" Command="{Binding LoginCommand}" 
                         Background="#00914f" 
                         TextColor="white" 
                         VerticalOptions="Start" 
-                        Grid.Row="3"/>
-                <Button Grid.Row="4" 
+                        Grid.Row="4"/>
+                <Button Grid.Row="5" 
                         Text="Continue as Guest" 
                         TextColor="#60c6a3" 
                         HorizontalOptions="EndAndExpand" 
@@ -96,10 +96,11 @@
                         Command="{Binding GuestCommand}"/>
 
                 <!---Login with Facebook -->
-                <Image Grid.Row="5" 
-                       Source="facebooklogo.png" 
-                       Margin="-10" 
+                <Image Grid.Row="6" 
+                       Source="facebook.png" 
+                       Margin="0" 
                        HorizontalOptions="Center"
+                       HeightRequest="65"
                        >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding TapCommand}"
@@ -108,7 +109,7 @@
                 </Image>
 
 
-                <Label Grid.Row="6" Text="Login with Facebook" HorizontalOptions="Center" Margin="10"/>
+                <Label Grid.Row="7" Text="Login with Facebook" HorizontalOptions="Center" Margin="-10"/>
             </Grid>
 
         </Grid>
