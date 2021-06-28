@@ -1,0 +1,66 @@
+﻿@model RecipeDetailViewModel
+@{
+    int j = 1;
+}
+
+<div class="overview-steps">
+    <div><h2>@Model.Title</h2></div>
+    
+    <div class="steps">
+        <div id="scene">
+            <div id="left-zone">
+                <ul class="list">
+                    @foreach (var step in Model.Steps)
+                    {
+                        <li class="item">
+                            @if (j == 1)
+                            {
+                                <input type="radio" id="radio_@j" name="basic_carousel" value="@step" checked />
+                            }
+                            else
+                            {
+                                <input type="radio" id="radio_@j" name="basic_carousel" value="@step" />
+
+                            }
+                            <label for="radio_@j" class="label">Step @j </label>
+                            <div class="content">
+                                <p class="steps-instruction">@step.Instruction</p>
+                            </div>
+                        </li>
+                        j++;
+                    }
+                </ul>
+
+            </div>
+            <div id="middle-border"></div>
+            <div id="right-zone"></div>
+        </div>
+    </div>
+    <div class="detail-minutes">
+        <div class="row detail-min-row">
+            <p class="col-sm-12 col-md-6 col-lg-6 detail-time-left">Preparation time: </p>
+            <p class="col-sm-12 col-md-6 col-lg-6 detail-time-right">Cooking time: </p>
+        </div>
+        <div class="row detail-min-row">
+            <p class="col-sm-12 col-md-6 col-lg-6 detail-time-left">@Model.PrepTimeInMin min </p>
+            <p class="col-sm-12 col-md-6 col-lg-6 detail-time-right">@Model.CookTimeInMin min</p>
+        </div>
+
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-5">
+                @foreach (var ingredient in Model.Ingredients)
+                {
+                    <p>@ingredient.Amount @ingredient.Ingredient.Name</p>
+                }
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-7">
+            <img src="@Model.ImageUrl" />
+            </div>
+        </div>
+    </div>
+
+</div>

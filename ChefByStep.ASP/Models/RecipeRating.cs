@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ChefByStep.ASP.Models
+﻿namespace ChefByStep.ASP.Models
 {
     public class RecipeRating
     {
-        public int Id { get; set; }
-        public ApplicationUser User { get; set; }
+        public int UserId { get; set; }
+
+        public int RecipeId { get; set; }
+
+        public ApiUser User { get; set; }
+
         public Recipe Recipe { get; set; }
+
         public string Comment { get; set; }
-        public int Rating { get; set; }
+
+        public double Rating { get; set; }
     }
 }

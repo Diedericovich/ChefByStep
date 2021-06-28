@@ -1,93 +1,81 @@
 ﻿@model RecipeViewModel
 
-<div class="overview">
-    <h2>All recipes</h2>
-    <div class="row">
-        @foreach (var recipe in Model.Recipes)
+<div class="overview list-container">
+    <h1>Our recipes</h1>
+    <div id="myBtnContainer">
+        <button class="btn btn-filter active" onclick="filterSelection('all')"> Show all</button>
+        @*@foreach (var category in Enum.GetNames(typeof(Category)))
         {
-            <div class="col-sm-12 col-md-6 col-lg-3 ">
-                <a class="nav-link" asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
-                    <img class="recipe-img" src="@recipe.ImageUrl" />
+            <button class="btn" onclick="filterSelection('@category')"> @category</button>
+        }*@
+        <button class="btn btn-filter" onclick="filterSelection('Breakfast')"> Breakfast</button>
+        <button class="btn btn-filter" onclick="filterSelection('Lunch')"> Lunch</button>
+        <button class="btn btn-filter" onclick="filterSelection('Dinner')"> Dinner</button>
+        <button class="btn btn-filter" onclick="filterSelection('Dessert')"> Dessert</button>
+    </div>
 
-                    <div class="centered">@recipe.Title</div>
+    @*<div id="list1" class="dropdown-check-list" tabindex="100">
+        <span class="anchor">Filter</span>
+        <ul class="items">
+            <li><input type="checkbox" id="breakfast" />Breakfast </li>
+            <li><input type="checkbox" id="lunch" />Lunch</li>
+            <li><input type="checkbox" id="dinner" />Dinner </li>
+            <li><input type="checkbox" id="dessert" />Dessert </li>
+        </ul>
+    </div>*@
+<div class="row recipe-row">
+    @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Breakfast))
+    {
+        <div class="filterDiv @Category.Breakfast show col-sm-12 col-md-6 col-lg-4">
+            <div class="card overview-tile" style="width: 18rem;">
+                <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                    <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="recipe-overview-text">@recipe.Title</h5>
+                    </div>
                 </a>
             </div>
-        }
-    </div>
+        </div>
+    }
+    @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Lunch))
+    {
+        <div class="filterDiv @Category.Lunch show col-sm-12 col-md-6 col-lg-4">
+            <div class="card overview-tile" style="width: 18rem;">
+                <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                    <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="recipe-overview-text">@recipe.Title</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+    @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dinner))
+    {
+        <div class="filterDiv @Category.Dinner show col-sm-12 col-md-6 col-lg-4">
+            <div class="card overview-tile" style="width: 18rem;">
+                <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                    <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="recipe-overview-text">@recipe.Title</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+    @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dessert))
+    {
+        <div class="filterDiv @Category.Dessert show col-sm-12 col-md-6 col-lg-4">
+            <div class="card overview-tile" style="width: 18rem;">
+                <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                    <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="recipe-overview-text">@recipe.Title</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>
 </div>
 
-@*<div class="overview">
-    <h2>All recipes</h2>
-    <div class="row recipe-row">
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-    </div>
-    <div class="row recipe-row">
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-    </div>
-    <div class="row recipe-row">
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-    </div>
-    <div class="row recipe-row">
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 ">
-            <img class="recipe-img" src="https://images.food52.com/TRW26JcClLEecmYmv3tOpia1DXY=/1008x672/filters:format(webp)/157f3d99-a272-4002-9353-867d70731001--2021-0512_strawberry-lemonade-cupcakes_4x5_julia-gartland_063.jpg" />
-            <div class="centered">Strawberry Lemonade Cupcakes</div>
-        </div>
-    </div>
-</div>*@

@@ -136,10 +136,10 @@
                         Margin="5,5,5,5"
                         BackgroundColor="white"
                         CornerRadius="0"
-                        HeightRequest="180"
+                        HeightRequest="320"
                         HorizontalOptions="Center"
                         VerticalOptions="StartAndExpand"
-                        WidthRequest="180"
+                        WidthRequest="320"
                         >
                         <pancake:PancakeView.Shadow>
                             <pancake:DropShadow
@@ -156,8 +156,15 @@
                             <Image
                                 Margin="5"
                                 Aspect="AspectFill"
-                                Source="https://cdn.pixabay.com/photo/2016/03/10/18/44/top-view-1248955_1280.jpg"
+                                Source="https://greenkitchenstories.com/wp-content/uploads/2014/03/Beet_endive_salad_2.jpg"
                                 />
+                            <Label Text="Salads"
+                                   TextColor="Wheat"
+                                   VerticalOptions="EndAndExpand"
+                                   HorizontalOptions="EndAndExpand"
+                                   Margin="15"
+                                   FontSize="30"
+                                   />
 
                         </Grid>
                     </pancake:PancakeView>

@@ -11,8 +11,8 @@
 
     public class RecipeRepository : IRecipeRepository
     {
-        // private const string baseUrl = "https://10.0.2.2:44350/api/Recipe";
-        private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/Recipe";
+         private const string baseUrl = "https://10.0.2.2:44350/api/Recipe";
+        //private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/Recipe";
 
         public async Task<Recipe> GetRecipe(int id)
         {

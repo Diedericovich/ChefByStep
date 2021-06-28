@@ -9,7 +9,7 @@ namespace ChefByStep.API.Controllers
 {
     [ApiController, Route("api/[controller]")]
 
-    public class IngredientController: ControllerBase
+    public class IngredientController : ControllerBase
     {
         private IIngredientService _service;
 
@@ -24,7 +24,7 @@ namespace ChefByStep.API.Controllers
             await _service.AddIngredientAsync(ingredient);
         }
 
-        [HttpDelete("{id})")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteIngredientAsync(int id)
         {
             try
@@ -63,6 +63,5 @@ namespace ChefByStep.API.Controllers
                 return BadRequest(e.Message);
             }
         }
-
     }
 }

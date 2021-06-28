@@ -7,5 +7,7 @@
         public int DurationMin { get; set; }
 
         public bool isDone { get; set; }
+
+        public int NumberOfStep { get; set; }
     }
 }

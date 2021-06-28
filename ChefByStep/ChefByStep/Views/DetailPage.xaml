@@ -99,7 +99,7 @@
                                                     <Label
                                                         HorizontalOptions="Center"
                                                         VerticalOptions="Center"
-                                                        Text="{Binding Name, StringFormat='*   {0}'}" />
+                                                        Text="{Binding Ingredient.Name, StringFormat='*   {0}'}" />
                                                 </DataTemplate>
                                             </CollectionView.ItemTemplate>
                                         </CollectionView>
@@ -114,7 +114,7 @@
                                         TextColorSelected="red"
                                         FontSize="16">
                                     <Grid>
-                                        <CollectionView ItemsSource="{Binding SelectedRecipe.Raitings}" Margin="20">
+                                        <CollectionView ItemsSource="{Binding SelectedRecipe.Ratings}" Margin="20">
                                             <CollectionView.ItemTemplate>
                                                 <DataTemplate>
                                                     <Label
@@ -128,48 +128,24 @@
                                 </xct:TabViewItem>
                             </xct:TabView>
 
-
-                            <!--<Label Text="{Binding SelectedPlace.Description}"
-                                   FontSize="18"
-                                   Margin="10,20"/>-->
                         </StackLayout>
 
-
-
-                        <!--Xamarin Community Toolkit , using for tabs-->
-                        <!--<Grid>
-                            <xyt:TabView Style="{StaticResource TabStyle}">
-                                <xyt:TabViewItem >
-                                    <Grid BackgroundColor="Red">
-                                    </Grid>
-                                </xyt:TabViewItem>
-                                <xyt:TabViewItem>
-                                    <Grid BackgroundColor="Blue">
-                                    </Grid>
-                                </xyt:TabViewItem>
-                            </xyt:TabView>
-                        </Grid>-->
-
-
-
-
                     </Frame>
-
+                    
                     <pancake:PancakeView CornerRadius="50"
                            BackgroundColor="white"
                            HeightRequest="60"
                            WidthRequest="60"
                            HorizontalOptions="EndAndExpand"
                            VerticalOptions="StartAndExpand"
-                           Margin="0,-35,35,0"
-                           >
+                           Margin="0,-35,35,0">
                         <pancake:PancakeView.Shadow>
-                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0"/>
+                            <pancake:DropShadow Color="Black" BlurRadius="15" Offset="0,0" />
                         </pancake:PancakeView.Shadow>
 
                         <Grid VerticalOptions="Center"
                               HorizontalOptions="Center">
-                            <Label Text="{Binding SelectedPlace.Rating}"
+                            <Label Text="7"
                                    FontSize="22"
                                    TextColor="red"/>
                         </Grid>

@@ -1,4 +1,7 @@
-﻿using ChefByStep.ASP.Models;
+﻿using AutoMapper;
+using ChefByStep.ASP.Models;
+using ChefByStep.ASP.Services;
+using ChefByStep.ASP.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +15,24 @@ namespace ChefByStep.ASP.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IRecipeService _service;
+        private readonly IMapper _mapper;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IRecipeService service, IMapper mapper)
         {
             _logger = logger;
+            _service = service;
+            _mapper = mapper;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            return View();
+            ICollection<Recipe> recipes = await _service.GetRecipesAsync();
+            var viewModel = new RecipeViewModel
+            {
+                Recipes = _mapper.Map<ICollection<Recipe>>(recipes)
+            };
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
