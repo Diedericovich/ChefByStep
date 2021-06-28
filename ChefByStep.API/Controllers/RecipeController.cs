@@ -19,7 +19,7 @@ namespace ChefByStep.API.Controllers
         }
 
         [HttpPost]
-        public async Task AddRecipeAsync(Recipe recipe)
+        public async Task AddRecipeAsync([FromBody] Recipe recipe)
         {
             await _service.AddRecipeAsync(recipe);
         }

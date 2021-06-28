@@ -35,7 +35,6 @@
             return View(viewModel);
         }
 
-
         public async Task<ActionResult> DetailAsync(int id)
         {
             Recipe recipe = await _recipeService.GetRecipeAsync(id);
@@ -53,11 +52,9 @@
             string name = User.Identity.Name;
             var user = await _userService.GetUserByNameAsync(name);
             recipeRating.UserId = user.Id;
-            this._ratingService.PostRecipeRating(recipeRating);
+            _ratingService.PostRecipeRating(recipeRating);
 
             var temp = vm.RecipeRatingVm.RecipeId;
-
-
 
             return RedirectToAction($"Detail", temp);
         }
@@ -79,16 +76,27 @@
         // POST: RecipeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(RecipeCreateViewModel vm)
         {
-            try
+            bool IsValid = TryValidateModel(vm);
+            if (IsValid)
             {
-                return RedirectToAction(nameof(IndexAsync));
+                string name = User.Identity.Name;
+                var user = await _userService.GetUserByNameAsync(name);
+                Recipe recipe = _mapper.Map<Recipe>(vm);
+                recipe.CreatedById = user.Id;
+                await _recipeService.PostRecipe(recipe);
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(vm);
+            //try
+            //{
+            //    return RedirectToAction(nameof(IndexAsync));
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
         }
 
         // GET: RecipeController/Edit/5

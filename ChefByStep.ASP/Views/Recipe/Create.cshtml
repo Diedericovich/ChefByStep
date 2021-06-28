@@ -1,4 +1,54 @@
-﻿@*
+﻿@model RecipeCreateViewModel
+
+<h1>Create</h1>
+
+<h4>Package</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <button onclick="addRow()" type="button">Add Row</button>
+            <table id="AddItemsTable">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Steps[0].Instruction)</th>
+                </tr>
+            </table>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var counter = 0;
+        function addRow() {
+            var table = document.getElementById("AddItemsTable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            cell1.innerHTML = '<input type="text" name="Steps[' + counter + '].Instruction" />';
+            counter++;
+        }
+    </script>
+}
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{

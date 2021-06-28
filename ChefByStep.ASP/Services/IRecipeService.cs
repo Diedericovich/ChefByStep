@@ -8,5 +8,6 @@ namespace ChefByStep.ASP.Services
     {
         Task<Recipe> GetRecipeAsync(int id);
         Task<IList<Recipe>> GetRecipesAsync();
+        Task PostRecipe(Recipe recipe);
     }
 }

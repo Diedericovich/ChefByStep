@@ -9,13 +9,15 @@ namespace ChefByStep.ASP.ViewModels
     public class RecipeCreateViewModel
     {
         public int Id { get; set; }
+        public int CreatedById { get; set; }
 
-        public string Title { get; set; }
+        public Category CategoryId { get; set; }
 
         public string Description { get; set; }
 
         public string ImageUrl { get; set; }
-        public string CreatedByUser { get; set; }
+
+        public string Title { get; set; }
         public int PrepTimeInMin { get; set; }
         public int CookTimeInMin { get; set; }
 
@@ -24,5 +26,6 @@ namespace ChefByStep.ASP.ViewModels
         public List<RecipeIngredient> Ingredients { get; set; }
         public ApiUser CreatedBy { get; set; }
 
+        public List<Step> Steps { get; set; }
     }
 }
