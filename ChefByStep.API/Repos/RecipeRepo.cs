@@ -25,6 +25,14 @@ namespace ChefByStep.API.Repos
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        public async Task<List<Recipe>> GetBySearchAsync(string searchText)
+        {
+            return await _context.Recipes
+                .Where(x => x.Title.Contains(searchText) || x.Description.Contains(searchText) || x.CreatedBy.Name.Contains(searchText))
+                .Include(x => x.Ratings)
+                .ToListAsync();
+        }
+
         public async override Task<List<Recipe>> GetAllAsync()
         {
             return await _context.Recipes
