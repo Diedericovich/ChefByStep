@@ -15,7 +15,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <textarea asp-for="Description" class="form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -23,12 +23,53 @@
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
-            <button onclick="addRow()" type="button">Add Row</button>
-            <table id="AddItemsTable">
+            <div class="form-group">
+                <label asp-for="PrepTimeInMin"></label>
+                <input class="form-control" asp-for="PrepTimeInMin" />
+                <span asp-validation-for="PrepTimeInMin" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CookTimeInMin"></label>
+                <input class="form-control" asp-for="CookTimeInMin" />
+                <span asp-validation-for="CookTimeInMin" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CategoryId"></label>
+                <select asp-for="CategoryId" asp-items="Html.GetEnumSelectList<Category>()">
+                </select>
+            </div>
+
+
+            <table id="AddStepsTable">
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.Steps[0].Instruction)</th>
                 </tr>
+                <tr>
+                    <td>
+                        <textarea name="Steps[0].Instruction"></textarea>
+                    </td>
+                </tr>
+            </table> 
+            <button class="btn btn-danger" onclick="addStepsRow()" type="button">Add Steps</button>
+            
+            <table id="AddIngredientsTable">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Ingredients[0].Amount)</th>
+                    <th>@Html.DisplayNameFor(model => model.Ingredients[0].Ingredient.Name)</th>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="Ingredients[0].Amount"></textarea>
+                    </td>
+                    <td>
+                        <textarea name="Ingredients[0].Ingredient.Name"></textarea>
+                    </td>
+                </tr>
             </table>
+            <button class="btn btn-danger" onclick="addIngredientRow()" type="button">Add Ingredient</button>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -38,54 +79,25 @@
 
 @section Scripts {
     <script>
-        var counter = 0;
-        function addRow() {
-            var table = document.getElementById("AddItemsTable");
+        var stepCounter = 1;
+        var ingredientCounter = 1;
+
+        function addStepsRow() {
+            var table = document.getElementById("AddStepsTable");
             var row = table.insertRow(-1);
             var cell1 = row.insertCell(0);
-            cell1.innerHTML = '<input type="text" name="Steps[' + counter + '].Instruction" />';
-            counter++;
+            cell1.innerHTML = '<textarea type="text" name="Steps[' + stepCounter + '].Instruction"></textarea>';
+            stepCounter++;
+        }
+
+        function addIngredientRow() {
+            var table = document.getElementById("AddIngredientsTable");
+            var row = table.insertRow(-1);
+            var cell2 = row.insertCell(0);
+            var cell1 = row.insertCell(1);
+            cell2.innerHTML = '<textarea name="Ingredients[' + ingredientCounter + '].Ingredient.Name"></textarea>';
+            cell1.innerHTML = '<textarea name="Ingredients[' + ingredientCounter + '].Amount"></textarea>';
+            ingredientCounter++;
         }
     </script>
 }
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model RecipeCreateViewModel
-
-<form>
-    <div class="form-group">
-        <label asp-for="Title"></label>
-        <input class="form-control" asp-for="Title" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Description"></label>
-        <textarea class="form-control" asp-for="Description"></textarea>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="ImageUrl"></label>
-        <input class="form-control" asp-for="ImageUrl" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="PrepTimeInMin"></label>
-        <input class="form-control" asp-for="PrepTimeInMin" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="CookTimeInMin"></label>
-        <input class="form-control" asp-for="CookTimeInMin" />
-    </div>
-
-    <input asp-for="CreatedByUser" hidden />
-
-    <input type="text" asp-for="Steps[0].Instruction" class="form-control" />
-        <input type="text" name="Steps[1].Instruction" class="form-control" />
-        <input type="text" name="Steps[2].Instruction" class="form-control" />
-
-    <button class="btn btn-primary" type="submit">Add Recipe</button>
-</form>
