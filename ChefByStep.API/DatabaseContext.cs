@@ -34,10 +34,5 @@ namespace ChefByStep.API
             modelBuilder.BuildRelations();
             modelBuilder.Seed();
         }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.EnableSensitiveDataLogging();
-        }
     }
 }

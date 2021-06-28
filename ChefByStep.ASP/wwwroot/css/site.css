@@ -1,5 +1,4 @@
-﻿
-/*
+﻿/*
 1. NAVBAR
 2. STICKY FOOTER
 3. HEADER
@@ -10,20 +9,22 @@
 8. SEARCHBAR CSS
 */
 
-
 /*------------------------------------------------------------------------------------- NAVBAR ---------------------------------------------------------------------------------------*/
 .navbar-brand {
     text-align: center;
     word-break: break-all;
 }
-nav{
+
+nav {
     height: 70px;
 }
+
 .navbar {
     background-color: #78c6a3;
     display: block;
 }
-.nav-item{
+
+.nav-item {
     padding-top: 10px;
     margin-bottom: -10px;
 }
@@ -33,12 +34,17 @@ nav{
     padding-left: 5px;
     padding-right: -5px;
 }
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
 }
-.btn-link{
+.nav-link:hover {
+    background-color: RGBA(120,198,163);
+}
+
+.btn-link {
     margin-top: -1px;
 }
 /*------------------------------------------------------------------------------------- STICKY FOOTER ---------------------------------------------------------------------------------------*/
@@ -68,6 +74,7 @@ button.accept-policy {
     font-size: 1rem;
     line-height: inherit;
 }
+
 html {
     position: relative;
     min-height: 100%;
@@ -117,15 +124,18 @@ body {
 }
 
 .overview-btn {
-    background-color: #78c6a3;
+    background-color: RGBA(120,198,163,0.59);
 }
+
+    .overview-btn:hover {
+        background-color: RGBA(120,198,163);
+    }
 
 .overview-title {
     font-size: 2.5em;
     font-weight: 600;
     line-height: 40px;
 }
-
 
 .random-recipe {
     font-size: 1em;
@@ -134,6 +144,10 @@ body {
 .random-btn {
     background-color: RGBA(120,198,163,0.59);
 }
+
+    .random-btn:hover {
+        background-color: RGBA(120,198,163);
+    }
 
 .recipe-row {
     margin-bottom: 3%;
@@ -149,19 +163,23 @@ body {
     border-radius: 5px;
     border-color: RGBA(120,198,163,0.75);
 }
+.recipe-img:hover{
+    -webkit-filter: brightness(1.1);
+    filter:brightness(1.1);
+}
 
 .recipe-row a {
     text-decoration: none;
     color: #fff;
 }
 
-.recipe-row a:hover {
-    color: #fff;
-}
+    .recipe-row a:hover {
+        color: #fff;
+    }
 
-.recipe-row a:visited {
-    color: #fff;
-}
+    .recipe-row a:visited {
+        color: #fff;
+    }
 
 .centered {
     position: absolute;
@@ -188,30 +206,35 @@ body {
     margin-right: auto;
     margin-top: 20px;
 }
+
 .detail-img {
     width: 100%;
 }
-.detail-description{
-   /* margin-top: -150px;*/
+
+.detail-description {
+    /* margin-top: -150px;*/
 }
 
 .recipe-comments {
     margin-top: 20px;
     padding-top: 10px;
 }
+
 .comment-rating {
     text-align: right;
     margin-top: -50px;
     margin-bottom: 20px;
     margin-right: 10px;
 }
-.comment-name{
+
+.comment-name {
     text-align: right;
     font-size: 0.8em;
     color: dimgray;
     margin-right: 10px;
 }
-.average-rating{
+
+.average-rating {
     font-weight: 400;
     font-size: 0.7em;
     margin-top: 5px;
@@ -222,16 +245,20 @@ body {
     height: fit-content;
     padding-left: 10px;
 }
-.detail-ingredients-title{
+
+.detail-ingredients-title {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.detail-ingredient{
+
+.detail-ingredient {
     margin-bottom: 5px;
 }
-.detail-title{
+
+.detail-title {
     margin-top: 10px;
 }
+
 .detail-minutes {
     border-radius: 5px;
     text-align: center;
@@ -241,17 +268,21 @@ body {
     margin-bottom: 20px;
     background-color: RGBA(120,198,163,0.59);
 }
+
 .detail-time-left {
     margin: 0;
     border-right: 1px solid #78c6a3;
     ;
 }
+
 .detail-time-right {
     margin: 0;
 }
+
 .fa-star {
     color: #ECA72C;
 }
+
 .btn-comment {
     background-color: RGBA(120,198,163,0.59);
     border-radius: 5px;
@@ -260,8 +291,14 @@ body {
     margin-right: auto;
     padding-top: 2px;
     padding-bottom: 2px;
+    height:2.5em;
+    width:7em;
 }
-.input-rating{
+    .btn-comment:hover {
+        background-color: RGBA(120,198,163);
+    }
+
+.input-rating {
     margin-top: 10px;
 }
 
@@ -288,6 +325,7 @@ body {
     text-align: center;
     opacity: .5;
 }
+
 .vert .carousel-item-next.carousel-item-left,
 .vert .carousel-item-prev.carousel-item-right {
     -webkit-transform: translate3d(0, 0, 0);
@@ -312,9 +350,11 @@ body {
     text-align: center;
     padding-top: 20%;
 }
+
 .carousel-control-prev .carousel-control-next {
     width: 100%;
 }
+
 ol.carousel-indicators {
     position: absolute;
     bottom: 0;
@@ -322,26 +362,24 @@ ol.carousel-indicators {
     left: 0;
     right: 0;
     width: auto;
-    
 }
 
-ol.carousel-indicators li,
-ol.carousel-indicators li.active {
-    float: left;
-    width: 33%;
-    height: 10px;
-    margin: 0;
-    border-radius: 0;
-    border: 0;
-    background: RGBA(120,198,163,0.40);
-    border-left: 1px solid;
-    border-color: #78c6a3;
-        
-}
+    ol.carousel-indicators li,
+    ol.carousel-indicators li.active {
+        float: left;
+        width: 33%;
+        height: 10px;
+        margin: 0;
+        border-radius: 0;
+        border: 0;
+        background: RGBA(120,198,163,0.40);
+        border-left: 1px solid;
+        border-color: #78c6a3;
+    }
 
-ol.carousel-indicators li.active {
-    background: RGBA(120,198,163,0.75);
-}
+        ol.carousel-indicators li.active {
+            background: RGBA(120,198,163,0.75);
+        }
 
 .carousel-control-next-icon .carousel-control-prev-icon {
     background-color: #78c6a3;
@@ -372,7 +410,7 @@ ol.carousel-indicators li.active {
     }
 }
 
-.steps-instruction{
+.steps-instruction {
     font-size: 1.2em;
 }
 
@@ -407,16 +445,17 @@ body #scene #left-zone {
     justify-content: left;
 }
 
-body #scene #left-zone .list {
-    display: flex;
-    list-style: none;
-    align-content: stretch;
-    flex-direction: column;
-    flex-grow: 1;
-    margin: 0;
-    padding: 0;
-}
-.list{
+    body #scene #left-zone .list {
+        display: flex;
+        list-style: none;
+        align-content: stretch;
+        flex-direction: column;
+        flex-grow: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+.list {
     background-color: RGBA(120,198,163,0.25);
 }
 
@@ -424,75 +463,73 @@ body #scene #left-zone .list li.item input[type="radio"] {
     display: none;
 }
 
-body #scene #left-zone .list li.item input[type="radio"] ~ label {
-     display: block;
-     opacity: 0.5;
-     height: 50px;
-     font-size: 2em;
-     margin-left: 10%;
-     line-height: 50px;
-}
-
-body #scene #left-zone .list li.item input[type="radio"] ~ label:first-letter {
-     text-transform: uppercase;
-}
-
-body #scene #left-zone .list li.item input[type="radio"] ~ label:hover {
-     opacity: 0.75;
-     cursor: pointer;
-}
-
-body #scene #left-zone .list li.item input[type="radio"] ~ label.label:before {
-     content: " ";
-     display: block;
-     position: absolute;
-     width: 50px;
-     height: 50px;
-     margin-left: 15px;
-}
-
-body #scene #left-zone .list li.item input[type="radio"] ~ .content {
-     position: absolute;
-     left: 10%;
-     bottom: 20%;
-     top: 85%;
-     width: 100%;
-     height: 100%;
-     animation-duration: 0.75s;
-     animation-name: slideout;
-     animation-timing-function: ease-out;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-     text-align: center;
-}
-
-body #scene #left-zone .list li.item input[type="radio"] ~ .content.content h1 {
-    color: RGBA(120,198,163,0.75);
-    text-align: center;
-}
-
-                        
-
-body #scene #left-zone .list li.item input[type="radio"] ~ .content h1:first-letter {
-    text-transform: uppercase;
-}
-
-body #scene #left-zone .list li.item input[type="radio"] ~ .content p {
-    max-width: 50%;
-    text-align: center;
-}
-
-body #scene #left-zone .list li.item input[type="radio"]:checked ~ label {
-    opacity: 1;
-    animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-
-    body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label {
-        color: RGBA(120,198,163,0.75);
-        border-right: solid 4px #78c6a3;
+    body #scene #left-zone .list li.item input[type="radio"] ~ label {
+        display: block;
+        opacity: 0.5;
+        height: 50px;
+        font-size: 2em;
+        margin-left: 10%;
+        line-height: 50px;
     }
+
+        body #scene #left-zone .list li.item input[type="radio"] ~ label:first-letter {
+            text-transform: uppercase;
+        }
+
+        body #scene #left-zone .list li.item input[type="radio"] ~ label:hover {
+            opacity: 0.75;
+            cursor: pointer;
+        }
+
+        body #scene #left-zone .list li.item input[type="radio"] ~ label.label:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-left: 15px;
+        }
+
+    body #scene #left-zone .list li.item input[type="radio"] ~ .content {
+        position: absolute;
+        left: 10%;
+        bottom: 20%;
+        top: 85%;
+        width: 100%;
+        height: 100%;
+        animation-duration: 0.75s;
+        animation-name: slideout;
+        animation-timing-function: ease-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+        body #scene #left-zone .list li.item input[type="radio"] ~ .content.content h1 {
+            color: RGBA(120,198,163,0.75);
+            text-align: center;
+        }
+
+        body #scene #left-zone .list li.item input[type="radio"] ~ .content h1:first-letter {
+            text-transform: uppercase;
+        }
+
+        body #scene #left-zone .list li.item input[type="radio"] ~ .content p {
+            max-width: 50%;
+            text-align: center;
+        }
+
+    body #scene #left-zone .list li.item input[type="radio"]:checked ~ label {
+        opacity: 1;
+        animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+        body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label {
+            color: RGBA(120,198,163,0.75);
+            border-right: solid 4px #78c6a3;
+        }
 
     body #scene #left-zone .list li.item input[type="radio"]:checked ~ .content {
         animation-duration: 0.75s;
@@ -524,24 +561,26 @@ body #scene #right-zone {
     height: auto;
 }
 
-.overview-steps h2 {
-    padding-bottom: 10px;
-    border-bottom: 1.5px solid rgba(0, 0, 0, 0.24);
-    margin-bottom: 5%;
-}
-.ingredients p{
+    .overview-steps h2 {
+        padding-bottom: 10px;
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.24);
+        margin-bottom: 5%;
+    }
+
+.ingredients p {
     line-height: 15px;
 }
+
 .ingredients img {
     width: 550px;
-
 }
 
 .recipe-overview-text {
     color: #000;
     text-align: left;
 }
-.card{
+
+.card {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2%;
@@ -567,22 +606,23 @@ body #scene #right-zone {
 .btn-filter {
     border: none;
     outline: none;
-    background-color: RGBA(120,198,163,0.59) ;
+    background-color: RGBA(120,198,163,0.59);
     cursor: pointer;
     margin-bottom: 50px;
+    width:8em;
+    height:3em;
 }
 
     /* Add a light grey background on mouse-over */
     .btn-filter:hover {
-        background-color: #ddd;
+        background-color: RGBA(120,198,163);
     }
 
     /* Add a dark background to the active button */
-    .btn-filter.active {
+    .btn-filter:active {
         background-color: #78c6a3;
         color: white;
     }
-
 
 /*------------------------------------------------------------------------------------- SEARCHBAR CSS ---------------------------------------------------------------------------------------*/
 /*.home-search {

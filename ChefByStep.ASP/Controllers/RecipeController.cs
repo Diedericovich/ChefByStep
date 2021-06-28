@@ -8,7 +8,7 @@
     using ChefByStep.ASP.Models;
     using ChefByStep.ASP.Services;
     using ChefByStep.ASP.ViewModels;
-
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
 
@@ -68,6 +68,7 @@
         }
 
         // GET: RecipeController/Create
+        //[Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -89,14 +90,6 @@
                 return RedirectToAction("Index");
             }
             return View(vm);
-            //try
-            //{
-            //    return RedirectToAction(nameof(IndexAsync));
-            //}
-            //catch
-            //{
-            //    return View();
-            //}
         }
 
         // GET: RecipeController/Edit/5
