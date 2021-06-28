@@ -9,9 +9,16 @@
 
     public class BaseViewModel : INotifyPropertyChanged
     {
-        
-        public ActiveUser ActiveUser { get; set; }
-        
+        public ActiveUser ActiveUser
+        {
+            get => this.activeUser;
+            set
+            {
+                this.activeUser = value;
+                this.OnPropertyChanged(nameof(this.activeUser));
+            }
+        }
+
         public BaseViewModel()
         {
             ActiveUser = ActiveUser.GetInstance();
@@ -32,6 +39,8 @@
         }
 
         string title = string.Empty;
+
+        private ActiveUser activeUser;
 
         public string Title
         {

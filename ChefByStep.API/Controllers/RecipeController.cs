@@ -44,6 +44,12 @@ namespace ChefByStep.API.Controllers
             return await _service.GetRecipeAsync(id);
         }
 
+        [HttpGet("Search/{searchText}")]
+        public async Task<IEnumerable<Recipe>> GetRecipeBySearchAsync(string searchText)
+        {
+            return await _service.GetAllBySearch(searchText);
+        }
+
         [HttpGet]
         public async Task<IEnumerable<Recipe>> GetAllRecipesAsync()
         {

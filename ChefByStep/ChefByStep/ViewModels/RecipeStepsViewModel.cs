@@ -46,6 +46,7 @@
         public RecipeStepsViewModel()
         {
             _repo = new RecipeRepository();
+            //CookingTime = ConvertCookingTime(SelectedRecipe.CookTimeInMin);
         }
 
         private async Task LoadRecipe(int id)
@@ -53,13 +54,26 @@
             try
             {
                 var recipe = await _repo.GetRecipe(id);
+                int counter = 1;
+                foreach (var step in recipe.Steps)
+                {
+                    step.Id = counter;
+                    counter++;
+                }
+                recipe.CookingTime = ConvertCookingTime(recipe.CookTimeInMin);
                 SelectedRecipe = recipe;
             }
             catch (Exception)
             {
-                Debug.WriteLine("Failed to load place");
+                Debug.WriteLine("Failed to load Recipes");
             }
         }
 
+        private string ConvertCookingTime(int time)
+        {
+            TimeSpan result = TimeSpan.FromMinutes(time);
+            string fromTimeString = result.ToString("hh':'mm");
+            return fromTimeString;
+        }
     }
 }

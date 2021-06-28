@@ -11,7 +11,7 @@
 
     public class RecipeRepository : IRecipeRepository
     {
-         private const string baseUrl = "https://10.0.2.2:44350/api/Recipe";
+        private const string baseUrl = "https://10.0.2.2:44350/api/Recipe";
         //private const string baseUrl = "https://chefbystepapimgmt.azure-api.net/api/api/Recipe";
 
         public async Task<Recipe> GetRecipe(int id)
@@ -35,9 +35,9 @@
                     else
                     {
                         return new Recipe
-                               {
-                                   Title = "No data"
-                               };
+                        {
+                            Title = "No data"
+                        };
                     }
                 }
                 catch (Exception exception)
@@ -58,6 +58,80 @@
                 try
                 {
                     HttpResponseMessage message = await client.GetAsync(baseUrl);
+
+                    if (message.IsSuccessStatusCode)
+                    {
+                        string json = await message.Content.ReadAsStringAsync();
+                        List<Recipe> result = JsonConvert.DeserializeObject<List<Recipe>>(json);
+                        return result;
+                    }
+                    else
+                    {
+                        return new List<Recipe>
+                               {
+                                   new Recipe
+                                   {
+                                       Title = "No data"
+                                   }
+                               };
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
+            }
+        }
+
+        public async Task<List<Recipe>> GetAllRecipesByCategory(int categoryId)
+        {
+            var url = $"{baseUrl}/ByCategory/{categoryId}";
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
+
+            using (var client = new HttpClient(handler))
+            {
+                try
+                {
+                    HttpResponseMessage message = await client.GetAsync(url);
+
+                    if (message.IsSuccessStatusCode)
+                    {
+                        string json = await message.Content.ReadAsStringAsync();
+                        List<Recipe> result = JsonConvert.DeserializeObject<List<Recipe>>(json);
+                        return result;
+                    }
+                    else
+                    {
+                        return new List<Recipe>
+                               {
+                                   new Recipe
+                                   {
+                                       Title = "No data"
+                                   }
+                               };
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
+            }
+        }
+
+        public async Task<List<Recipe>> GetAllRecipesBySearch(string searchText)
+        {
+            var url = $"{baseUrl}/Search/{searchText}";
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
+
+            using (var client = new HttpClient(handler))
+            {
+                try
+                {
+                    HttpResponseMessage message = await client.GetAsync(url);
 
                     if (message.IsSuccessStatusCode)
                     {

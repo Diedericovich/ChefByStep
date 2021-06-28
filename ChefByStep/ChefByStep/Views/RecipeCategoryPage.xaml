@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ChefByStep.ViewModels"
+             x:Class="ChefByStep.Views.RecipeCategoryPage">
+    <ContentPage.BindingContext>
+        <local:RecipeCategoryViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid WidthRequest="600">
+                    <Frame
+                        Margin="20"
+                        BorderColor="Gray"
+                        CornerRadius="5"
+                        HasShadow="True">
+                        <StackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="{Binding CategoryName, StringFormat='{0} Recipes'}" />
+                            <BoxView
+                                HeightRequest="2"
+                                HorizontalOptions="Fill"
+                                Color="Gray" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+                <FlexLayout Wrap="Wrap"
+                        JustifyContent="SpaceEvenly"
+                        BindableLayout.ItemsSource="{Binding Recipes}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame
+                                Padding="0"
+                                Margin="3,10,3,10"
+                                BackgroundColor="white"
+                                CornerRadius="10"
+                                HasShadow="True"
+                                HeightRequest="150"
+                                HorizontalOptions="CenterAndExpand"
+                                WidthRequest="150">
+
+                                    <Grid HorizontalOptions="FillAndExpand">
+                                        <StackLayout BackgroundColor="Black">
+                                            <Image
+                                            Aspect="AspectFill"
+                                            HeightRequest="150"
+                                            Opacity="0.8"
+                                            Source="{Binding ImageUrl}" />
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Image
+                                            Margin="0,-10,0,0"
+                                            Aspect="AspectFit"
+                                            HeightRequest="60"
+                                            HorizontalOptions="EndAndExpand"
+                                            Source="icon_bookmark.png"
+                                            IsVisible="{Binding IsFavorited}" />
+                                            <Label
+                                            Margin="15,0,15,15"
+                                            FontAttributes="Bold"
+                                            FontSize="20"
+                                            Text="{Binding Title}"
+                                            TextColor="white"
+                                            VerticalOptions="EndAndExpand" />
+                                        </StackLayout>
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:RecipeCategoryViewModel}}, Path=ItemTapped}"
+                                            CommandParameter="{Binding .}"
+                                            NumberOfTapsRequired="1" />
+                                        </Grid.GestureRecognizers>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
