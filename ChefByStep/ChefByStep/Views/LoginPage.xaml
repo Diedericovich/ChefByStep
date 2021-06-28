@@ -80,7 +80,7 @@
                     </Grid.RowDefinitions>
                     <!--<Label Text="{Binding CurrentUser.ActiveUser.Name, StringFormat='Hi {0}'}" FontSize="22"/>-->
                 </Grid>
-                <Entry Grid.Row="1" Placeholder="User Name" FontSize="16" Keyboard="Telephone"  Text="{Binding Name}"/>
+                <Entry Grid.Row="1" Placeholder="User Name" FontSize="16" Text="{Binding Name}"/>
                 <Entry Grid.Row="2" Placeholder="Password" FontSize="16" IsPassword="True" Text="{Binding Password}"/>
                 <Button Text="LogIn" Command="{Binding LoginCommand}" 
                         Background="#00914f" 
@@ -93,10 +93,20 @@
                         HorizontalOptions="EndAndExpand" 
                         Margin=" 0,-10,0,0"
                         BackgroundColor="Transparent"
-                        Command="{Binding GoToHomeCommand}"/>
+                        Command="{Binding GuestCommand}"/>
 
-                <!---Login with Facebook for the next release-->
-                <Image Grid.Row="5" Source="logofacebook.png" Margin="-10" />
+                <!---Login with Facebook -->
+                <Image Grid.Row="5" 
+                       Source="facebooklogo.png" 
+                       Margin="-10" 
+                       HorizontalOptions="Center"
+                       >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                              CommandParameter="https://www.facebook.com" />
+                    </Image.GestureRecognizers>
+                </Image>
+
 
                 <Label Grid.Row="6" Text="Login with Facebook" HorizontalOptions="Center" Margin="10"/>
             </Grid>

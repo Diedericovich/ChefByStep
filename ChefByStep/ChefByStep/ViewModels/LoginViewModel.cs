@@ -1,11 +1,11 @@
 ﻿namespace ChefByStep.ViewModels
 {
     using System.Threading.Tasks;
-
+    using System.Windows.Input;
     using ChefByStep.Models;
     using ChefByStep.Services.Repositories;
     using ChefByStep.Views;
-
+    using Xamarin.Essentials;
     using Xamarin.Forms;
 
     public class LoginViewModel : BaseViewModel
@@ -15,6 +15,8 @@
         public Command LoginCommand { get; }
 
         public Command GuestCommand { get; }
+
+        public ICommand TapCommand { get; }
 
         public Task DisplayAlert { get; private set; }
 
@@ -53,6 +55,7 @@
             _userRepo = new UserRepository();
             LoginCommand = new Command(OnLoginClicked);
             GuestCommand = new Command(GoToHomePage);
+            TapCommand =  new Command<string>(async (url) => await Launcher.OpenAsync(url));
         }
 
         private async void OnLoginClicked()
