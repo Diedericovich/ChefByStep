@@ -78,7 +78,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Text="{Binding CurrentUser.ActiveUser.Name, StringFormat='Hi {0}'}" FontSize="22"/>
+                    <!--<Label Text="{Binding CurrentUser.ActiveUser.Name, StringFormat='Hi {0}'}" FontSize="22"/>-->
                 </Grid>
                 <Entry Grid.Row="1" Placeholder="User Name" FontSize="16" Keyboard="Telephone"  Text="{Binding Name}"/>
                 <Entry Grid.Row="2" Placeholder="Password" FontSize="16" IsPassword="True" Text="{Binding Password}"/>
@@ -96,7 +96,7 @@
                         Command="{Binding GoToHomeCommand}"/>
 
                 <!---Login with Facebook for the next release-->
-                <Image Grid.Row="5" Source="facebook.png" Margin="-10"/>
+                <Image Grid.Row="5" Source="logofacebook.png" Margin="-10" />
 
                 <Label Grid.Row="6" Text="Login with Facebook" HorizontalOptions="Center" Margin="10"/>
             </Grid>
