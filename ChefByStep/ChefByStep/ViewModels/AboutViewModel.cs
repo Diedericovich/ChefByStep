@@ -1,7 +1,9 @@
 ﻿namespace ChefByStep.ViewModels
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Input;
     using ChefByStep.Models;
@@ -13,7 +15,7 @@
     public class AboutViewModel : BaseViewModel
     {
         private RecipeRepository _repo;
-        public ICommand GoToProfile { get;}
+        public ICommand GoToProfile { get; }
 
         public AboutViewModel()
         {
@@ -21,6 +23,8 @@
             GoToProfile = new Command(GoToProfilePage);
             ShowAllTheRecipes();
             ItemTapped = new Command<Recipe>(OnRecipeSelected);
+            CategoryTapped = new Command<string>(OnCategorySelected);
+            SearchRecipe = new Command<string>(OnSearchRecipe);
         }
 
         private async void GoToProfilePage()
@@ -45,16 +49,39 @@
         }
 
         public Command<Recipe> ItemTapped { get; }
+        public Command<string> CategoryTapped { get; }
+        public Command<string> SearchRecipe { get; }
 
         private async Task ShowAllTheRecipes()
         {
             var recipes = await _repo.GetAllRecipes();
+            foreach (var recipe in recipes)
+            {
+                if (ActiveUser.ApplicationUser.FavoriteRecipes.FirstOrDefault(x => x.Title == recipe.Title) != null)
+                {
+                    recipe.IsFavorited = true;
+                }
+            }
             Recipes = new ObservableCollection<Recipe>(recipes);
         }
 
         private async void OnRecipeSelected(Recipe recipe)
         {
             await Shell.Current.GoToAsync($"{nameof(DetailPage)}?{nameof(DetailPageViewModel.RecipeId)}={recipe.Id}");
+        }
+
+        private async void OnCategorySelected(string id)
+        {
+            int categoryId = Convert.ToInt32(id);
+            await Shell.Current.GoToAsync($"{nameof(RecipeCategoryPage)}?{nameof(RecipeCategoryViewModel.CategoryId)}={categoryId}");
+        }
+
+        private async void OnSearchRecipe(string searchText)
+        {
+            //await Shell.Current.GoToAsync($"{nameof(SearchRecipePage)}?{nameof(SearchRecipeViewModel.SearchText)}={searchText}");
+            var recipes = await _repo.GetAllRecipesBySearch(searchText);
+
+            Recipes = new ObservableCollection<Recipe>(recipes);
         }
     }
 }
