@@ -139,7 +139,7 @@ body {
 }
 
     .overview-btn:hover {
-        background-color: RGBA(120,198,163,0.59);
+        background-color: #449671;
     }
 
 .overview-title {
@@ -170,13 +170,13 @@ body {
 }
 
 .random-btn {
-    background-color: RGBA(120,198,163,0.59);
+    background-color: RGBA(120,198,163);
     width: 200px;
     height: 40px;
 }
 
     .random-btn:hover {
-        background-color: RGBA(120,198,163);
+        background-color: #449671;
     }
 
 .recipe-row {
@@ -345,6 +345,8 @@ body {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
     width: 60%;
     margin-bottom: 20px;
     background-color: RGBA(120,198,163,0.59);
@@ -376,7 +378,7 @@ body {
     width:7em;
 }
     .btn-comment:hover {
-        background-color: RGBA(120,198,163);
+        background-color: #449671;
     }
 
 .input-rating {
@@ -387,7 +389,7 @@ body {
     margin-top: 20px;
 }
     .btn-create:hover {
-        background-color: RGBA(120,198,163, 0.59);
+        background-color: #449671;
     }
 .btn-add-row {
     background-color: RGBA(120,198,163, 0.59);
@@ -406,9 +408,12 @@ body {
     height: 3em;
     background-color: RGBA(120,198,163);
 }
+    .btn-create-recipe:active {
+        background-color: #449671;
+    }
 
     .btn-create-recipe:hover {
-        background-color: RGBA(120,198,163, 0.59);
+        background-color: #449671;
     }
 .step-table{
     width: 100%;
@@ -752,7 +757,7 @@ body #scene #right-zone {
 .btn-filter {
     border: none;
     outline: none;
-    background-color: RGBA(120,198,163,0.59);
+    background-color: RGB(120,198,163);
     cursor: pointer;
     margin-bottom: 50px;
     width:8em;
@@ -761,12 +766,12 @@ body #scene #right-zone {
 
     /* Add a light grey background on mouse-over */
     .btn-filter:hover {
-        background-color: RGBA(120,198,163);
+        background-color: #449671;
     }
 
     /* Add a dark background to the active button */
     .btn-filter:active {
-        background-color: #78c6a3;
+        background-color: #449671;
         color: white;
     }
 
