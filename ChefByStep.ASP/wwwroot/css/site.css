@@ -7,6 +7,8 @@
 6. STEP OVERVIEW
 7. OVERVIEW FILTER
 8. SEARCHBAR CSS
+9. LOGIN PAGE
+10. REGISTER PAGE
 */
 
 /*------------------------------------------------------------------------------------- NAVBAR ---------------------------------------------------------------------------------------*/
@@ -272,7 +274,6 @@ body {
 .detail-time-left {
     margin: 0;
     border-right: 1px solid #78c6a3;
-    ;
 }
 
 .detail-time-right {
@@ -659,3 +660,101 @@ body #scene #right-zone {
 .home-search input {
     height: 20%;
 }*/
+
+
+/*------------------------------------------------------------------------------------- LOGIN PAGE ---------------------------------------------------------------------------------------*/
+
+
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+}
+
+.login {
+    border-radius: 2px 2px 5px 5px;
+    padding: 20px 30px 49px 20px;
+    width: 90%;
+    max-width: 350px;
+    background: #ffffff;
+    position: relative;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+}
+
+.form-control {
+    box-shadow: 0px 0px 0px 0px #F4B942;
+    transition: box-shadow 0.3s linear;
+    margin: 0.5em;
+}
+
+.form-control:hover {
+    box-shadow: 0px 0px 0px 1.7px #F4B942;
+}
+
+.login_input {
+display: block;
+padding: 5px 0px;
+width: 100%;
+transition: border-width 0.9s ease;
+border-radius: 3px;
+}
+
+.login_link {
+    font-size: 0.7em;
+    color: cornflowerblue;
+    text-decoration: none;
+    margin: 0em 0em -20em 0em;
+    }
+
+#remember_check {
+    padding: 5px 0px 0px 10px;
+}
+
+.checkbox {
+    font-size: 0.75em;
+}
+
+.login_button {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    margin-top: 10px;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    max-height: 60px;
+    border: 0px solid rgba(0,0,0,0.1);
+    border-radius: 0 0 2px 2px;
+    background-color: RGBA(120,198,163,0.59);
+    font-size: larger;
+}
+
+    .login_button:hover {
+        background-color: #F4B942;
+        color: white;
+        font-weight: 700;
+    }
+
+/*-----------------------------REGISTER PAGE -----------------------*/
+
+.register {
+    border-radius: 2px 2px 5px 5px;
+    padding: 20px 30px 70px 20px;
+    width: 90%;
+    max-width: 350px;
+    background: #ffffff;
+    position: relative;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
+
