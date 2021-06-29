@@ -1,5 +1,156 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model RecipeEditViewModel
+
+<div class="overview">
+    <h1>Edit Recipe</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="col">
+                        <h3>Details</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7">
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label asp-for="CategoryId" class="control-label"></label>
+                            <select class="form-control" asp-for="CategoryId" asp-items="Html.GetEnumSelectList<Category>()"></select>
+                            <span asp-validation-for="CategoryId" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-label"></label>
+                            <textarea asp-for="Description" class="form-control"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="PrepTimeInMin"></label>
+                            <input class="form-control" asp-for="PrepTimeInMin" />
+                            <span asp-validation-for="PrepTimeInMin" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="CookTimeInMin"></label>
+                            <input class="form-control" asp-for="CookTimeInMin" />
+                            <span asp-validation-for="CookTimeInMin" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ImageUrl" class="control-label"></label>
+                            <input asp-for="ImageUrl" class="form-control" />
+                            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col">
+                        <h3>Steps</h3>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @for (int i = 0; i < Model.Steps.Count; i++)
+                    {
+                        <textarea asp-for="Steps[i].Instruction" class="form-control"></textarea>
+                        <input asp-for="Steps[i].Id" hidden/>
+                        <span asp-validation-for="Steps[i].Instruction" class="text-danger"></span>
+                    }
+                    
+                    <table id="AddStepsTable">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Steps[Model.Steps.Count()].Instruction)</th>
+                        </tr>
+                    </table>
+                    <button class="btn btn-add-row" onclick="addStepsRow()" type="button">Add New Step</button>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <h3>Ingredients</h3>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        @for (int i = 0; i < Model.Ingredients.Count; i++)
+                        {
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <input asp-for="Ingredients[i].Amount" class="form-control" />
+                                <input asp-for="Ingredients[i].Id" hidden/>
+                                <span asp-validation-for="Ingredients[i].Amount" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 col-md-9 col-lg-9">
+                                <input asp-for="Ingredients[i].Ingredient.Name" class="form-control" />
+                                <input asp-for="Ingredients[i].Ingredient.Id" hidden />
+                                <span asp-validation-for="Ingredients[i].Ingredient.Name" class="text-danger"></span>
+                            </div>
+                        }
+                        }
+                    </div>
+                    <table id="AddIngredientsTable">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Ingredients[@Model.Ingredients.Count].Amount)</th>
+                            <th>@Html.DisplayNameFor(model => model.Ingredients[@Model.Ingredients.Count].Ingredient.Name)</th>
+                        </tr>
+                    </table>
+                    <button class="btn btn-add-row" onclick="addIngredientRow()" type="button">Add New Ingredient</button>
+                </div>
+
+                <div>
+                    <input asp-for="CreatedById" class="form-control" hidden />
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-create" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        var stepCounter = @Model.Steps.Count;
+        var ingredientCounter = @Model.Ingredients.Count;
+
+        function addStepsRow() {
+            var table = document.getElementById("AddStepsTable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            cell1.innerHTML = '<textarea type="text" asp-for="Steps[' + stepCounter + '].Instruction" name="Steps[' + stepCounter + '].Instruction"></textarea>';
+            stepCounter++;
+        }
+
+        function addIngredientRow() {
+            var table = document.getElementById("AddIngredientsTable");
+            var row = table.insertRow(-1);
+            var cell2 = row.insertCell(0);
+            var cell1 = row.insertCell(1);
+            cell2.innerHTML = '<textarea asp-for="Ingredients[' + ingredientCounter + '].Ingredient.Name" name="Ingredients[' + ingredientCounter + '].Ingredient.Name"></textarea>';
+            cell1.innerHTML = '<textarea asp-for="Ingredients[' + ingredientCounter + '].Amount" name="Ingredients[' + ingredientCounter + '].Amount"></textarea>';
+            ingredientCounter++;
+        }
+    </script>
 }

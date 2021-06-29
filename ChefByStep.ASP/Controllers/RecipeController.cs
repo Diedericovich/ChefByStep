@@ -8,10 +8,11 @@
     using ChefByStep.ASP.Models;
     using ChefByStep.ASP.Services;
     using ChefByStep.ASP.ViewModels;
-
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
 
+    [Authorize]
     public class RecipeController : Controller
     {
         private readonly IRecipeService _recipeService;
@@ -28,13 +29,13 @@
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         public async Task<ActionResult> IndexAsync()
         {
             ICollection<Recipe> recipes = await _recipeService.GetRecipesAsync();
             var viewModel = new RecipeViewModel { Recipes = _mapper.Map<ICollection<Recipe>>(recipes) };
             return View(viewModel);
         }
-
 
         public async Task<ActionResult> DetailAsync(int id)
         {
@@ -53,11 +54,9 @@
             string name = User.Identity.Name;
             var user = await _userService.GetUserByNameAsync(name);
             recipeRating.UserId = user.Id;
-            this._ratingService.PostRecipeRating(recipeRating);
+            _ratingService.PostRecipeRating(recipeRating);
 
             var temp = vm.RecipeRatingVm.RecipeId;
-
-
 
             return RedirectToAction($"Detail", temp);
         }
@@ -71,6 +70,7 @@
         }
 
         // GET: RecipeController/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -79,53 +79,73 @@
         // POST: RecipeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(RecipeCreateViewModel vm)
         {
-            try
+            bool IsValid = TryValidateModel(vm);
+            if (IsValid)
             {
-                return RedirectToAction(nameof(IndexAsync));
+                string name = User.Identity.Name;
+                var user = await _userService.GetUserByNameAsync(name);
+                Recipe recipe = _mapper.Map<Recipe>(vm);
+                recipe.CreatedById = user.Id;
+                await _recipeService.PostRecipe(recipe);
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(vm);
         }
 
         // GET: RecipeController/Edit/5
-        public ActionResult Edit(int id)
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> EditAsync(int id)
         {
-            return View();
+            if (id == 0)
+            {
+                return NotFound();
+            }
+            Recipe recipe = await _recipeService.GetRecipeAsync(id);
+            if (recipe == null)
+            {
+                return NotFound();
+            }
+            RecipeEditViewModel vm = _mapper.Map<RecipeEditViewModel>(recipe);
+            return View(vm);
         }
 
         // POST: RecipeController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> EditAsync( RecipeEditViewModel viewModel)
         {
-            try
+            bool isValid = TryValidateModel(viewModel);
+
+            if (!isValid)
             {
-                return RedirectToAction(nameof(IndexAsync));
+                return View(viewModel);
             }
-            catch
-            {
-                return View();
-            }
+
+            Recipe recipe = _mapper.Map<Recipe>(viewModel);
+            await _recipeService.UpdateRecipe(recipe);
+            return RedirectToAction("Index");
         }
 
         // GET: RecipeController/Delete/5
-        public ActionResult Delete(int id)
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> DeleteAsync(int id)
         {
-            return View();
+            Recipe recipe = await _recipeService.GetRecipeAsync(id);
+            RecipeDeleteViewModel vm = _mapper.Map<RecipeDeleteViewModel>(recipe);
+            return View(vm);
         }
 
         // POST: RecipeController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> DeleteAsync(int id, IFormCollection collection)
         {
             try
             {
-                return RedirectToAction(nameof(IndexAsync));
+                await _recipeService.DeleteRecipeAsync(id);
+                return RedirectToAction("Index");
             }
             catch
             {

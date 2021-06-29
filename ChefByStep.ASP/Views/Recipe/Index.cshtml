@@ -1,82 +1,218 @@
 ﻿@using Microsoft.AspNetCore.Components.Forms
 @model RecipeViewModel
 
-<div class="overview list-container">
-    <h1>Our recipes</h1>
-    <div id="myBtnContainer">
-        <button class="btn btn-filter active" onclick="filterSelection('all')"> Show all</button>
-        @*@foreach (var category in Enum.GetNames(typeof(Category)))
-        {
-            <button class="btn" onclick="filterSelection('@category')"> @category</button>
-        }*@
-        <button class="btn btn-filter" onclick="filterSelection('Breakfast')"> Breakfast</button>
-        <button class="btn btn-filter" onclick="filterSelection('Lunch')"> Lunch</button>
-        <button class="btn btn-filter" onclick="filterSelection('Dinner')"> Dinner</button>
-        <button class="btn btn-filter" onclick="filterSelection('Dessert')"> Dessert</button>
+    <div class="overview list-container">
+        <h1 class="mb-2">Our Recipes</h1>
+        <div id="myBtnContainer">
+            <button class="btn btn-filter" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn btn-filter" onclick="filterSelection('Breakfast')"> Breakfast</button>
+            <button class="btn btn-filter" onclick="filterSelection('Lunch')"> Lunch</button>
+            <button class="btn btn-filter" onclick="filterSelection('Dinner')"> Dinner</button>
+            <button class="btn btn-filter" onclick="filterSelection('Dessert')"> Dessert</button>
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="btn btn-create-recipe" asp-controller="Recipe" asp-action="Create">Add Recipe</a>
+            }
+            
+        </div>
+        <div class="row recipe-row">
+            @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Breakfast))
+            {
+                double totalRating = 0;
+                double averageRating = 0;
+                if (recipe.Ratings.Count == 0)
+                {
+                    averageRating = 3.0;
+                }
+                else
+                {
+                    @foreach (var rating in recipe.Ratings)
+                    {
+                        totalRating += rating.Rating;
+                    }
+                    averageRating = totalRating / recipe.Ratings.Count;
+                }
+                <div class="filterDiv @Category.Breakfast show col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card overview-tile" style="width: 18rem;">
+                        <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                            <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="recipe-overview-text">@recipe.Title</h5>
+                                <p class="recipe-overview-text">
+                                    <span>
+                                        @switch (Math.Round(averageRating))
+                                        {
+                                            case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    </span>
+                                    (@recipe.Ratings.Count ratings)
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+            @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Lunch))
+            {
+                double totalRating = 0;
+                double averageRating = 0;
+                if (recipe.Ratings.Count == 0)
+                {
+                    averageRating = 3.0;
+                }
+                else
+                {
+                    @foreach (var rating in recipe.Ratings)
+                    {
+                        totalRating += rating.Rating;
+                    }
+                    averageRating = totalRating / recipe.Ratings.Count;
+                }
+                <div class="filterDiv @Category.Lunch show col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card overview-tile" style="width: 18rem;">
+                        <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                            <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="recipe-overview-text">@recipe.Title</h5>
+                                <p class="recipe-overview-text">
+                                    <span>
+                                        @switch (Math.Round(averageRating))
+                                        {
+                                            case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    </span>
+                                    (@recipe.Ratings.Count ratings)
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+            @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dinner))
+            {
+
+                double totalRating = 0;
+                double averageRating = 0;
+                if (recipe.Ratings.Count == 0)
+                {
+                    averageRating = 3.0;
+                }
+                else
+                {
+                    @foreach (var rating in recipe.Ratings)
+                    {
+                        totalRating += rating.Rating;
+                    }
+                    averageRating = totalRating / recipe.Ratings.Count;
+                }
+                <div class="filterDiv @Category.Dinner show col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card overview-tile" style="width: 18rem;">
+                        <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                            <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="recipe-overview-text">@recipe.Title</h5>
+                                <p class="recipe-overview-text">
+                                    <span>
+                                        @switch (Math.Round(averageRating))
+                                        {
+                                            case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    </span>
+                                    (@recipe.Ratings.Count ratings)
+                                </p>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+            @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dessert))
+            {
+                double totalRating = 0;
+                double averageRating = 0;
+                if (recipe.Ratings.Count == 0)
+                {
+                    averageRating = 3.0;
+                }
+                else
+                {
+                    @foreach (var rating in recipe.Ratings)
+                    {
+                        totalRating += rating.Rating;
+                    }
+                    averageRating = totalRating / recipe.Ratings.Count;
+                }
+                <div class="filterDiv @Category.Dessert show col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card overview-tile" style="width: 18rem;">
+                        <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
+                            <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="recipe-overview-text">@recipe.Title</h5>
+                                <p class="recipe-overview-text">
+                                    <span>
+                                        @switch (Math.Round(averageRating))
+                                        {
+                                            case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
+                                                break;
+                                            case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    </span>
+                                    (@recipe.Ratings.Count ratings)
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 
-    @*<div id="list1" class="dropdown-check-list" tabindex="100">
-        <span class="anchor">Filter</span>
-        <ul class="items">
-            <li><input type="checkbox" id="breakfast" />Breakfast </li>
-            <li><input type="checkbox" id="lunch" />Lunch</li>
-            <li><input type="checkbox" id="dinner" />Dinner </li>
-            <li><input type="checkbox" id="dessert" />Dessert </li>
-        </ul>
-    </div>*@
-<div class="row recipe-row">
-    @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Breakfast))
-    {
-        <div class="filterDiv @Category.Breakfast show col-sm-12 col-md-6 col-lg-4">
-            <div class="card overview-tile" style="width: 18rem;">
-                <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
-                    <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="recipe-overview-text">@recipe.Title</h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-    }
-    @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Lunch))
-    {
-        <div class="filterDiv @Category.Lunch show col-sm-12 col-md-6 col-lg-4">
-            <div class="card overview-tile" style="width: 18rem;">
-                <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
-                    <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="recipe-overview-text">@recipe.Title</h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-    }
-    @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dinner))
-    {
-        <div class="filterDiv @Category.Dinner show col-sm-12 col-md-6 col-lg-4">
-            <div class="card overview-tile" style="width: 18rem;">
-                <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
-                    <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="recipe-overview-text">@recipe.Title</h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-    }
-    @foreach (var recipe in Model.Recipes.Where(x => x.CategoryId == Category.Dessert))
-    {
-        <div class="filterDiv @Category.Dessert show col-sm-12 col-md-6 col-lg-4">
-            <div class="card overview-tile" style="width: 18rem;">
-                <a asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id="@recipe.Id">
-                    <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="recipe-overview-text">@recipe.Title</h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-    }
-</div>
-</div>
-
+@section Scripts{
+    <script>
+        if ( == "admin") {
+            $(".admin").show();
+        }
+    </script>
+}

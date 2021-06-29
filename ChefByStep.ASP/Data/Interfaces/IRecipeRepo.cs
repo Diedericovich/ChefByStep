@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ChefByStep.ASP.Services
+namespace ChefByStep.ASP.Data
 {
-    public interface IRecipeService
+    public interface IRecipeRepo
     {
+        Task DeleteRecipe(int id);
         Task<Recipe> GetRecipeAsync(int id);
         Task<IList<Recipe>> GetRecipesAsync();
+        Task PostRecipeAsync(Recipe recipe);
+        Task UpdateRecipeAsync(Recipe recipe);
     }
 }

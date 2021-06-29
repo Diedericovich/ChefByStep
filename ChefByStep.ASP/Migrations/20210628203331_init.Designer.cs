@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChefByStep.ASP.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210623094835_init")]
+    [Migration("20210628203331_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

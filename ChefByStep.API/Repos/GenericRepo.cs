@@ -39,6 +39,7 @@
 
         public virtual async Task UpdateAsync(T item)
         {
+            //_context.Attach(item);
             _context.Update(item);
             await _context.SaveChangesAsync();
         }

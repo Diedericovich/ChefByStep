@@ -4,14 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ChefByStep.ASP.Data
 {
-
     public class RecipeRepo : IRecipeRepo
     {
         private const string apiUrl = "https://localhost:44350";
+
         //private const string apiUrl = "https://chefbystepapimgmt.azure-api.net/api/api/Recipe";
         private string url;
 
@@ -33,6 +34,36 @@ namespace ChefByStep.ASP.Data
             return result;
         }
 
+        public async Task PostRecipeAsync(Recipe recipe)
+        {
+            url = $"{ apiUrl}/api/Recipe";
+            HttpResponseMessage message = await PostHttpResponseMessageAsync(url, recipe);
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+        }
+
+        public async Task UpdateRecipeAsync(Recipe recipe)
+        {
+            url = $"{ apiUrl}/api/Recipe";
+            HttpResponseMessage message = await UpdateHttpResponseMessageAsync(url, recipe);
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+        }
+
+        public async Task DeleteRecipe(int id)
+        {
+            url = GenerateUrl(id);
+            HttpResponseMessage message = await DeleteHttpResponseMessageAsync(url);
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+        }
+
         private async Task<HttpResponseMessage> GetHttpResponseMessageAsync(string url)
         {
             var client = new HttpClient();
@@ -44,7 +75,49 @@ namespace ChefByStep.ASP.Data
             }
 
             return message;
+        }
 
+        private async Task<HttpResponseMessage> PostHttpResponseMessageAsync(string url, Recipe recipe)
+        {
+            var client = new HttpClient();
+            var json = JsonConvert.SerializeObject(recipe);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage message = await client.PostAsync(url, httpContent);
+
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+
+            return message;
+        }
+
+        private async Task<HttpResponseMessage> UpdateHttpResponseMessageAsync(string url, Recipe recipe)
+        {
+            var client = new HttpClient();
+            var json = JsonConvert.SerializeObject(recipe);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage message = await client.PutAsync(url, httpContent);
+
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+
+            return message;
+        }
+
+        private async Task<HttpResponseMessage> DeleteHttpResponseMessageAsync(string url)
+        {
+            var client = new HttpClient();
+            HttpResponseMessage message = await client.DeleteAsync(url);
+
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+
+            return message;
         }
 
         private async Task<Recipe> GetEntityFromJsonAsync(HttpResponseMessage message)
@@ -60,7 +133,6 @@ namespace ChefByStep.ASP.Data
             {
                 throw new JsonSerializationException("Serialization failed", e);
             }
-
         }
 
         private async Task<List<Recipe>> GetEntitiesFromJsonAsync(HttpResponseMessage message)
@@ -70,13 +142,11 @@ namespace ChefByStep.ASP.Data
             try
             {
                 return JsonConvert.DeserializeObject<List<Recipe>>(json);
-
             }
             catch (Exception e)
             {
                 throw new JsonSerializationException("Serialization failed", e);
             }
-
         }
 
         private string GenerateUrl(int id)
@@ -88,6 +158,5 @@ namespace ChefByStep.ASP.Data
 
             return $"{apiUrl}/api/Recipe/{id}";
         }
-
     }
 }
