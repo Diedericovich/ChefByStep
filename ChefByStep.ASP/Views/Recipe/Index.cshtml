@@ -1,12 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Components.Forms
 @model RecipeViewModel
 
-@if (User.IsInRole("admin"))
-    {
-        
-    }
-
-
     <div class="overview list-container">
         <h1 class="mb-2">Our Recipes</h1>
         <div id="myBtnContainer">
@@ -15,9 +9,9 @@
             <button class="btn btn-filter" onclick="filterSelection('Lunch')"> Lunch</button>
             <button class="btn btn-filter" onclick="filterSelection('Dinner')"> Dinner</button>
             <button class="btn btn-filter" onclick="filterSelection('Dessert')"> Dessert</button>
-            @if (User.IsInRole("admin"))
+            @if (User.IsInRole("Admin"))
             {
-                <button class="btn btn-create-recipe">Add Recipe</button>
+                <a class="btn btn-create-recipe" asp-controller="Recipe" asp-action="Create">Add Recipe</a>
             }
             
         </div>

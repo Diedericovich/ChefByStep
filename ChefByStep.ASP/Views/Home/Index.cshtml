@@ -19,20 +19,28 @@
 }
 <div class="overview">
     <div class="mb-5">
-        <div class="float-left header">
-            <div class="header-title">
-                <p>Tired of not being able to cook properly?</p>
-                <p>Try out our new Chef-By-Step!</p>
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-5">
+                <div class="header-title">
+                    <p>Tired of not being able to cook properly?</p>
+                    <p>Try out our new <br />Chef-By-Step!</p>
+                </div>
+                <p class="decriptive-header">Try out any recipe from our library that contains +200 recipes.</p>
+                <a class="btn overview-btn" asp-area="" asp-controller="Recipe" asp-action="Index">View recipes</a>
             </div>
-            <p class="decriptive-header">Try out any recipe from our library that contains +200 recipes.</p>
-            <a class="btn overview-btn" asp-area="" asp-controller="Recipe" asp-action="Index">View recipes</a>
+            <div class="col-sm-12 col-md-8 col-lg-7">
+                <img class="header-img"  src="https://images.food52.com/UL7ZymgTTVQHQVJHPZtbwYjAHIA=/1008x672/filters:format(webp)/6847c864-39cb-496b-8730-0d98d4ea6225--2016-0330_polenta-cakes-with-caramelized-onions-goat-cheese-and-honey_alpha-smoot_370.jpg" />
+            </div>
+        </div>
+        @*<div class="float-left header">
+            
         </div>
         <div class="float-right header">
-            <img src="https://images.food52.com/UL7ZymgTTVQHQVJHPZtbwYjAHIA=/1008x672/filters:format(webp)/6847c864-39cb-496b-8730-0d98d4ea6225--2016-0330_polenta-cakes-with-caramelized-onions-goat-cheese-and-honey_alpha-smoot_370.jpg" class=" header-img" width="450" />
-        </div>
-        <div class="overview-title">
+            
+        </div>*@
+        <div class="overview-title-random">
             <p class="random-recipe">Surprise me with a recipe!</p>
-            <a class="btn random-btn" asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id=@randomId>Start to cook!</a>
+            <a class="btn random-btn" asp-area="" asp-controller="Recipe" asp-action="Detail" asp-route-id=@randomId>Start cooking!</a>
         </div>
     </div>
 

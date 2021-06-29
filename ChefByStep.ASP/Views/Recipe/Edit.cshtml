@@ -1,11 +1,11 @@
 ﻿@model RecipeEditViewModel
 
 <div class="overview">
-    <h1>Create a Recipe</h1>
+    <h1>Edit Recipe</h1>
     <hr />
     <div class="row">
         <div class="col-md-12">
-            <form asp-action="Create">
+            <form asp-action="Edit" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="row">
                     <div class="col">
@@ -69,49 +69,88 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    @for (int i = 0; i < Model.Steps.Count; i++)
+                    {
+                        <textarea asp-for="Steps[i].Instruction" class="form-control"></textarea>
+                        <input asp-for="Steps[i].Id" hidden/>
+                        <span asp-validation-for="Steps[i].Instruction" class="text-danger"></span>
+                    }
+                    
+                    <table id="AddStepsTable">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Steps[Model.Steps.Count()].Instruction)</th>
+                        </tr>
+                    </table>
+                    <button class="btn btn-add-row" onclick="addStepsRow()" type="button">Add New Step</button>
+                </div>
 
-                @*Make an editable list our of steps and ingredients?*@
-
-
-                <table id="AddStepsTable">
-                    <tr>
-                        <th>@Html.DisplayNameFor(model => model.Steps[0].Instruction)</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <textarea name="Steps[0].Instruction"></textarea>
-                        </td>
-                    </tr>
-                </table>
-
-                <button class="btn btn-add-row" onclick="addStepsRow()" type="button">Add New Step</button>
-
-                <hr />
                 <div class="row">
                     <div class="col">
                         <h3>Ingredients</h3>
                     </div>
                 </div>
-                <table id="AddIngredientsTable">
-                    <tr>
-                        <th>@Html.DisplayNameFor(model => model.Ingredients[0].Amount)</th>
-                        <th>@Html.DisplayNameFor(model => model.Ingredients[0].Ingredient.Name)</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <textarea name="Ingredients[0].Amount"></textarea>
-                        </td>
-                        <td>
-                            <textarea name="Ingredients[0].Ingredient.Name"></textarea>
-                        </td>
-                    </tr>
-                </table>
-                <button class="btn btn-add-row" onclick="addIngredientRow()" type="button">Add New Ingredient</button>
 
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-create" />
+                    <div class="row">
+                        @for (int i = 0; i < Model.Ingredients.Count; i++)
+                        {
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <input asp-for="Ingredients[i].Amount" class="form-control" />
+                                <input asp-for="Ingredients[i].Id" hidden/>
+                                <span asp-validation-for="Ingredients[i].Amount" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 col-md-9 col-lg-9">
+                                <input asp-for="Ingredients[i].Ingredient.Name" class="form-control" />
+                                <input asp-for="Ingredients[i].Ingredient.Id" hidden />
+                                <span asp-validation-for="Ingredients[i].Ingredient.Name" class="text-danger"></span>
+                            </div>
+                        }
+                        }
+                    </div>
+                    <table id="AddIngredientsTable">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Ingredients[@Model.Ingredients.Count].Amount)</th>
+                            <th>@Html.DisplayNameFor(model => model.Ingredients[@Model.Ingredients.Count].Ingredient.Name)</th>
+                        </tr>
+                    </table>
+                    <button class="btn btn-add-row" onclick="addIngredientRow()" type="button">Add New Ingredient</button>
+                </div>
+
+                <div>
+                    <input asp-for="CreatedById" class="form-control" hidden />
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-create" />
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+
+@section Scripts {
+    <script>
+        var stepCounter = @Model.Steps.Count;
+        var ingredientCounter = @Model.Ingredients.Count;
+
+        function addStepsRow() {
+            var table = document.getElementById("AddStepsTable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            cell1.innerHTML = '<textarea type="text" asp-for="Steps[' + stepCounter + '].Instruction" name="Steps[' + stepCounter + '].Instruction"></textarea>';
+            stepCounter++;
+        }
+
+        function addIngredientRow() {
+            var table = document.getElementById("AddIngredientsTable");
+            var row = table.insertRow(-1);
+            var cell2 = row.insertCell(0);
+            var cell1 = row.insertCell(1);
+            cell2.innerHTML = '<textarea asp-for="Ingredients[' + ingredientCounter + '].Ingredient.Name" name="Ingredients[' + ingredientCounter + '].Ingredient.Name"></textarea>';
+            cell1.innerHTML = '<textarea asp-for="Ingredients[' + ingredientCounter + '].Amount" name="Ingredients[' + ingredientCounter + '].Amount"></textarea>';
+            ingredientCounter++;
+        }
+    </script>
+}

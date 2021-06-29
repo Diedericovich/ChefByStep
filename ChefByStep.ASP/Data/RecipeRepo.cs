@@ -44,6 +44,26 @@ namespace ChefByStep.ASP.Data
             }
         }
 
+        public async Task UpdateRecipeAsync(Recipe recipe)
+        {
+            url = $"{ apiUrl}/api/Recipe";
+            HttpResponseMessage message = await UpdateHttpResponseMessageAsync(url, recipe);
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+        }
+
+        public async Task DeleteRecipe(int id)
+        {
+            url = GenerateUrl(id);
+            HttpResponseMessage message = await DeleteHttpResponseMessageAsync(url);
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+        }
+
         private async Task<HttpResponseMessage> GetHttpResponseMessageAsync(string url)
         {
             var client = new HttpClient();
@@ -63,6 +83,34 @@ namespace ChefByStep.ASP.Data
             var json = JsonConvert.SerializeObject(recipe);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
             HttpResponseMessage message = await client.PostAsync(url, httpContent);
+
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+
+            return message;
+        }
+
+        private async Task<HttpResponseMessage> UpdateHttpResponseMessageAsync(string url, Recipe recipe)
+        {
+            var client = new HttpClient();
+            var json = JsonConvert.SerializeObject(recipe);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage message = await client.PutAsync(url, httpContent);
+
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+
+            return message;
+        }
+
+        private async Task<HttpResponseMessage> DeleteHttpResponseMessageAsync(string url)
+        {
+            var client = new HttpClient();
+            HttpResponseMessage message = await client.DeleteAsync(url);
 
             if (!message.IsSuccessStatusCode)
             {

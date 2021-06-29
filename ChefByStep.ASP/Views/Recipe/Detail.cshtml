@@ -55,7 +55,10 @@
                     <p class="col-sm-12 col-md-6 col-lg-6 detail-time-left">@Model.RecipeDetailVm.PrepTimeInMin min </p>
                     <p class="col-sm-12 col-md-6 col-lg-6 detail-time-right">@Model.RecipeDetailVm.CookTimeInMin min</p>
                 </div>
-
+                
+            </div>
+            <div class="btn-cook">
+                <a class="btn nav-link btn-cook-btn" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
             </div>
         </div>
 
@@ -71,12 +74,17 @@
 
                 }
             </div>
-            <div class="btn-cook">
-                <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
-            </div>
-            <div class="admin">
-                <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Edit" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
-            </div>
+            @if (User.IsInRole("Admin"))
+            {
+                <div>
+                    <a class="btn nav-link btn-edit" asp-area="" asp-controller="Recipe" asp-action="Edit" asp-route-id="@Model.RecipeDetailVm.Id">Edit Recipe</a>
+                </div>
+                <div>
+                    <a class="btn nav-link btn-edit" asp-area="" asp-controller="Recipe" asp-action="Delete" asp-route-id="@Model.RecipeDetailVm.Id">Delete Recipe</a>
+                </div>
+                @*<a class="btn btn-create-recipe" asp-controller="Recipe" asp-action="Create">Add Recipe</a>*@
+            }
+
         </div>
 
     </div>

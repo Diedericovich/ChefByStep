@@ -104,15 +104,18 @@ body {
     /*font-family: Britannic;*/
     font-size: 3em;
     font-weight: 600;
-    line-height: 40px;
+    line-height: 50px;
+    margin-right: 20px;
 }
 
 .decriptive-header {
     font-size: 1.5em;
+    margin-right: 20px;
 }
 
 .header-img {
     width: 100%;
+    margin-top: 10px;
 }
 
 /*------------------------------------------------------------------------------------- BODY ---------------------------------------------------------------------------------------*/
@@ -135,6 +138,20 @@ body {
     font-size: 2.5em;
     font-weight: 600;
     line-height: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overview-title-random {
+    font-size: 2.5em;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid RGBA(177, 181, 179, 0.59);
+    border-bottom: 1px solid RGBA(177, 181, 179, 0.59);
 }
 
 .random-recipe {
@@ -143,6 +160,8 @@ body {
 
 .random-btn {
     background-color: RGBA(120,198,163,0.59);
+    width: 200px;
+    height: 40px;
 }
 
     .random-btn:hover {
@@ -199,14 +218,34 @@ body {
 }
 
 .btn-cook {
-    background-color: RGBA(120,198,163,0.59);
+    background-color: #F4B942;
+    width: 60%;
     border-radius: 5px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
 }
-
+.btn-cook:hover{
+    background-color: RGBA(244,185,66,0.59);
+}
+.btn-cook-btn{
+    font-size: 1.6em;
+}
+    .btn-cook-btn:hover {
+        background-color: RGBA(244,185,66,0.59);
+    }
+.btn-edit {
+    background-color: RGBA(120,198,163);
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+    .btn-edit:hover {
+        background-color: RGBA(120,198,163,0.59);
+    }
 .detail-img {
     width: 100%;
 }
@@ -320,6 +359,7 @@ body {
     outline: none;
     cursor: pointer;
     margin-bottom: 50px;
+    padding-top: 12px;
     width: 8em;
     height: 3em;
     background-color: RGBA(120,198,163);

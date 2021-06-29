@@ -32,5 +32,15 @@ namespace ChefByStep.ASP.Services
         {
             await _repo.PostRecipeAsync(recipe);
         }
+
+        public async Task UpdateRecipe(Recipe recipe)
+        {
+            await _repo.UpdateRecipeAsync(recipe);
+        }
+
+        public async Task DeleteRecipeAsync(int id)
+        {
+            await _repo.DeleteRecipe(id);
+        }
     }
 }
