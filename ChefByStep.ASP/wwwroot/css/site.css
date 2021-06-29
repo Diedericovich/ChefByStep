@@ -124,11 +124,11 @@ body {
 }
 
 .overview-btn {
-    background-color: RGBA(120,198,163,0.59);
+    background-color: RGBA(120,198,163);
 }
 
     .overview-btn:hover {
-        background-color: RGBA(120,198,163);
+        background-color: RGBA(120,198,163,0.59);
     }
 
 .overview-title {
@@ -284,7 +284,7 @@ body {
 }
 
 .btn-comment {
-    background-color: RGBA(120,198,163,0.59);
+    background-color: RGBA(120,198,163);
     border-radius: 5px;
     text-align: center;
     margin-left: auto;
@@ -301,11 +301,24 @@ body {
 .input-rating {
     margin-top: 10px;
 }
-
-/*------------------------------------------------------------------------------------- HOME CAROUSEL ---------------------------------------------------------------------------------------*/
-.carousel-caption {
-    background-color: RGBA(120,198,163,0.75);
+.btn-create {
+    background-color: RGBA(120,198,163);
+    margin-top: 20px;
 }
+    .btn-create:hover {
+        background-color: RGBA(120,198,163, 0.59);
+    }
+.btn-add-row {
+    background-color: RGBA(120,198,163, 0.59);
+    margin-top: 15px;
+}
+    .btn-add-row:hover {
+        background-color: RGBA(120,198,163);
+    }
+    /*------------------------------------------------------------------------------------- HOME CAROUSEL ---------------------------------------------------------------------------------------*/
+    .carousel-caption {
+        background-color: RGBA(120,198,163,0.75);
+    }
 
 .carousel-control-next, .carousel-control-prev {
     position: absolute;
