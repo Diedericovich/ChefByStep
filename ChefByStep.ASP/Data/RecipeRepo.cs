@@ -34,7 +34,7 @@ namespace ChefByStep.ASP.Data
             return result;
         }
 
-        public async Task PostRecipeAsync(Recipe recipe)
+        public async Task AddRecipeAsync(Recipe recipe)
         {
             url = $"{ apiUrl}/api/Recipe";
             HttpResponseMessage message = await PostHttpResponseMessageAsync(url, recipe);

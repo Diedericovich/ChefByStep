@@ -9,6 +9,9 @@
 8. SEARCHBAR CSS
 */
 
+/*------------------------------------------------------------------------------------- IMPORTS ---------------------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 /*------------------------------------------------------------------------------------- NAVBAR ---------------------------------------------------------------------------------------*/
 .navbar-brand {
     text-align: center;
@@ -102,10 +105,11 @@ body {
 
 .header-title {
     /*font-family: Britannic;*/
-    font-size: 3em;
-    font-weight: 600;
-    line-height: 50px;
+    font-size: 4em;
+    font-weight: 800;
+    line-height: 60px;
     margin-right: 20px;
+    font-family: 'Amatic SC', cursive;
 }
 
 .decriptive-header {
@@ -125,7 +129,11 @@ body {
     padding: 5%;
     height: auto;
 }
-
+.overview h1 {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 800;
+    font-size: 3em;
+}
 .overview-btn {
     background-color: RGBA(120,198,163);
 }
@@ -135,11 +143,12 @@ body {
     }
 
 .overview-title {
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: 600;
     line-height: 40px;
     text-align: center;
     margin-top: 30px;
+    font-family: 'Amatic SC', cursive;
 }
 
 .overview-title-random {
@@ -147,7 +156,8 @@ body {
     font-weight: 600;
     line-height: 40px;
     text-align: center;
-    margin-top: 30px;
+    
+    margin-top: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-top: 1px solid RGBA(177, 181, 179, 0.59);
@@ -155,7 +165,8 @@ body {
 }
 
 .random-recipe {
-    font-size: 1em;
+    font-size: 1.2em;
+    font-family: 'Amatic SC', cursive;
 }
 
 .random-btn {
@@ -199,7 +210,38 @@ body {
     .recipe-row a:visited {
         color: #fff;
     }
-
+.chef-row {
+    margin-bottom: 3%;
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+    .chef-row .picBox {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #F4B942;
+        font-size: 20px;
+    }
+.chef-img {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: RGBA(120,198,163,0.75);
+}
+.chef-overview-title {
+    font-size: 3em;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 30px;
+    
+}
+    .chef-overview-title p {
+        font-family: 'Amatic SC', cursive;
+    }
 .centered {
     position: absolute;
     top: 50%;
@@ -368,13 +410,35 @@ body {
     .btn-create-recipe:hover {
         background-color: RGBA(120,198,163, 0.59);
     }
-.admin{
-    display: none;
+.step-table{
+    width: 100%;
 }
-    /*------------------------------------------------------------------------------------- HOME CAROUSEL ---------------------------------------------------------------------------------------*/
-    .carousel-caption {
-        background-color: RGBA(120,198,163,0.75);
+    .step-table textarea {
+        width: 100%;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
     }
+.ingredient-table{
+    width: 100%;
+}
+    .ingredient-table textarea {
+        width: 100%;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+    }
+
+.edit-listitem{
+    margin-bottom: 10px;
+}
+.center-delete{
+    text-align: center;
+}
+/*------------------------------------------------------------------------------------- HOME CAROUSEL ---------------------------------------------------------------------------------------*/
+.carousel-caption {
+    background-color: RGBA(120,198,163,0.75);
+}
 
 .carousel-control-next, .carousel-control-prev {
     position: absolute;
@@ -481,6 +545,14 @@ ol.carousel-indicators {
 
 .steps-instruction {
     font-size: 1.2em;
+}
+.step-ingredients-list {
+    border: 1px solid grey;
+    width: 100%;
+    margin-top: 10px;
+   /* margin-left: 15px;
+    margin-right: -15px;*/
+    padding: 20px;
 }
 
 .overview-steps #scene {
@@ -641,7 +713,12 @@ body #scene #right-zone {
 }
 
 .ingredients img {
-    width: 550px;
+    width: 615px;
+    margin: 10px;
+    margin-left: 40px;
+}
+.ingredients{
+    width: 100%;
 }
 
 .recipe-overview-text {

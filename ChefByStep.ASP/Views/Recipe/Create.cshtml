@@ -68,7 +68,7 @@
                         </div>
                     </div>
 
-                    <table id="AddStepsTable">
+                    <table class="step-table" id="AddStepsTable">
                         <tr>
                             <th>@Html.DisplayNameFor(model => model.Steps[0].Instruction)</th>
                         </tr>
@@ -87,7 +87,7 @@
                             <h3>Ingredients</h3>
                         </div>
                     </div>
-                    <table id="AddIngredientsTable">
+                    <table class="ingredient-table" id="AddIngredientsTable">
                         <tr>
                             <th>@Html.DisplayNameFor(model => model.Ingredients[0].Amount)</th>
                             <th>@Html.DisplayNameFor(model => model.Ingredients[0].Ingredient.Name)</th>
@@ -127,10 +127,13 @@
             function addIngredientRow() {
                 var table = document.getElementById("AddIngredientsTable");
                 var row = table.insertRow(-1);
-                var cell2 = row.insertCell(0);
-                var cell1 = row.insertCell(1);
-                cell2.innerHTML = '<textarea name="Ingredients[' + ingredientCounter + '].Ingredient.Name"></textarea>';
+
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+
                 cell1.innerHTML = '<textarea name="Ingredients[' + ingredientCounter + '].Amount"></textarea>';
+                cell2.innerHTML = '<textarea name="Ingredients[' + ingredientCounter + '].Ingredient.Name"></textarea>';
+                
                 ingredientCounter++;
             }
         </script>

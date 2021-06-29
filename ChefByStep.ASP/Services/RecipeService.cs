@@ -30,7 +30,7 @@ namespace ChefByStep.ASP.Services
 
         public async Task PostRecipe(Recipe recipe)
         {
-            await _repo.PostRecipeAsync(recipe);
+            await _repo.AddRecipeAsync(recipe);
         }
 
         public async Task UpdateRecipe(Recipe recipe)
