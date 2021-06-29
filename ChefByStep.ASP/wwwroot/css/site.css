@@ -315,6 +315,22 @@ body {
     .btn-add-row:hover {
         background-color: RGBA(120,198,163);
     }
+.btn-create-recipe {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 50px;
+    width: 8em;
+    height: 3em;
+    background-color: RGBA(120,198,163);
+}
+
+    .btn-create-recipe:hover {
+        background-color: RGBA(120,198,163, 0.59);
+    }
+.admin{
+    display: none;
+}
     /*------------------------------------------------------------------------------------- HOME CAROUSEL ---------------------------------------------------------------------------------------*/
     .carousel-caption {
         background-color: RGBA(120,198,163,0.75);

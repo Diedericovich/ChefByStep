@@ -1,11 +1,5 @@
 ﻿@model RecipeDetailRatingViewModel
-<style type="text/css">
-    .addcommentsbox {
-    }
 
-    .recipe-comments {
-    }
-</style>
 @{
     double totalRating = 0;
     double averageRating = 0;
@@ -79,6 +73,9 @@
             </div>
             <div class="btn-cook">
                 <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
+            </div>
+            <div class="admin">
+                <a class="btn nav-link" asp-area="" asp-controller="Recipe" asp-action="Edit" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
             </div>
         </div>
 
