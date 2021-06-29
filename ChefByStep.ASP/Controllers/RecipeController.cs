@@ -12,6 +12,7 @@
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
 
+    [Authorize]
     public class RecipeController : Controller
     {
         private readonly IRecipeService _recipeService;
@@ -28,6 +29,7 @@
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         public async Task<ActionResult> IndexAsync()
         {
             ICollection<Recipe> recipes = await _recipeService.GetRecipesAsync();
