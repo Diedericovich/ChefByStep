@@ -19,7 +19,6 @@ function toggleSteps() {
     }
 }
 
-
 function toggleCategories() {
     var selectedCategories = document.getElementById('breakfast');
 
@@ -34,10 +33,7 @@ function toggleCategories() {
     //    selectedCategories.style.display = 'block';
     //    startCooking.innerHTML = 'Stop Cooking';
     //}
-
-
 }
-
 
 function toggleStepByStep() {
     var prev = $('.prev');
@@ -48,7 +44,7 @@ function toggleStepByStep() {
     $('.li').eq(0).show();
 
     next.on('click',
-        function() {
+        function () {
             $('.li').hide();
             num++;
             if (num > 3) {
@@ -58,7 +54,7 @@ function toggleStepByStep() {
         });
 
     prev.on('click',
-        function() {
+        function () {
             $('.li').hide();
             num--;
             if (num < 0) {
@@ -69,13 +65,12 @@ function toggleStepByStep() {
 }
 
 var checkList = document.getElementById('list1');
-checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
     if (checkList.classList.contains('visible'))
         checkList.classList.remove('visible');
     else
         checkList.classList.add('visible');
 }
-
 
 filterSelection("all")
 function filterSelection(c) {
@@ -125,3 +120,29 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+function FavouriteClicked(uId, rId) {
+    document.getElementById("favButton").src = './images/heartfull.png';
+
+    //const params = {
+        //userId: this.userId,
+        //recipeId: this.recipeId
+    //};
+    //const options = {
+    //    method: 'POST',
+    //    body: JSON.stringify(params),
+        
+    //};
+    //fetch('https://localhost:44350/api/User/AddFavourite', options)
+    //    .then(response => response.json())
+    //    .then(response => {
+    //        console.log('success');
+    //    });
+    console.log(uId, rId)
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://localhost:44350/api/User/AddFavourite", true)
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    xhr.send(JSON.stringify({
+        userId: uId,
+        recipeId: rId
+    }))
+}

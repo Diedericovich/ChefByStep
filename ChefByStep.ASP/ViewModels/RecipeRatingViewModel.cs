@@ -9,7 +9,7 @@
 
         public int RecipeId { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public ApiUser User { get; set; }
 
         public Recipe Recipe { get; set; }
 

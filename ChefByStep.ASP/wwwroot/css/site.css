@@ -12,7 +12,7 @@
 11. FORGOT PASSWORD PAGE
 12. FORGOT PASSWORD CONFIRMATION PAGE
 13. REGISTER CONFIRMATION PAGE
-14. EMAIL CONFIRMATION PAGE 
+14. EMAIL CONFIRMATION PAGE
 */
 
 /*------------------------------------------------------------------------------------- IMPORTS ---------------------------------------------------------------------------------------*/
@@ -49,6 +49,7 @@ nav {
     background-color: #1b6ec2;
     border-color: #1861ac;
 }
+
 .nav-link:hover {
     background-color: RGBA(120,198,163);
 }
@@ -135,12 +136,14 @@ body {
     padding: 5%;
     height: auto;
 }
+
 .overview h1 {
     font-family: 'Amatic SC', cursive;
     font-weight: 800;
     font-size: 3em;
     margin-bottom: 20px;
 }
+
 .overview-btn {
     background-color: RGBA(120,198,163);
 }
@@ -163,7 +166,6 @@ body {
     font-weight: 600;
     line-height: 40px;
     text-align: center;
-    
     margin-top: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -200,10 +202,11 @@ body {
     border-radius: 5px;
     border-color: RGBA(120,198,163,0.75);
 }
-.recipe-img:hover{
-    -webkit-filter: brightness(1.1);
-    filter:brightness(1.1);
-}
+
+    .recipe-img:hover {
+        -webkit-filter: brightness(1.1);
+        filter: brightness(1.1);
+    }
 
 .recipe-row a {
     text-decoration: none;
@@ -217,6 +220,7 @@ body {
     .recipe-row a:visited {
         color: #fff;
     }
+
 .chef-row {
     margin-bottom: 3%;
     position: relative;
@@ -224,6 +228,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
     .chef-row .picBox {
         position: absolute;
         top: 80%;
@@ -232,23 +237,26 @@ body {
         color: #F4B942;
         font-size: 20px;
     }
+
 .chef-img {
     width: 100%;
     border: 1px solid;
     border-radius: 5px;
     border-color: RGBA(120,198,163,0.75);
 }
+
 .chef-overview-title {
     font-size: 3em;
     font-weight: 600;
     line-height: 40px;
     text-align: center;
     margin-top: 30px;
-    
 }
+
     .chef-overview-title p {
         font-family: 'Amatic SC', cursive;
     }
+
 .centered {
     position: absolute;
     top: 50%;
@@ -275,16 +283,20 @@ body {
     margin-right: auto;
     margin-top: 20px;
 }
-.btn-cook:hover{
-    background-color: RGBA(244,185,66,0.59);
-}
+
+    .btn-cook:hover {
+        background-color: RGBA(244,185,66,0.59);
+    }
+
 .btn-cook-btn {
     font-size: 1.6em;
     background-color: #F4B942;
 }
+
     .btn-cook-btn:hover {
         background-color: RGBA(244,185,66,0.59);
     }
+
 .btn-edit {
     background-color: RGBA(120,198,163);
     border-radius: 5px;
@@ -293,9 +305,48 @@ body {
     margin-right: auto;
     margin-top: 20px;
 }
+
     .btn-edit:hover {
         background-color: RGBA(120,198,163,0.59);
     }
+
+.btn-favourite {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    position:absolute;
+    z-index:1;
+    width:80px;
+    height:80px;
+    left:84%;
+    background-image: url(../images/like.png);
+    background-size:contain;
+    background-color:transparent;
+    border:none;
+}
+
+    .btn-favourite:hover {
+        background-image: url(../images/heartfull.png);
+    }
+    .btn-favourite:focus {
+        background-image: url(../images/heartfull.png);
+        border: none;
+        outline:none;
+    }
+.btn-favourited {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    position: absolute;
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    left: 84%;
+    background-image: url(../images/heartfull.png);
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+}
 .detail-img {
     width: 100%;
 }
@@ -381,9 +432,10 @@ body {
     margin-right: auto;
     padding-top: 2px;
     padding-bottom: 2px;
-    height:2.5em;
-    width:7em;
+    height: 2.5em;
+    width: 7em;
 }
+
     .btn-comment:hover {
         background-color: #449671;
     }
@@ -391,13 +443,16 @@ body {
 .input-rating {
     margin-top: 10px;
 }
+
 .btn-create {
     background-color: #F4B942;
     margin-top: 20px;
 }
+
     .btn-create:hover {
         background-color: RGBA(244,185,66,0.59);
     }
+
 .btn-create-cancel {
     background-color: RGBA(120,198,163);
     margin-top: 20px;
@@ -406,13 +461,16 @@ body {
     .btn-create-cancel:hover {
         background-color: RGBA(120,198,163,0.59);
     }
+
 .btn-add-row {
     background-color: RGBA(120,198,163, 0.59);
     margin-top: 15px;
 }
+
     .btn-add-row:hover {
         background-color: RGBA(120,198,163);
     }
+
 .btn-create-recipe {
     border: none;
     outline: none;
@@ -422,25 +480,27 @@ body {
     width: 8em;
     height: 3em;
     background-color: #F4B942;
-    
 }
-
 
     .btn-create-recipe:hover {
         background-color: RGBA(244,185,66,0.59);
     }
-.step-table{
+
+.step-table {
     width: 100%;
 }
+
     .step-table textarea {
         width: 100%;
         background-color: #fff;
         background-clip: padding-box;
         border: 1px solid #ced4da;
     }
-.ingredient-table{
+
+.ingredient-table {
     width: 100%;
 }
+
     .ingredient-table textarea {
         width: 100%;
         background-color: #fff;
@@ -448,13 +508,15 @@ body {
         border: 1px solid #ced4da;
     }
 
-.edit-listitem{
+.edit-listitem {
     margin-bottom: 10px;
 }
-.center-delete{
+
+.center-delete {
     text-align: center;
 }
-#update-profile-button{
+
+#update-profile-button {
     float: right;
     margin-left: 16px;
     margin-top: 0;
@@ -570,11 +632,12 @@ ol.carousel-indicators {
 .steps-instruction {
     font-size: 1.2em;
 }
+
 .step-ingredients-list {
     border: 1px solid grey;
     width: 100%;
     margin-top: 10px;
-   /* margin-left: 15px;
+    /* margin-left: 15px;
     margin-right: -15px;*/
     padding: 20px;
 }
@@ -741,7 +804,8 @@ body #scene #right-zone {
     margin: 10px;
     margin-left: 40px;
 }
-.ingredients{
+
+.ingredients {
     width: 100%;
 }
 
@@ -779,8 +843,8 @@ body #scene #right-zone {
     background-color: RGB(120,198,163);
     cursor: pointer;
     margin-bottom: 50px;
-    width:8em;
-    height:3em;
+    width: 8em;
+    height: 3em;
 }
 
     /* Add a light grey background on mouse-over */
@@ -817,10 +881,7 @@ body #scene #right-zone {
     height: 20%;
 }*/
 
-
 /*------------------------------------------------------------------------------------- LOGIN PAGE ---------------------------------------------------------------------------------------*/
-
-
 
 .wrapper {
     display: flex;
@@ -831,10 +892,9 @@ body #scene #right-zone {
     min-height: 100%;
 }
 
-.wrapper h5 {
-    text-align:center;
-}
-
+    .wrapper h5 {
+        text-align: center;
+    }
 
 .login {
     border-radius: 2px 2px 5px 5px;
@@ -846,22 +906,22 @@ body #scene #right-zone {
     box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 }
 
-.form-control {
+.fc-login {
     box-shadow: 0px 0px 0px 0px #F4B942;
     transition: box-shadow 0.3s linear;
     margin: 0.5em;
 }
 
-.form-control:hover {
-    box-shadow: 0px 0px 0px 1.7px #F4B942;
-}
+    .fc-login:hover {
+        box-shadow: 0px 0px 0px 1.7px #F4B942;
+    }
 
 .login_input {
-display: block;
-padding: 5px 0px;
-width: 100%;
-transition: border-width 0.9s ease;
-border-radius: 3px;
+    display: block;
+    padding: 5px 0px;
+    width: 100%;
+    transition: border-width 0.9s ease;
+    border-radius: 3px;
 }
 
 .login_link {
@@ -869,7 +929,7 @@ border-radius: 3px;
     color: cornflowerblue;
     text-decoration: none;
     margin: 0em 0em -20em 0em;
-    }
+}
 
 #remember_check {
     padding: 5px 0px 0px 10px;
@@ -885,7 +945,7 @@ border-radius: 3px;
     display: block;
     border: none;
     margin-top: 10px;
-    position:absolute;
+    position: absolute;
     left: 0;
     bottom: 0;
     max-height: 60px;
@@ -913,8 +973,6 @@ border-radius: 3px;
     box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 }
 
-
-
 /*-----------------------------FORGOT PASSWORD PAGE -----------------------*/
 
 .forgot-password {
@@ -926,7 +984,6 @@ border-radius: 3px;
     position: relative;
     box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 }
-
 
 /*-----------------------------CONFIRM FORGOT PASSWORD PAGE -----------------------*/
 
@@ -941,7 +998,7 @@ border-radius: 3px;
 }
 
 #password-confirmation {
-    text-align:center;
+    text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -966,7 +1023,6 @@ border-radius: 3px;
 
 /*----------------------------- EMAIL CONFIRMATION PAGE -----------------------*/
 
-
 .email-confirmation {
     border-radius: 2px 2px 5px 5px;
     padding: 20px 30px 70px 20px;
@@ -985,6 +1041,6 @@ border-radius: 3px;
 
 #code {
     padding-left: 80px;
-    padding-right:100px;
-    align-self:center;
+    padding-right: 100px;
+    align-self: center;
 }
