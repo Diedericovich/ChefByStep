@@ -42,6 +42,9 @@
             Recipe recipe = await _recipeService.GetRecipeAsync(id);
             RecipeDetailRatingViewModel viewModel = new RecipeDetailRatingViewModel();
             viewModel.RecipeDetailVm = _mapper.Map<RecipeDetailViewModel>(recipe);
+            string name = User.Identity.Name;
+            var user = await _userService.GetUserByNameAsync(name);
+            viewModel.RecipeRatingVm = new RecipeRatingViewModel { UserId = user.Id };
             return View(viewModel);
         }
 
@@ -50,11 +53,7 @@
         public async Task<ActionResult> DetailAsync(RecipeDetailRatingViewModel vm)
         {
             var recipeRating = this._mapper.Map<RecipeRating>(vm.RecipeRatingVm);
-
-            string name = User.Identity.Name;
-            var user = await _userService.GetUserByNameAsync(name);
-            recipeRating.UserId = user.Id;
-            _ratingService.PostRecipeRating(recipeRating);
+            await _ratingService.PostRecipeRating(recipeRating);
 
             var temp = vm.RecipeRatingVm.RecipeId;
 
@@ -114,7 +113,7 @@
         // POST: RecipeController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> EditAsync( RecipeEditViewModel viewModel)
+        public async Task<ActionResult> EditAsync(RecipeEditViewModel viewModel)
         {
             bool isValid = TryValidateModel(viewModel);
 

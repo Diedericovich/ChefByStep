@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using ChefByStep.ASP.Models;
+﻿using ChefByStep.ASP.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace ChefByStep.ASP.Areas.Identity.Pages.Account.Manage
 {
@@ -27,7 +24,7 @@ namespace ChefByStep.ASP.Areas.Identity.Pages.Account.Manage
         {
             _userManager = userManager;
             _signInManager = signInManager;
-           _userRepo = userRepo;
+            _userRepo = userRepo;
         }
 
         public string Username { get; set; }
@@ -44,6 +41,12 @@ namespace ChefByStep.ASP.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
 
+            [Display(Name = "First name")]
+            public string FirstName { get; set; }
+
+            [Display(Name = "Last name")]
+            public string LastName { get; set; }
+
             public ApiUser ApiUser { get; set; }
         }
 
@@ -52,13 +55,14 @@ namespace ChefByStep.ASP.Areas.Identity.Pages.Account.Manage
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
-
             var tempuser = await this._userRepo.GetUserByNameAsync(userName);
             Username = userName;
             Input = new InputModel
             {
                 ApiUser = tempuser,
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                LastName = user.LastName,
+                FirstName = user.FirstName
             };
         }
 
@@ -98,7 +102,9 @@ namespace ChefByStep.ASP.Areas.Identity.Pages.Account.Manage
                     return RedirectToPage();
                 }
             }
-
+            user.FirstName = Input.FirstName;
+            user.LastName = Input.LastName;
+            await _userManager.UpdateAsync(user);
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();

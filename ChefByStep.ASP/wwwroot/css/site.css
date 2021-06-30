@@ -139,6 +139,7 @@ body {
     font-family: 'Amatic SC', cursive;
     font-weight: 800;
     font-size: 3em;
+    margin-bottom: 20px;
 }
 .overview-btn {
     background-color: RGBA(120,198,163);
@@ -397,6 +398,14 @@ body {
     .btn-create:hover {
         background-color: RGBA(244,185,66,0.59);
     }
+.btn-create-cancel {
+    background-color: RGBA(120,198,163);
+    margin-top: 20px;
+}
+
+    .btn-create-cancel:hover {
+        background-color: RGBA(120,198,163,0.59);
+    }
 .btn-add-row {
     background-color: RGBA(120,198,163, 0.59);
     margin-top: 15px;
@@ -444,6 +453,11 @@ body {
 }
 .center-delete{
     text-align: center;
+}
+#update-profile-button{
+    float: right;
+    margin-left: 16px;
+    margin-top: 0;
 }
 /*------------------------------------------------------------------------------------- HOME CAROUSEL ---------------------------------------------------------------------------------------*/
 .carousel-caption {

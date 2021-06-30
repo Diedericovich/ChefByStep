@@ -37,5 +37,15 @@
         {
             await _repo.PostUserAsync(user);
         }
+
+        public async Task UpdateUser(ApiUser user)
+        {
+            await _repo.UpdateUserAsync(user);
+        }
+
+        public async Task AddFavouriteRecipe(FavouriteDto favourite)
+        {
+            await _repo.AddFavouriteRecipe(favourite);
+        }
     }
 }

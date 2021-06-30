@@ -1,5 +1,7 @@
 ﻿using ChefByStep.API.Entities;
+using ChefByStep.API.Entities.DTOs;
 using ChefByStep.API.Helpers;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,6 +48,14 @@ namespace ChefByStep.API.Repos
         {
             return await _context.Users
                 .AnyAsync(x => x.Name == name);
+        }
+
+        public async Task AddFavouriteRecipe(FavouriteDto favourite)
+        {
+            var commandText = @"INSERT INTO UserFavouriteRecipes(FavoriteRecipesId,FavouritedById) VALUES(@RecipeId,@UserId)";
+            var recepiId = new SqlParameter("@RecipeId", favourite.RecipeId);
+            var userId = new SqlParameter("@UserId", favourite.UserId);
+            await _context.Database.ExecuteSqlRawAsync(commandText, recepiId, userId);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ChefByStep.ASP.Data
@@ -49,11 +50,34 @@ namespace ChefByStep.ASP.Data
             url = $"{ apiUrl}/api/User";
             var client = new HttpClient();
             HttpResponseMessage message = await client.PostAsJsonAsync<ApiUser>(url, user);
-            //var result = message.Result;
-            //if (result.IsSuccessStatusCode)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+        }
+
+        public async Task UpdateUserAsync(ApiUser user)
+        {
+            url = $"{ apiUrl}/api/User";
+            var client = new HttpClient();
+            var json = JsonConvert.SerializeObject(user);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage message = await client.PutAsync(url, httpContent);
+
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+        }
+
+        public async Task AddFavouriteRecipe(FavouriteDto favourite)
+        {
+            url = $"{ apiUrl}/api/User/AddFavourite";
+            var client = new HttpClient();
+            var json = JsonConvert.SerializeObject(favourite);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage message = await client.PostAsync(url, httpContent);
+
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
         }
 
         private async Task<HttpResponseMessage> GetHttpResponseMessageAsync(string url)

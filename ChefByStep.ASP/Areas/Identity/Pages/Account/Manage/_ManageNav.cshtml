@@ -1,5 +1,4 @@
-﻿@using ChefByStep.ASP.Models
-@inject SignInManager<ApplicationUser> SignInManager
+﻿@inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

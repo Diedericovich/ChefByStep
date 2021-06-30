@@ -1,4 +1,5 @@
 ﻿using ChefByStep.API.Entities;
+using ChefByStep.API.Entities.DTOs;
 using ChefByStep.API.Repos;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -43,6 +44,11 @@ namespace ChefByStep.API.Services
         public async Task UpdateUserAsync(User user)
         {
             await _repo.UpdateAsync(user);
+        }
+
+        public async Task AddFavouriteRecipe(FavouriteDto favourite)
+        {
+            await _repo.AddFavouriteRecipe(favourite);
         }
 
         public async Task<bool> UserExistsAsync(string name)
