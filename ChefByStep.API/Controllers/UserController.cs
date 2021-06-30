@@ -1,4 +1,5 @@
 ﻿using ChefByStep.API.Entities;
+using ChefByStep.API.Entities.DTOs;
 using ChefByStep.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -69,6 +70,20 @@ namespace ChefByStep.API.Controllers
             try
             {
                 await _service.UpdateUserAsync(user);
+                return Ok("Update OK");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost("AddFavourite")]
+        public async Task<ActionResult> AddFavouriteRecipe(FavouriteDto favourite)
+        {
+            try
+            {
+                await _service.AddFavouriteRecipe(favourite);
                 return Ok("Update OK");
             }
             catch (Exception e)
