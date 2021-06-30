@@ -315,6 +315,8 @@ body {
     font-size: 0.8em;
     color: dimgray;
     margin-right: 10px;
+    margin-top: -10px;
+    margin-bottom: 15px;
 }
 
 .average-rating {
