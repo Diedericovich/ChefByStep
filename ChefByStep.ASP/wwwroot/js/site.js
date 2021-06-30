@@ -19,22 +19,6 @@ function toggleSteps() {
     }
 }
 
-function toggleCategories() {
-    var selectedCategories = document.getElementById('breakfast');
-
-    //var displaySetting = selectedCategories.style.display;
-    selectedCategories.style.hide = true;
-    /*   var startCooking = document.getElementById('breakfast');*/
-
-    //if (displaySetting == 'block') {
-    //    selectedCategories.style.display = 'none';
-    //    startCooking.innerHTML = 'DO Stuff Breakfast';
-    //} else {
-    //    selectedCategories.style.display = 'block';
-    //    startCooking.innerHTML = 'Stop Cooking';
-    //}
-}
-
 function toggleStepByStep() {
     var prev = $('.prev');
     var next = $('.next');
@@ -123,20 +107,6 @@ for (var i = 0; i < btns.length; i++) {
 function FavouriteClicked(uId, rId) {
     document.getElementById("favButton").src = './images/heartfull.png';
 
-    //const params = {
-        //userId: this.userId,
-        //recipeId: this.recipeId
-    //};
-    //const options = {
-    //    method: 'POST',
-    //    body: JSON.stringify(params),
-        
-    //};
-    //fetch('https://localhost:44350/api/User/AddFavourite', options)
-    //    .then(response => response.json())
-    //    .then(response => {
-    //        console.log('success');
-    //    });
     console.log(uId, rId)
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://localhost:44350/api/User/AddFavourite", true)

@@ -6,13 +6,12 @@
 5. HOME CAROUSEL
 6. STEP OVERVIEW
 7. OVERVIEW FILTER
-8. SEARCHBAR CSS
-9. LOGIN PAGE
-10. REGISTER PAGE
-11. FORGOT PASSWORD PAGE
-12. FORGOT PASSWORD CONFIRMATION PAGE
-13. REGISTER CONFIRMATION PAGE
-14. EMAIL CONFIRMATION PAGE
+8. LOGIN PAGE
+9. REGISTER PAGE
+10. FORGOT PASSWORD PAGE
+11. FORGOT PASSWORD CONFIRMATION PAGE
+12. REGISTER CONFIRMATION PAGE
+13. EMAIL CONFIRMATION PAGE
 */
 
 /*------------------------------------------------------------------------------------- IMPORTS ---------------------------------------------------------------------------------------*/
@@ -857,29 +856,6 @@ body #scene #right-zone {
         background-color: #449671;
         color: white;
     }
-
-/*------------------------------------------------------------------------------------- SEARCHBAR CSS ---------------------------------------------------------------------------------------*/
-/*.home-search {
-    width: 200px;
-    padding-top: 20px;
-}
-
-.home-search button {
-    height: 25%;
-    padding-bottom: 4px;
-    margin-left: 5%;
-    color: #000;
-    border-color: RGBA(120,198,163,0.59);
-}
-
-.home-search .btn:hover {
-    color: #fff;
-    background-color: darkorange;
-}
-
-.home-search input {
-    height: 20%;
-}*/
 
 /*------------------------------------------------------------------------------------- LOGIN PAGE ---------------------------------------------------------------------------------------*/
 

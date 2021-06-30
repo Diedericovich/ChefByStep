@@ -1,13 +1,6 @@
 ﻿@model RecipeDetailRatingViewModel
 @inject IUserService service
-@*@functions{
-        public string AddFavourite()
-        {
-            var favourite = new FavouriteDto { RecipeId = Model.RecipeDetailVm.Id, UserId = Model.RecipeRatingVm.UserId };
-            service.AddFavouriteRecipe(favourite);
-            return "done";
-        }
-    }*@
+
 
 @{
     double totalRating = 0;
