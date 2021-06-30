@@ -387,11 +387,11 @@ body {
     margin-top: 10px;
 }
 .btn-create {
-    background-color: RGBA(120,198,163);
+    background-color: #F4B942;
     margin-top: 20px;
 }
     .btn-create:hover {
-        background-color: #449671;
+        background-color: RGBA(244,185,66,0.59);
     }
 .btn-add-row {
     background-color: RGBA(120,198,163, 0.59);
