@@ -350,10 +350,6 @@ body {
     width: 100%;
 }
 
-.detail-description {
-    /* margin-top: -150px;*/
-}
-
 .recipe-comments {
     margin-top: 20px;
     padding-top: 10px;
@@ -371,6 +367,8 @@ body {
     font-size: 0.8em;
     color: dimgray;
     margin-right: 10px;
+    margin-top: -10px;
+    margin-bottom: 15px;
 }
 
 .average-rating {
@@ -826,16 +824,14 @@ body #scene #right-zone {
 }
 
 .filterDiv {
-    display: none; /* Hidden by default */
+    display: none; 
     padding: 0;
 }
 
-/* The "show" class is added to the filtered elements */
 .show {
     display: block;
 }
 
-/* Style the buttons */
 .btn-filter {
     border: none;
     outline: none;
@@ -846,12 +842,10 @@ body #scene #right-zone {
     height: 3em;
 }
 
-    /* Add a light grey background on mouse-over */
     .btn-filter:hover {
         background-color: #449671;
     }
 
-    /* Add a dark background to the active button */
     .btn-filter:active {
         background-color: #449671;
         color: white;

@@ -8,6 +8,7 @@ namespace ChefByStep.ASP.ViewModels
     public class RecipeCreateViewModel
     {
         public int Id { get; set; }
+
         public int CreatedById { get; set; }
 
         [DisplayName("Category: ")]
@@ -40,6 +41,7 @@ namespace ChefByStep.ASP.ViewModels
         public List<Step> Steps { get; set; }
 
         public List<RecipeIngredient> Ingredients { get; set; }
+
         public ApiUser CreatedBy { get; set; }
     }
 }

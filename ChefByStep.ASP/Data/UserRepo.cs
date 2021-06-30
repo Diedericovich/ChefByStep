@@ -15,7 +15,6 @@ namespace ChefByStep.ASP.Data
     {
         private const string apiUrl = "https://localhost:44350";
 
-        //private const string apiUrl = "https://chefbystepapimgmt.azure-api.net/api/api/User";
         private string url;
 
         public async Task<ApiUser> GetUserAsync(int id)

@@ -10,7 +10,9 @@ namespace ChefByStep.ASP.Models
     {
         [DisplayName("Instructions: ")]
         public string Instruction { get; set; }
+
         public int DurationMin { get; set; }
+
         public bool IsDone { get; set; }
     }
 }

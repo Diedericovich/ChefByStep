@@ -68,14 +68,12 @@
             return View(viewModel);
         }
 
-        // GET: RecipeController/Create
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: RecipeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(RecipeCreateViewModel vm)
@@ -93,7 +91,6 @@
             return View(vm);
         }
 
-        // GET: RecipeController/Edit/5
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult> EditAsync(int id)
         {
@@ -110,7 +107,6 @@
             return View(vm);
         }
 
-        // POST: RecipeController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> EditAsync(RecipeEditViewModel viewModel)
@@ -127,7 +123,6 @@
             return RedirectToAction("Index");
         }
 
-        // GET: RecipeController/Delete/5
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult> DeleteAsync(int id)
         {
@@ -136,7 +131,6 @@
             return View(vm);
         }
 
-        // POST: RecipeController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteAsync(int id, IFormCollection collection)
