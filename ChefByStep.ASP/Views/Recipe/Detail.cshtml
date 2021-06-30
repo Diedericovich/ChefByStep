@@ -46,6 +46,7 @@
             <hr />
             <h2 class="detail-title">
                 @Model.RecipeDetailVm.Title
+            </h2>
                 <p class="average-rating">
                     @switch (averageRating)
                     {
@@ -64,7 +65,7 @@
                     }
                     (@Model.RecipeDetailVm.Ratings.Count reviews)
                 </p>
-            </h2>
+            
             <p>@Model.RecipeDetailVm.Description</p>
             <p>- @Model.RecipeDetailVm.CreatedByUser</p>
             <div class="detail-minutes">
