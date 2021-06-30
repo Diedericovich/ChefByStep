@@ -1,14 +1,6 @@
 ﻿@model RecipeDetailRatingViewModel
 @inject IUserService service
 
-@functions{
-    public string AddFavourite()
-    {
-        var favourite = new FavouriteDto { RecipeId = Model.RecipeDetailVm.Id, UserId = Model.RecipeRatingVm.UserId };
-        service.AddFavouriteRecipe(favourite);
-        return "done";
-    }
-}
 
 @{
     double totalRating = 0;
@@ -32,9 +24,22 @@
     <div class="row">
         <div class="col-sm-12 col-md-10 col-lg-9">
             <img class="detail-img" src="@Model.RecipeDetailVm.ImageUrl" />
+            @if (Model.RecipeRatingVm.User.FavoriteRecipes.Where(x => x.Id == Model.RecipeDetailVm.Id).Any())
+            {
+                <button class="btn-favourited"></button>
+            }
+            else
+            {
+                int userId = Model.RecipeRatingVm.UserId;
+                int recipeId = Model.RecipeDetailVm.Id;
+
+                <button class="btn-favourite" id="favButton" onclick="FavouriteClicked(@userId, @recipeId)"></button>
+
+            }
             <hr />
             <h2 class="detail-title">
                 @Model.RecipeDetailVm.Title
+            </h2>
                 <p class="average-rating">
                     @switch (averageRating)
                     {
@@ -53,7 +58,7 @@
                     }
                     (@Model.RecipeDetailVm.Ratings.Count reviews)
                 </p>
-            </h2>
+            
             <p>@Model.RecipeDetailVm.Description</p>
             <p>- @Model.RecipeDetailVm.CreatedByUser</p>
             <div class="detail-minutes">
@@ -82,9 +87,6 @@
                     </p>
 
                 }
-            </div>
-            <div>
-                <button class="btn nav-link btn-edit" id="favButton" onclick="@AddFavourite()">Add To Favourites</button>
             </div>
             @if (User.IsInRole("Admin"))
             {
@@ -149,23 +151,9 @@
                 <textarea class="form-control mb-3" asp-for="RecipeRatingVm.Comment" placeholder="Write your comment here"></textarea>
 
                 <span asp-validation-for="RecipeRatingVm.Recipe" class="text-danger"></span>
-
+                <input asp-for="RecipeRatingVm.UserId" value="@Model.RecipeRatingVm.UserId" hidden />
                 <button class="btn btn-comment" type="submit">Submit</button>
             </form>
         </div>
     </div>
 </div>
-
-@section Scripts{
-
-    <script type="text/javascript">
-         document.addEventListener("DOMContentLoaded", function () {
-             var button = document.getElementById('favButton');
-            button.addEventListener('click', function () {
-                var test = "@AddFavourite()";
-                console.log(test);
-             });
-        });
-    </script>
-
-} 

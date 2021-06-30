@@ -45,6 +45,8 @@
     <br/>
     <hr />
     <br/>
+    @if (Model.Input.ApiUser.FavoriteRecipes.Any())
+    {
     <h1 class="list-container">Favourite Recipes</h1>
     <div class="row recipe-row">
         @foreach (var recipe in @Model.Input.ApiUser.FavoriteRecipes)
@@ -61,16 +63,10 @@
                 </div>
             </div>
         }
-        @*<div>
-            <ul>
-                @foreach (var item in @Model.Input.ApiUser.FavoriteRecipes)
-                {
-                    <li>@item.Title</li>
 
-                }
-            </ul>
-        </div>*@
     </div>
+    }
+</div>
 
     @section Scripts {
         <partial name="_ValidationScriptsPartial" />

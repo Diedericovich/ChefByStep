@@ -1,0 +1,49 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Registration";
+}
+
+
+
+
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+        <div class="wrapper">
+            <form asp-route-returnUrl="@Model.DisplayConfirmAccountLink" class="register-confirmation">
+                <h5>@ViewData["Title"]</h5>
+                <div class="form-group">
+                    <div id="register-confirmation" class="login_input">
+                        <p>
+                            Congratulations! Your account is created.
+                        </p>
+                        <p>
+                            Please <a href="@Model.EmailConfirmationUrl">confirm</a> your account to complete registration.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="wrapper">
+            <form class="register-confirmation">
+                <h5>@ViewData["Title"]</h5>
+                <div class="form-group">
+                    <div class="login_input">
+                        <p id="register-confirmation">
+                            Please check your email to confirm your account.
+                        </p>
+                    </div>
+                </div>
+                <button type="submit" class="login_button">Go back</button>
+            </form>
+        </div>
+    }
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

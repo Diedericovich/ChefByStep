@@ -44,7 +44,7 @@
             viewModel.RecipeDetailVm = _mapper.Map<RecipeDetailViewModel>(recipe);
             string name = User.Identity.Name;
             var user = await _userService.GetUserByNameAsync(name);
-            viewModel.RecipeRatingVm = new RecipeRatingViewModel { UserId = user.Id };
+            viewModel.RecipeRatingVm = new RecipeRatingViewModel { UserId = user.Id, User = user };
             return View(viewModel);
         }
 
