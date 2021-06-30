@@ -6,7 +6,6 @@ A joint collaboration between 6 .NET students.
 - Simon Van Tittelboom
 - Jens Van Gelder
 - Andreas Stavropoulos
-- Joyce Alfvoet
 - Emma Danckaert
 
 We designed a cooking app to aid people who dislike cookingbooks or aren't a that good of a cook.
