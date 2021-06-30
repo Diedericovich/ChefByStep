@@ -38,26 +38,29 @@
                             <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="recipe-overview-text">@recipe.Title</h5>
-                                <p class="recipe-overview-text">
-                                    <span>
-                                        @switch (Math.Round(averageRating))
-                                        {
-                                            case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
-                                                break;
-                                            default:
-                                                break;
-                                        }
-                                    </span>
-                                    (@recipe.Ratings.Count ratings)
-                                </p>
+                                @if (recipe.Ratings.Count > 0)
+                                {
+                                    <p class="recipe-overview-text">
+                                        <span>
+                                            @switch (Math.Round(averageRating))
+                                            {
+                                                case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                        </span>
+                                        (@recipe.Ratings.Count ratings)
+                                    </p>
+                                }
                             </div>
                         </a>
                     </div>
@@ -85,26 +88,29 @@
                             <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="recipe-overview-text">@recipe.Title</h5>
-                                <p class="recipe-overview-text">
-                                    <span>
-                                        @switch (Math.Round(averageRating))
-                                        {
-                                            case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
-                                                break;
-                                            default:
-                                                break;
-                                        }
-                                    </span>
-                                    (@recipe.Ratings.Count ratings)
-                                </p>
+                                @if (recipe.Ratings.Count > 0)
+                                {
+                                    <p class="recipe-overview-text">
+                                        <span>
+                                            @switch (Math.Round(averageRating))
+                                            {
+                                                case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                        </span>
+                                        (@recipe.Ratings.Count ratings)
+                                    </p>
+                                }
                             </div>
                         </a>
                     </div>
@@ -133,27 +139,29 @@
                             <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="recipe-overview-text">@recipe.Title</h5>
-                                <p class="recipe-overview-text">
-                                    <span>
-                                        @switch (Math.Round(averageRating))
-                                        {
-                                            case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
-                                                break;
-                                            case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
-                                                break;
-                                            default:
-                                                break;
-                                        }
-                                    </span>
-                                    (@recipe.Ratings.Count ratings)
-                                </p>
-
+                                @if (recipe.Ratings.Count > 0)
+                                {
+                                    <p class="recipe-overview-text">
+                                        <span>
+                                            @switch (Math.Round(averageRating))
+                                            {
+                                                case 1:<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 2: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 3: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 4: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>;
+                                                    break;
+                                                case 5: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>;
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                        </span>
+                                        (@recipe.Ratings.Count ratings)
+                                    </p>
+                                }
                             </div>
                         </a>
                     </div>
@@ -181,6 +189,8 @@
                             <img class="card-img-top recipe-img" src="@recipe.ImageUrl" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="recipe-overview-text">@recipe.Title</h5>
+                                @if (recipe.Ratings.Count > 0)
+                                {
                                 <p class="recipe-overview-text">
                                     <span>
                                         @switch (Math.Round(averageRating))
@@ -200,7 +210,8 @@
                                         }
                                     </span>
                                     (@recipe.Ratings.Count ratings)
-                                </p>
+                                </p> 
+                                }
                             </div>
                         </a>
                     </div>
