@@ -86,10 +86,10 @@ namespace ChefByStep.API.Helpers
             string[] lines = File.ReadAllLines("Helpers\\Datafiles\\Recipes.csv").Skip(1).ToArray();
             List<User> users = new List<User>
             {
-                new User{Id = 1, Name = "Frieda", },
-                new User{Id = 2,Name = "Alberto",},
-                new User{Id = 3,Name = "Octaaf",},
-                new User{Id = 4,Name = "Gert",},
+                new User{Id = 1, Name = "Simon Van Tittelboom", },
+                new User{Id = 2,Name = "Jens Van Gelder",},
+                new User{Id = 3,Name = "Emma Danckaert",},
+                new User{Id = 4,Name = "Diederik Van Yperzele",},
             };
             return users;
         }

@@ -72,14 +72,16 @@
                 <div class="form-group">
                     @for (int i = 0; i < Model.Steps.Count; i++)
                     {
-                        <textarea asp-for="Steps[i].Instruction" class="form-control"></textarea>
-                        <input asp-for="Steps[i].Id" hidden/>
-                        <span asp-validation-for="Steps[i].Instruction" class="text-danger"></span>
+                        <div class="edit-listitem">
+                            <textarea asp-for="Steps[i].Instruction" class="form-control"></textarea>
+                            <input asp-for="Steps[i].Id" hidden />
+                            <span asp-validation-for="Steps[i].Instruction" class="text-danger"></span>
+                        </div>
                     }
-                    
-                    <table id="AddStepsTable">
+
+                    <table class="step-table" id="AddStepsTable">
                         <tr>
-                            <th>@Html.DisplayNameFor(model => model.Steps[Model.Steps.Count()].Instruction)</th>
+                            <th>@Html.DisplayNameFor(model => model.Steps[Model.Steps.Count].Instruction)</th>
                         </tr>
                     </table>
                     <button class="btn btn-add-row" onclick="addStepsRow()" type="button">Add New Step</button>
@@ -95,22 +97,22 @@
                     <div class="row">
                         @for (int i = 0; i < Model.Ingredients.Count; i++)
                         {
-                            <div class="col-sm-12 col-md-3 col-lg-3">
+                            <div class="col-sm-12 col-md-3 col-lg-3 edit-listitem">
                                 <input asp-for="Ingredients[i].Amount" class="form-control" />
-                                <input asp-for="Ingredients[i].Id" hidden/>
+                                <input asp-for="Ingredients[i].Id" hidden />
                                 <span asp-validation-for="Ingredients[i].Amount" class="text-danger"></span>
                             </div>
-                            <div class="col-sm-12 col-md-9 col-lg-9">
+                            <div class="col-sm-12 col-md-9 col-lg-9 edit-listitem">
                                 <input asp-for="Ingredients[i].Ingredient.Name" class="form-control" />
                                 <input asp-for="Ingredients[i].Ingredient.Id" hidden />
                                 <span asp-validation-for="Ingredients[i].Ingredient.Name" class="text-danger"></span>
                             </div>
                         }
-                        }
+
                     </div>
-                    <table id="AddIngredientsTable">
+                    <table class="ingredient-table" id="AddIngredientsTable">
                         <tr>
-                            <th>@Html.DisplayNameFor(model => model.Ingredients[@Model.Ingredients.Count].Amount)</th>
+                            <th class="table-amount">@Html.DisplayNameFor(model => model.Ingredients[@Model.Ingredients.Count].Amount)</th>
                             <th>@Html.DisplayNameFor(model => model.Ingredients[@Model.Ingredients.Count].Ingredient.Name)</th>
                         </tr>
                     </table>
@@ -123,8 +125,11 @@
 
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-create" />
+                    <a class="btn btn-create" asp-controller="Recipe" asp-action="Detail" asp-route-id="@Model.Id">Cancel</a>
                 </div>
+
             </form>
+           
         </div>
     </div>
 </div>
@@ -146,10 +151,13 @@
         function addIngredientRow() {
             var table = document.getElementById("AddIngredientsTable");
             var row = table.insertRow(-1);
-            var cell2 = row.insertCell(0);
-            var cell1 = row.insertCell(1);
-            cell2.innerHTML = '<textarea asp-for="Ingredients[' + ingredientCounter + '].Ingredient.Name" name="Ingredients[' + ingredientCounter + '].Ingredient.Name"></textarea>';
+
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1); 
+
+
             cell1.innerHTML = '<textarea asp-for="Ingredients[' + ingredientCounter + '].Amount" name="Ingredients[' + ingredientCounter + '].Amount"></textarea>';
+            cell2.innerHTML = '<textarea asp-for="Ingredients[' + ingredientCounter + '].Ingredient.Name" name="Ingredients[' + ingredientCounter + '].Ingredient.Name"></textarea>';
             ingredientCounter++;
         }
     </script>

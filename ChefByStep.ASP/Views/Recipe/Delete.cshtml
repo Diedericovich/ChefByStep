@@ -1,11 +1,14 @@
 ﻿@model RecipeDeleteViewModel
+<div class="overview center-delete">
+        <form asp-controller="Recipe" asp-action="Delete" method="post">
+            <img src="@Model.ImageUrl" width="500px"/>
+            <p>Are you sure you want to delete @Model.Title?</p>
+            
+            <input type="hidden" asp-for="@Model.Id" />
+            <div class="center-delete">
+                <button type="submit" class="btn btn-create">Delete</button>
 
-<form asp-controller="Recipe" asp-action="Delete" method="post">
-    <p>Are you sure you want to delete @Model.Title?</p>
-
-    <input type="hidden" asp-for="@Model.Id" />
-
-    <button type="submit" class="btn btn-danger">Delete</button>
-    |
-    <a asp-controller="Recipe" asp-action="Index">Return to recipes</a>
-</form>
+                <a class="btn btn-create" asp-controller="Recipe" asp-action="Index">Cancel</a>
+            </div>
+        </form>
+    </div>
