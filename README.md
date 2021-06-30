@@ -1,6 +1,6 @@
 # ChefByStep
 
-A joint collaboration between 6 .NET students.
+A joint collaboration between 5 .NET students.
 
 - Diederik Van Yperzele
 - Simon Van Tittelboom
