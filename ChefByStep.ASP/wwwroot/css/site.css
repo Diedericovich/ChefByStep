@@ -271,8 +271,9 @@ body {
 .btn-cook:hover{
     background-color: RGBA(244,185,66,0.59);
 }
-.btn-cook-btn{
+.btn-cook-btn {
     font-size: 1.6em;
+    background-color: #F4B942;
 }
     .btn-cook-btn:hover {
         background-color: RGBA(244,185,66,0.59);
@@ -406,14 +407,13 @@ body {
     padding-top: 12px;
     width: 8em;
     height: 3em;
-    background-color: RGBA(120,198,163);
+    background-color: #F4B942;
+    
 }
-    .btn-create-recipe:active {
-        background-color: #449671;
-    }
+
 
     .btn-create-recipe:hover {
-        background-color: #449671;
+        background-color: RGBA(244,185,66,0.59);
     }
 .step-table{
     width: 100%;
