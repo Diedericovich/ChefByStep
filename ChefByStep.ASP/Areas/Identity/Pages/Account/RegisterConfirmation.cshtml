@@ -1,0 +1,37 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Registration";
+}
+
+
+
+
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+    <div class="wrapper">
+        <form class="register-confirmation">
+            <h5>@ViewData["Title"]</h5>
+            <div class="form-group">
+                <div class="login_input">
+                    <p id="register-confirmation">
+                       Congratulations! Your account is created. 
+                        </p>
+                    <p id="register-confirmation"> 
+                        Please confirm your account to complete registration.
+                    </p>
+                </div>
+
+            </div>
+            <button type="submit" href="@Model.EmailConfirmationUrl" class="login_button">Confirm Account</button>
+        </form>
+    </div>
+    }
+    else
+    {
+<p>
+        Please check your email to confirm your account.
+</p>
+    }
+}
