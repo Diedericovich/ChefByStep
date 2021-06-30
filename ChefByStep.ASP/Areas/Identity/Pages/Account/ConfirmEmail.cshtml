@@ -1,7 +1,28 @@
 ﻿@page
 @model ConfirmEmailModel
 @{
-    ViewData["Title"] = "Confirm email";
+    ViewData["Title"] = "Registration";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="wrapper">
+    <form class="email-confirmation">
+        <h5>@ViewData["Title"]</h5>
+        <div class="form-group">
+            <div id="email-confirmation" class="login_input">
+                <p>
+                    Account is confirmed.
+                </p>
+                <p>
+                    You have received an email with a code.
+                </p>
+                <p>
+                    Enter the code in the field below.
+                </p>
+                <div id="code" class="login_input">
+                    <input class="form-control" placeholder="Code" type="password" />
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="login_button">Continue</button>
+    </form>
+</div>

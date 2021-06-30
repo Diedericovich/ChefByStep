@@ -12,6 +12,7 @@
 11. FORGOT PASSWORD PAGE
 12. FORGOT PASSWORD CONFIRMATION PAGE
 13. REGISTER CONFIRMATION PAGE
+14. EMAIL CONFIRMATION PAGE 
 */
 
 /*------------------------------------------------------------------------------------- IMPORTS ---------------------------------------------------------------------------------------*/
@@ -935,7 +936,7 @@ border-radius: 3px;
 
 .register-confirmation {
     border-radius: 2px 2px 5px 5px;
-    padding: 20px 30px 70px 20px;
+    padding: 20px 30px 40px 20px;
     width: 90%;
     max-width: 350px;
     background: #ffffff;
@@ -945,7 +946,31 @@ border-radius: 3px;
 
 #register-confirmation {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
+/*----------------------------- EMAIL CONFIRMATION PAGE -----------------------*/
+
+
+.email-confirmation {
+    border-radius: 2px 2px 5px 5px;
+    padding: 20px 30px 70px 20px;
+    width: 90%;
+    max-width: 350px;
+    background: #ffffff;
+    position: relative;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+}
+
+#email-confirmation {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#code {
+    padding-left: 80px;
+    padding-right:100px;
+    align-self:center;
+}
