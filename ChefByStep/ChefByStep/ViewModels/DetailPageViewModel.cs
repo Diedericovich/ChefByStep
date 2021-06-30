@@ -32,7 +32,12 @@
                 this.ActiveUser.ApplicationUser.FavoriteRecipes.Add(SelectedRecipe);
                 SelectedRecipe.IsFavorited = true;
                 FavoriteButton = "heartfull.png";
-                await _userRepo.UpdateUser(ActiveUser.ApplicationUser);
+                var favourite = new FavouriteDto
+                {
+                    UserId = ActiveUser.ApplicationUser.Id,
+                    RecipeId = SelectedRecipe.Id
+                };
+                await _userRepo.AddFavouriteRecipe(favourite);
             }
         }
 

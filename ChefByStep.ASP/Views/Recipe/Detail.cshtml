@@ -1,4 +1,14 @@
 ﻿@model RecipeDetailRatingViewModel
+@inject IUserService service
+
+@functions{
+    public string AddFavourite()
+    {
+        var favourite = new FavouriteDto { RecipeId = Model.RecipeDetailVm.Id, UserId = Model.RecipeRatingVm.UserId };
+        service.AddFavouriteRecipe(favourite);
+        return "done";
+    }
+}
 
 @{
     double totalRating = 0;
@@ -55,7 +65,6 @@
                     <p class="col-sm-12 col-md-6 col-lg-6 detail-time-left">@Model.RecipeDetailVm.PrepTimeInMin min </p>
                     <p class="col-sm-12 col-md-6 col-lg-6 detail-time-right">@Model.RecipeDetailVm.CookTimeInMin min</p>
                 </div>
-                
             </div>
             <div class="btn-cook">
                 <a class="btn nav-link btn-cook-btn" asp-area="" asp-controller="Recipe" asp-action="Steps" asp-route-id="@Model.RecipeDetailVm.Id">Start Cooking</a>
@@ -74,6 +83,9 @@
 
                 }
             </div>
+            <div>
+                <button class="btn nav-link btn-edit" id="favButton" onclick="@AddFavourite()">Add To Favourites</button>
+            </div>
             @if (User.IsInRole("Admin"))
             {
                 <div>
@@ -83,14 +95,12 @@
                     <a class="btn nav-link btn-edit" asp-area="" asp-controller="Recipe" asp-action="Delete" asp-route-id="@Model.RecipeDetailVm.Id">Delete Recipe</a>
                 </div>
             }
-
         </div>
-
     </div>
 
     @if (Model.RecipeDetailVm.Ratings.Count > 0)
     {
-    <hr />
+        <hr />
         <div class="recipe-comments">
             <h3>Comments:</h3>
             @foreach (var comment in @Model.RecipeDetailVm.Ratings)
@@ -117,7 +127,6 @@
                     <div class="comment-name">- @comment.User.Name</div>
                 </div>
             }
-
         </div>
     }
     <br />
@@ -146,3 +155,17 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+
+    <script type="text/javascript">
+         document.addEventListener("DOMContentLoaded", function () {
+             var button = document.getElementById('favButton');
+            button.addEventListener('click', function () {
+                var test = "@AddFavourite()";
+                console.log(test);
+             });
+        });
+    </script>
+
+} 

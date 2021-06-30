@@ -118,5 +118,21 @@
                 }
             }
         }
+
+        public async Task AddFavouriteRecipe(FavouriteDto favourite)
+        {
+            var url = $"{BaseUrl}/AddFavourite";
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback += (sender, certificate, chain, errors) => true;
+            var client = new HttpClient(handler);
+            var json = JsonConvert.SerializeObject(favourite);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage message = await client.PostAsync(url, httpContent);
+
+            if (!message.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException($"Request failed: {message.StatusCode}");
+            }
+        }
     }
 }
