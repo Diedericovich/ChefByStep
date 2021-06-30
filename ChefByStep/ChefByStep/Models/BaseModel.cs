@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ChefByStep.Models
+﻿namespace ChefByStep.Models
 {
     public class BaseModel
     {

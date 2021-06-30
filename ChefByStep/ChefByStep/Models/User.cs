@@ -1,14 +1,17 @@
-﻿namespace ChefByStep.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace ChefByStep.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
+    
 
     public class User : BaseModel
     {
         public int Id { get; set; }
+
         public int AccountId { get; set; }
 
         public int RoleId { get; set; }
@@ -16,6 +19,7 @@
         public string Name { get; set; }
 
         public List<Recipe> CreatedRecipe { get; set; }
+
 
         private ObservableCollection<Recipe> favoriteRecipes;
 

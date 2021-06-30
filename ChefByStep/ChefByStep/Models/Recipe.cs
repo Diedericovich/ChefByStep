@@ -1,18 +1,26 @@
-﻿namespace ChefByStep.Models
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace ChefByStep.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
+    
 
     public class Recipe : BaseModel
     {
         public int Id { get; set; }
+
         public int CategoryID { get; set; }
+
         public string CreatedByUser { get; set; }
+
         public int PrepTimeInMin { get; set; }
+
         public int CookTimeInMin { get; set; }
+
         public string CookingTime { get; set; }
+
         public int AverageRating { get; set; }
 
         public string Description { get; set; }
